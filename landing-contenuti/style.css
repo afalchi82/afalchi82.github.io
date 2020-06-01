@@ -1,0 +1,73 @@
+:root {
+  --c-primary: #0c3371;
+}
+
+.container {
+  max-width: 800px;
+}
+
+body {
+  background: white;
+  font-size: 0.9rem;
+}
+
+
+/* -----------------------------------------------
+  Title
+----------------------------------------------- */
+.font-serif {
+  font-family: 'Noticia Text', serif;
+}
+
+
+
+/* -----------------------------------------------
+  Header
+----------------------------------------------- */
+.header {
+  background: var(--c-primary);
+  height: 3rem;
+}
+
+.logo-top {
+  width: 14rem;
+}
+
+
+/* -----------------------------------------------
+  Main
+----------------------------------------------- */
+.main {
+  padding: 3rem 0;
+  min-height: calc(100vh - 13rem);
+}
+
+.main-title {
+  font-family: 'Noticia Text', serif;   
+  color: var(--c-primary);
+  font-size: 1.5rem;
+}
+
+
+
+/* -----------------------------------------------
+  Footer
+----------------------------------------------- */
+.footer {
+  background: var(--c-primary);
+  padding: 2rem 0;
+  height: 10rem;
+  color: white;
+  font-size: .6rem;
+}
+
+.logo-bottom {
+  width: 4rem;
+  opacity: .5;
+}
+
+.credits {
+  text-align: right;
+  opacity: .5;
+  max-width: 26rem;
+}

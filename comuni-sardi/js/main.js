@@ -432,11 +432,11 @@ function switchAccenti($t) {
     switch(v){
         case 'a' : va = 'à';
         break;
-        case 'e' : va = 'è';
+        case 'e' : va = 'é';
         break;
         case 'i' : va = 'ì';
         break;
-        case 'o' : va = 'ò';
+        case 'o' : va = 'ó';
         break;
         case 'u' : va = 'ù';
         break;
@@ -651,7 +651,7 @@ var speech = {
         //g.msg.voice = g.voices[10]; // Note: some voices don't support altering params
         g.msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Whisper'; })[0]
         g.msg.voiceURI = 'native';
-        g.msg.volume = .5; // 0 to 1
+        g.msg.volume = .8; // 0 to 1
         g.msg.rate = 1; // 0.1 to 10
         g.msg.pitch = 1; //0 to 2
         g.msg.lang = 'it-IT';
