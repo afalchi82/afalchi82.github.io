@@ -1,4 +1,7 @@
 
+/* 0082c8 */
+/* 0c3371 */
+
 /* -----------------------------------------------
   Global
 ----------------------------------------------- */
@@ -26,12 +29,13 @@ body {
   Header
 ----------------------------------------------- */
 .header {
-  background: #0c3371;
-  height: 3rem;
+  background: #0082c8;
 }
 
 .logo-top {
-  width: 14rem;
+  width: 6rem;
+  margin: 0.7rem 0;
+  display: inline-block;
 }
 
 
@@ -45,7 +49,7 @@ body {
 
 .main-title {
   font-family: 'Noticia Text', serif;   
-  color: #0c3371;
+  color: #0082c8;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -59,7 +63,19 @@ body {
 }
 
 .carousel-indicators li {
-  background-color: #0c3371;
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  margin-left: 6px;
+  border-radius: 7px;
+  border: 2px solid #0082c8;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.carousel-indicators .active {
+  background-color: #0082c8;
 }
 
 
@@ -68,7 +84,7 @@ body {
   Footer
 ----------------------------------------------- */
 .footer {
-  background: #0c3371;
+  background: #0082c8;
   padding: 2rem 0;
   height: 10rem;
   color: white;
@@ -77,11 +93,11 @@ body {
 
 .logo-bottom {
   width: 4rem;
-  opacity: .5;
+  opacity: .8;
 }
 
 .credits {
   text-align: right;
-  opacity: .5;
+  opacity: .8;
   max-width: 26rem;
 }
