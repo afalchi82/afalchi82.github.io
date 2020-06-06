@@ -51,6 +51,18 @@ body {
 }
 
 
+/* -----------------------------------------------
+  Carousel
+----------------------------------------------- */
+.carousel-indicators {
+  position: relative;
+}
+
+.carousel-indicators li {
+  background-color: #0c3371;
+}
+
+
 
 /* -----------------------------------------------
   Footer
