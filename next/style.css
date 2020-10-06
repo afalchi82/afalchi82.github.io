@@ -1,0 +1,239 @@
+:root {
+    --o-cc1-btn-primary: #133371;
+    --o-cc3-link: #133371;
+    --red: #a53535;
+    --blue: #133371;
+    --blue-light: #4e6695;
+    --light-grey: #ddd;
+    --grey-lightest: #f5f5f5;
+    --border-color: #e6e7e6;
+    --grey-dark: #525252;
+    --emperor-500: #525252;
+    --stack-500: #9d9f9d;
+    --stack-100: #F5F5F5;
+  }
+  h4, .h4 {
+    /* font-size: 1.5rem; */
+    font-weight: bold;
+  }
+  .o_form_view .o_form_statusbar,
+  .o_control_panel, html .o_web_client > .o_action_manager {
+  border-color: var(--border-color)
+  }
+  
+  .o_form_view .o_form_uri > span:first-child {
+    text-decoration: underline;
+    color: var(--blue);  
+    font-weight: bold;
+  }
+  
+  /* COLOR EMPEROR */
+  .o_form_view .oe_button_box .oe_stat_button .o_button_icon {
+      color: var(--stack-500);
+  }
+  
+  /* COLOR BLUE */
+  .ui-autocomplete .ui-menu-item.o_m2o_dropdown_option > a, .ui-autocomplete .ui-menu-item.o_m2o_dropdown_option > a.ui-state-active, 
+  .o_ThreadIcon_online, .o_search_panel .o_search_panel_category .o_search_panel_section_icon,
+  .breadcrumb-item.o_back_button > a, .o_control_panel .breadcrumb > li > a, .o_searchview_autocomplete a {
+    color: var(--blue)
+  }
+  
+  /* BG BLUE */
+  .o_searchview .o_searchview_autocomplete li.o-selection-focus,
+  .o_field_widget.o_field_image .o_form_image_controls {
+    background-color: var(--blue)
+  }
+  /* COLOR WHITE */
+  .o_field_widget.o_field_image .o_form_image_controls button {
+    color: white
+  }
+  /* BG LIGHT GREY */
+  .o_DiscussSidebar {
+    background-color: var(--light-grey)
+  }
+  
+  /* BG TRANSPARENT */
+  .o_form_view,
+  .o_Chatter,
+  .o_form_view .o_form_statusbar {
+    background-color: transparent
+  }
+  
+  /* BACKGROUND IMAGE NONE*/
+  .o_form_view .o_form_sheet_bg {
+      background-image: none;
+  }
+  
+  .o_DiscussSidebarItem_activeIndicator.o-item-active,
+  .o_ChatWindowHeader {
+    background-color: var(--blue)
+  }
+  .o_mail_systray_item .o_notification_counter, .badge {
+    background: var(--red);
+    border-color: var(--red);
+  }
+  
+  /* MAIN NAV */
+  html .o_web_client > .o_action_manager {
+    padding-left: 80px;
+    border-left: 1px solid #ccc;
+    background: url(https://i.itsosticky.com/q0vyw7.png) no-repeat top left;
+  }
+  .oe_expiration_tag {
+    display: none;
+  }
+  body {
+    font-family: "Quattrocento Sans";
+    font-size: 1.15rem;
+  }
+  
+  
+  .o_form_view .o_form_sheet_bg > .o_form_sheet {
+    box-shadow: none;
+    border: 1px solid #ececec;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  }
+  .btn-link, .o_form_view .o_form_uri, .btn-secondary, .o_radio_hide_bullet label {
+    color: var(--o-cc3-link);
+  }
+  .btn-fill-primary, .btn-primary {
+    background-color: #133371;
+    border-color: #133371
+  }
+  .o_form_view .o_field_widget {
+    /*margin-bottom: 10px */
+  }
+  .o_main_navbar {
+    background-color: #133371
+  }
+  .o_onboarding.o_onboarding_blue, .o_onboarding.o_onboarding_blue .o_onboarding_wrap {
+    background-image: none;
+    box-shadow: none;
+    background-color: #13337111;
+  }
+  .o_onboarding.o_onboarding_blue, .o_onboarding.o_onboarding_blue .o_onboarding_step_title, .o_onboarding.o_onboarding_blue .o_onboarding_step_action, .o_onboarding.o_onboarding_blue a.o_onboarding_all_done, .o_onboarding.o_onboarding_blue .o_onboarding_all_done > .fa, .o_onboarding.o_onboarding_blue .o_onboarding_btn_close {
+    color: #555
+  }
+  .btn, .o_radio_hide_bullet label, .o_account_reports_page .oe_link_reports {
+    padding: .5rem 1rem;
+    font-weight: bold
+  }
+  
+  
+  .nav-tabs .nav-item {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: -.1px;
+  }
+  .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link {
+    border-left: 0;
+    border-right: 0;
+  }
+  .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link.active, .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link.active:hover, .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link.active:focus, .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link.active:active {
+    border-bottom: 4px solid var(--red);
+    border-top: 0
+  }
+  
+  
+  /* --------------------------------------------------
+      TABS 
+  -------------------------------------------------- */
+  .nav-tabs .nav-link {
+      font-size: 13px;
+      border-top: 0;
+      border-bottom: 0;
+      
+      &.active {
+          font-weight: bold;
+          background-color: var(--stack-100);
+      }
+  }
+  
+  .nav-item a {
+      color: var(--grey-dark);
+  }
+  
+  .btn-fill-primary:focus, .btn-primary:focus, .btn-fill-primary.focus, .focus.btn-primary {
+    box-shadow: 0 0 0 0.2rem #13337144;
+  }
+  .o_control_panel .breadcrumb {
+    font-weight: bold;
+  }
+  .o_control_panel > div {
+    margin: 10px 0
+  }
+  .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background: var(--blue)
+  }
+  .o_searchview .o_searchview_facet {
+    border: 0;
+    background: #e8e8e8;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: var(--blue);
+    border-color: var(--blue);
+  }
+  
+  
+  /* --------------------------------------------------
+      FORM 
+  -------------------------------------------------- */
+  .o_form_view {
+      // display: flex;    
+  }
+  
+  .o_input {
+    border: 1px solid #ccc;
+    border-radius: 0;
+  }
+  input[type="text" i] {
+    padding: 3px 4px;
+  }
+  .o_field_widget .o_input_dropdown .o_dropdown_button {
+    top: 4px; right: 6px
+  }
+  .o_control_panel, .breadcrumb {
+    background-color: transparent;  
+  }
+  .o_form_view .o_group .o_td_label .o_form_label {
+    font-weight: normal;
+  }
+  
+  
+  /* --------------------------------------------------
+      Badges
+  -------------------------------------------------- */
+  .o_field_widget.o_field_many2manytags .o_tag_color_0 {
+      box-shadow: inset 0 0 0 1px #777777;
+  }
+  
+  
+  /* SETTINGS */
+  .o_base_settings .o_setting_container .settings_tab {
+    color: var(--grey-dark);
+    background-color: transparent;
+    border-right: 1px solid #ddd;
+  }
+  .o_base_settings .o_setting_container .settings_tab .app_name {
+    color: var(--grey-dark)
+  }
+  
+  /* LISTE */
+  .o_content > .o_list_view > .table-responsive > .table:not(.o_list_table_grouped) > tbody > tr:not(.o_list_table_grouped) > td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  
+  /* BOTTONI */
+  .btn {
+      border-radius: 0;
+      text-transform: uppercase;
+      
+      &-secondary {
+          border: 0;
+          background-color: transparent;
+      }
+      
+  }
