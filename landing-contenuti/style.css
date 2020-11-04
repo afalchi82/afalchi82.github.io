@@ -54,6 +54,12 @@ body {
   font-weight: bold;
 }
 
+.slide-title {
+  color: #a53535;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 
 /* -----------------------------------------------
   Carousel
@@ -78,6 +84,10 @@ body {
   background-color: #0082c8;
 }
 
+.carousel-item {
+  font-size: 1.025rem;
+}
+
 
 
 /* -----------------------------------------------
@@ -100,4 +110,9 @@ body {
   text-align: right;
   opacity: .8;
   max-width: 26rem;
+}
+
+
+.red {
+  color: #a53535;
 }
