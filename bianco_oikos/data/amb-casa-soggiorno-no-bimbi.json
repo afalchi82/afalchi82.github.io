@@ -1,0 +1,72 @@
+{
+  "stageType":"products",
+  "pathName": "Senza bambini",
+  "title": "Soggiorno non frequentato dai bambini",
+  "abstract":"",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2198", "2199"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2216", "2238", "2209" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2195", "2196" ]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2216", "2238", "2209" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2200", "2202" ]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2216", "2238", "2209" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura",
+      "label": "Rasatura",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2195", "2199" ]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2216", "2238", "2209" ]
+        }
+      ]
+    }
+  ]  
+}

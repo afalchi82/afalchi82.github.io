@@ -1,0 +1,59 @@
+{
+  "pathName": "Prodotto specifico",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "questionText": "Quale ambiente della casa vuoi trattare?",
+  "abstract": "All’interno della casa ogni ambiente riveste una propria funzione e, come tale, necessita di prodotti dotati di specifiche caratteristiche e prestazioni tecniche. La gamma di pitture White. Il Bianco Oikos offre soluzioni specifiche mirate per ciascuno spazio, nel rispetto della salute delle persone e dell’ambiente. ",
+  "options":[
+    {
+      "title":"Cucina",
+      "iconUrl": "img/icons/cibi.png",
+      "helpText": "",
+      "nextStage":"amb-casa-cucina-q-umidita"
+    },
+    {
+      "title":"Soggiorno",
+      "iconUrl": "img/icons/soggiorno.png",
+      "helpText": "",
+      "nextStage":"amb-casa-soggiorno-q-bimbi"
+    },
+    {
+      "title":"Studio",
+      "iconUrl": "img/icons/studio.png",
+      "helpText": "",
+      "nextStage":"amb-casa-studio-q-uso"
+    },
+    {
+      "title":"Camera da letto",
+      "iconUrl": "img/icons/camera.png",
+      "helpText": "",
+      "nextStage":"amb-casa-camera-q-quale"
+    },
+    {
+      "title":"Bagno",
+      "iconUrl": "img/icons/bagno.png",
+      "helpText": "",
+      "nextStage":"amb-casa-bagno-q-tipo"
+    },
+
+
+    {
+      "title":"Ambienti tecnici ",
+      "iconUrl": "img/icons/boiler.png",
+      "helpText": "Garage, ripostiglio, capanno, vano caldaia ",
+      "nextStage":"amb-casa-garage-q-umidita"
+    },
+    {
+      "title":"Corridoi e ingressi",
+      "iconUrl": "img/icons/scale.png",
+      "helpText": "Vano scala, Corridoio, ingresso ",
+      "nextStage":"amb-casa-scale"
+    },
+    {
+      "title":"Cantina e Tavernetta",
+      "iconUrl": "img/icons/cantina.png",
+      "helpText": "",
+      "nextStage":"amb-casa-cantina-q-umidita"
+    }
+  ]
+}

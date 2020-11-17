@@ -1,0 +1,56 @@
+{
+  "stageType":"products",
+  "pathName": "Con umidità di risalita",
+  "title": "Cantina o tavernetta con problemi di umidità di risalita",
+  "abstract": "Cantina e tavernetta sono ambienti della casa utilizzati non solo con funzioni pratiche, come la conservazione di vini e cibi, ma anche come luoghi per trascorrere con gli ospiti piacevoli momenti di divertimento e relax. <br>   Sono ambienti soggetti per natura all’umidità e all’usura, che necessitano di pitture specifiche capaci sia di risolvere tali problematiche, sia di rendere piacevoli e accoglienti gli spazi. White. Il Bianco Oikos offre pitture e materie adatte ad arredare cantina e tavernetta, nel rispetto per la salute delle persone e dell’ambiente. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2193", "2197", "2196" ]
+        },        
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2233", "2234", "2235" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2193", "2197", "2196" ]
+        },        
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2233", "2234", "2235" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura",
+      "label": "Rasatura",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2193", "2197", "2196" ]
+        },        
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2233", "2234", "2235" ]
+        }
+      ]
+    }
+  ]  
+}

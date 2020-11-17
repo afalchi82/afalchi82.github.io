@@ -1,0 +1,21 @@
+{
+  "pathName": "Studio", 
+  "stageType":"question",
+  "backgroundImage": "img/bg/ambienti.jpg",
+  "questionText":"Usi lo studio a scopo professionale?",
+  "abstract": "",
+  "options":[
+    {
+      "title":"Sì",
+      "helpText": "",
+      "iconUrl": "img/icons/yes.png", 
+      "nextStage":"amb-casa-studio-professionale"
+    },
+    {
+      "title": "No",
+      "helpText": "",
+      "iconUrl": "img/icons/no.png", 
+      "nextStage":"amb-casa-studio-hobby"
+    }
+  ]
+}

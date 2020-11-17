@@ -1,0 +1,72 @@
+{
+  "stageType":"products",
+  "pathName": "Vano scala, Corridoio, ingresso ",
+  "title": "Vano scala, Corridoio, ingresso ",
+  "abstract": "Sono gli ambienti di maggior traffico della casa, soggetti ogni giorno a numerose sollecitazioni. Ecco perché diventa indispensabile in questi spazi utilizzare Ecopitture per interni e Ecopitture materiche che garantiscano alta resistenza, lavabilità e durata nel tempo. <br>  “White. Il Bianco Oikos” offre soluzioni specifiche per decorare questi ambienti, nel rispetto della salute. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2196", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2218", "2213", "2214" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2218", "2213", "2214" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stuco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2199", "2200", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2218", "2213", "2214" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura",
+      "label": "Rasatura",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2218", "2213", "2214" ]
+        }
+      ]
+    }
+  ]  
+}

@@ -1,0 +1,796 @@
+{
+  "id": "esigenze",
+  "pathName": "Per esigenza",
+  "stageType":"accordion",
+  "backgroundImage": "img/bg/esigenza.jpg",
+  "title": "Cerca per esigenza",
+  "abstract":"Trova la pittura più adatta ai problemi specifici della tua parete e superficie. Con White. Il Bianco Oikos, puoi risolvere qualsiasi problematica, in modo efficace, ma soprattutto ecologico.",
+  "data":[
+
+    {
+      "label":"Vorrei usare la stanza subito dopo l’applicazione",      
+      "blocks":[
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "Consigliamo di favorire il ricambio dell’aria nell’ambiente immediatamente dopo la fine dell’applicazione.",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Vedi prodotti",
+              "items": [
+                {
+                  "label": "Tutti i prodotti",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "label":"Vorrei una pittura senza odore",
+      "blocks":[
+        {
+          "type": "products",
+          "title": "Consigli di applicazione",
+          "html": "Ti ricordiamo che i prodotti a base calce hanno un loro odore naturale caratteristico, che viene rilasciato nell’ambiente fino alla maturazione",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Vedi prodotti",
+              "items": [
+                {
+                  "label": "Tutti i prodotti",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "label":"Vorrei una pittura senza solventi tossici e nocivi",
+      "html": "Senza formaldeide, in classe A+, prodotti nel rispetto dell’ambiente e dei prodotti.",
+      "blocks":[
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Vedi prodotti",
+              "items": [
+                {
+                  "label": "Tutti i prodotti",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {      
+      "label":"Vorrei una pittura che contrasti il fenomeno dell’umidità di risalita ",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Che cos’è l’umidità di risalita?",
+          "html": "L’umidità di risalita interessa quegli edifici, di recente o vecchia costruzione, le cui fondamenta di solito non hanno una buona impermeabilizzazione. La conseguenza è che l'acqua presente nel terreno tende ad infiltrarsi e a risalire nei muri per capillarità. Questo fenomeno, in genere, interessa il primo piano o i piani interrati. Per gestirlo bisogna applicare soluzioni che abbiano un'elevata traspirazione."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Per affrontare l’umidità di risalita, se hai un intonaco sfarinante, ti consigliamo di applicare un ciclo formato da un prodotto fissativo consolidante; se hai un intonaco coeso e liscio, puoi applicare un aggrappante. Come finitura puoi optare per una pittura altamente traspirante."
+        },
+        {
+          "type": "text",
+          "title": "Se hai una situazione di gravità maggiore",
+          "html": "Ti consigliamo di applicare degli intonaci deumidificanti macroporosi alfine di favorire la traspirazione del supporto."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Preparazione del supporto",
+              "items": [
+                {
+                  "label": "Neofix",
+                  "url": "http://www.oikos-group.it/it/p/neofix"
+                }
+              ]
+            },
+            {
+              "type": "prods",
+              "title": "Aggrappante",
+              "items": [ "210" ]
+            },
+            {
+              "type": "prods",
+              "title": "Finitura",
+              "items": [ "2193", "2195", "2196", "2199" ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {      
+      "label":"Vorrei una soluzione anticondensa",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Che cos’è la condensa?",
+          "html": "La condensa interessa quegli ambienti che presentano due fattori fondamentali: presenza di vapore acqueo e di punti freddi sulle pareti dove il vapore acqueo può appunto \"condensare\". I punti freddi sono rappresentati da zone scarsamente isolate o da \"ponti termici\". In queste zone si formano muffe che rendono l'ambiente insalubre, oltre che danneggiare la parete."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Per intervenire in questi casi è necessario bonificare le pareti con un prodotto specifico e poi applicare un fissativo con capacità di inibire la ricrescita delle muffe. Come finitura è possibile applicare una pittura Anticondensa – antimuffa con capacità di isolamento termico. Qualora tale problematica sia molto grave si possono prendere in considerazione interventi di tipo strutturale attraverso l'applicazione di termocappotti o attraverso interventi di correzione dei ponti termici"
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Bonifica pareti",
+              "items": [
+                {
+                  "label": "Sterylfix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Preparazione",
+              "items": [
+                {
+                  "label": "Sterylsan",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Finitura",
+              "items": [
+                {
+                  "label": "Micotral",
+                  "url": "http://www.oikos-group.it/it/p/micotral"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      
+      "label":"Vorrei una pittura che contrasti la muffa",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cosa sono le muffe? ",
+          "html": "Le muffe possono essere causate da diverse cause: condensa, scarsa areazione, vicinanza dell'immobile a specchi d'acqua o a zone umide"
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Per intervenire in questi casi è necessario bonificarele pareti con un prodotto specifico e poi applicare un fissativo con capacità diinibire la ricrescita delle muffe. Come finitura è possibile applicare una pittura antimuffa. Inoltre con uno specifico additivo antimuffa è possibile rendere ogni pittura capace di difendersi dalle muffe più aggressive."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Bonifica pareti",
+              "items": [
+                {
+                  "label": "Sterylfix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Preparazione",
+              "items": [
+                {
+                  "label": "Sterylsan",
+                  "url": ""
+                }
+              ]
+            },            
+            {
+              "type": "prods",
+              "title": "Finitura",
+              "items": [ "2197" ]
+            },
+            {
+              "type": "links",
+              "title": "Additivo",
+              "items": [
+                {
+                  "label": "Sterylplus",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {      
+      "label":"Vorrei una soluzione efficace contro le macchie difficili, gli aloni e l’ingiallimento",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cosa si intende per “macchie”",
+          "html": "Nelle nostre abitazioni a volte sono presenti macchie che non si riescono a mandare via con le normali pitture e che, pertanto, rendono malsani e degradati gli ambienti. Tali macchie sono formate da sostanze idrosolubili che vanno affrontate con specifici prodotti di pitturazione."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Macchie di nicotina, umidità o unto vanno eliminate prima di tutto eliminando polveri e parti in distacco. Nel caso particolare delle macchie di unto ti consigliamo di sgrassarle preventivamente con un apposito pulitore. Poi devi applicare un fissativo isolante e una pittura coprimacchia. "
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Preparazione supporto",
+              "items": [
+                {
+                  "label": "Crilux",
+                  "url": "http://www.oikos-group.it/it/p/crilux"
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Finitura",
+              "items": [
+                {
+                  "label": "Decortina",
+                  "url": "http://www.oikos-group.it/it/p/decortinanew"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {      
+      "label":"Vorrei una pittura che rimuova le alonature da termosifone / calorifero",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cosa sono le alonature?",
+          "html": "Spesso, dopo l’inverno, intorno ai termosifoni di casa si formano antiestetiche alonature nere. Per eliminarle e/o evitare che si riformino puoi utilizzare soluzioni di facile applicazione."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Prima di procedere con l'applicazione di un prodotto verniciante, si consiglia di lavare la parete con una spugna imbevuta di acqua e un detergente neutro poco aggressivo. Se dopo tale lavaggio noti che la pittura ha aderito bene al supporto e non sfarina, puoi procedere con l'applicazione diretta di un prodotto ad alta copertura. Se desideri evitare che tale inconveniente si ripresenti in futuro, puoi applicare, al posto del prodotto ad alta copertura, dei prodotti altamente lavabili che, a fine inverno, andranno solo puliti con le modalità descritte prima."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "prods",
+              "title": "Prodotto ad alta copertura",
+              "items": [ "2195" ]
+            },
+            {
+              "type": "prods",
+              "title": "Prodotto altamente lavabile",
+              "items": [ "2199", "2201"  ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {      
+      "label":"Vorrei una pittura efficace contro il fenomeno dello sfarinamento",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cos'è lo sfarinamento?",
+          "html": "Perché un intervento di pitturazione vada a buon fine è necessario che le superfici siano compatte e non polverose o sfarinanti. Se il supporto che presenta sfarinamento è un intonaco o una parete precedentemente verniciata, sia nuova che vecchia, ti consigliamo di intervenire prima di proseguirecon il trattamento della superficie."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Per eliminare lo sfarinamento delle superfici ti consigliamo di applicare un fissativo consolidante. Una volta preparate le superfici in questo modo, puoi rifinire la parete con qualunque prodotto verniciante."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Preparazione",
+              "items": [
+                {
+                  "label": "Neofix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Preparazione",
+              "items": [
+                {
+                  "label": "Tutte le pitture",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti gli smalti",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti i decorativi",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+
+    {      
+      "label":"Vorrei una pittura da applicare su una superficie di difficile aggrappaggio",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cosa si intende per superficie di difficile aggrappaggio?",
+          "html": "Per una buona applicazione su superfici lisce o poco assorbenti, hai necessità di aumentare il grip del supporto."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Per tali superfici ti consigliamo di intervenire utilizzando un primer aggrappante prima del prodotto di finitura. Esistono diversi tipi di aggrappante ognuno con sue specificità di scopo e utilizzo."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Preparazione",
+              "items": [
+                {
+                  "label": "Il Primer",
+                  "url": "http://www.oikos-group.it/it/p/ilprimer"
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Finitura",
+              "items": [
+                {
+                  "label": "Tutte le pitture",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti gli smalti",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti i decorativi",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {      
+      "label":"Vorrei una pittura da applicare su una superficie molto assorbente",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cosa si intende per superficie molto assorbente?",
+          "html": "Le superfici molto assorbenti possono rendere più complicato un intervento di pitturazione creando problemi di applicazione e rendendo più difficoltosa la copertura dei prodotti vernicianti."
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Per ridurre l'assorbimento delle superfici è necessario applicare isolanti o fondi capaci di ridurre e regolare il fenomeno."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Preparazione",
+              "items": [
+                {
+                  "label": "Neofix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Finitura",
+              "items": [
+                {
+                  "label": "Tutte le pitture",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti gli smalti",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti i decorativi",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {      
+      "label":"Vorrei una pittura da applicare su fondi irregolari ",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Cosa si intende per “fondo irregolare”?",
+          "html": "Quando si rinnova un ambiente spesso ci si trova a dover chiudere fori o a fare nuove tracce sui muri, se hai rinnovato anche gli impianti di casa. Per eseguire dei lavori a regola d'arte ti consigliamo di utilizzare i giusti prodotti di preparazione e applicare la corretta pittura. "
+        },
+        {
+          "type": "text",
+          "title": "Ecco come puoi intervenire",
+          "html": "Se sulla parete sono presenti solo dei fori, dopo averli chiusi con appositi stucchi antiritiro, puoi utilizzare un fondo uniformante che ti permetta di dipingere senza avere problemi di assorbimento anomalo in corrispondenza dei punti di ripristino della parete. <br> Se sulla parete trovi tracce derivate dal rinnovo degli impianti, ti consigliamo di preparare la parete con interventi più estesi. Dopo aver ripristinato le tracce, con apposite malte, puoi applicare un primer aggrappante per poi effettuare una rasatura finale che uniformi e livelli la parete."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "prods",
+              "title": "Fondo uniformante",
+              "items": [ "210" ]
+            },
+            {
+              "type": "links",
+              "title": "Primer aggrappante",
+              "items": [
+                {
+                  "label": "Il primer",
+                  "url": "http://www.oikos-group.it/it/p/ilprimer"
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Rasatura",
+              "items": [
+                {
+                  "label": "Stucco in pasta per rasatura",
+                  "url": "http://www.oikos-group.it/it/p/stuccorasatura"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+    {
+      "label":"Vecchie trattare pareti con pitture di scarsa qualità e/o in fase di distacco",
+      "blocks":[
+        {
+          "type":"text",
+          "html":"Se sulla tua parete è stata applicata una vecchia pittura vinilica, una tempera o una pittura di scarsa qualità, devi adottare un giusto ciclo di pitturazione per applicare una nuova pittura con successo. Anche se all'apparenza queste pitture possono sembrare ben ancorate e non problematiche, se sovratinteggiate  direttamente con prodotti di qualità superiore, possono distaccarsi inficiando l'intervento  di ripristino o rinnovo. <br>      Lepitturepococoese o in fase di distacco non consentono diiniziareunanuova pitturazione se non opportunamente trattate."
+        },
+        {
+          "type":"text",
+          "title":"Ecco come puoi intervenire",
+          "html":"Per superfici con pitture poco coese è necessario eliminare ogni parte di film pittorico in fase di distacco. Successivamente è necessario applicare un fissativo consolidante prima di applicare il prodotto di finitura. <br>         Qualora tale problematica sia grave e pertanto molto estesa e qualora le condizioni del cantiere lo consentano, è possibile prendere in considerazione una sverniciatura totale della superficie con l'uso di appositi sverniciatori. <br>          Per il trattamento di pittura di scarsa qualità si consiglia di applicare una o due mani di un fissativo consolidante previa eliminazione di eventuali polveri e parti in distacco presenti sulla superficie. Si terminerà l'intervento con l'applicazione di un prodotto di finitura. <br>         Per riconoscere pitture di scarsa qualità è possibile provare a bagnare con una spugna imbevuta di acqua una porzione di parete. Se in tempi brevi ci accorgiamo che la pittura si distacca o si dilava quasi totalmente è il caso di intervenire come sopra descritto."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Sverniciatore",
+              "items": [
+                {
+                  "label": "Ekostripper",
+                  "url": "http://www.oikos-group.it/it/p/ekostripper"
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Fissativo consolidante",
+              "items": [
+                {
+                  "label": "Neofix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "links",
+              "title": "Finitura",
+              "items": [
+                {
+                  "label": "Tutte le pitture",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti gli smalti",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti i decorativi",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "label":"Vorrei trattare una parete con scarso isolamento termico",
+      "blocks":[
+        {
+          "type":"text",
+          "html":"Uno scarso isolamento termico delle pareti può provocare diverse problematiche. <br>           La parete può essere afflitta da un problema di muffe. Per tutti i consigli in merito ti invitiamo a consultare la faq relativa alle “Muffe”.  <br>          In altri casi la parete può avere un problema di condensa. <br>       Per tutti i consigli in merito, ti invitiamo a consultare la faq relativa alla “Condensa”."
+        }
+      ]
+    },
+
+
+    {
+      "label": "Vorrei una pittura per rinnovare ambienti chiusi da tempo",
+      "blocks":[
+        {
+          "type":"text",
+          "html":"Un ambiente non utilizzato per molto tempo può rivelare diverse criticità qualora si decida di recuperarlo. L'ambiente potrà apparire con muri grigi e un odore stantio all'interno o anche presentare problemati che di muffe, che dovrai trattare adeguatamente. "
+        },
+        {
+          "type":"text",
+          "title":"Ecco come puoi intervenire",
+          "html":"Per ripristinare locali chiusi che si presentano con pareti grigie o odore di chiuso all'interno, ti consigliamo di eliminare polveri e parti in distacco sulle pareti. Successivamente se i supporti risultano essere sfarinanti, puoi procedere con l'applicazione di un fissativo consolidante. Se le pareti sono già tinteggiate anche con colori forti, puoi applicare Bianco 210. Per rifinire tali ambienti consigliamo prodotti profumati ad alta copertura. <br>    Se l'ambiente si presenta con muffe, ti invitiamo a consultare la faq dedicata alla \"muffa\". <br>  Qualorati trovi in presenza di \"vecchie pitture in fase di distacco\" leggi tutti i consigli nell’apposita faq. "
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Fissativo consolidante",
+              "items": [
+                {
+                  "label": "Crilux",
+                  "url": ""
+                },
+                {
+                  "label": "Neofix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "prods",
+              "title": "Fondo",
+              "items": [ "210" ]
+            },
+            {
+              "type": "prods",
+              "title": "Pittura profumata ad alta copertura",
+              "items": [ "2194", "2198" ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "label": "Vorrei una pittura che migliori la profumazione dell’ambiente",
+      "blocks":[
+        {
+          "type":"text",
+          "html":"Se vuoi migliorare la profumazione di una camera rimasta chiusa per diverso tempo, puoi utilizzare pitture profumate che, oltre a rendere più gradevole l'ambiente, fornisca anche qualità tecniche e alte prestazioni.   "
+        },
+        {
+          "type":"text",
+          "title":"Ecco come puoi intervenire",
+          "html": "Se le tue pareti risultano sfarinanti, ti consigliamo di applicare un fissativo consolidante. Se le pareti sono in buono stato, puoi applicare un fondo uniformante. "
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Fissativo consolidante",
+              "items": [
+                {
+                  "label": "Neofix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "prods",
+              "title": "Fondo uniformante",
+              "items": [ "210" ]
+            },
+            {
+              "type": "prods",
+              "title": "Pitture profumate",
+              "items": [ "2194", "2198" ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      "label": "Vorrei ripitturare di Bianco pareti già tinteggiate con colori accesi",
+      "blocks":[
+        {
+          "type":"text",
+          "html":"Il rinnovo o il recupero degli ambienti deve affrontare la criticità di muri già tinteggiati. In caso di \"Pitture in fase di distacco\", ti invitiamo a consultare l’apposita faq. In caso di pitture ben adese, puoi seguire questi consigli di applicazione."
+        },
+        {
+          "type":"text",
+          "title":"Ecco come puoi intervenire",
+          "html": "Qualora il supporto sia sfarinante e molto assorbente è necessario applicare un isolante consolidante previa eliminazione delle polveri e delle parti in distacco. Puoi applicare poi un prodotto ad alta copertura che ti consenta, in pochi passaggi, di ripristinare la parete. In alternativa puoi applicare un fondo uniformante, per poi stendere la pittura con le migliori caratteristiche per l'ambiente che stai rinnovando. <br>          Se il supporto si presenta ben coeso e non sfarinante, ti consigliamo di applicare un fondo pigmentato per ridurre l'assorbimento e aumentare la copertura. Come pittura, puoi applicare una pittura di buona qualità. "
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Fissativo consolidante",
+              "items": [
+                {
+                  "label": "Neofix",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "type": "prods",
+              "title": "Pittura ad alta copertura",
+              "items": [ "2195" ]
+            },
+            {
+              "type": "prods",
+              "title": "Fondo uniformante",
+              "items": [ "2201" ]
+            },
+            {
+              "type": "links",
+              "title": "Finitura",
+              "items": [
+                {
+                  "label": "Tutte le pitture",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti gli smalti",
+                  "url": ""
+                },
+                {
+                  "label": "Tutti i decorativi",
+                  "url": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "label": "Vorrei un prodotto che protegga la parete tinteggiata",
+      "blocks":[
+        {
+          "type":"text",
+          "html":"Ambienti molto vissuti come cucine, bagni, ambienti di forte passaggio o ambienti di rappresentanza, spesso hanno bisogno di una protezione supplementare per far sì che le pareti rimangano belle e performanti per più tempo."
+        },
+        {
+          "type":"text",
+          "title":"Ecco come puoi intervenire",
+          "html": "In questo caso puoi applicare dei protettivi trasparenti sulle pitture che siano state applicate con un ciclo idoneo e abbiano avuto almeno 24 ore di essiccazione."
+        },
+        {
+          "type": "products",
+          "title": "Ti consigliamo di applicare",
+          "html": "",
+          "prods": [
+            {
+              "type": "links",
+              "title": "Protettivi",
+              "items": [
+                {
+                  "label": "Igrolux",
+                  "url": "http://www.oikos-group.it/it/p/ilpigmentato"
+                },
+                {
+                  "label": "Watins lux",
+                  "url": "http://www.oikos-group.it/it/p/watinslux"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+
+
+  ]
+}

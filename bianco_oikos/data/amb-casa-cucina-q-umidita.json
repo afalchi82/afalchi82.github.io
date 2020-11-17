@@ -1,0 +1,21 @@
+{
+  "pathName": "Cucina", 
+  "stageType":"question",
+  "backgroundImage": "img/bg/ambienti.jpg",
+  "questionText":"L'ambiente presenta molta umidità?",
+  "abstract": "Il cuore pulsante della casa, ma anche il luogo in cui svolgere le attività quotidiane: dalla preparazione dei cibi fino al loro consumo: un ambiente, dunque, che richiede grande attenzione nella scelta di ecopitture, ecosmalti ed ecomateria da utilizzare.",
+  "options":[
+    {
+      "title":"Sì",
+      "helpText": "",
+      "iconUrl": "img/icons/yes.png", 
+      "nextStage":"amb-casa-cucina-umida"
+    },
+    {
+      "title":"No",
+      "helpText": "",
+      "iconUrl": "img/icons/no.png",  
+      "nextStage":"amb-casa-cucina-non-umida"
+    }
+  ]
+}

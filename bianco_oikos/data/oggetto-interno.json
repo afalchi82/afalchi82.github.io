@@ -1,0 +1,30 @@
+{
+  "id": "oggetto-interno",
+  "pathName": "All'interno",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "questionText":"Di che materiale è fatto l'oggetto?",
+  "abstract": "La soluzione perfetta per decorare, rinnovare e proteggere oggetti, accessori e mobili all’interno della casa, come ad esempio cornici, rosoni, battiscopa, sedie, tavoli etc. ",
+  "options":[
+    {
+      "title":"Ferro",
+      "iconUrl": "img/icons/ferro.png",
+      "nextStage":"oggetto-int-ferro"
+    },
+    {
+      "title":"Legno",
+      "iconUrl": "img/icons/legno.png",
+      "nextStage":"oggetto-int-legno"
+    },
+    {
+      "title":"Materiali difficili da trattare",
+      "iconUrl": "img/icons/vetro.png",
+      "nextStage":"oggetto-int-difficili"
+    },
+    {
+      "title":"Materiali molto porosi",
+      "iconUrl": "img/icons/ceramica.png",
+      "nextStage":"oggetto-int-porosi"
+    }
+  ]
+}

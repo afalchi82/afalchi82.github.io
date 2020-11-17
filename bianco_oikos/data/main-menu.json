@@ -1,0 +1,26 @@
+{
+  "pathName": "Ricerca per",
+  "stageType": "main-menu",
+  "backgroundImage": "img/bg/main-menu.jpg",
+  "title": "<strong>Trova la soluzione più giusta per te</strong><br>per decorare, rinnovare, rinfrescare la tua casa",
+  "data": [
+    {
+      "label": "Oggetto",
+      "abstract": "Scegli il prodotto giusto per decorare, proteggere e dare nuova vita ai mobili e gli oggetti della tua casa, sia all’esterno che all’interno.",
+      "image": "img/main-menu/oggetto.jpg",
+      "nextStage": "oggetto-ambienti"
+    },
+    {
+      "label": "Esigenza o problematica specifica",
+      "abstract": "Trova la pittura più adatta ai problemi specifici della tua parete e superficie.",
+      "image": "img/main-menu/esigenza.jpg",
+      "nextStage": "esigenze"
+    },
+    {
+      "label": "Ambiente",
+      "abstract": "Trova la soluzione più adatta per imbiancare, rinnovare e rinfrescare gli ambienti interni di casa, dell’ufficio o di qualunque spazio pubblico e commerciale.",
+      "image": "img/main-menu/ambiente.jpg",
+      "nextStage": "amb-contesti"
+    }
+  ]
+}

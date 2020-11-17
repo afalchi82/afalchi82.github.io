@@ -1,0 +1,52 @@
+{
+  "stageType":"products",
+  "pathName": "Laboratori artigianali",
+  "title": "Laboratori artigianali",
+  "abstract":"Ambienti destinati alla creatività, sia artigianale che industriale. Sartorie, Oreficerie, Laboratori Manifatturieri etc. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    }
+  ]  
+}

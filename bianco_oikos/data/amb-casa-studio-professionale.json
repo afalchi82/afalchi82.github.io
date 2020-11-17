@@ -1,0 +1,72 @@
+{
+  "stageType":"products",
+  "pathName": "Per la professione",
+  "title": "Studio a uso professionale",
+  "abstract":"In ogni casa, per piccola che sia, è importante cercare di ritagliarsi uno spazio tranquillo per lavorare, studiare oppure semplicemente per dedicarsi alle proprie attività preferite. La gamma White. Il Bianco propone pitture, smalti e materie specifiche per decorare ed arredare lo studio di casa. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2198", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2214", "2217", "2189" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2193", "2196", "2195"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2214", "2217", "2189" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2200", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2214", "2217", "2189" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2195", "2198"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2214", "2217", "2189" ]
+        }
+      ]
+    }
+  ]  
+}

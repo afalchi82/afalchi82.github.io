@@ -1,0 +1,31 @@
+{
+  "id": "amb-casa-prod-unico",
+  "stageType":"products",
+  "pathName": "Un prodotto per tutta la casa",
+  "title": "Un unico prodotto per tutta la casa",
+  "abstract":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "tabs": [
+    {
+      "id": "pareti",
+      "label": "Pareti",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2193", "2196", "2199"]
+        }
+      ]
+    },
+    {
+      "id": "soffitto",
+      "label": "Soffitto",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2193", "2195"]
+        }
+      ]
+    }
+  ]  
+}

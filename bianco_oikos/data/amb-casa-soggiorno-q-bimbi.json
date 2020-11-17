@@ -1,0 +1,21 @@
+{
+  "pathName": "Soggiorno", 
+  "stageType":"question",
+  "backgroundImage": "img/bg/ambienti.jpg",
+  "questionText": "Vuoi far vivere in libertà la casa ai tuoi bambini?",
+  "abstract": "Il soggiorno o salotto è l’ambiente di rappresentanza più importante, il centro della casa, in cui accogliere e ricevere i propri ospiti, lo spazio perfetto per trascorrere ore di piacevole relax. <br>   Il Bianco, la Pittura, la Materia, l’Ecologia, utilizzati in forma integrata, abbinati insieme in maniera consapevole, trasformano il volto del vostro ambiente di soggiorno, rendendolo più accogliente e più luminoso e garantendo, a voi e ai vostri ospiti, un Benessere totale.  ",
+  "options": [
+    {
+      "title":"Sì",
+      "helpText": "",
+      "iconUrl": "img/icons/yes.png", 
+      "nextStage":"amb-casa-soggiorno-bimbi"
+    },
+    {
+      "title":"No",
+      "helpText": "",
+      "iconUrl": "img/icons/no.png", 
+      "nextStage":"amb-casa-soggiorno-no-bimbi"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "amb-lavorativo-uffici-contatto-pubblico",
+  "stageType":"products",
+  "pathName": "Uffici pubblici a contatto con il pubblico",
+  "title": "Uffici pubblici a contatto con il pubblico",
+  "abstract":"Ambienti con funzione commerciale e istituzionale, destinati all’accoglienza della clientela. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2198", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2199", "2200", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2198", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    }
+  ]  
+}

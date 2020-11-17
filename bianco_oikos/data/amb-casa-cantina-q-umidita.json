@@ -1,0 +1,18 @@
+{
+  "pathName": "Cantina, tavernetta",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/ambienti.jpg",
+  "questionText": "Devi risolvere un problema di umidità di risalita?",
+  "options":[
+    {
+      "title":"Sì",
+      "iconUrl": "img/icons/yes.png", 
+      "nextStage":"amb-casa-cantina-umido"
+    },
+    {
+      "title":"No",
+      "iconUrl": "img/icons/no.png", 
+      "nextStage":"amb-casa-cantina-non-umido"
+    }
+  ]
+}

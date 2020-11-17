@@ -1,0 +1,29 @@
+{
+  "pathName": "Bagno",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "questionText":"Che caratteristiche ha il tuo bagno?",
+  "abstract": "Accogliente, intimo, funzionale ed esteticamente gradevole, il bagno è per ciascuno un’oasi di benessere nella quale ritagliarsi un attimo di relax e tranquillità, dove ogni elemento, a partire dai colori e dalla scelta dei materiali, deve essere scelto per metterci sempre a nostro agio. <br>   “White. Il Bianco Oikos, la pittura ecologica che arreda” unisce pittura, materia ed ecologia ad effetti decorativi studiati per soddisfare le esigenze di personalizzazione e decorazione dell’ambiente, per arredare ogni stanza e prevenire le criticità di usura e deterioramento provocato da umidità e vapore acqueo, nel massimo rispetto del Benessere personale.",
+  "options":[
+    {
+      "title":"Può essere arieggiato",
+      "iconUrl": "img/icons/arieggiato.png", 
+      "nextStage":"amb-casa-bagno-arieggiato"
+    },
+    {
+      "title":"Non può essere arieggiato",
+      "iconUrl": "img/icons/non-arieggiato.png", 
+      "nextStage":"amb-casa-bagno-non-arieggiato"
+    },
+    {
+      "title":"È soggetto a muffa",
+      "iconUrl": "img/icons/muffa.png", 
+      "nextStage":"amb-casa-bagno-muffa"
+    },
+    {
+      "title":"Non è soggetto a muffa",
+      "iconUrl": "img/icons/no-muffa.png", 
+      "nextStage":"amb-casa-bagno-no-muffa"
+    }
+  ]
+}

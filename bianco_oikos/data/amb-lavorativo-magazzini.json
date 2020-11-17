@@ -1,0 +1,42 @@
+{
+  "id": "amb-lavorativo-magazzini",
+  "stageType":"products",
+  "pathName": "Magazzini di stoccaggio",
+  "title": "Magazzini di stoccaggio",
+  "abstract":"Ambienti deputati al deposito dei prodotti e delle merci in magazzino. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2193", "2196" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2193", "2195"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2193", "2196" ]
+        }
+      ]
+    }
+  ]  
+}

@@ -1,0 +1,72 @@
+{
+  "stageType":"products",
+  "pathName": "Con bambini",
+  "title": "Soggiorno frequentato dai bambini",
+  "abstract":"",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2198", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2189", "2236", "2228" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2189", "2236", "2228" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2196", "2200", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2189", "2236", "2228" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2196", "2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2189", "2236", "2228" ]
+        }
+      ]
+    }
+  ]  
+}

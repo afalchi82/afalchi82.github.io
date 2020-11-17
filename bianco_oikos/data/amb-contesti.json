@@ -1,0 +1,21 @@
+{
+  "id": "amb-contesti",
+  "pathName": "Ambiente",
+  "stageType":"question",
+  "backgroundImage": "img/bg/ambiente.jpg",
+  "questionText":"Che tipo di ambiente è?",
+  "options":[
+    {
+      "title":"Lavorativo",
+      "helpText": "",
+      "iconUrl": "img/icons/lavorativo.png",
+      "nextStage":"amb-lavorativo-locali"
+    },
+    {
+      "title":"Domestico",
+      "helpText": "",
+      "iconUrl": "img/icons/interno.png",
+      "nextStage":"amb-casa-esigenza"
+    }
+  ]
+}

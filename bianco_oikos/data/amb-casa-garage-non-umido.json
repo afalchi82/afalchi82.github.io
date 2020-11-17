@@ -1,0 +1,41 @@
+{
+  "stageType":"products",
+  "pathName": "Senza umidità di risalita",
+  "title": "Ambiente tecnico senza problemi di umidità di risalita",
+  "abstract": "Sono ambienti tecnici destinati a svolgere funzioni estremamente pratiche e concrete, come il deposito di oggetti, e a fungere da piccola officina domestica in cui tenere gli attrezzi e svolgere attività fai da te. <br>   Si tratta di ambienti che quotidianamente hanno a che fare con problematiche quali l’umidità di risalita e che, pertanto, richiedono l’utilizzo di pitture specifiche per decorare le pareti. La linea di pitture “White. Il Bianco” propone la pittura più adatta per decorare le pareti di questi ambienti, nel rispetto per la salute delle persone. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2195", "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2195", "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura",
+      "label": "Rasatura",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2195", "2201", "2202", "2203"]
+        }
+      ]
+    }
+  ]  
+}

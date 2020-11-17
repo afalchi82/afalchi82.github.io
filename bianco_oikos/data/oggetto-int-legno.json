@@ -1,0 +1,28 @@
+{
+  "pathName": "Legno",
+  "stageType":"products",
+  "title": "Legno",  
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "abstract":"Il legno è uno dei materiali più comuni negli oggetti o i mobili di arredo per gli ambienti interni. <br>   Per proteggere questo materiale ed esaltarne il naturale aspetto estetico, puoi utilizzare prodotti capaci di penetrare in profondità in superficie, mantenendola salubre e protetta nel tempo, nella massima ecosostenibilità.",
+  "blocks": [
+    {
+      "type": "links",
+      "title":"Preparazione supporto",
+      "links": [
+        {
+          "label": "Novalis fondo riempitivo",
+          "href": "http://www.oikos-group.it/it/p/novalisfondoriempitivo"
+        },
+        {
+          "label": "Novalis sottosmalto",
+          "href": "http://www.oikos-group.it/it/p/novalissottosmalto"
+        }
+      ]
+    },
+    {
+      "type": "prods",
+      "title": "Smalto",
+      "prods": [ "2192", "2204", "2205"]
+    }
+  ]
+}

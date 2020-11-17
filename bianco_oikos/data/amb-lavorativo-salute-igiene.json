@@ -1,0 +1,73 @@
+{
+  "id": "amb-lavorativo-salute-igiene",
+  "stageType":"products",
+  "pathName": "Laboratori/Spazi legati alla salute e all’igiene ",
+  "title": "Laboratori/Spazi legati alla salute e all’igiene ",
+  "abstract":"Ambulatori medici, ambulatori analisi, sale operatorie, spazi ospedalieri, saloni estetiste e centri benessere, saloni parrucchiere, studi dentistici. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": ["2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": ["2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": ["2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": ["2199", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    }
+  ]  
+}

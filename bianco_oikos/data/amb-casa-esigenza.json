@@ -1,0 +1,22 @@
+{
+  "id": "amb-contesti",
+  "pathName": "Domestico",
+  "stageType":"question",
+  "backgroundImage": "img/bg/ambiente.jpg",
+  "questionText":"Che tipo di prodotto cerchi?",
+  "abstract": "Scegli la pittura giusta per imbiancare, rinnovare, rinfrescare e decorare la tua casa, nel rispetto e nella salvaguardia della salute degli ambienti e delle persone che la vivono. ",
+  "options":[
+    {
+      "title":"Prodotto unico",
+      "helpText": "Un unico prodotto adatto a tutta la casa",
+      "iconUrl": "img/icons/prodotto-unico.png",
+      "nextStage":"amb-casa-prod-unico"
+    },
+    {
+      "title":"Prodotto specifico",
+      "helpText": "Un prodotto specifico per ogni ambiente",
+      "iconUrl": "img/icons/prod-mirato.png",
+      "nextStage":"amb-casa-ambienti"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "amb-lavorativo-bagni-rappresentanza",
+  "stageType":"products",
+  "pathName": "Bagni di rappresentanza",
+  "title": "Bagni di rappresentanza",
+  "abstract":"Ambienti di servizio, destinati ad essere utilizzati esclusivamente dalla clientela e dagli ospiti dell’attività commerciale. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2189", "2229", "2227"]
+        }
+      ]
+    }
+  ]  
+}

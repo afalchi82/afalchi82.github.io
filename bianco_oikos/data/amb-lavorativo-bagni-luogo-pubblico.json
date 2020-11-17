@@ -1,0 +1,53 @@
+{
+  "id": "amb-lavorativo-bagni-luogo-pubblico",
+  "stageType":"products",
+  "pathName": "Bagni in luogo pubblico",
+  "title": "Bagni in luogo pubblico",
+  "abstract":"Ambienti di grande traffico, destinati ad uso frequente ed occasionale da parte di un pubblico molto ampio. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    }
+  ]  
+}

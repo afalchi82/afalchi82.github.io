@@ -1,0 +1,28 @@
+{
+  "pathName": "Ferro",
+  "stageType":"products",
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "title": "Ferro",
+  "abstract": "Il ferro è uno dei materiali che più frequentemente troviamo negli oggetti destinati ad ambienti esterni: ringhiere, cancelli, gazebo, giochi dei bambini. <br>   Per rinnovare e decorare i tuoi oggetti in ferro puoi trattare la superficie con prodotti che garantiscano resistenza, lunga durata ed una buona protezione agli agenti corrosivi. ",
+  "blocks": [
+    {
+      "type": "links",
+      "title":"Preparazione supporto",
+      "links": [
+        {
+          "label": "Novalis convertitore",
+          "href": "http://www.oikos-group.it/it/p/novalisconvertitore"
+        },
+        {
+          "label": "Novalis antiruggine",
+          "href": "http://www.oikos-group.it/it/p/novalisantiruggine"
+        }
+      ]
+    },
+    {
+      "type": "prods",
+      "title": "Smalto",
+      "prods": [ "2192", "2204", "2205"]
+    }
+  ]
+}

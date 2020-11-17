@@ -1,0 +1,72 @@
+{
+  "stageType":"products",
+  "pathName": "Soggetto a muffa",
+  "title": "Bagno soggetto alla comparsa di muffa",
+  "abstract": "Accogliente, intimo, funzionale ed esteticamente gradevole, il bagno è per ciascuno un’oasi di benessere nella quale ritagliarsi un attimo di relax e tranquillità, dove ogni elemento, a partire dai colori e dalla scelta dei materiali, deve essere scelto per metterci sempre a nostro agio. <br>  “White. Il Bianco Oikos, la pittura ecologica che arreda” unisce pittura, materia ed ecologia ad effetti decorativi studiati per soddisfare le esigenze di personalizzazione e decorazione dell’ambiente, per arredare ogni stanza e prevenire le criticità di usura e deterioramento provocato da umidità e vapore acqueo, nel massimo rispetto del Benessere personale.",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2196", "2197"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2217", "2234", "2233" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2196", "2197" ]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2217", "2234", "2233" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2196", "2197", "2198"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2217", "2234", "2233" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura",
+      "label": "Rasatura",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2163", "2196", "2197" ]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2217", "2234", "2233" ]
+        }
+      ]
+    }
+  ]  
+}

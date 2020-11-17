@@ -1,0 +1,33 @@
+{
+  "pathName": "All'esterno",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "questionText":"Di che materiale è fatto il tuo oggetto?",
+  "abstract": "La soluzione perfetta per decorare, rinnovare o proteggere oggetti, accessori e mobili destinati ad ambienti esterni, come ad esempioringhiere, gazebo, panchine ed altri arredi da giardino.",
+  "options":[
+    {
+      "title":"Ferro",
+      "iconUrl": "img/icons/ferro.png",
+      "helpText": "Ringhiere, cancelli, gazebo, giochi dei bambini",
+      "nextStage":"oggetto-est-ferro"
+    },
+    {
+      "title":"Legno",
+      "iconUrl": "img/icons/legno.png",
+      "helpText": "Panchine, sedie, tavoli, staccionate",
+      "nextStage":"oggetto-est-legno"
+    },
+    {
+      "title":"Materiali difficili da trattare",
+      "iconUrl": "img/icons/vetro.png",
+      "helpText": "Vetro, plastica, ceramica, laminato, formica, polistirolo",
+      "nextStage":"oggetto-est-difficili"
+    },
+    {
+      "title":"Materiali molto porosi",
+      "iconUrl": "img/icons/ceramica.png",
+      "helpText": "Terracotta, Pietra Porosa, Mattoni",
+      "nextStage":"oggetto-est-porosi"
+    }
+  ]
+}

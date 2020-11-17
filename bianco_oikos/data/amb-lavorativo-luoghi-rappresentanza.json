@@ -1,0 +1,63 @@
+{
+  "id": "amb-lavorativo-luoghi-rappresentanza",
+  "stageType":"products",
+  "pathName": "Luoghi di rappresentanza",
+  "title": "Luoghi di rappresentanza",
+  "abstract":"Ambienti come uffici e studi destinati ad attività con funzione di tipo istituzionale e rappresentativo.",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": ["2196", "2198", "2201", "2202", "2203"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2235", "028", "2207"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2196", "2198"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2195", "2196", "2200"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": ["2195", "2196", "2198"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2218", "2223", "2225"]
+        }
+      ]
+    }
+  ]  
+}

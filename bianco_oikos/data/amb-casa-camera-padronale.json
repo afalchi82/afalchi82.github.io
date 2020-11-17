@@ -1,0 +1,72 @@
+{
+  "stageType":"products",
+  "pathName": "Padronale o degli ospiti",
+  "title": "Camera da letto padronale o degli ospiti",
+  "abstract":"Tra tutte le stanze della casa, la camera da letto è senza dubbio lo spazio nel quale diventa essenziale preservare la salubrità e la sicurezza dell’ambiente. È proprio durante un buon sonno, infatti, che manteniamo uno stato di buona salute. White. Il Bianco arreda il luogo in cui dormi e riposi, con soluzioni specifiche, che uniscono l’estetica al rispetto per la salute, perché respirare aria pulita e sana significa riposare bene, quindi vivere meglio.",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2196", "2200"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2239", "2236", "2238" ]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2195", "2200"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2239", "2236", "2238" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2193", "2200"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2239", "2236", "2238" ]
+        }
+      ]
+    },
+    {
+      "id": "rasatura",
+      "label": "Rasatura",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2194", "2163", "2195"]
+        },
+        {
+          "type": "prods",
+          "title": "Soluzioni di design",
+          "prods": [ "2218", "2208", "2215" ]
+        }
+      ]
+    }
+  ]  
+}

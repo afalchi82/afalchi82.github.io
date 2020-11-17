@@ -1,0 +1,19 @@
+{
+  "pathName": "Amgienti tecnici",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/ambienti.jpg",
+  "questionText": "Devi risolvere un problema di umidità di risalita?",
+  "abstract": "Sono ambienti tecnici destinati a svolgere funzioni estremamente pratiche e concrete, come il deposito di oggetti, e a fungere da piccola officina domestica in cui tenere gli attrezzi e svolgere attività fai da te.  <br>  Si tratta di ambienti che quotidianamente hanno a che fare con problematiche quali l’umidità di risalita e che, pertanto, richiedono l’utilizzo di pitture specifiche per decorare le pareti. La linea di pitture “White. Il Bianco” propone la pittura più adatta per decorare le pareti di questi ambienti, nel rispetto per la salute delle persone. ",
+  "options":[
+    {
+      "title":"Sì",
+      "iconUrl": "img/icons/yes.png", 
+      "nextStage":"amb-casa-garage-umido"
+    },
+    {
+      "title":"No",
+      "iconUrl": "img/icons/no.png", 
+      "nextStage":"amb-casa-garage-non-umido"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "pathName": "Oggetto", 
+  "stageType":"question",
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "questionText":"Dove si trova l'oggetto che vuoi trattare?",
+  "options":[
+    {
+      "title":"All'esterno",
+      "helpText": "Ringhiere, gazebo, panchine, arredi da giardino",
+      "iconUrl": "", 
+      "nextStage": "oggetto-esterno"
+    },
+    {
+      "title":"All'interno",
+      "helpText": "Cornici, rosoni, battiscopa, sedie, tavoli",
+      "iconUrl": "", 
+      "nextStage": "oggetto-interno"
+    }
+  ]
+}

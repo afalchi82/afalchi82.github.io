@@ -1,0 +1,65 @@
+{
+  "id": "amb-lavorativo-locali",
+  "pathName": "Lavorativo",
+  "stageType":"grid-choice",
+  "backgroundImage": "img/bg/ambiente.jpg",
+  "questionText":"Di che locale si tratta?",
+  "abstract": "Ogni ambiente ha specifiche esigenze in termini di decorazione, in funzione del ruolo e delle attività che in esso vengono svolte quotidianamente. Trova la pittura più adatta alla tipologia di ambiente da arredare.",
+  "options":[
+    {
+      "title":"Bagni in luogo pubblico",
+      "iconUrl": "img/icons/toilet.png",
+      "helpText": "",
+      "nextStage": "amb-lavorativo-bagni-luogo-pubblico"
+    },
+    {
+      "title":"Bagni di rappresentanza",
+      "iconUrl": "img/icons/bagno-servizio.png",
+      "helpText": "",
+      "nextStage": "amb-lavorativo-bagni-rappresentanza"
+    },
+    {
+      "title":"Uffici pubblici a contatto con il pubblico",
+      "iconUrl": "img/icons/shop.png",
+      "helpText": "",
+      "nextStage": "amb-lavorativo-uffici-contatto-pubblico"
+    },
+
+    {
+      "title":"Laboratori/Spazi legati alla salute e all’igiene ",
+      "iconUrl": "img/icons/salute.png",
+      "helpText": "Ambulatori medici, ambulatori analisi, ospedali, saloni estetiste, saloni parrucchiere",
+      "nextStage": "amb-lavorativo-salute-igiene"
+    },
+    {
+      "title":"Luoghi di rappresentanza ",
+      "iconUrl": "img/icons/rappresentanza.png",
+      "helpText": "",
+      "nextStage": "amb-lavorativo-luoghi-rappresentanza"
+    },
+    {
+      "title":"Luoghi/Negozi in cui si preparano cibi ",
+      "iconUrl": "img/icons/cibi.png",
+      "helpText": "Ristoranti, pasticcerie, chioschi, bar, ecc.",
+      "nextStage": "amb-lavorativo-cibi"
+    },
+    {
+      "title":"Laboratori artigianali",
+      "iconUrl": "img/icons/artigiani.png",
+      "helpText": "",
+      "nextStage": "amb-lavorativo-lab-artigiani"
+    },
+    {
+      "title":"Negozi di esposizione ",
+      "iconUrl": "img/icons/showroom.png",
+      "helpText": "Showroom, librerie, negozi, autosaloni, ecc. ",
+      "nextStage": "amb-lavorativo-esposizioni"
+    },
+    {
+      "title":"Magazzini di stoccaggio ",
+      "iconUrl": "img/icons/magazzini.png",
+      "helpText": "",
+      "nextStage": "amb-lavorativo-magazzini"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "pathName": "Camera da letto", 
+  "stageType":"question",
+  "backgroundImage": "img/bg/ambienti.jpg",
+  "questionText": "Quale camera da letto vuoi arredare?",
+  "abstract": "Tra tutte le stanze della casa, la camera da letto è senza dubbio lo spazio nel quale diventa essenziale preservare la salubrità e la sicurezza dell’ambiente. È proprio durante un buon sonno, infatti, che manteniamo uno stato di buona salute. <br>  White. Il Bianco arreda il luogo in cui dormi e riposi, con soluzioni specifiche, che uniscono l’estetica al rispetto per la salute, perché respirare aria pulita e sana significa riposare bene, quindi vivere meglio.",
+  "options":[
+    {
+      "title":"Camera dei figli",
+      "helpText": "",
+      "iconUrl": "", 
+      "nextStage":"amb-casa-camera-figli"
+    },
+    {
+      "title":"Camera padronale o degli ospiti",
+      "helpText": "",
+      "iconUrl": "", 
+      "nextStage":"amb-casa-camera-padronale"
+    }
+  ]
+}

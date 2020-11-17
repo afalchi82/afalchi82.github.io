@@ -1,0 +1,19 @@
+{
+  "pathName": "Materiali difficili",
+  "stageType":"products",
+  "title": "Materiali difficili da trattare",  
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "abstract":"Vetro, plastica, ceramica, laminato, formica, polistirolo [etc.] sono materiali che, per loro natura, rendono difficile o scarsa l’adesione del prodotto alla superficie. Li troviamo in oggetti destinati all’interno, come vasi, tavoli, sedie ed altri elementi di arredo. <br>  Per trattare questi supporti in modo efficace, è necessario utilizzare prodotti che favoriscano l’adesione alla superficie e mantengano il Bianco durevole e brillante nel tempo, proteggendo la superficie dallo sporco e dall’usura. ",
+  "blocks": [
+    {
+      "type": "prods",
+      "title": "Preparazione supporto",
+      "prods": [ "250"]
+    },
+    {
+      "type": "prods",
+      "title": "Smalto",
+      "prods": [ "2192", "2204", "2205"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "pathName": "Materiali molto porosi",
+  "stageType":"products",
+  "title": "Materiali molto porosi",  
+  "backgroundImage": "img/bg/oggetto.jpg",
+  "abstract":"Terracotta, Pietra Porosa, Mattoni, ecc. sono materiali che presentano una superficie molto assorbente e che, pertanto, necessita di prodotti che regolino l’assorbimento e diano grip, mantenendo a lungo il Bianco inalterato nel tempo.",
+  "blocks": [
+    {
+      "type": "prods",
+      "title": "Preparazione supporto",
+      "prods": [ "250"]
+    },
+    {
+      "type": "prods",
+      "title": "Smalto",
+      "prods": [ "2192", "2204", "2205"]
+    }
+  ]
+}

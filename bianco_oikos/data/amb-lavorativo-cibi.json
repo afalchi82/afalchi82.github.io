@@ -1,0 +1,53 @@
+{
+  "id": "amb-lavorativo-cibi",
+  "stageType":"products",
+  "pathName": "Luoghi in cui si preparano cibi ",
+  "title": "Luoghi/Negozi in cui si preparano cibi ",
+  "abstract":"Ambienti destinati al consumo e alla somministrazione di cibi e bevande. Ristoranti, Pasticcerie, Bar, Agriturismi, Chioschi, etc. ",
+  "tabs": [
+    {
+      "id": "nuovo",
+      "label": "Nuovo",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "nuovo-cartongesso",
+      "label": "Nuovo con cartongesso",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-stucco",
+      "label": "Rasatura a stucco",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    },
+    {
+      "id": "rasatura-civile",
+      "label": "Rasatura civile",
+      "blocks": [
+        {
+          "type": "prods",
+          "title": "Pittura",
+          "prods": [ "2201", "2202", "2203"]
+        }
+      ]
+    }
+  ]  
+}
