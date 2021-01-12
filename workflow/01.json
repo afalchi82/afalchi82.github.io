@@ -65,8 +65,91 @@
                     "_filename": "macro interventi nelle esecuzioni e atti endo",
                     "_question": "Chi sta depositando?",
                     "_options": {
-
-                    }
+                        "delegato": {
+                            "_filename": "Indice Delegato",
+                            "_question": "Cosa vuole depositare l'utente?",
+                            "_options": {
+                                "Rapporto riepilogativo iniziale": "",
+                                "Rapporto riepilogativo sintetico": "",
+                                "Riparto": "",
+                                "minuta decreto di trasferimento,": "",
+                                "Esecutività progetto di distribuzione,": "",
+                                "Proposta progetto distribuzione,": "",
+                                "Deposito atto semplice,": "",
+                                "Aggiudicazione lotto (verbale di vendita)": "",
+                                "Rapporto semestrale (mobiliari e immobiliari)": "",
+                                "Rapporto Finale (mobiliari e immobilari)": ""
+                            }
+                        },
+                        "ctu": "",
+                        "difensore": {
+                            "_filename": "macro interventi nelle esecuzioni e atti endo",
+                            "_question": "Cosa si vuole depositare?",
+                            "_options": [
+                                {
+                                    "_name": "Sostituzione creditore",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter sostituzione del creditore.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Atto di intervento in procedura esecutiva",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter intervento.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Istanza di visibilità",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter_istanza_visibilita_esecuzioni.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Istanza di assegnazione ",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter istanza assegnazione.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Istanza di vendita",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter istanza vendita.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Deposito trascrizione pignoramento",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter deposito trascrizione pignoramento.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Deposito relazione notarile",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter deposito relazione notarile.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Rinuncia nei cfr di uno o più debitori",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter rinuncia.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Nota di precisazione del credito",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter precisazione credito.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Costituzione di nuovo difensore",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter sostituzione difensore.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Atto generico (nota spese, liquidazione patrocinio, rinuncia al mandato, istanza ex art 41 TUB)",
+                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter atto generico nelle esecuzioni.docx",
+                                    "_type": "Atto"
+                                },
+                                {
+                                    "_name": "Istanza di distribuzione",
+                                    // "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter deposito istanza di distribuzione.docx",
+                                    "_type": "Atto"
+                                }
+                            ]
+                        }
+                    },
+                    "_notes": "Loop strano, viene chiesto di nuovo chi sta depositando"
                 },
                 "...": {}
             }
