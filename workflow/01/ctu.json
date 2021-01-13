@@ -1,0 +1,23 @@
+{
+    "name": "root",
+    "question": "Chi sta depositando?",
+    "options": [
+        {
+            "label": "avvocato",
+            "goto": "avv"
+        },
+        {
+            "label": "ctu",
+            "goto": "ctu"
+        },
+        {
+            "label": "delegato",
+            "file": "Indice Delegato.docx",
+            "goto": "delegato"
+        },
+        {
+            "label": "curatore",
+            "goto": "delegato"
+        }
+    ]
+}

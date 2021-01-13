@@ -1,0 +1,22 @@
+{
+    "_file": "Indice Avvocato.docx",
+    "question": "Cosa vuole depositare l’utente?",
+    "options": [
+        {
+            "label": "Atto di citazione",
+            "goto": "avv_citazioni"
+        },
+        {
+            "label": "Comparsa di costituzione o intervento",
+            "goto": "avv_comparsa-costituzione-o-intervento"
+        },
+        {
+            "label": "Atti endoprocedimentali",
+            "goto": "avv_atti-endoprocedimentali"
+        },
+        {
+            "label": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
+            "goto": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi"
+        }
+    ]
+}

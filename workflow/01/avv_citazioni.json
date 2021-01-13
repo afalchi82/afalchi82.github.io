@@ -1,0 +1,25 @@
+{
+    "question": "Di che tipo di citazione si tratta?",
+    "options": [
+        {
+            "label": "Opposizione a decreto ingiuntivo",
+            "goto": "avv_citazioni_opposizione-a-decreto-ingiuntivo"
+        },
+        {
+            "label": "Ordinaria Tribunale",
+            "goto": "avv_citazioni_ordinaria-tribunale"
+        },
+        {
+            "label": "Chiamata in causa del terzo",
+            "goto": "avv_citazioni_chiamata-in-causa-del-terzo"
+        },
+        {
+            "label": "Riassunzione",
+            "goto": "avv_citazioni_riassunzione"
+        },
+        {
+            "label": "Appello",
+            "goto": "avv_citazioni_appello"
+        }
+    ]
+}

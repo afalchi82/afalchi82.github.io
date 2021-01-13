@@ -8,3 +8,14 @@
 {
     "_name": ""
 }
+
+
+{
+    "question": <String> Testo della domanda,
+    "options": [
+        {
+                "label": <String> Testo della selezione,
+                "goto": <String> json del prossimo step da caricare
+        }
+    ]
+}
