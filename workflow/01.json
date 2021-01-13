@@ -4,16 +4,16 @@
     "options": [
         {
             "name": "avvocato",
-            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/Indice Avvocato.docx",
+            "file": "Indice Avvocato.docx",
             "options": [
                 {
                     "name": "Atto di citazione",
-                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/macro citazioni.docx",
+                    "file": "macro citazioni.docx",
                     "question": "Di che tipo di citazione si tratta?",
                     "options": [
                         { 
                             "name": "Opposizione a decreto ingiuntivo",
-                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter opposizione DIv1.1_rev_3.docx",
+                            "file": "iter opposizione DIv1.1_rev_3.docx",
                             "question": "Per quale materia?",
                             "options": [
                                 {
@@ -28,7 +28,7 @@
                         },
                         { 
                             "name": "Ordinaria Tribunale",
-                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazioneordinaria.docx",
+                            "file": "iterCitazioneordinaria.docx",
                             "output": [
                                 { "attoprincipale": "Atto di citazione" },
                                 { "registro": "Contenzioso civile" },
@@ -37,7 +37,7 @@
                         },
                         { 
                             "name": "Chiamata in causa del terzo",
-                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter costituzione civile ordinaria con chiamata in causa di terzo.docx",
+                            "file": "iter costituzione civile ordinaria con chiamata in causa di terzo.docx",
                             "output": [
                                 { "atto": "Comparsa di costituzione con chiamata in causa di terzo" },
                                 { "attoprincipale": "Atto di citazione" },
@@ -50,11 +50,11 @@
                             "options": [
                                 { 
                                     "name": "riassunzione Tribunale per incompetenza territoriale", 
-                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione Trib incompetenza territoriale.docx", 
+                                    "file": "iterCitazione in riassunzione Trib incompetenza territoriale.docx"
                                 },
                                 { 
                                     "name": "riassunzione in corte d’appello per incompetenza territoriale", 
-                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione CDA incompetenza territoriale.docx", 
+                                    "file": "iterCitazione in riassunzione CDA incompetenza territoriale.docx"
                                 },
                                 {   
                                     "name": "riassunzione per rinvio dalla Cassazione",
@@ -62,7 +62,7 @@
                                     "options": [
                                         { 
                                             "name": "In Tribunale", 
-                                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneTribunale.docx", 
+                                            "file": "iterCitazione in riassunzione da CassazioneTribunale.docx", 
                                             "output": [
                                                 {"attoprincipale": "Atto di citazione"},
                                                 {"registro": "Contenzioso civile"},
@@ -71,7 +71,7 @@
                                         },
                                         { 
                                             "name": "In corte di appello", 
-                                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
+                                            "file": "iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
                                             "output": [
                                                 {"attoprincipale": "Atto di citazione"},
                                                 {"registro": "Contenzioso civile"},
@@ -82,7 +82,7 @@
                                 },
                                 { 
                                     "name": "riassunzione per difetto di giurisdizione", 
-                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da altro Giudice.docx", 
+                                    "file": "iterCitazione in riassunzione da altro Giudice.docx", 
                                     "output": [
                                         {"attoprincipale": "Atto di citazione"},
                                         {"registro": "Contenzioso civile"},
@@ -96,11 +96,11 @@
                             "options": [
                                 {
                                     "name": "Appello in Tribunale avverso sentenza del GDP",
-                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in appello in Tribunale avverso sentenza del GDP.docx",
+                                    "file": "iterCitazione in appello in Tribunale avverso sentenza del GDP.docx",
                                 },
                                 {
                                     "name": "Appello In corte di appello",
-                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in appello.docx",
+                                    "file": "iterCitazione in appello.docx",
                                 }
                             ]
                         } 
@@ -108,26 +108,32 @@
                 },
                 {
                     "name": "Comparsa di costituzione o intervento",
-                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/macro costituzioni.docx",
-                    "question": "",
+                    "file": "macro costituzioni.docx",
+                    "question": "Cosa deve depositare l'utente?",
                     "options": [
                         { 
-                            "name": "Costituzione nei riti concorsuali"
+                            "name": "Costituzione nei riti concorsuali",
+                            "file": "iter costituzione concorsuali.docx"
                         },
                         { 
-                            "name": "Costituzione in procedimenti di lavoro"
+                            "name": "Costituzione in procedimenti di lavoro",
+                            "file": "macro costituzioni lavoro.docx"
                         },
                         { 
-                            "name": "Costituzione in procedimenti civili "
+                            "name": "Costituzione in procedimenti civili",
+                            "file": "macro costituzioni civili ordinarie.docx"
                         },
                         { 
-                            "name": "Costituzione in procedimenti esecutivi"
+                            "name": "Costituzione in procedimenti esecutivi",
+                            "file": "iter costituzione difensore.docx"
                         },
                         { 
-                            "name": "Costituzione in procedimenti di volontaria giurisdizione"
+                            "name": "Costituzione in procedimenti di volontaria giurisdizione",
+                            "file": "iter costituzione volontaria giurisdizione.docx"
                         },
                         { 
-                            "name": "Interventi volontari in giudizio"
+                            "name": "Interventi volontari in giudizio",
+                            "file": "macro interventi.docx"
                         }
                     ]
                 },
