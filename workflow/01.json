@@ -1,44 +1,44 @@
 {
-    "_name": "root",
-    "_question": "Chi sta depositando?",
-    "_options": [
+    "name": "root",
+    "question": "Chi sta depositando?",
+    "options": [
         {
-            "_name": "avvocato",
-            "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/Indice Avvocato.docx",
-            "_options": [
+            "name": "avvocato",
+            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/Indice Avvocato.docx",
+            "options": [
                 {
-                    "_name": "Atto di citazione",
-                    "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/macro citazioni.docx",
-                    "_question": "Di che tipo di citazione si tratta?",
-                    "_options": [
+                    "name": "Atto di citazione",
+                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/macro citazioni.docx",
+                    "question": "Di che tipo di citazione si tratta?",
+                    "options": [
                         { 
-                            "_name": "Opposizione a decreto ingiuntivo",
-                            "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter opposizione DIv1.1_rev_3.docx",
-                            "_question": "Per quale materia?",
-                            "_options": [
+                            "name": "Opposizione a decreto ingiuntivo",
+                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter opposizione DIv1.1_rev_3.docx",
+                            "question": "Per quale materia?",
+                            "options": [
                                 {
-                                    "_name": "Civile",
-                                    "_url": "",
-                                    "_options": []
+                                    "name": "Civile",
+                                    "url": "",
+                                    "options": []
                                 },
                                 {
-                                    "_name": "Lavoro"
+                                    "name": "Lavoro"
                                 }
                             ]
                         },
                         { 
-                            "_name": "Ordinaria Tribunale",
-                            "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazioneordinaria.docx",
-                            "_output": [
+                            "name": "Ordinaria Tribunale",
+                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazioneordinaria.docx",
+                            "output": [
                                 { "attoprincipale": "Atto di citazione" },
                                 { "registro": "Contenzioso civile" },
                                 { "ruolo": "generale degli affari civili contenziosi" }
                             ]
                         },
                         { 
-                            "_name": "Chiamata in causa del terzo",
-                            "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter costituzione civile ordinaria con chiamata in causa di terzo.docx",
-                            "_output": [
+                            "name": "Chiamata in causa del terzo",
+                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iter costituzione civile ordinaria con chiamata in causa di terzo.docx",
+                            "output": [
                                 { "atto": "Comparsa di costituzione con chiamata in causa di terzo" },
                                 { "attoprincipale": "Atto di citazione" },
                                 { "registro": "Contenzioso civile" },
@@ -46,33 +46,33 @@
                             ]
                         },
                         {
-                            "_name": "Riassunzione",
-                            "_options": [
+                            "name": "Riassunzione",
+                            "options": [
                                 { 
-                                    "_name": "riassunzione Tribunale per incompetenza territoriale", 
-                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione Trib incompetenza territoriale.docx", 
+                                    "name": "riassunzione Tribunale per incompetenza territoriale", 
+                                    "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione Trib incompetenza territoriale.docx", 
                                 },
                                 { 
-                                    "_name": "riassunzione in corte d’appello per incompetenza territoriale", 
-                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione CDA incompetenza territoriale.docx", 
+                                    "name": "riassunzione in corte d’appello per incompetenza territoriale", 
+                                    "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione CDA incompetenza territoriale.docx", 
                                 },
                                 {   
-                                    "_name": "riassunzione per rinvio dalla Cassazione",
-                                    "_question": "Presso quale sede?",
-                                    "_options": [
+                                    "name": "riassunzione per rinvio dalla Cassazione",
+                                    "question": "Presso quale sede?",
+                                    "options": [
                                         { 
-                                            "_name": "In Tribunale", 
-                                            "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneTribunale.docx", 
-                                            "_output": [
+                                            "name": "In Tribunale", 
+                                            "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneTribunale.docx", 
+                                            "output": [
                                                 {"attoprincipale": "Atto di citazione"},
                                                 {"registro": "Contenzioso civile"},
                                                 {"ruolo": "generale degli affari civili contenziosi"}
                                             ]
                                         },
                                         { 
-                                            "_name": "In corte di appello", 
-                                            "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
-                                            "_output": [
+                                            "name": "In corte di appello", 
+                                            "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
+                                            "output": [
                                                 {"attoprincipale": "Atto di citazione"},
                                                 {"registro": "Contenzioso civile"},
                                                 {"ruolo": "generale degli affari civili contenziosi"}
@@ -81,9 +81,9 @@
                                     ]
                                 },
                                 { 
-                                    "_name": "riassunzione per difetto di giurisdizione", 
-                                    "_url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da altro Giudice.docx", 
-                                    "_output": [
+                                    "name": "riassunzione per difetto di giurisdizione", 
+                                    "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da altro Giudice.docx", 
+                                    "output": [
                                         {"attoprincipale": "Atto di citazione"},
                                         {"registro": "Contenzioso civile"},
                                         {"ruolo": "generale degli affari civili contenziosi"}
@@ -92,105 +92,105 @@
                             ]
                         },
                         {
-                            "_name": "Appello",
-                            "_options": [
+                            "name": "Appello",
+                            "options": [
                                 {
-                                    "_name": "Appello in Tribunale avverso sentenza del GDP",
-                                    "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in appello in Tribunale avverso sentenza del GDP.docx",
+                                    "name": "Appello in Tribunale avverso sentenza del GDP",
+                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in appello in Tribunale avverso sentenza del GDP.docx",
                                 },
                                 {
-                                    "_name": "Appello In corte di appello",
-                                    "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in appello.docx",
+                                    "name": "Appello In corte di appello",
+                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in appello.docx",
                                 }
                             ]
                         } 
                     ]
                 },
                 {
-                    "_name": "Comparsa di costituzione o intervento",
-                    "_file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/macro costituzioni.docx",
-                    "_question": "",
-                    "_options": [
+                    "name": "Comparsa di costituzione o intervento",
+                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/macro costituzioni.docx",
+                    "question": "",
+                    "options": [
                         { 
-                            "_name": "Costituzione nei riti concorsuali"
+                            "name": "Costituzione nei riti concorsuali"
                         },
                         { 
-                            "_name": "Costituzione in procedimenti di lavoro"
+                            "name": "Costituzione in procedimenti di lavoro"
                         },
                         { 
-                            "_name": "Costituzione in procedimenti civili "
+                            "name": "Costituzione in procedimenti civili "
                         },
                         { 
-                            "_name": "Costituzione in procedimenti esecutivi"
+                            "name": "Costituzione in procedimenti esecutivi"
                         },
                         { 
-                            "_name": "Costituzione in procedimenti di volontaria giurisdizione"
+                            "name": "Costituzione in procedimenti di volontaria giurisdizione"
                         },
                         { 
-                            "_name": "Interventi volontari in giudizio"
+                            "name": "Interventi volontari in giudizio"
                         }
                     ]
                 },
                 {
-                    "_name": "Atti endoprocedimentali",
-                    "_file": "",
-                    "_question": "Di che materia si tratta?",
-                    "_options": [
+                    "name": "Atti endoprocedimentali",
+                    "file": "",
+                    "question": "Di che materia si tratta?",
+                    "options": [
                         { 
-                            "_name": "Procedure concorsuali",
-                            "_file": "macro endoprocedimentali concorsuali.docx",
-                            "_options": [
+                            "name": "Procedure concorsuali",
+                            "file": "macro endoprocedimentali concorsuali.docx",
+                            "options": [
                                 {
-                                    "_name": "Memoria autorizzata"
+                                    "name": "Memoria autorizzata"
                                 },
                                 {
-                                    "_name": "Istanza generica",
-                                    "_file": "https://els1-my.sharepoint.com/:w:/g/personal/a_falchi_giuffrefl_it/EXLz8VV0r15EswLUDQI8RZgBG4wZHYQ9hHbvI-MBppCT0g?e=T1aaTm"
+                                    "name": "Istanza generica",
+                                    "file": "https://els1-my.sharepoint.com/:w:/g/personal/a_falchi_giuffrefl_it/EXLz8VV0r15EswLUDQI8RZgBG4wZHYQ9hHbvI-MBppCT0g?e=T1aaTm"
                                 },
                                 {
-                                    "_name": "Istanza di visibilità"
+                                    "name": "Istanza di visibilità"
                                 },
                                 {
-                                    "_name": "Rinuncia al credito oggetto di rivendicazione"
+                                    "name": "Rinuncia al credito oggetto di rivendicazione"
                                 },
                                 {
-                                    "_name": "Rinuncia al credito oggetto di insinuazione"
+                                    "name": "Rinuncia al credito oggetto di insinuazione"
                                 }
                             ]                     
                         },
                         { 
-                            "_name": "Lavoro"
+                            "name": "Lavoro"
                         },
                         { 
-                            "_name": "Agrario"
+                            "name": "Agrario"
                         },
                         { 
-                            "_name": "Civile"
+                            "name": "Civile"
                         },
                         { 
-                            "_name": "Esecuzioni"
+                            "name": "Esecuzioni"
                         },
                         { 
-                            "_name": "Volontaria giurisdizione"
+                            "name": "Volontaria giurisdizione"
                         }
                     ]
                 },
                 {
-                    "_name": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
-                    "_file": "",
-                    "_question": "",
-                    "_options": []
+                    "name": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
+                    "file": "",
+                    "question": "",
+                    "options": []
                 }
             ]
         },
         {
-            "_name": "ctu"
+            "name": "ctu"
         },
         {
-            "_name": "delegato"
+            "name": "delegato"
         },
         {
-            "_name": "curatore"
+            "name": "curatore"
         }
     ]
 }
