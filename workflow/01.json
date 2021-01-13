@@ -18,7 +18,7 @@
                             "options": [
                                 {
                                     "name": "Civile",
-                                    "url": "",
+                                    "file": "",
                                     "options": []
                                 },
                                 {
@@ -50,11 +50,11 @@
                             "options": [
                                 { 
                                     "name": "riassunzione Tribunale per incompetenza territoriale", 
-                                    "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione Trib incompetenza territoriale.docx", 
+                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione Trib incompetenza territoriale.docx", 
                                 },
                                 { 
                                     "name": "riassunzione in corte d’appello per incompetenza territoriale", 
-                                    "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione CDA incompetenza territoriale.docx", 
+                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione CDA incompetenza territoriale.docx", 
                                 },
                                 {   
                                     "name": "riassunzione per rinvio dalla Cassazione",
@@ -62,7 +62,7 @@
                                     "options": [
                                         { 
                                             "name": "In Tribunale", 
-                                            "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneTribunale.docx", 
+                                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneTribunale.docx", 
                                             "output": [
                                                 {"attoprincipale": "Atto di citazione"},
                                                 {"registro": "Contenzioso civile"},
@@ -71,7 +71,7 @@
                                         },
                                         { 
                                             "name": "In corte di appello", 
-                                            "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
+                                            "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
                                             "output": [
                                                 {"attoprincipale": "Atto di citazione"},
                                                 {"registro": "Contenzioso civile"},
@@ -82,7 +82,7 @@
                                 },
                                 { 
                                     "name": "riassunzione per difetto di giurisdizione", 
-                                    "url": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da altro Giudice.docx", 
+                                    "file": "https://els1-my.sharepoint.com/personal/a_falchi_giuffrefl_it/Documents/Workflow/redattore web ver 3-0/iterCitazione in riassunzione da altro Giudice.docx", 
                                     "output": [
                                         {"attoprincipale": "Atto di citazione"},
                                         {"registro": "Contenzioso civile"},
