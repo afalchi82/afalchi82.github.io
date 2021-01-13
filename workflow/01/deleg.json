@@ -1,23 +1,21 @@
 {
-    "name": "root",
-    "question": "Chi sta depositando?",
+    "question": "Cosa vuole depositare l’utente?",
     "options": [
         {
-            "label": "avvocato",
-            "goto": "avv"
+            "label": "Atto di citazione",
+            "goto": "avv_citazioni"
         },
         {
-            "label": "ctu",
-            "goto": "ctu"
+            "label": "Comparsa di costituzione o intervento",
+            "goto": "avv_comparsa-costituzione-o-intervento"
         },
         {
-            "label": "delegato",
-            "file": "Indice Delegato.docx",
-            "goto": "delegato"
+            "label": "Atti endoprocedimentali",
+            "goto": "avv_atti-endoprocedimentali"
         },
         {
-            "label": "curatore",
-            "goto": "delegato"
+            "label": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
+            "goto": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi"
         }
     ]
 }
