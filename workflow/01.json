@@ -113,11 +113,13 @@
                     "options": [
                         { 
                             "name": "Costituzione nei riti concorsuali",
-                            "file": "iter costituzione concorsuali.docx"
+                            "file": "iter costituzione concorsuali.docx",
+                            "output": {}
                         },
                         { 
                             "name": "Costituzione in procedimenti di lavoro",
                             "file": "macro costituzioni lavoro.docx",
+                            "question": "Cosa deve depositare l'utente?",
                             "options": [
                                 { 
                                     "name": "Costituzione ordinaria",
@@ -220,9 +222,36 @@
                 },
                 {
                     "name": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
-                    "file": "",
-                    "question": "",
-                    "options": []
+                    "file": "macro interventi nelle esecuzioni e atti endo.docx",
+                    "question": "Chi sta depositando?",
+                    "nota": "Caso strano",
+                    "options": [
+                        {
+                            "name": "ctu",
+                            "file": "macro CTU esecuzioni.docx"
+                        },
+                        {
+                            "name": "delegato",
+                            "file": "Indice Delegato.docx"
+                        },
+                        {
+                            "name": "difensore",
+                            "options": [
+                                { "name": "Sostituzione creditore" },
+                                { "name": "Atto di intervento in procedura esecutiva" },
+                                { "name": "Istanza di visibilità" },
+                                { "name": "Istanza di assegnazione" },
+                                { "name": "Istanza di vendita" },
+                                { "name": "Deposito trascrizione pignoramento" },
+                                { "name": "Deposito relazione notarile" },
+                                { "name": "Rinuncia nei cfr di uno o più debitori" },
+                                { "name": "Nota di precisazione del credito" },
+                                { "name": "Costituzione di nuovo difensore " },
+                                { "name": "Atto generico (nota spese, liquidazione patrocinio, rinuncia al mandato, istanza ex art 41 TUB)" },
+                                { "name": "Istanza di distribuzione" },
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -230,7 +259,8 @@
             "name": "ctu"
         },
         {
-            "name": "delegato"
+            "name": "delegato",
+            "file": "Indice Delegato.docx"
         },
         {
             "name": "curatore"
