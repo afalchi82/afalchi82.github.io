@@ -29,21 +29,21 @@
                         { 
                             "name": "Ordinaria Tribunale",
                             "file": "iterCitazioneordinaria.docx",
-                            "output": [
-                                { "attoprincipale": "Atto di citazione" },
-                                { "registro": "Contenzioso civile" },
-                                { "ruolo": "generale degli affari civili contenziosi" }
-                            ]
+                            "output": { 
+                                "attoprincipale": "Atto di citazione",
+                                "registro": "Contenzioso civile",
+                                "ruolo": "generale degli affari civili contenziosi" 
+                            }
                         },
                         { 
                             "name": "Chiamata in causa del terzo",
                             "file": "iter costituzione civile ordinaria con chiamata in causa di terzo.docx",
-                            "output": [
-                                { "atto": "Comparsa di costituzione con chiamata in causa di terzo" },
-                                { "attoprincipale": "Atto di citazione" },
-                                { "registro": "Contenzioso civile" },
-                                { "ruolo": "generale degli affari civili contenziosi" }
-                            ]
+                            "output": {
+                                "atto": "Comparsa di costituzione con chiamata in causa di terzo" ,
+                                "attoprincipale": "Atto di citazione" ,
+                                "registro": "Contenzioso civile" ,
+                                "ruolo": "generale degli affari civili contenziosi",
+                            }
                         },
                         {
                             "name": "Riassunzione",
@@ -63,31 +63,31 @@
                                         { 
                                             "name": "In Tribunale", 
                                             "file": "iterCitazione in riassunzione da CassazioneTribunale.docx", 
-                                            "output": [
-                                                {"attoprincipale": "Atto di citazione"},
-                                                {"registro": "Contenzioso civile"},
-                                                {"ruolo": "generale degli affari civili contenziosi"}
-                                            ]
+                                            "output": {
+                                                "attoprincipale": "Atto di citazione",
+                                                "registro": "Contenzioso civile",
+                                                "ruolo": "generale degli affari civili contenziosi"
+                                            }
                                         },
                                         { 
                                             "name": "In corte di appello", 
                                             "file": "iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
-                                            "output": [
-                                                {"attoprincipale": "Atto di citazione"},
-                                                {"registro": "Contenzioso civile"},
-                                                {"ruolo": "generale degli affari civili contenziosi"}
-                                            ]
+                                            "output": {
+                                                "attoprincipale": "Atto di citazione",
+                                                "registro": "Contenzioso civile",
+                                                "ruolo": "generale degli affari civili contenziosi"
+                                            }
                                         }
                                     ]
                                 },
                                 { 
                                     "name": "riassunzione per difetto di giurisdizione", 
                                     "file": "iterCitazione in riassunzione da altro Giudice.docx", 
-                                    "output": [
-                                        {"attoprincipale": "Atto di citazione"},
-                                        {"registro": "Contenzioso civile"},
-                                        {"ruolo": "generale degli affari civili contenziosi"}
-                                    ]
+                                    "output": {
+                                        "attoprincipale": "Atto di citazione",
+                                        "registro": "Contenzioso civile",
+                                        "ruolo": "generale degli affari civili contenziosi"
+                                    }
                                 }
                             ]
                         },
@@ -117,7 +117,44 @@
                         },
                         { 
                             "name": "Costituzione in procedimenti di lavoro",
-                            "file": "macro costituzioni lavoro.docx"
+                            "file": "macro costituzioni lavoro.docx",
+                            "options": [
+                                { 
+                                    "name": "Costituzione ordinaria",
+                                    "file": "iter costituzione lavoro ordinaria.docx",
+                                    "output": {}
+                                },
+                                { 
+                                    "name": "Costituzione ordinaria in appello ",
+                                    "file": "iter costituzione lavoro in appello.docx",
+                                    "output": {}
+                                },
+                                { 
+                                    "name": "Costituzione con chiamata in causa del terzo ",
+                                    "file": "iter costituzione lavoro con chiamata in causa di terzo.docx",
+                                    "output": {}
+                                },
+                                { 
+                                    "name": "Costituzione con domanda riconvenzionale",
+                                    "file": "iter costituzione lavoro con domanda riconvenzionale.docx",
+                                    "output": {}
+                                },
+                                { 
+                                    "name": "Costituzione nei procedimenti di opposizione a decreto ingiuntivo",
+                                    "file": "iter costituzione lavoro in opposizione a DI.docx",
+                                    "output": {}
+                                },
+                                { 
+                                    "name": "Costituzione nel rito Fornero",
+                                    "file": "iter costituzione lavoro fornero.docx",
+                                    "output": {}
+                                },
+                                { 
+                                    "name": "Costituzione nella fase di opposizione al rito Fornero",
+                                    "file": "iter costituzione lavoro nella fase di opposizione rito fornero.docx",
+                                    "output": {}
+                                }
+                            ]
                         },
                         { 
                             "name": "Costituzione in procedimenti civili",
