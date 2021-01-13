@@ -64,15 +64,18 @@
                                             "name": "In Tribunale",
                                             "file": "iterCitazione in riassunzione da CassazioneTribunale.docx",
                                             "output": {
+                                                "atto": "Citazione in riassunzione da Cassazione a Tribunale",
+                                                "schema": "Citazione in riassunzione da Cassazione a Tribunale <istanza>",
                                                 "attoprincipale": "Atto di citazione",
-                                                "registro": "Contenzioso civile",
-                                                "ruolo": "generale degli affari civili contenziosi"
+                                                "registro": ["Contenzioso civile"],
+                                                "ruolo": ["generale degli affari civili contenziosi", "Y"]
                                             }
                                         },
                                         {
                                             "name": "In corte di appello",
                                             "file": "iterCitazione in riassunzione da CassazioneCorteAppello.docx",
                                             "output": {
+                                                "atto": "Citazione in riassunzione da Cassazione a Corte di Appello",
                                                 "attoprincipale": "Atto di citazione",
                                                 "registro": "Contenzioso civile",
                                                 "ruolo": "generale degli affari civili contenziosi"
@@ -84,6 +87,7 @@
                                     "name": "riassunzione per difetto di giurisdizione",
                                     "file": "iterCitazione in riassunzione da altro Giudice.docx",
                                     "output": {
+                                        "atto": "Citazione in riassunzione per difetto di giurisdizione",
                                         "attoprincipale": "Atto di citazione",
                                         "registro": "Contenzioso civile",
                                         "ruolo": "generale degli affari civili contenziosi"
