@@ -11,7 +11,7 @@
                     "file": "macro citazioni.docx",
                     "question": "Di che tipo di citazione si tratta?",
                     "options": [
-                        { 
+                        {
                             "name": "Opposizione a decreto ingiuntivo",
                             "file": "iter opposizione DIv1.1_rev_3.docx",
                             "question": "Per quale materia?",
@@ -26,52 +26,52 @@
                                 }
                             ]
                         },
-                        { 
+                        {
                             "name": "Ordinaria Tribunale",
                             "file": "iterCitazioneordinaria.docx",
-                            "output": { 
+                            "output": {
                                 "attoprincipale": "Atto di citazione",
                                 "registro": "Contenzioso civile",
-                                "ruolo": "generale degli affari civili contenziosi" 
+                                "ruolo": "generale degli affari civili contenziosi"
                             }
                         },
-                        { 
+                        {
                             "name": "Chiamata in causa del terzo",
                             "file": "iter costituzione civile ordinaria con chiamata in causa di terzo.docx",
                             "output": {
-                                "atto": "Comparsa di costituzione con chiamata in causa di terzo" ,
-                                "attoprincipale": "Atto di citazione" ,
-                                "registro": "Contenzioso civile" ,
-                                "ruolo": "generale degli affari civili contenziosi",
+                                "atto": "Comparsa di costituzione con chiamata in causa di terzo",
+                                "attoprincipale": "Atto di citazione",
+                                "registro": "Contenzioso civile",
+                                "ruolo": "generale degli affari civili contenziosi"
                             }
                         },
                         {
                             "name": "Riassunzione",
                             "options": [
-                                { 
-                                    "name": "riassunzione Tribunale per incompetenza territoriale", 
+                                {
+                                    "name": "riassunzione Tribunale per incompetenza territoriale",
                                     "file": "iterCitazione in riassunzione Trib incompetenza territoriale.docx"
                                 },
-                                { 
-                                    "name": "riassunzione in corte d’appello per incompetenza territoriale", 
+                                {
+                                    "name": "riassunzione in corte d’appello per incompetenza territoriale",
                                     "file": "iterCitazione in riassunzione CDA incompetenza territoriale.docx"
                                 },
-                                {   
+                                {
                                     "name": "riassunzione per rinvio dalla Cassazione",
                                     "question": "Presso quale sede?",
                                     "options": [
-                                        { 
-                                            "name": "In Tribunale", 
-                                            "file": "iterCitazione in riassunzione da CassazioneTribunale.docx", 
+                                        {
+                                            "name": "In Tribunale",
+                                            "file": "iterCitazione in riassunzione da CassazioneTribunale.docx",
                                             "output": {
                                                 "attoprincipale": "Atto di citazione",
                                                 "registro": "Contenzioso civile",
                                                 "ruolo": "generale degli affari civili contenziosi"
                                             }
                                         },
-                                        { 
-                                            "name": "In corte di appello", 
-                                            "file": "iterCitazione in riassunzione da CassazioneCorteAppello.docx", 
+                                        {
+                                            "name": "In corte di appello",
+                                            "file": "iterCitazione in riassunzione da CassazioneCorteAppello.docx",
                                             "output": {
                                                 "attoprincipale": "Atto di citazione",
                                                 "registro": "Contenzioso civile",
@@ -80,9 +80,9 @@
                                         }
                                     ]
                                 },
-                                { 
-                                    "name": "riassunzione per difetto di giurisdizione", 
-                                    "file": "iterCitazione in riassunzione da altro Giudice.docx", 
+                                {
+                                    "name": "riassunzione per difetto di giurisdizione",
+                                    "file": "iterCitazione in riassunzione da altro Giudice.docx",
                                     "output": {
                                         "attoprincipale": "Atto di citazione",
                                         "registro": "Contenzioso civile",
@@ -96,14 +96,14 @@
                             "options": [
                                 {
                                     "name": "Appello in Tribunale avverso sentenza del GDP",
-                                    "file": "iterCitazione in appello in Tribunale avverso sentenza del GDP.docx",
+                                    "file": "iterCitazione in appello in Tribunale avverso sentenza del GDP.docx"
                                 },
                                 {
                                     "name": "Appello In corte di appello",
-                                    "file": "iterCitazione in appello.docx",
+                                    "file": "iterCitazione in appello.docx"
                                 }
                             ]
-                        } 
+                        }
                     ]
                 },
                 {
@@ -111,66 +111,66 @@
                     "file": "macro costituzioni.docx",
                     "question": "Cosa deve depositare l'utente?",
                     "options": [
-                        { 
+                        {
                             "name": "Costituzione nei riti concorsuali",
                             "file": "iter costituzione concorsuali.docx",
                             "output": {}
                         },
-                        { 
+                        {
                             "name": "Costituzione in procedimenti di lavoro",
                             "file": "macro costituzioni lavoro.docx",
                             "question": "Cosa deve depositare l'utente?",
                             "options": [
-                                { 
+                                {
                                     "name": "Costituzione ordinaria",
                                     "file": "iter costituzione lavoro ordinaria.docx",
                                     "output": {}
                                 },
-                                { 
+                                {
                                     "name": "Costituzione ordinaria in appello ",
                                     "file": "iter costituzione lavoro in appello.docx",
                                     "output": {}
                                 },
-                                { 
+                                {
                                     "name": "Costituzione con chiamata in causa del terzo ",
                                     "file": "iter costituzione lavoro con chiamata in causa di terzo.docx",
                                     "output": {}
                                 },
-                                { 
+                                {
                                     "name": "Costituzione con domanda riconvenzionale",
                                     "file": "iter costituzione lavoro con domanda riconvenzionale.docx",
                                     "output": {}
                                 },
-                                { 
+                                {
                                     "name": "Costituzione nei procedimenti di opposizione a decreto ingiuntivo",
                                     "file": "iter costituzione lavoro in opposizione a DI.docx",
                                     "output": {}
                                 },
-                                { 
+                                {
                                     "name": "Costituzione nel rito Fornero",
                                     "file": "iter costituzione lavoro fornero.docx",
                                     "output": {}
                                 },
-                                { 
+                                {
                                     "name": "Costituzione nella fase di opposizione al rito Fornero",
                                     "file": "iter costituzione lavoro nella fase di opposizione rito fornero.docx",
                                     "output": {}
                                 }
                             ]
                         },
-                        { 
+                        {
                             "name": "Costituzione in procedimenti civili",
                             "file": "macro costituzioni civili ordinarie.docx"
                         },
-                        { 
+                        {
                             "name": "Costituzione in procedimenti esecutivi",
                             "file": "iter costituzione difensore.docx"
                         },
-                        { 
+                        {
                             "name": "Costituzione in procedimenti di volontaria giurisdizione",
                             "file": "iter costituzione volontaria giurisdizione.docx"
                         },
-                        { 
+                        {
                             "name": "Interventi volontari in giudizio",
                             "file": "macro interventi.docx"
                         }
@@ -181,7 +181,7 @@
                     "file": "",
                     "question": "Di che materia si tratta?",
                     "options": [
-                        { 
+                        {
                             "name": "Procedure concorsuali",
                             "file": "macro endoprocedimentali concorsuali.docx",
                             "options": [
@@ -201,21 +201,21 @@
                                 {
                                     "name": "Rinuncia al credito oggetto di insinuazione"
                                 }
-                            ]                     
+                            ]
                         },
-                        { 
+                        {
                             "name": "Lavoro"
                         },
-                        { 
+                        {
                             "name": "Agrario"
                         },
-                        { 
+                        {
                             "name": "Civile"
                         },
-                        { 
+                        {
                             "name": "Esecuzioni"
                         },
-                        { 
+                        {
                             "name": "Volontaria giurisdizione"
                         }
                     ]
@@ -237,18 +237,42 @@
                         {
                             "name": "difensore",
                             "options": [
-                                { "name": "Sostituzione creditore" },
-                                { "name": "Atto di intervento in procedura esecutiva" },
-                                { "name": "Istanza di visibilità" },
-                                { "name": "Istanza di assegnazione" },
-                                { "name": "Istanza di vendita" },
-                                { "name": "Deposito trascrizione pignoramento" },
-                                { "name": "Deposito relazione notarile" },
-                                { "name": "Rinuncia nei cfr di uno o più debitori" },
-                                { "name": "Nota di precisazione del credito" },
-                                { "name": "Costituzione di nuovo difensore " },
-                                { "name": "Atto generico (nota spese, liquidazione patrocinio, rinuncia al mandato, istanza ex art 41 TUB)" },
-                                { "name": "Istanza di distribuzione" },
+                                {
+                                    "name": "Sostituzione creditore"
+                                },
+                                {
+                                    "name": "Atto di intervento in procedura esecutiva"
+                                },
+                                {
+                                    "name": "Istanza di visibilità"
+                                },
+                                {
+                                    "name": "Istanza di assegnazione"
+                                },
+                                {
+                                    "name": "Istanza di vendita"
+                                },
+                                {
+                                    "name": "Deposito trascrizione pignoramento"
+                                },
+                                {
+                                    "name": "Deposito relazione notarile"
+                                },
+                                {
+                                    "name": "Rinuncia nei cfr di uno o più debitori"
+                                },
+                                {
+                                    "name": "Nota di precisazione del credito"
+                                },
+                                {
+                                    "name": "Costituzione di nuovo difensore "
+                                },
+                                {
+                                    "name": "Atto generico (nota spese, liquidazione patrocinio, rinuncia al mandato, istanza ex art 41 TUB)"
+                                },
+                                {
+                                    "name": "Istanza di distribuzione"
+                                }
                             ]
                         }
                     ]
@@ -267,4 +291,3 @@
         }
     ]
 }
-
