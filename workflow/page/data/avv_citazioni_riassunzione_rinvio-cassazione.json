@@ -5,11 +5,11 @@
     "options": [
         {
             "label": "In tribunale",
-            "child": null
+            "child": "avv_citazioni_riassunzione_rinvio-cassazione_tribunale"
         },
         {
             "label": "In corte d'appello",
-            "child": null
+            "child": "avv_citazioni_riassunzione_rinvio-cassazione_corte-appello"
         }
     ]
 }
