@@ -1,0 +1,27 @@
+{
+    "id": "avv",
+    "question": "Cosa si vuole depositare?",
+    "description": "",
+    "options": [
+        {
+            "label": "Atto di citazione",
+            "child": "avv_citazioni"
+        },
+        {
+            "label": "Comparsa di costituzione o intervento",
+            "child": "avv_comparsa-costituzione-o-intervento"
+        },
+        {
+            "label": "Atti endoprocedimentali",
+            "child": "avv_atti-endoprocedimentali"
+        },
+        {
+            "label": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
+            "child": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi"
+        },
+        {
+            "label": "Index",
+            "child": "index"
+        }
+    ]
+}

@@ -1,25 +1,26 @@
 {
+    "id": "avv_citazioni",
     "question": "Di che tipo di citazione si tratta?",
     "options": [
         {
             "label": "Opposizione a decreto ingiuntivo",
-            "goto": "opposizione-a-decreto-ingiuntivo"
+            "child": "opposizione-a-decreto-ingiuntivo"
         },
         {
             "label": "Ordinaria Tribunale",
-            "goto": "ordinaria-tribunale"
+            "child": "ordinaria-tribunale"
         },
         {
             "label": "Chiamata in causa del terzo",
-            "goto": "chiamata-in-causa-del-terzo"
+            "child": "chiamata-in-causa-del-terzo"
         },
         {
             "label": "Riassunzione",
-            "goto": "riassunzione"
+            "child": "riassunzione"
         },
         {
             "label": "Appello",
-            "goto": "appello"
+            "child": "appello"
         }
     ]
 }

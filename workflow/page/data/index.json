@@ -1,0 +1,27 @@
+{
+    "id": "index",
+    "question": "Chi sta depositando?",
+    "description": "Seleziona la veste in cui si vuole effettuare il deposito",
+    "options": [
+        {
+            "label": "avvocato",
+            "child": "avv",
+            "active": true
+        },
+        {
+            "label": "ctu",
+            "child": "ctu",
+            "active": true
+        },
+        {
+            "label": "delegato",
+            "child": "deleg",
+            "active": true
+        },
+        {
+            "label": "curatore",
+            "child": "curat",
+            "active": true
+        }
+    ]
+}

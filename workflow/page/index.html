@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ __('title') }}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+    <style>
+        body {
+    
+        }
+    
+        .option { 
+            cursor: pointer;
+        }
+    
+        .option:hover {
+            text-decoration: underline;
+        } 
+    </style>
+
+</head>
+<body>
+    
+  
+  
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 id="question-title" class="title">Chi vuole depositare?</h2>
+            <p id="question-description">Seleziona chi vuole depositare</p>
+    
+            <div id="options-wrapper">
+                
+            </div>
+
+            <button id="restart" style="display: none">
+                Riparti
+            </button>
+
+            <hr>
+
+            <pre id="json-log"></pre>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script>
+    const qTitle = document.getElementById('question-title');
+    const qDesc = document.getElementById('question-description');
+    const optsWrapper = document.getElementById('options-wrapper');
+    const jsonLog = document.getElementById('json-log');
+    const restartBtn = document.getElementById('restart');
+
+
+    function resetStage () {            
+        qDesc.style.display = "block";
+        restartBtn.style.display = "none";
+        
+        while (optsWrapper.firstChild) {
+            optsWrapper.removeChild(optsWrapper.firstChild);
+        }
+        
+    }
+
+    function buildOption (optObj) {
+        const opt = document.createElement("div");
+        opt.innerText = optObj.label;
+        opt.setAttribute('title', optObj.child);
+        opt.classList.add('option');
+        opt.addEventListener("click", function () {
+            loadData(optObj.child);
+        });
+        return opt;
+    }
+
+    function buildStage (stageObj) {
+        resetStage();
+
+        if(stageObj.question) {
+            qTitle.innerHTML = stageObj.question;
+            stageObj.options.forEach(item => {
+                optsWrapper.appendChild(buildOption(item));
+            });
+        } else {
+            restartBtn.style.display = "block";
+            qTitle.innerHTML = "Risultato della ricerca";
+        }
+
+        stageObj.description ? qDesc.innerHTML = stageObj.description : qDesc.style.display = "none";
+
+        // Debug
+        jsonLog.innerHTML = JSON.stringify(stageObj, null, 2);
+
+        
+    }
+
+    function loadData (id) {
+        const url = "./data/" + id + ".json";
+        $.ajax({
+            url,
+            dataType: 'json',
+            success( data ) {
+                buildStage(data);
+            },
+            error( err ) {
+                alert( "ERROR:  " + err );
+            }
+        });
+    } 
+
+    // $.getJSON("index.json", data => {
+    //     buildStage(data);
+    // });
+    
+    // buildStage(data.index);
+
+    restartBtn.addEventListener('click', function () {
+        loadData("index");
+    });
+
+    loadData("index");
+
+
+
+</script>
+
+
+
+</body>
+</html>
