@@ -6,7 +6,7 @@
     "options": [
         {
             "label": "avvocato",
-            "child": "avv",
+            "child": "avv"
         },
         {
             "label": "ctu",

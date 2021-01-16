@@ -70,7 +70,7 @@
     const restartBtn = document.getElementById('restart');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
-    const filesPath = "C:\Users\Utente\OneDrive - EDITIONS LEFEBVRE SARRUT\Workflow\redattore web ver 3-0";
+    const filesPath = "file:///C:\Users\Utente\OneDrive - EDITIONS LEFEBVRE SARRUT\Workflow\redattore web ver 3-0";
 
 
     /* ---------------------------------------------------
@@ -140,6 +140,7 @@
                 buildStage(data);
             },
             error( err ) {
+                console.log(err)
                 alert( "ERROR:  " + err );
             }
         });
