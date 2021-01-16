@@ -18,9 +18,70 @@
             "child": "avv_atti-endoprocedimentali",
             "disabled": true
         },
+
         {
             "label": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
-            "child": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Altri procedimenti in materia esecutiva e opposizioni",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Pignoramento",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Procedimenti di famiglia",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Reclamo",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Atto di istruzione preventiva",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Sequestro",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Ricorso monitorio",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Procedure concorsuali",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Procedimenti di volontaria giurisdizione",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Procedimenti agrari",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Procedimenti di lavoro",
+            "child": null,
+            "disabled": true
+        },
+        {
+            "label": "Procedimenti sommari e cautelari",
+            "child": null,
             "disabled": true
         }
     ]
