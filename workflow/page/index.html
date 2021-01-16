@@ -59,12 +59,6 @@
 
             <hr>
 
-            <button id="restart" class="hidden">
-                Riparti da capo
-            </button>
-
-            <hr>
-
             <pre id="json-log"></pre>
             <a href="" id="filename-log" target="_blank"></pre>
         </div>
@@ -81,7 +75,6 @@
     const optsWrapper = document.getElementById('options-wrapper');
     const filenameLog = document.getElementById('filename-log');
     const jsonLog = document.getElementById('json-log');
-    const restartBtn = document.getElementById('restart');
     const path = document.getElementById('path');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
@@ -196,11 +189,6 @@
     /* ---------------------------------------------------
         Init
     --------------------------------------------------- */
-
-    
-    restartBtn.addEventListener('click', function () {
-        loadData("index");
-    });
 
     loadData("index");
 
