@@ -10,19 +10,23 @@
         },
         {
             "label": "Comparsa di costituzione o intervento",
-            "child": "avv_comparsa-costituzione-o-intervento"
+            "child": "avv_comparsa-costituzione-o-intervento",
+            "disabled": true
         },
         {
             "label": "Atti endoprocedimentali",
-            "child": "avv_atti-endoprocedimentali"
+            "child": "avv_atti-endoprocedimentali",
+            "disabled": true
         },
         {
             "label": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
-            "child": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi"
+            "child": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi",
+            "disabled": true
         },
         {
             "label": "Index",
-            "child": "index"
+            "child": "index",
+            "disabled": true
         }
     ]
 }

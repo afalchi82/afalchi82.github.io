@@ -5,15 +5,15 @@
     "options": [
         {
             "label": "Opposizione a decreto ingiuntivo",
-            "child": "opposizione-a-decreto-ingiuntivo"
+            "child": "avv_citazioni_opposizione-a-decreto-ingiuntivo"
         },
         {
             "label": "Ordinaria Tribunale",
-            "child": "ordinaria-tribunale"
+            "child": null
         },
         {
             "label": "Chiamata in causa del terzo",
-            "child": "chiamata-in-causa-del-terzo"
+            "child": null
         },
         {
             "label": "Riassunzione",
@@ -21,7 +21,7 @@
         },
         {
             "label": "Appello",
-            "child": "appello"
+            "child": null
         }
     ]
 }

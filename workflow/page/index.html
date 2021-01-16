@@ -26,6 +26,7 @@
         .disabled, .disabled:hover {
             color: #999;
             cursor: not-allowed;
+            text-decoration: none;
         } 
     </style>
 
@@ -70,7 +71,7 @@
     const restartBtn = document.getElementById('restart');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
-    const filesPath = "file:///C:\Users\Utente\OneDrive - EDITIONS LEFEBVRE SARRUT\Workflow\redattore web ver 3-0";
+    const filesPath = "file:///C:\\Users\\Utente\\OneDrive - EDITIONS LEFEBVRE SARRUT\\Workflow\\redattore web ver 3-0";
 
 
     /* ---------------------------------------------------
@@ -141,7 +142,7 @@
             },
             error( err ) {
                 console.log(err)
-                alert( "ERROR:  " + err );
+                alert( "ERROR:  " + err.statusText );
             }
         });
     } 
