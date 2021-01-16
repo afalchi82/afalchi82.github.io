@@ -21,6 +21,11 @@
     
         .option:hover {
             text-decoration: underline;
+        }
+
+        .disabled, .disabled:hover {
+            color: #999;
+            cursor: not-allowed;
         } 
     </style>
 
@@ -47,7 +52,7 @@
             <hr>
 
             <pre id="json-log"></pre>
-            <a href="C:\Users\Utente\OneDrive - EDITIONS LEFEBVRE SARRUT\Workflow\redattore web ver 3-0" id="filename-log" target="_blank"></pre>
+            <a href="" id="filename-log" target="_blank"></pre>
         </div>
     </div>
 </div>
@@ -65,6 +70,7 @@
     const restartBtn = document.getElementById('restart');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
+    const filesPath = "C:\Users\Utente\OneDrive - EDITIONS LEFEBVRE SARRUT\Workflow\redattore web ver 3-0";
 
 
     /* ---------------------------------------------------
@@ -83,6 +89,8 @@
 
         emptyEl(optsWrapper);
         emptyEl(filenameLog);
+
+        filenameLog.setAttribute('href', "");
     }
 
     function buildOption (optObj) {
@@ -90,6 +98,10 @@
         opt.innerText = optObj.label;
         opt.setAttribute('title', optObj.child);
         opt.classList.add('option');
+        if (!optObj.child || optObj.disabled) {
+            opt.classList.add('disabled');
+        };
+
         opt.addEventListener("click", function () {
             loadData(optObj.child);
         });
@@ -113,7 +125,8 @@
 
         // Debug
         jsonLog.innerHTML = JSON.stringify(stageObj, null, 2);
-        filenameLog.innerText = stageObj.filename;
+        filenameLog.innerText = stageObj.filename + ".docx";
+        filenameLog.setAttribute('href', filesPath + stageObj.filename + ".docx");
 
         
     }

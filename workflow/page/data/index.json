@@ -7,22 +7,21 @@
         {
             "label": "avvocato",
             "child": "avv",
-            "active": true
         },
         {
             "label": "ctu",
             "child": "ctu",
-            "active": true
+            "disabled": true
         },
         {
             "label": "delegato",
             "child": "deleg",
-            "active": true
+            "disabled": true
         },
         {
             "label": "curatore",
             "child": "curat",
-            "active": true
+            "disabled": true
         }
     ]
 }

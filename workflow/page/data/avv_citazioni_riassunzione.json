@@ -1,21 +1,26 @@
 {
     "id": "avv_citazioni_riassunzione",
+    "filename": "macro citazioni",
     "question": "Seleziona il tipo di Riassunzione",
     "options": [
         {
-            "name": "riassunzione Tribunale per incompetenza territoriale",
-            "file": "iterCitazione in riassunzione Trib incompetenza territoriale.docx"
+            "label": "riassunzione Tribunale per incompetenza territoriale",
+            "file": "iterCitazione in riassunzione Trib incompetenza territoriale.docx",
+            "child": null
         },
         {
-            "name": "riassunzione in corte d’appello per incompetenza territoriale",
-            "file": "iterCitazione in riassunzione CDA incompetenza territoriale.docx"
+            "label": "riassunzione in corte d’appello per incompetenza territoriale",
+            "file": "iterCitazione in riassunzione CDA incompetenza territoriale.docx",
+            "child": null
         },
         {
-            "name": "riassunzione per rinvio dalla Cassazione"
+            "label": "riassunzione per rinvio dalla Cassazione",
+            "child": "avv_citazioni_riassunzione_rinvio-cassazione"
         },
         {
-            "name": "riassunzione per difetto di giurisdizione",
-            "file": "iterCitazione in riassunzione da altro Giudice.docx"
+            "label": "riassunzione per difetto di giurisdizione",
+            "file": "iterCitazione in riassunzione da altro Giudice.docx",
+            "child": null
         }
     ]
 }
