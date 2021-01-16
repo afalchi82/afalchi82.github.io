@@ -6,7 +6,7 @@
     "options": [
         {
             "label": "Avvocato",
-            "description": "Quello che difende la gente",
+            "description": "Difensore",
             "child": "avv"
         },
         {

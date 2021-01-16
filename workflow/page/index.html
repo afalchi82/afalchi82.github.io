@@ -15,23 +15,28 @@
         body {
     
         }
-    
-        .option { 
-            cursor: pointer;
+
+        .option {
+            padding: 8px;
+            border: 1px solid;
+            line-height: 22px;
         }
-    
+
         .option:hover {
             text-decoration: underline;
+            cursor: pointer;
         }
 
         .disabled, .disabled:hover {
             color: #999;
             cursor: not-allowed;
             text-decoration: none;
+            opacity: .7;
         } 
 
         #json-log {
             font-size: 10px;
+            max-height: 400px
         }
 
         .path-item {
@@ -104,10 +109,15 @@
     }
 
     function buildOption (optObj) {
+        const wrapper = document.createElement("div");
+        // wrapper.classList.add('col-md-6');
+        wrapper.classList.add('mb-1');
+
         const opt = document.createElement("div");
         opt.innerText = optObj.label;
         opt.setAttribute('title', optObj.description || '');
         opt.classList.add('option');
+        
         if (!optObj.child || optObj.disabled) {
             opt.classList.add('disabled');
         };
@@ -115,7 +125,9 @@
         opt.addEventListener("click", function () {
             loadData(optObj.child);
         });
-        return opt;
+
+        wrapper.appendChild(opt);
+        return wrapper;
     }
 
     function buildPathItem (id) {
