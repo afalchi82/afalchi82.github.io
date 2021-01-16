@@ -22,11 +22,6 @@
             "label": "Interventi e atti endoprocessuali dei procedimenti esecutivi",
             "child": "avv_interventi-e-atti-endoprocessuali-dei-procedimenti-esecutivi",
             "disabled": true
-        },
-        {
-            "label": "Index",
-            "child": "index",
-            "disabled": true
         }
     ]
 }

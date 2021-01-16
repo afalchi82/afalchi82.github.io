@@ -8,6 +8,7 @@
   <title>Guidance</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="feather.css">
     <link rel="stylesheet" href="app.css">
  
     <style>
@@ -28,6 +29,10 @@
             cursor: not-allowed;
             text-decoration: none;
         } 
+
+        #json-log {
+            font-size: 10px;
+        }
     </style>
 
 </head>
@@ -46,8 +51,8 @@
                 
             </div>
 
-            <button id="restart" style="display: none">
-                Riparti
+            <button id="restart">
+                Riparti da capo
             </button>
 
             <hr>
@@ -86,7 +91,6 @@
 
     function resetStage () {            
         qDesc.style.display = "block";
-        restartBtn.style.display = "none";
 
         emptyEl(optsWrapper);
         emptyEl(filenameLog);
@@ -118,7 +122,6 @@
                 optsWrapper.appendChild(buildOption(item));
             });
         } else {
-            restartBtn.style.display = "block";
             qTitle.innerHTML = "Risultato della ricerca";
         }
 
@@ -135,6 +138,7 @@
     function loadData (id) {
         const url = dataUrl + id + ".json";
         $.ajax({
+            cache: false,
             url,
             dataType: 'json',
             success( data ) {
@@ -147,12 +151,7 @@
         });
     } 
 
-    // $.getJSON("index.json", data => {
-    //     buildStage(data);
-    // });
     
-    // buildStage(data.index);
-
     restartBtn.addEventListener('click', function () {
         loadData("index");
     });
