@@ -1,5 +1,6 @@
 {
     "id": "index",
+    "filename": "index",
     "question": "Chi sta depositando?",
     "description": "Seleziona la veste in cui si vuole effettuare il deposito",
     "options": [

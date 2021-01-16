@@ -16,7 +16,7 @@
         },
         {
             "label": "Riassunzione",
-            "child": "riassunzione"
+            "child": "avv_citazioni_riassunzione"
         },
         {
             "label": "Appello",

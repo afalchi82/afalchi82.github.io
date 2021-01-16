@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ __('title') }}</title>
+  <title>Guidance</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
  
     <style>
         body {
@@ -46,6 +47,7 @@
             <hr>
 
             <pre id="json-log"></pre>
+            <a href="C:\Users\Utente\OneDrive - EDITIONS LEFEBVRE SARRUT\Workflow\redattore web ver 3-0" id="filename-log" target="_blank"></pre>
         </div>
     </div>
 </div>
@@ -58,18 +60,29 @@
     const qTitle = document.getElementById('question-title');
     const qDesc = document.getElementById('question-description');
     const optsWrapper = document.getElementById('options-wrapper');
+    const filenameLog = document.getElementById('filename-log');
     const jsonLog = document.getElementById('json-log');
     const restartBtn = document.getElementById('restart');
 
+    const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
+
+
+    /* ---------------------------------------------------
+        Functions
+    --------------------------------------------------- */
+
+    function emptyEl (el) {
+        while (optsWrapper.firstChild) {
+            optsWrapper.removeChild(optsWrapper.firstChild);
+        }
+    } 
 
     function resetStage () {            
         qDesc.style.display = "block";
         restartBtn.style.display = "none";
-        
-        while (optsWrapper.firstChild) {
-            optsWrapper.removeChild(optsWrapper.firstChild);
-        }
-        
+
+        emptyEl(optsWrapper);
+        emptyEl(filenameLog);
     }
 
     function buildOption (optObj) {
@@ -100,12 +113,13 @@
 
         // Debug
         jsonLog.innerHTML = JSON.stringify(stageObj, null, 2);
+        filenameLog.innerText = stageObj.filename;
 
         
     }
 
     function loadData (id) {
-        const url = "./data/" + id + ".json";
+        const url = dataUrl + id + ".json";
         $.ajax({
             url,
             dataType: 'json',
