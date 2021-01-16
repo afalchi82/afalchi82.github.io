@@ -5,21 +5,25 @@
     "description": "Chi sta facendo il deposito",
     "options": [
         {
-            "label": "avvocato",
+            "label": "Avvocato",
+            "description": "Quello che difende la gente",
             "child": "avv"
         },
         {
-            "label": "ctu",
+            "label": "CTU",
+            "description": "",
             "child": "ctu",
             "disabled": true
         },
         {
-            "label": "delegato",
+            "label": "Delegato",
+            "description": "",
             "child": "deleg",
             "disabled": true
         },
         {
-            "label": "curatore",
+            "label": "Curatore",
+            "description": "",
             "child": "curat",
             "disabled": true
         }

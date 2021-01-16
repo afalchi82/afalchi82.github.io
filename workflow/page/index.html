@@ -106,7 +106,7 @@
     function buildOption (optObj) {
         const opt = document.createElement("div");
         opt.innerText = optObj.label;
-        opt.setAttribute('title', optObj.child);
+        opt.setAttribute('title', optObj.description || '');
         opt.classList.add('option');
         if (!optObj.child || optObj.disabled) {
             opt.classList.add('disabled');
