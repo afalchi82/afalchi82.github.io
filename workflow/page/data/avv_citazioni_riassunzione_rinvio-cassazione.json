@@ -4,11 +4,11 @@
     "question": "Dove si vuole depositare?",
     "options": [
         {
-            "name": "In tribunale",
+            "label": "In tribunale",
             "child": null
         },
         {
-            "name": "In corte d'appello",
+            "label": "In corte d'appello",
             "child": null
         }
     ]
