@@ -33,6 +33,13 @@
         #json-log {
             font-size: 10px;
         }
+
+        .path-item {
+            background: none;
+            border: 0;
+            margin-right: 4px;
+            font-size: 12px;
+        }
     </style>
 
 </head>
@@ -44,6 +51,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <small id="path"></small>
             <h2 id="question-title" class="title">Chi vuole depositare?</h2>
             <p id="question-description">Seleziona chi vuole depositare</p>
     
@@ -51,7 +59,7 @@
 
             <hr>
 
-            <button id="restart">
+            <button id="restart" class="hidden">
                 Riparti da capo
             </button>
 
@@ -74,11 +82,12 @@
     const filenameLog = document.getElementById('filename-log');
     const jsonLog = document.getElementById('json-log');
     const restartBtn = document.getElementById('restart');
+    const path = document.getElementById('path');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
     const filesPath = "file:///C:\\Users\\Utente\\OneDrive - EDITIONS LEFEBVRE SARRUT\\Workflow\\redattore web ver 3-0";
 
-    const history = [];
+    let history = [];
 
 
     /* ---------------------------------------------------
@@ -86,8 +95,8 @@
     --------------------------------------------------- */
 
     function emptyEl (el) {
-        while (optsWrapper.firstChild) {
-            optsWrapper.removeChild(optsWrapper.firstChild);
+        while (el.firstChild) {
+            el.removeChild(el.firstChild);
         }
     } 
 
@@ -96,6 +105,7 @@
 
         emptyEl(optsWrapper);
         emptyEl(filenameLog);
+        emptyEl(path);
 
         filenameLog.setAttribute('href', "");
     }
@@ -115,6 +125,16 @@
         return opt;
     }
 
+    function buildPathItem (id) {
+        const step = document.createElement("button");
+        step.innerText = id || "[id]";
+        step.classList.add('path-item');
+        step.addEventListener("click", function (ev) {
+            loadData(id);
+        });
+        return step;
+    }
+
     function buildStage (stageObj) {
         resetStage();
 
@@ -128,6 +148,8 @@
         }
 
         stageObj.description ? qDesc.innerHTML = stageObj.description : qDesc.style.display = "none";
+
+        updatePath(stageObj.id);
 
         // Debug
         jsonLog.innerHTML = JSON.stringify(stageObj, null, 2);
@@ -152,6 +174,28 @@
             }
         });
     } 
+
+
+    function updatePath (id) {
+        emptyEl(path);
+
+        const index = history.indexOf(id);
+        if (index === -1) {
+            history.push(id);
+        } else {
+            history = history.filter((el, i) => i <= index);
+        }
+
+        history.forEach(item => {
+            path.appendChild(buildPathItem(item));
+        });
+
+    }
+
+
+    /* ---------------------------------------------------
+        Init
+    --------------------------------------------------- */
 
     
     restartBtn.addEventListener('click', function () {
