@@ -1,21 +1,11 @@
 {
     "_filename": "macro pignoramento iscritto da debitore terzo",
-    "id": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari",
+    "id": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari",
     "question": "Seleziona il tipo di esecuzione",
     "options": [
         {
-            "label": "espropriazione mobiliare presso il debitore",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_espropriazione-mobiliare-presso-il-debitore",
-            "disabled": true
-        },
-        {
-            "label": "Pignoramento di autoveicoli",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_pignoramento-di-autoveicoli",
-            "disabled": true
-        },
-        {
-            "label": "Espropriazione mobiliare presso terzi",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_espropriazione-mobiliare-presso-terzi",
+            "label": "espropriazione immobiliare (610001)",
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari_espropriazione-immobiliare",
             "disabled": true
         }
     ]
