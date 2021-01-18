@@ -179,7 +179,7 @@
 
 
     function getRemoteFilePath (filename) {
-        return `https://www.dropbox.com/sh/wb1d2s7w9w09yl3/AABMfFLSp62PbJt53SgIDsIna?dl=0&preview=${filename}.pdf`;
+        return `https://www.dropbox.com/sh/wb1d2s7w9w09yl3/AABMfFLSp62PbJt53SgIDsIna?dl=0&preview=${filename.replace(" ", "+")}.pdf`;
     }
 
 
