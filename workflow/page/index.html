@@ -129,11 +129,12 @@
         
         if (!optObj.child || optObj.disabled) {
             opt.classList.add('disabled');
-        };
+        } else {
+            opt.addEventListener("click", function () {
+                loadData(optObj.child);
+            });
+        }
 
-        opt.addEventListener("click", function () {
-            loadData(optObj.child);
-        });
 
         wrapper.appendChild(opt);
         return wrapper;
