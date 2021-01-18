@@ -1,14 +1,8 @@
 {
     "_filename": "macro pignoramento iscritto da debitore terzo",
+    "_note": "Ruolo e registro?",
     "id": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari",
-    "question": "Seleziona il tipo di esecuzione",
-    "options": [
-        {
-            "label": "espropriazione immobiliare (610001)",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari_espropriazione-immobiliare",
-            "disabled": true
-        }
-    ]
+    "result": null
 }
 
 
