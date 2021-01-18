@@ -45,6 +45,13 @@
             padding: 0px 4px;
             line-height: 1.8;
         }
+
+        .note {
+            display: block;
+            font-size: 13px;
+            color: palevioletred;
+            padding: 8px;
+        }
     </style>
 
 </head>
@@ -64,7 +71,7 @@
 
             <hr>
 
-            <div id="note"></div>
+            <div id="note" class="well"></div>
 
             <pre id="json-log"></pre>
             <a href="" id="filename-log" target="_blank"></pre>
@@ -101,10 +108,11 @@
         }
     } 
 
-    function resetStage () {            
-        qDesc.style.display = "block";
-
+    function resetStage () {                    
         [optsWrapper, filenameLog, path, note].forEach(el => emptyEl(el));
+        
+        qDesc.style.display = "block";
+        note.style.display = "none";
 
         filenameLog.setAttribute('href', "");
     }
@@ -159,7 +167,10 @@
 
         // Debug
         jsonLog.innerHTML = JSON.stringify(stageObj, null, 2);
-        note.innerHTML = stageObj._note;
+        if (stageObj._note) {
+            note.innerHTML = stageObj._note;
+            note.style.display = "block";
+        }
         filenameLog.innerText = stageObj._filename + ".docx";
         filenameLog.setAttribute('href', filesPath + stageObj._filename + ".docx");
 
