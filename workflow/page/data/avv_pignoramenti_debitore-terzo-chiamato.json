@@ -1,0 +1,20 @@
+{
+    "_filename": "macro pignoramento iscritto da debitore terzo",
+    "_note": "Chiede di nuovo di scegliere tra mobiliari e immobiliari",
+    "id": "avv_pignoramenti_debitore-terzo-chiamato",
+    "question": "Che tipo di esecuzione?",
+    "options": [
+        {
+            "label": "Esecuzioni immobiliari",
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari",
+            "disabled": true
+        },
+        {
+            "label": "Esecuzioni mobiliari",
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari"
+        }
+    ]
+}
+
+
+
