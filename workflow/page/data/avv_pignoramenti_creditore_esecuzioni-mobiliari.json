@@ -1,0 +1,37 @@
+{
+    "id": "avv_pignoramenti_creditore_esecuzioni-mobiliari",
+    "filename": "macro pignoramenti",
+    "question": "Che tipo di esecuzione mobiliare?",
+    "options": [
+        {
+            "label": "espropriazione mobiliare presso il debitore",
+            "child": "avv_pignoramenti_creditore_esecuzioni-mobiliari_espropriazione-mobiliare-presso-debitore",
+            "disabled": true
+        },
+        {
+            "label": "Pignoramento di autoveicoli",
+            "child": "avv_pignoramenti_creditore_esecuzioni-mobiliari_pignoramento-autoveicoli",
+            "disabled": true
+        },
+        {
+            "label": "Espropriazione mobiliare presso terzi",
+            "child": "avv_pignoramenti_creditore_esecuzioni-mobiliari_espropriazione-mobiliare-presso-terzi",
+            "disabled": true
+        },
+        {
+            "label": "Pignoramento di quote societarie",
+            "child": "avv_pignoramenti_creditore_esecuzioni-mobiliari_pignoramento-quote-societarie",
+            "disabled": true
+        },
+        {
+            "label": "esecuzione forzata per espropriazione del marchio (520003)",
+            "child": "avv_pignoramenti_creditore_esecuzioni-mobiliari_esecuzione-forzata-per-espropriazione-del-marchio",
+            "disabled": true
+        },
+        {
+            "label": "Conversione del sequestro in pignoramento",
+            "child": "avv_pignoramenti_creditore_esecuzioni-mobiliari_conversione-del-sequestro-in-pignoramento",
+            "disabled": true
+        }
+    ]
+}
