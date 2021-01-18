@@ -17,6 +17,7 @@
             --blue: #133371;
             --blue-light: #1b469d;
             --red: #a53535;
+            --gray: #999;
         }
         body {
             border-top: 8px solid var(--blue);
@@ -25,20 +26,29 @@
         .option {
             padding: 8px;
             line-height: 22px;
-            color: white;
-            background: var(--blue);
+            border: 1px solid var(--blue);
+            color: var(--blue);
+            transition: all .4s;
         }
 
-        .option:hover {
+        .option:hover:not(.disabled) {
             background: var(--blue-light);
+            color: white;
             cursor: pointer;
         }
 
+        .selected {
+            background: var(--blue);
+            color: white;
+            font-weight: bold;
+        }
+
         .disabled, .disabled:hover {
+            border: 1px solid var(--gray);
             color: #999;
             cursor: not-allowed;
             text-decoration: none;
-            opacity: .3;
+            opacity: .6;
         } 
 
         #json-log {
@@ -121,6 +131,7 @@
         }
     } 
 
+
     function resetStage () {                    
         [optsWrapper, filenameLog, path, note].forEach(el => emptyEl(el));
         
@@ -129,6 +140,7 @@
 
         filenameLog.setAttribute('href', "");
     }
+
 
     function buildOption (optObj) {
         const wrapper = document.createElement("div");
@@ -143,15 +155,18 @@
         if (!optObj.child || optObj.disabled) {
             opt.classList.add('disabled');
         } else {
-            opt.addEventListener("click", function () {
-                loadData(optObj.child);
+            opt.addEventListener("click", function (ev) {
+                ev.target.classList.add("selected");
+                setTimeout(() => {
+                    loadData(optObj.child);
+                }, 400);
             });
         }
-
 
         wrapper.appendChild(opt);
         return wrapper;
     }
+
 
     function buildPathItem (id) {
         const step = document.createElement("button");
@@ -162,6 +177,7 @@
         });
         return step;
     }
+
 
     function buildStage (stageObj) {
         resetStage();
