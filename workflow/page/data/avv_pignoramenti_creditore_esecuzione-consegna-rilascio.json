@@ -3,10 +3,10 @@
     "_note": "Gestione istanze? Ruolo e registro?",
     "id": "avv_pignoramenti_creditore_esecuzione-consegna-rilascio",
     "result": {
-        "atto": "Citazione in riassunzione da Cassazione a Corte di Appello",
+        "atto": "Esecuzione per consegna o rilascio",
         "attoGfl": "???",
-        "registro": ["Contenzioso civile"],
-        "ruolo": ["generale degli affari civili contenziosi", "Y"]
+        "registro": null,
+        "ruolo": null
     }
 }
 
