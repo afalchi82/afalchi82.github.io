@@ -31,8 +31,7 @@
         },
         {
             "label": "Pignoramento",
-            "child": null,
-            "disabled": true
+            "child": "avv_pignoramenti"
         },
         {
             "label": "Procedimenti di famiglia",
