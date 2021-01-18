@@ -6,8 +6,7 @@
     "options": [
         {
             "label": "Esecuzioni immobiliari",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari",
-            "disabled": true
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-immobiliari"
         },
         {
             "label": "Esecuzioni mobiliari",
