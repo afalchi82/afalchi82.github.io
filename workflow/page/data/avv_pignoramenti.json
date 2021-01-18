@@ -5,8 +5,7 @@
     "options": [
         {
             "label": "Debitore o terzo chiamato",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato",
-            "disabled": true
+            "child": "avv_pignoramenti_debitore-terzo-chiamato"
         },
         {
             "label": "Creditore",
