@@ -5,8 +5,7 @@
     "options": [
         {
             "label": "espropriazione mobiliare presso il debitore",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_espropriazione-mobiliare-presso-il-debitore",
-            "disabled": true
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_espropriazione-mobiliare-presso-il-debitore"
         },
         {
             "label": "Pignoramento di autoveicoli",
