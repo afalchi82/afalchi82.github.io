@@ -12,19 +12,23 @@
     <link rel="stylesheet" href="app.css">
  
     <style>
+
+        :root {
+            --blue: #133371;
+            --red: #a53535;
+        }
         body {
-            border-top: 8px solid #a53535;
+            border-top: 8px solid var(--blue);
         }
 
         .option {
             padding: 8px;
-            border: 1px solid;
             line-height: 22px;
-            background: white;
+            color: white;
+            background: var(--blue);
         }
 
         .option:hover {
-            text-decoration: underline;
             cursor: pointer;
         }
 
@@ -32,7 +36,7 @@
             color: #999;
             cursor: not-allowed;
             text-decoration: none;
-            opacity: .7;
+            opacity: .3;
         } 
 
         #json-log {
