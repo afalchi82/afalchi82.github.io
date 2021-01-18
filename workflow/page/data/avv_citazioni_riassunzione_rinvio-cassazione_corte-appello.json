@@ -1,11 +1,11 @@
 {
-    "id": "avv_citazioni_riassunzione_rinvio-cassazione_corte-appello",
     "_filename": "iterCitazione in riassunzione da CassazioneCorteAppello",
+    "id": "avv_citazioni_riassunzione_rinvio-cassazione_corte-appello",
     "result": {
         "atto": "Citazione in riassunzione da Cassazione a Corte di Appello",
         "attoGfl": "???",
         "registro": ["Contenzioso civile"],
-        "ruolo": ["generale degli affari civili contenziosi", "Y"]
+        "ruolo": ["generale degli affari civili contenziosi"]
     }
 }
 
