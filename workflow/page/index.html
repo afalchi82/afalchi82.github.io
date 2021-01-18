@@ -93,7 +93,6 @@
     const note = document.getElementById('note');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
-    const filesPath = "file:///C:\\Users\\Utente\\OneDrive - EDITIONS LEFEBVRE SARRUT\\Workflow\\redattore web ver 3-0";
 
     let history = [];
 
@@ -173,10 +172,16 @@
             note.style.display = "block";
         }
         filenameLog.innerText = stageObj._filename + ".docx";
-        filenameLog.setAttribute('href', filesPath + stageObj._filename + ".docx");
+        filenameLog.setAttribute('href', getRemoteFilePath(stageObj._filename));
 
         
     }
+
+
+    function getRemoteFilePath (filename) {
+        return `https://www.dropbox.com/sh/wb1d2s7w9w09yl3/AABMfFLSp62PbJt53SgIDsIna?dl=0&preview=${filename}.pdf`;
+    }
+    
 
     function loadData (id) {
         const url = dataUrl + id + ".json";
