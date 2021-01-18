@@ -9,13 +9,11 @@
         },
         {
             "label": "Pignoramento di autoveicoli",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_pignoramento-di-autoveicoli",
-            "disabled": true
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_pignoramento-di-autoveicoli"
         },
         {
             "label": "Espropriazione mobiliare presso terzi",
-            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_espropriazione-mobiliare-presso-terzi",
-            "disabled": true
+            "child": "avv_pignoramenti_debitore-terzo-chiamato_esecuzioni-mobiliari_espropriazione-mobiliare-presso-terzi"
         }
     ]
 }
