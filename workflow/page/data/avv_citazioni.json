@@ -1,6 +1,6 @@
 {
     "id": "avv_citazioni",
-    "filename": "macro citazioni",
+    "_filename": "macro citazioni",
     "question": "Di che tipo di citazione si tratta?",
     "options": [
         {

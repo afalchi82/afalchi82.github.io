@@ -1,6 +1,6 @@
 {
     "id": "index",
-    "filename": "index",
+    "_filename": "index",
     "question": "Chi sta depositando?",
     "description": "Chi sta facendo il deposito",
     "options": [

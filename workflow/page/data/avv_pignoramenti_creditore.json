@@ -1,12 +1,11 @@
 {
     "id": "avv_pignoramenti_creditore",
-    "filename": "macro pignoramenti",
+    "_filename": "macro pignoramenti",
     "question": "Chi sta procedendo al deposito?",
     "options": [
         {
             "label": "Esecuzione per consegna o rilascio",
-            "child": "avv_pignoramenti_creditore_esecuzione-consegna-rilascio",
-            "disabled": true
+            "child": "avv_pignoramenti_creditore_esecuzione-consegna-rilascio"
         },
         {
             "label": "Esecuzioni immobiliari",

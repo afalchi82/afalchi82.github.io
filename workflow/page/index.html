@@ -64,6 +64,8 @@
 
             <hr>
 
+            <div id="note"></div>
+
             <pre id="json-log"></pre>
             <a href="" id="filename-log" target="_blank"></pre>
         </div>
@@ -81,6 +83,7 @@
     const filenameLog = document.getElementById('filename-log');
     const jsonLog = document.getElementById('json-log');
     const path = document.getElementById('path');
+    const note = document.getElementById('note');
 
     const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
     const filesPath = "file:///C:\\Users\\Utente\\OneDrive - EDITIONS LEFEBVRE SARRUT\\Workflow\\redattore web ver 3-0";
@@ -101,9 +104,7 @@
     function resetStage () {            
         qDesc.style.display = "block";
 
-        emptyEl(optsWrapper);
-        emptyEl(filenameLog);
-        emptyEl(path);
+        [optsWrapper, filenameLog, path, note].forEach(el => emptyEl(el));
 
         filenameLog.setAttribute('href', "");
     }
@@ -158,8 +159,9 @@
 
         // Debug
         jsonLog.innerHTML = JSON.stringify(stageObj, null, 2);
-        filenameLog.innerText = stageObj.filename + ".docx";
-        filenameLog.setAttribute('href', filesPath + stageObj.filename + ".docx");
+        note.innerHTML = stageObj._note;
+        filenameLog.innerText = stageObj._filename + ".docx";
+        filenameLog.setAttribute('href', filesPath + stageObj._filename + ".docx");
 
         
     }

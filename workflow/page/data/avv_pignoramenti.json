@@ -1,6 +1,6 @@
 {
     "id": "avv_pignoramenti",
-    "filename": "macro pignoramenti",
+    "_filename": "macro pignoramenti",
     "question": "Chi sta procedendo al deposito?",
     "options": [
         {
@@ -9,7 +9,7 @@
             "disabled": true
         },
         {
-            "label": "creditore",
+            "label": "Creditore",
             "child": "avv_pignoramenti_creditore"
         }
     ]
