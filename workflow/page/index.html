@@ -171,7 +171,7 @@
             note.innerHTML = stageObj._note;
             note.style.display = "block";
         }
-        filenameLog.innerText = stageObj._filename + ".docx";
+        filenameLog.innerText = stageObj._filename;
         filenameLog.setAttribute('href', getRemoteFilePath(stageObj._filename));
 
         
@@ -181,7 +181,7 @@
     function getRemoteFilePath (filename) {
         return `https://www.dropbox.com/sh/wb1d2s7w9w09yl3/AABMfFLSp62PbJt53SgIDsIna?dl=0&preview=${filename}.pdf`;
     }
-    
+
 
     function loadData (id) {
         const url = dataUrl + id + ".json";
