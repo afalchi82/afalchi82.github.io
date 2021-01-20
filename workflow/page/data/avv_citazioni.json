@@ -1,6 +1,7 @@
 {
-    "id": "avv_citazioni",
     "_filename": "macro citazioni",
+    "_note": "Nel doc viene chiesto di recuperare il tipo di citazione dal fascicolo",
+    "id": "avv_citazioni",
     "question": "Di che tipo di citazione si tratta?",
     "options": [
         {
