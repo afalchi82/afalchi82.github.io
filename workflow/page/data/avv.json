@@ -5,6 +5,9 @@
     "description": "",
     "options": [
         {
+            "if": {
+                "materia": "civile"
+            },
             "label": "Atto di citazione",
             "child": "avv_citazioni"
         },

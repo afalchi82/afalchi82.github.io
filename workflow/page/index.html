@@ -21,6 +21,7 @@
         }
         body {
             border-top: 8px solid var(--blue);
+            padding-bottom: 120px;
         }
 
         .option {
@@ -160,6 +161,17 @@
                 setTimeout(() => {
                     loadData(optObj.child);
                 }, 400);
+            });
+        }
+
+        // Check dati fascicolo
+        if (datiFascicolo && optObj.if) {
+            Object.keys(optObj.if).forEach(k => {
+                if (optObj.if[k] !== datiFascicoli[k]) {
+                    const warning = document.createElement("p");
+                    warning.innerText = `Opzione in contrasto col dato ${k} del fascicolo.`;
+                    wrapper.appendChild(warning);
+                };
             });
         }
 

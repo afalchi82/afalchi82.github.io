@@ -2,7 +2,7 @@
     "id": "index",
     "_filename": "indice",
     "question": "Chi sta depositando?",
-    "description": "Chi sta facendo il deposito",
+    "description": "Indica in quale veste si sta facendo il deposito",
     "options": [
         {
             "label": "Avvocato",
