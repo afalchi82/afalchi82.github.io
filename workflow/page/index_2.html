@@ -253,7 +253,7 @@
     function loadData (id) {
         const url = dataUrl + id + ".json";
 
-        fetch({
+        fetch(url, {
             cache: 'no-cache',
             headers: {
                 "Authorization": 'token cbbf07be1c0e7b82d64ea67cce9e1de0f6a5b250',
