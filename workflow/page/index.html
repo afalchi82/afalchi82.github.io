@@ -135,7 +135,7 @@
     const note = document.getElementById('note');
     const logDatiFascicolo = document.getElementById('log-dati-fascicolo');
 
-    const dataUrl = "https://afalchi82.github.io/workflow/page/data/";
+    const dataUrl = "https://raw.githubusercontent.com/afalchi82/rdtr_workflow/master/data/";
 
     let history = [];
 
@@ -255,14 +255,15 @@
         $.ajax({
             cache: false,
             url,
-            dataType: 'json',
+            // dataType: 'json',
             success( data ) {
                 buildStage(data);
             },
             error( err ) {
                 console.log(err)
                 alert( "ERROR:  " + err.statusText );
-            }
+            },
+            headers: {"Authorization": 'token AAO35IQRS4M5YY5O25CICBTACFDAW'}
         });
     } 
 
