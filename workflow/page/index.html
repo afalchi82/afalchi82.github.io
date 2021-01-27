@@ -135,7 +135,7 @@
     const note = document.getElementById('note');
     const logDatiFascicolo = document.getElementById('log-dati-fascicolo');
 
-    const dataUrl = "https://raw.githubusercontent.com/afalchi82/rdtr_workflow/master/data/";
+    const dataUrl = "https://cbe257b3c948bd55c1359e8bb36c1ec86d171a7d@raw.githubusercontent.com/afalchi82/rdtr_workflow/master/data/";
 
     let history = [];
 
@@ -262,8 +262,7 @@
             error( err ) {
                 console.log(err)
                 alert( "ERROR:  " + err.statusText );
-            },
-            headers: {"Authorization": 'token AAO35IQRS4M5YY5O25CICBTACFDAW'}
+            }
         });
     } 
 
