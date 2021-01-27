@@ -253,11 +253,12 @@
     function loadData (id) {
         const url = dataUrl + id + ".json";
 
+        /*
         fetch(url, {
             cache: 'no-cache',
             headers: {
                 "Authorization": 'token cbbf07be1c0e7b82d64ea67cce9e1de0f6a5b250',
-                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/json'
             },
             method: 'GET', 
             // mode: 'no-cors'
@@ -269,12 +270,13 @@
                 alert( "ERROR:  " + err.statusText );
             })
         ;
-
-        /*
+        */
+        
         $.ajax({
             cache: false,
+            crossDomain: true,
             url,
-            dataType: 'json',
+            dataType: 'text/plain',
             success( data ) {
                 buildStage(data);
             },
@@ -282,9 +284,12 @@
                 console.log(err)
                 alert( "ERROR:  " + err.statusText );
             },
-            headers: {"Authorization": 'token cbbf07be1c0e7b82d64ea67cce9e1de0f6a5b250'}
+            headers: {"Authorization": 'token cbbf07be1c0e7b82d64ea67cce9e1de0f6a5b250'},
+            beforeSend: function( xhr ) {
+                xhr.setRequestHeader( 'Content-Type', 'text/plain' );
+            },
+            type: 'GET'
         });
-        */
     } 
 
 
