@@ -101,6 +101,23 @@ a {
 }
 
 
+.asterisco {
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.callout {
+  padding: .75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-left: 3px solid #e01414;
+  color: #e01414;
+  display: flex;
+  background: #f6f6f6;
+}
+
+
 
 /* -----------------------------------------------
   Footer
