@@ -11,91 +11,10 @@
 
 <body>
 
-    <script>
-        AFRAME.registerComponent('modify-materials', {
-            init: function () {
-                // Wait for model to load.
-                this.el.addEventListener('model-loaded', () => {
-                    // Grab the mesh / scene.
-                    const obj = this.el.getObject3D('mesh');
-                    // Go over the submeshes and modify materials we want.
-                    obj.traverse(node => {
-                        if (node.name.indexOf('settimino') !== -1) {
-                            node.material.color.set('red');
-                        }
-                    });
-                });
-            }
-        });
+    <script src="script.js"></script>   
 
 
-        AFRAME.registerComponent('letto', {
-            schema: {
-                width: { type: 'number', default: .9 },
-                height: { type: 'number', default: .6 },
-                depth: { type: 'number', default: 1.9 },
-                color: { type: 'color', default: '#AAA' }
-            },
-
-            /**
-             * Initial creation and setting of the mesh.
-             */
-            init: function () {
-                var data = this.data;
-                var el = this.el;
-
-                // Create geometry.
-                this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
-
-                // Create material.
-                this.material = new THREE.MeshStandardMaterial({ color: data.color });
-
-                // Create mesh.
-                this.mesh = new THREE.Mesh(this.geometry, this.material);
-
-                // Set mesh on entity.
-                el.setObject3D('mesh', this.mesh);
-            }
-        });
-
-        AFRAME.registerGeometry('example', {
-            schema: {
-                vertices: {
-                default: ['-10 10 0', '-10 -10 0', '10 -10 0'],
-                }
-            },
-
-            init: function (data) {
-                var geometry = new THREE.Geometry();
-                geometry.vertices = data.vertices.map(function (vertex) {
-                    var points = vertex.split(' ').map(function(x){return parseInt(x);});
-                    return new THREE.Vector3(points[0], points[1], points[2]);
-                });
-                geometry.computeBoundingBox();
-                geometry.faces.push(new THREE.Face3(0, 1, 2));
-                geometry.mergeVertices();
-                geometry.computeFaceNormals();
-                geometry.computeVertexNormals();
-                this.geometry = geometry;
-            }
-            });
-
-    </script>
-
-
-    <a-scene background="color: #ECECEC">
-
-        <a-entity geometry="primitive: example; vertices: 1 1 -3, 3 1 -3, 2 2 -3"></a-entity>
-
-
-        <!-- n -->
-
-        <a-entity light="type: point;  castShadow: true"
-            position="0 2.396 0"
-           
-        ></a-entity>
-
-        <a-entity light="type: spot; castShadow: true; color: #ffffff; intensity: 0.09; penumbra: 0.27; shadowRadius: 3.7" position="1.20782 1.75592 2.35795"></a-entity>
+    <a-scene scene-init>
 
         <a-assets>
             <img id="parquet"
@@ -114,58 +33,11 @@
                 src="assets/COM 6 CASS 45 DM24351.gltf"></a-asset-item>
         </a-assets>
 
-        <a-entity gltf-model="#settimino"
-            modify-materials
-            shadow></a-entity>
 
-        <a-entity shadow="cast: true; receive: true">
-            <a-box position="-0.67576 1.27008 -1.68792"
-                width="2.35"
-                height="2.6"
-                depth=".6"
-                material="src: #olmo; roughness: 1; repeat: 5 2">
-                <!-- <a-box
-                    position="0.70904 -0.77403 0.3305"
-                    width="0.50"
-                    height="2.6"
-                    depth=".03"
-                    material="src: #mirtillo; roughness: .5"
-                    geometry=""
-                ></a-box> -->
 
-                <a-box position="0.67361 -0.887 0.31496" width="0.50" height="2.6" id="cassetti" depth=".03" material="src: #papaya; roughness: .5;" geometry="width: 1; height: 0.73" scale=""></a-box>
-
-                
-    
-            </a-box>
-        </a-entity>
-
-        <!-- Room -->
-        <!-- <a-box material="src: #stucco; 
-                metalness: 0;
-                normal-map: #stucco-nrm; 
-                normal-texture-repeat: 1 1; 
-                repeat: 1 1; 
-                roughness: .5;
-                side: back;
-                emissive: #e8e8e8;
-            "
-            
-            shadow="cast: true; receive: true"
-            position="0 1.4 0"
-            scale="-1 1 1"
-            width="3.73"
-            height="2.8"
-            depth="3.73"
-            side="double"></a-box> -->
-
-        <a-plane material="src: #parquet; roughness: .1"
-            position="0 .01 0"
-            rotation="-90 0 0"
-            width="3.73"
-            height="3.73"
-            shadow="cast: true; receive: true"
-            color="#ffffff"></a-plane>
+        
+       
+        
     </a-scene>
 </body>
 
