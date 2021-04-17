@@ -23,7 +23,13 @@ function o (val) {
 }
 
 
-
+AFRAME.registerComponent('letto', {
+    schema: {
+        width: {type: "number", default: .8},
+        height: {type: "number", default: .2},
+        depth: {type: "number", default: 1.9},
+    }
+});
 
 
 
@@ -82,7 +88,7 @@ AFRAME.registerComponent('scene-init', {
         lightWindow.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .66,
+            intensity: .76,
             penumbra: .8,  
             castShadow: true
         });
@@ -97,7 +103,7 @@ AFRAME.registerComponent('scene-init', {
         lightDoor.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .36,
+            intensity: .86,
             penumbra: .8,  
             castShadow: true
         });
@@ -332,7 +338,7 @@ AFRAME.registerComponent('scene-init', {
             setPos(cassettoEl, [0, cassetto.height * i, comodino.depth]);
         }
         
-        setPos(comodinoWrapper, [ 0, 0, 2]);        
+        setPos(comodinoWrapper, [ 0, 0, 2.5]);        
         comodinoWrapper.setAttribute("rotation", "0 90 0");
 
         comodinoWrapper.appendChild(comodinoEl);
@@ -411,14 +417,19 @@ AFRAME.registerComponent('scene-init', {
         /* ----------------------------------------------------
             letto
         ---------------------------------------------------- */
-        const lettoWrapper = document.createElement('a-entity');
-        lettoWrapper.setAttribute("id", "letto");
-
         const letto = {
             width: .8,
             height: .2,
             depth: 1.9
         };
+
+        const letto1Wrapper = document.createElement('a-entity');
+        
+
+
+
+        letto1Wrapper.setAttribute("id", "letto");
+
         const lettoEl = document.createElement('a-box');
         lettoEl.setAttribute('material', 'src: #papaya;');
         lettoEl.setAttribute("shadow", "cast: true; receive: true");
@@ -427,11 +438,12 @@ AFRAME.registerComponent('scene-init', {
         lettoEl.setAttribute("depth", letto.depth);
         setPos(lettoEl, [0, .2, 0]);
         
-        setPos(lettoWrapper, [0, 0, roomD]);
-        lettoWrapper.setAttribute("rotation", "0 90 0");
+        
+        setPos(letto1Wrapper, [0, 0, roomD]);
+        letto1Wrapper.setAttribute("rotation", "0 90 0");
 
-        lettoWrapper.appendChild(lettoEl);
-        sceneEl.appendChild(lettoWrapper);
+        letto1Wrapper.appendChild(lettoEl);
+        sceneEl.appendChild(letto1Wrapper);
 
     }
 });
