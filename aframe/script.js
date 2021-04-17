@@ -23,10 +23,6 @@ function o (val) {
 }
 
 
-function makeRoom (val) {
-   
-}
-
 
 
 
@@ -42,13 +38,19 @@ AFRAME.registerComponent('scene-init', {
 
         sceneEl.setAttribute("color", "#cccccc")
 
+
+        /* ----------------------------------------------------
+            camera
+        ---------------------------------------------------- */
         const cameraWrapper = document.createElement('a-entity');
-        setPos(cameraWrapper, [0, 0, 0]);
+        
 
         const cameraEl = document.createElement('a-camera');
         cameraEl.setAttribute("wasd-controls", "acceleration: 40");
-        cameraEl.setAttribute("fov", "40");
-        setPos(cameraEl, [ roomW / 2, 1.7, 8]);
+        cameraEl.setAttribute("fov", "60");
+        setPos(cameraEl, [0, 0, 0]);
+
+        setPos(cameraWrapper, [ roomW / 2, 0, roomD / 2]);
         cameraWrapper.appendChild(cameraEl);
         sceneEl.appendChild(cameraWrapper);
 
@@ -80,7 +82,7 @@ AFRAME.registerComponent('scene-init', {
         lightWindow.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .46,
+            intensity: .66,
             penumbra: .8,  
             castShadow: true
         });
@@ -95,7 +97,7 @@ AFRAME.registerComponent('scene-init', {
         lightDoor.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .16,
+            intensity: .36,
             penumbra: .8,  
             castShadow: true
         });
