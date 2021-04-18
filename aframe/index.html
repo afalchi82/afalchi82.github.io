@@ -31,13 +31,32 @@
                 src="assets/papaya.jpg">
             <img id="olmo"
                 src="assets/olmo.jpg">
-            <a-asset-item id="settimino"
-                src="assets/COM 6 CASS 45 DM24351.gltf"></a-asset-item>
+            <a-asset-item id="settimino" src="assets/COM 6 CASS 45 DM24351.gltf"></a-asset-item>
+            <a-asset-item id="letto" src="assets/ie104y3k5uuj.gltf"></a-asset-item>
         </a-assets>
 
+        <a-sky color="#aaaaef"></a-sky>
 
+        <a-entity gltf-model="#letto"
+            modify-materials
+            id="letto-model"
+            scale=".001 .001 .001"
+            position="0 0 3.7"
+            shadow="cast: true; receive: true"
+        ></a-entity>
         
+        <a-entity gltf-model="#letto"
+            modify-materials
+            id="letto2-model"
+            scale=".001 .001 .001"
+            position="0 0 2.3"
+            shadow="cast: true; receive: true"
+        ></a-entity>
+
+        <!-- <a-box shadow="cast: true; receive: true"
+            position="0 0 0"></a-box> -->
         
+        <a-box shadow="" position="2.53601 0.62704 3.68347" material="" geometry=""></a-box>
        
         
     </a-scene>

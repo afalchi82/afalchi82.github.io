@@ -64,21 +64,25 @@ AFRAME.registerComponent('scene-init', {
         /* ----------------------------------------------------
             lampadario
         ---------------------------------------------------- */
-        const lightEl = document.createElement('a-entity');
+        const lampadarioWrapper = document.createElement('a-entity');
+        const lightEl = document.createElement('a-light');
+        lightEl.setAttribute('id', "lampadario");
         lightEl.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .96,
+            intensity: .40,
             penumbra: .6,  
             castShadow: true
         });
-        lightEl.setAttribute('rotation', "-90");
-        setPos(lightEl, [
+        
+        setPos(lampadarioWrapper, [
             roomW / 2,
             2.8,
             roomD / 2
-        ], true);
-        sceneEl.appendChild(lightEl);
+        ]);
+        lampadarioWrapper.setAttribute('rotation', "90 0 0");
+        lampadarioWrapper.appendChild(lightEl);
+        sceneEl.appendChild(lampadarioWrapper);
 
 
         /* ----------------------------------------------------
@@ -86,7 +90,7 @@ AFRAME.registerComponent('scene-init', {
         ---------------------------------------------------- */
         const lightWindow = document.createElement('a-entity');
         lightWindow.setAttribute('light', {
-            angle: 120,
+            angle: 100,
             type: "spot",
             intensity: .76,
             penumbra: .8,  
@@ -338,7 +342,7 @@ AFRAME.registerComponent('scene-init', {
             setPos(cassettoEl, [0, cassetto.height * i, comodino.depth]);
         }
         
-        setPos(comodinoWrapper, [ 0, 0, 2.5]);        
+        setPos(comodinoWrapper, [ 0, 0, 2.8]);        
         comodinoWrapper.setAttribute("rotation", "0 90 0");
 
         comodinoWrapper.appendChild(comodinoEl);
@@ -419,32 +423,72 @@ AFRAME.registerComponent('scene-init', {
         ---------------------------------------------------- */
         const letto = {
             width: .8,
-            height: .2,
+            height: .5,
             depth: 1.9
         };
 
         const letto1Wrapper = document.createElement('a-entity');
-        
+        letto1Wrapper.setAttribute("id", "letto1");
 
-
-
-        letto1Wrapper.setAttribute("id", "letto");
-
-        const lettoEl = document.createElement('a-box');
-        lettoEl.setAttribute('material', 'src: #papaya;');
-        lettoEl.setAttribute("shadow", "cast: true; receive: true");
-        lettoEl.setAttribute("width", letto.width);
-        lettoEl.setAttribute("height", letto.height);
-        lettoEl.setAttribute("depth", letto.depth);
-        setPos(lettoEl, [0, .2, 0]);
+        const letto1El = document.createElement('a-box');
+        letto1El.setAttribute('material', 'src: #papaya;');
+        letto1El.setAttribute("shadow", "cast: true; receive: true");
+        letto1El.setAttribute("width", letto.width);
+        letto1El.setAttribute("height", letto.height);
+        letto1El.setAttribute("depth", letto.depth);
+        setPos(letto1El, [0, 0, 0]);
         
         
         setPos(letto1Wrapper, [0, 0, roomD]);
         letto1Wrapper.setAttribute("rotation", "0 90 0");
 
-        letto1Wrapper.appendChild(lettoEl);
-        sceneEl.appendChild(letto1Wrapper);
+        letto1Wrapper.appendChild(letto1El);
+        // sceneEl.appendChild(letto1Wrapper);
+
+
+        const letto2Wrapper = document.createElement('a-entity');
+        letto2Wrapper.setAttribute("id", "letto2");
+
+        const letto2El = document.createElement('a-box');
+        letto2El.setAttribute('material', 'src: #papaya;');
+        letto2El.setAttribute("shadow", "cast: true; receive: true");
+        letto2El.setAttribute("width", letto.width);
+        letto2El.setAttribute("height", letto.height);
+        letto2El.setAttribute("depth", letto.depth);
+        setPos(letto2El, [0, 0, 0]);
+        
+        
+        setPos(letto2Wrapper, [0, 0, 2.3]);
+        letto2Wrapper.setAttribute("rotation", "0 90 0");
+
+        letto2Wrapper.appendChild(letto2El);
+        // sceneEl.appendChild(letto2Wrapper);
 
     }
 });
 
+
+
+AFRAME.registerComponent('modify-materials', {
+    init: function () {
+        // Wait for model to load.
+        this.el.addEventListener('model-loaded', () => {
+            // Grab the mesh / scene.
+            const obj = this.el.getObject3D('mesh');
+            // Go over the submeshes and modify materials we want.
+
+            
+
+            obj.traverse(node => {
+                console.log(node.material)
+                if (node.name.indexOf('M') !== -1) { 
+                    // node.material.map.repeat = "2 1 0";
+                    // node.material.color.set('#4c7a91');
+                    // node.material.opacity = 0;
+                }
+            });
+        });
+    },
+
+    multiple: true,
+});
