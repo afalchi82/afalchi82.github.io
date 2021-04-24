@@ -1,6 +1,6 @@
 
 
-function setPos (el, position, noScale) {
+function setPos (el, position) {
 
     const w = el?.getAttribute("width") || 0;
     const h = el?.getAttribute("height") || 0;
@@ -86,9 +86,10 @@ AFRAME.registerComponent('scene-init', {
 
 
         /* ----------------------------------------------------
-            luce finestra
+            luce a
         ---------------------------------------------------- */
         const lightWindow = document.createElement('a-entity');
+        lightWindow.setAttribute('id', "luce-finestra");
         lightWindow.setAttribute('light', {
             angle: 100,
             type: "spot",
@@ -101,17 +102,18 @@ AFRAME.registerComponent('scene-init', {
 
 
         /* ----------------------------------------------------
-            luce porta
+            luce ambientale
         ---------------------------------------------------- */
         const lightDoor = document.createElement('a-entity');
+        lightDoor.setAttribute('id', "luce-ambient");
         lightDoor.setAttribute('light', {
             angle: 120,
-            type: "spot",
-            intensity: .86,
+            type: "ambient",
+            intensity: .16,
             penumbra: .8,  
             castShadow: true
         });
-        lightEl.setAttribute('rotation', "-180");
+        lightDoor.setAttribute('rotation', "-180");
         setPos(lightDoor, [ roomW - .45, 1.5, .1]);
         sceneEl.appendChild(lightDoor);
 
@@ -375,7 +377,7 @@ AFRAME.registerComponent('scene-init', {
         
         const ponteSide = {
             width: .03,
-            height: 2,
+            height: 2.2,
             depth: .30
         };
         const ponteSxEl = document.createElement('a-box');
@@ -393,7 +395,7 @@ AFRAME.registerComponent('scene-init', {
         ponteDxEl.setAttribute("width", ponteSide.width);
         ponteDxEl.setAttribute("height", ponteSide.height);
         ponteDxEl.setAttribute("depth", ponteSide.depth);
-        setPos(ponteDxEl, [(scrittoio.width + ponteSide.width), 0, 0]);
+        setPos(ponteDxEl, [scrittoio.width, 0, 0]);
         ponteWrapper.appendChild(ponteDxEl);
 
         // cassone
@@ -410,7 +412,7 @@ AFRAME.registerComponent('scene-init', {
         ponteWrapper.appendChild(ponteCassone);
         
        
-        setPos(scrivaniaWrapper, [roomW, 0, roomD - (scrittoio.width + (ponteSide.width * 2))]); 
+        setPos(scrivaniaWrapper, [roomW, 0, roomD - (scrittoio.width + ponteSide.width)]); 
         scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
 
         scrivaniaWrapper.appendChild(ponteWrapper);
@@ -463,6 +465,38 @@ AFRAME.registerComponent('scene-init', {
 
         letto2Wrapper.appendChild(letto2El);
         // sceneEl.appendChild(letto2Wrapper);
+
+
+
+        /* ----------------------------------------------------
+            radiator
+        ---------------------------------------------------- */
+        const radiator = {
+            width: .8,
+            height: .7,
+            depth: .12,
+            y: .06
+        };
+
+        const radiatorWrapper = document.createElement('a-entity');
+        radiatorWrapper.setAttribute("id", "radiator");
+
+        const radiatorEl = document.createElement('a-box');
+        radiatorEl.setAttribute("shadow", "cast: true; receive: true");
+        radiatorEl.setAttribute("width", radiator.width);
+        radiatorEl.setAttribute("height", radiator.height);
+        radiatorEl.setAttribute("depth", radiator.depth);
+        setPos(radiatorEl, [0, 0, 0]);
+
+        setPos(radiatorWrapper, [
+            roomW - .85 - radiator.width, 
+            radiator.y, 
+            roomD - radiator.depth
+        ]);
+
+        radiatorWrapper.appendChild(radiatorEl);
+        sceneEl.appendChild(radiatorWrapper);
+
 
     }
 });
