@@ -1,31 +1,13 @@
-// import { room } from "const.js";
+import { 
+    makeBox,
+    materials,
+    room
+} from "./const.js";
 
 
+const roomW = room.width;
+const roomD = room.depth;
 
-const roomW = 3.73;
-const roomD = 3.73;
-
-const materials = {
-    col1: 'src: #papaya; roughness: 1;',
-    chiaro: 'src: #nuvola; roughness: 1;'
-}
-
-// class Maniglia {
-//     constructor(sizeObj) {
-//         this.width
-//     }
-// }
-
-function makeBox (sizeObj, materialStr, shadow = true) {
-    const boxEl = document.createElement('a-box');
-    boxEl.setAttribute('material', materialStr);
-    shadow && boxEl.setAttribute("shadow", "cast: true; receive: true");
-    boxEl.setAttribute("width", sizeObj.width);
-    boxEl.setAttribute("height", sizeObj.height);
-    boxEl.setAttribute("depth", sizeObj.depth);
-
-    return boxEl;
-}
 
 
 function setPos (el, position) {
@@ -135,7 +117,7 @@ AFRAME.registerComponent('scene-init', {
         lightDoor.setAttribute('id', "luce-ambient");
         lightDoor.setAttribute('light', {
             type: "ambient",
-            intensity: .3
+            intensity: .2
         });
         setPos(lightDoor, [ roomW - .45, 1.5, roomD / 2]);
         sceneEl.appendChild(lightDoor);
@@ -149,12 +131,11 @@ AFRAME.registerComponent('scene-init', {
         setPos(room, [0, -.001, 0]);
         room.setAttribute('material', {
             src: "#stucco", 
-            metalness: 0,
             normalMap: "#stucco-nrm", 
             normalTextureRepeat: "1 1", 
             normalScale: "-.1 -.1",
             repeat: "1 1", 
-            roughness: .5,
+            roughness: .9,
             side: "back"
         });
         room.object3D.scale.set(-1, 1, 1);
@@ -373,7 +354,7 @@ AFRAME.registerComponent('scene-init', {
             depth: .4
         };
         const settiminoEl = document.createElement('a-box');
-        settiminoEl.setAttribute('material', 'src: #olmo; roughness: 1; repeat: 5 2');
+        settiminoEl.setAttribute('material', materials.chiaro);
         settiminoEl.setAttribute("shadow", "cast: true; receive: true");
         settiminoEl.setAttribute("width", settimino.width);
         settiminoEl.setAttribute("height", settimino.height);
@@ -476,7 +457,7 @@ AFRAME.registerComponent('scene-init', {
             depth: .482
         };
         const comodinoEl = document.createElement('a-box');
-        comodinoEl.setAttribute('material', 'src: #zenzero; roughness: 1;');
+        comodinoEl.setAttribute('material', materials.col1);
         comodinoEl.setAttribute("shadow", "cast: true; receive: true");
         comodinoEl.setAttribute("width", comodino.width);
         comodinoEl.setAttribute("height", comodino.height);
@@ -487,7 +468,7 @@ AFRAME.registerComponent('scene-init', {
         // cassetti
         for (let i=0; i<2; i++) {
             const cassettoEl = document.createElement('a-box');
-            cassettoEl.setAttribute('material', 'src: #zenzero;');
+            cassettoEl.setAttribute('material', materials.col1);
             cassettoEl.setAttribute("width", comodino.width);
             cassettoEl.setAttribute("height", cassetto.height);
             cassettoEl.setAttribute("depth", cassetto.depth);
@@ -515,7 +496,7 @@ AFRAME.registerComponent('scene-init', {
         const scrittoio = {
             width: 1.5,
             height: .03,
-            depth: .70,
+            depth: .60,
             x: 0,
             y: .63,
             z: 0
@@ -571,8 +552,40 @@ AFRAME.registerComponent('scene-init', {
         ponteCassone.setAttribute("depth", ponteSide.depth);
         setPos(ponteCassone, [0, ponteSide.height - cassone.height, 0]);
         ponteWrapper.appendChild(ponteCassone);
+
+        // maniglie
+        const manigliaScrivania = {
+            width: .05,
+            height: .1,
+            depth: .02,
+            y: ponteSide.height - cassone.height,
+            z: ponteSide.depth
+        };
+        const manigliaScrivania1El = makeBox(manigliaScrivania, materials.col1);
+        setPos(manigliaScrivania1El, [
+            scrittoio.width / 3 - manigliaScrivania.width,
+            manigliaScrivania.y, 
+            manigliaScrivania.z
+        ]);
+        const manigliaScrivania2El = makeBox(manigliaScrivania, materials.col1);
+        setPos(manigliaScrivania2El, [
+            scrittoio.width / 3,
+            manigliaScrivania.y,
+            manigliaScrivania.z
+        ]);
+        const manigliaScrivania3El = makeBox(manigliaScrivania, materials.col1);
+        setPos(manigliaScrivania3El, [
+            (scrittoio.width / 3) * 2,
+            manigliaScrivania.y,
+            manigliaScrivania.z
+        ]);
+
+        scrivaniaWrapper.appendChild(manigliaScrivania1El);
+        scrivaniaWrapper.appendChild(manigliaScrivania2El);
+        scrivaniaWrapper.appendChild(manigliaScrivania3El);
         
        
+        // append
         setPos(scrivaniaWrapper, [roomW, 0, roomD - (scrittoio.width + ponteSide.width)]); 
         scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
 
@@ -581,51 +594,6 @@ AFRAME.registerComponent('scene-init', {
         sceneEl.appendChild(scrivaniaWrapper);
 
 
-        /* ----------------------------------------------------
-            letto
-        ---------------------------------------------------- */
-        const letto = {
-            width: .8,
-            height: .5,
-            depth: 1.9
-        };
-
-        const letto1Wrapper = document.createElement('a-entity');
-        letto1Wrapper.setAttribute("id", "letto1");
-
-        const letto1El = document.createElement('a-box');
-        letto1El.setAttribute('material', 'src: #papaya;');
-        letto1El.setAttribute("shadow", "cast: true; receive: true");
-        letto1El.setAttribute("width", letto.width);
-        letto1El.setAttribute("height", letto.height);
-        letto1El.setAttribute("depth", letto.depth);
-        setPos(letto1El, [0, 0, 0]);
-        
-        
-        setPos(letto1Wrapper, [0, 0, roomD]);
-        letto1Wrapper.setAttribute("rotation", "0 90 0");
-
-        letto1Wrapper.appendChild(letto1El);
-        // sceneEl.appendChild(letto1Wrapper);
-
-
-        const letto2Wrapper = document.createElement('a-entity');
-        letto2Wrapper.setAttribute("id", "letto2");
-
-        const letto2El = document.createElement('a-box');
-        letto2El.setAttribute('material', 'src: #papaya;');
-        letto2El.setAttribute("shadow", "cast: true; receive: true");
-        letto2El.setAttribute("width", letto.width);
-        letto2El.setAttribute("height", letto.height);
-        letto2El.setAttribute("depth", letto.depth);
-        setPos(letto2El, [0, 0, 0]);
-        
-        
-        setPos(letto2Wrapper, [0, 0, 2.3]);
-        letto2Wrapper.setAttribute("rotation", "0 90 0");
-
-        letto2Wrapper.appendChild(letto2El);
-        // sceneEl.appendChild(letto2Wrapper);
 
 
 
@@ -677,8 +645,10 @@ AFRAME.registerComponent('modify-materials', {
             obj.traverse(node => {
                 // console.log(node.material)
                 if (node.name.indexOf('M') !== -1) { 
+                    console.log(node.material)
+                    // node.material.map.image.set("#nuvola");
                     // node.material.map.repeat = "2 1 0";
-                    // node.material.color.set('#4c7a91');
+                    node.material.color.set('#ffffff');
                     // node.material.opacity = 0;
                 }
             });
