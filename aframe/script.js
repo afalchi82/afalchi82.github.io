@@ -1,9 +1,13 @@
+// import { room } from "const.js";
+
+
+
 const roomW = 3.73;
 const roomD = 3.73;
 
 const materials = {
-    mirtillo: 'src: #mirtillo; roughness: 1;',
-    olmo: 'src: #olmo; roughness: 1;'
+    col1: 'src: #papaya; roughness: 1;',
+    chiaro: 'src: #nuvola; roughness: 1;'
 }
 
 // class Maniglia {
@@ -12,15 +16,15 @@ const materials = {
 //     }
 // }
 
-function makeManiglia (sizeObj, materialStr, shadow = true) {
-    const manigliaEl = document.createElement('a-box');
-    manigliaEl.setAttribute('material', materialStr);
-    shadow && manigliaEl.setAttribute("shadow", "cast: true; receive: true");
-    manigliaEl.setAttribute("width", sizeObj.width);
-    manigliaEl.setAttribute("height", sizeObj.height);
-    manigliaEl.setAttribute("depth", sizeObj.depth);
+function makeBox (sizeObj, materialStr, shadow = true) {
+    const boxEl = document.createElement('a-box');
+    boxEl.setAttribute('material', materialStr);
+    shadow && boxEl.setAttribute("shadow", "cast: true; receive: true");
+    boxEl.setAttribute("width", sizeObj.width);
+    boxEl.setAttribute("height", sizeObj.height);
+    boxEl.setAttribute("depth", sizeObj.depth);
 
-    return manigliaEl;
+    return boxEl;
 }
 
 
@@ -208,7 +212,7 @@ AFRAME.registerComponent('scene-init', {
 
 
         const armadioEl = document.createElement('a-box');
-        armadioEl.setAttribute('material', 'src: #olmo; roughness: 1; repeat: 5 2');
+        armadioEl.setAttribute('material', materials.chiaro);
         armadioEl.setAttribute('color', 'white');
         ["width", "height", "depth"].forEach(p => {
             armadioEl.setAttribute(p, armadio[p]);
@@ -218,7 +222,7 @@ AFRAME.registerComponent('scene-init', {
         // ante h 100%
         for (let i=0; i<3; i++) {
             const antaWrapper = document.createElement('a-box');
-            antaWrapper.setAttribute('material', 'src: #olmo; roughness: 1;');
+            antaWrapper.setAttribute('material', materials.chiaro);
             antaWrapper.setAttribute("width", antaFull.width);
             antaWrapper.setAttribute("height", antaFull.height);
             antaWrapper.setAttribute("depth", antaFull.depth);
@@ -231,7 +235,7 @@ AFRAME.registerComponent('scene-init', {
         // ante h 60%
         for (let i=0; i<2; i++) {
             const antaWrapper = document.createElement('a-box');
-            antaWrapper.setAttribute('material', 'src: #olmo; roughness: 1;');
+            antaWrapper.setAttribute('material', materials.chiaro);
             antaWrapper.setAttribute("width", antaNotFull.width);
             antaWrapper.setAttribute("height", antaNotFull.height);
             antaWrapper.setAttribute("depth", antaNotFull.depth);
@@ -249,31 +253,31 @@ AFRAME.registerComponent('scene-init', {
             y: 1.2,
             z: armadio.depth + antaFull.depth
         };
-        const maniglia1El = makeManiglia(maniglia, materials.mirtillo);
+        const maniglia1El = makeBox(maniglia, materials.col1);
         setPos(maniglia1El, [
             antaFull.width - maniglia.width, 
             maniglia.y, 
             maniglia.z
         ]);
-        const maniglia2El = makeManiglia(maniglia, materials.mirtillo);
+        const maniglia2El = makeBox(maniglia, materials.col1);
         setPos(maniglia2El, [
             antaFull.width, 
             maniglia.y, 
             maniglia.z
         ]);
-        const maniglia3El = makeManiglia(maniglia, materials.mirtillo);
+        const maniglia3El = makeBox(maniglia, materials.col1);
         setPos(maniglia3El, [
             (antaFull.width * 3) - maniglia.width, 
             maniglia.y, 
             maniglia.z
         ]);
-        const maniglia4El = makeManiglia(maniglia, materials.mirtillo);
+        const maniglia4El = makeBox(maniglia, materials.col1);
         setPos(maniglia4El, [
             (antaFull.width * 4) - maniglia.width, 
             maniglia.y, 
             maniglia.z
         ]);
-        const maniglia5El = makeManiglia(maniglia, materials.mirtillo);
+        const maniglia5El = makeBox(maniglia, materials.col1);
         setPos(maniglia5El, [
             (antaFull.width * 4), 
             maniglia.y, 
@@ -290,7 +294,7 @@ AFRAME.registerComponent('scene-init', {
         // cassetti
         for (let i=0; i<2; i++) {
             const cassettoEl = document.createElement('a-box');
-            cassettoEl.setAttribute('material', materials.mirtillo);
+            cassettoEl.setAttribute('material', materials.col1);
             cassettoEl.setAttribute("width", cassetto.width);
             cassettoEl.setAttribute("height", cassetto.height);
             cassettoEl.setAttribute("depth", cassetto.depth);
@@ -308,19 +312,19 @@ AFRAME.registerComponent('scene-init', {
             depth: .02,
             z: armadio.depth + antaFull.depth
         };
-        const manigliaCass1El = makeManiglia(manigliaHor, materials.olmo);
+        const manigliaCass1El = makeBox(manigliaHor, materials.chiaro);
         setPos(manigliaCass1El, [
             (antaFull.width * 4) - (manigliaHor.width / 2), 
             cestone.height + cassetto.height * 2 - manigliaHor.height, 
             manigliaHor.z
         ]);
-        const manigliaCass2El = makeManiglia(manigliaHor, materials.olmo);
+        const manigliaCass2El = makeBox(manigliaHor, materials.chiaro);
         setPos(manigliaCass2El, [
             (antaFull.width * 4) - (manigliaHor.width / 2), 
             cestone.height + cassetto.height - manigliaHor.height, 
             manigliaHor.z
         ]);
-        const manigliaCass3El = makeManiglia(manigliaHor, materials.olmo);
+        const manigliaCass3El = makeBox(manigliaHor, materials.chiaro);
         setPos(manigliaCass3El, [
             (antaFull.width * 4) - (manigliaHor.width / 2), 
             cestone.height - manigliaHor.height, 
@@ -335,7 +339,7 @@ AFRAME.registerComponent('scene-init', {
 
         // cestone
         const cestoneEl = document.createElement('a-box');
-        cestoneEl.setAttribute('material', materials.mirtillo);
+        cestoneEl.setAttribute('material', materials.col1);
         cestoneEl.setAttribute("shadow", "cast: true; receive: true");
         cestoneEl.setAttribute("width", cestone.width);
         cestoneEl.setAttribute("height", cestone.height);
@@ -380,7 +384,7 @@ AFRAME.registerComponent('scene-init', {
         // cestoni
         for (let i=0; i<2; i++) {
             const cestoneEl = document.createElement('a-box');
-            cestoneEl.setAttribute('material', materials.mirtillo);
+            cestoneEl.setAttribute('material', materials.col1);
             cestoneEl.setAttribute("width", settimino.width);
             cestoneEl.setAttribute("height", cestone.height);
             cestoneEl.setAttribute("depth", cestone.depth);
@@ -394,7 +398,7 @@ AFRAME.registerComponent('scene-init', {
         // cassetti
         for (let i=0; i<3; i++) {
             const cassettoEl = document.createElement('a-box');
-            cassettoEl.setAttribute('material', materials.olmo);
+            cassettoEl.setAttribute('material', materials.chiaro);
             cassettoEl.setAttribute("width", settimino.width);
             cassettoEl.setAttribute("height", cassetto.height);
             cassettoEl.setAttribute("depth", cassetto.depth);
@@ -404,6 +408,53 @@ AFRAME.registerComponent('scene-init', {
             settiminoWrapper.appendChild(cassettoEl);
             setPos(cassettoEl, [0, (cestone.height * 2) + (cassetto.height * i), settimino.depth]);
         }
+
+        const manigliaSettimino = {
+            width: .1,
+            height: .05,
+            depth: .02,
+            x: (settimino.width / 2) - .05,
+            z: settimino.depth + cassetto.depth
+        };
+        const manigliaSettimino1El = makeBox(manigliaSettimino, materials.col1);
+        setPos(manigliaSettimino1El, [
+            manigliaSettimino.x,
+            (cestone.height * 2) + (cassetto.height * 3) - manigliaSettimino.height, 
+            manigliaSettimino.z
+        ]);
+        const manigliaSettimino2El = makeBox(manigliaSettimino, materials.col1);
+        setPos(manigliaSettimino2El, [
+            manigliaSettimino.x,
+            (cestone.height * 2) + cassetto.height, 
+            manigliaSettimino.z
+        ]);
+        const manigliaSettimino3El = makeBox(manigliaSettimino, materials.col1);
+        setPos(manigliaSettimino3El, [
+            manigliaSettimino.x,
+            (cestone.height * 2) + cassetto.height - manigliaSettimino.height, 
+            manigliaSettimino.z
+        ]);
+        const manigliaSettimino4El = makeBox(manigliaSettimino, materials.chiaro);
+        setPos(manigliaSettimino4El, [
+            manigliaSettimino.x,
+            (cestone.height * 2) - manigliaSettimino.height, 
+            manigliaSettimino.z
+        ]);
+        const manigliaSettimino5El = makeBox(manigliaSettimino, materials.chiaro);
+        setPos(manigliaSettimino5El, [
+            manigliaSettimino.x,
+            cestone.height - manigliaSettimino.height, 
+            manigliaSettimino.z
+        ]);
+
+        settiminoWrapper.appendChild(manigliaSettimino1El);
+        settiminoWrapper.appendChild(manigliaSettimino2El);
+        settiminoWrapper.appendChild(manigliaSettimino3El);
+        settiminoWrapper.appendChild(manigliaSettimino4El);
+        settiminoWrapper.appendChild(manigliaSettimino5El);
+
+
+
         
         setPos(settiminoWrapper, [ roomW, 0, 1]);        
         settiminoWrapper.setAttribute("rotation", "0 -90 0");
@@ -477,6 +528,13 @@ AFRAME.registerComponent('scene-init', {
         scrittoioEl.setAttribute("depth", scrittoio.depth);
         setPos(scrittoioEl, [0, scrittoio.y, 0]);
 
+        const ripianoScrivaniaEl = makeBox(
+            {width: scrittoio.width, height: scrittoio.height, depth: .3},
+            materials.chiaro
+        );
+        setPos(ripianoScrivaniaEl, [0, 1.2, 0]);
+        ponteWrapper.appendChild(ripianoScrivaniaEl);
+
         
         const ponteSide = {
             width: .03,
@@ -484,7 +542,7 @@ AFRAME.registerComponent('scene-init', {
             depth: .30
         };
         const ponteSxEl = document.createElement('a-box');
-        ponteSxEl.setAttribute('material', materials.olmo);
+        ponteSxEl.setAttribute('material', materials.chiaro);
         ponteSxEl.setAttribute("shadow", "cast: true; receive: true");
         ponteSxEl.setAttribute("width", ponteSide.width);
         ponteSxEl.setAttribute("height", ponteSide.height);
@@ -493,7 +551,7 @@ AFRAME.registerComponent('scene-init', {
         ponteWrapper.appendChild(ponteSxEl);
 
         const ponteDxEl = document.createElement('a-box');
-        ponteDxEl.setAttribute('material', materials.olmo);
+        ponteDxEl.setAttribute('material', materials.chiaro);
         ponteDxEl.setAttribute("shadow", "cast: true; receive: true");
         ponteDxEl.setAttribute("width", ponteSide.width);
         ponteDxEl.setAttribute("height", ponteSide.height);
@@ -506,7 +564,7 @@ AFRAME.registerComponent('scene-init', {
             height: .6
         };
         const ponteCassone = document.createElement('a-box');
-        ponteCassone.setAttribute('material', materials.olmo);
+        ponteCassone.setAttribute('material', materials.chiaro);
         ponteCassone.setAttribute("shadow", "cast: true; receive: true");
         ponteCassone.setAttribute("width", scrittoio.width);
         ponteCassone.setAttribute("height", cassone.height);
