@@ -75,35 +75,35 @@ AFRAME.registerComponent('scene-init', {
         ---------------------------------------------------- */
         const lampadarioWrapper = document.createElement('a-entity');
         const lightEl = document.createElement('a-light');
-        lightEl.setAttribute('id', "lampadario");
+        lampadarioWrapper.setAttribute('id', "lampadario");
         lightEl.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .40,
-            penumbra: .6,  
+            intensity: .5,
+            penumbra: 1,  
             castShadow: true
         });
         
         setPos(lampadarioWrapper, [
             roomW / 2,
-            2.8,
+            3,
             roomD / 2
         ]);
-        lampadarioWrapper.setAttribute('rotation', "90 0 0");
+        lampadarioWrapper.setAttribute('rotation', "-90 0 0");
         lampadarioWrapper.appendChild(lightEl);
         sceneEl.appendChild(lampadarioWrapper);
 
 
         /* ----------------------------------------------------
-            luce a
+            luce finestra
         ---------------------------------------------------- */
         const lightWindow = document.createElement('a-entity');
         lightWindow.setAttribute('id', "luce-finestra");
         lightWindow.setAttribute('light', {
             angle: 100,
             type: "spot",
-            intensity: .76,
-            penumbra: .8,  
+            intensity: .8,
+            penumbra: 1,  
             castShadow: true
         });
         setPos(lightWindow, [ roomW - .7, 2, roomD]);
@@ -111,15 +111,17 @@ AFRAME.registerComponent('scene-init', {
 
 
         /* ----------------------------------------------------
-            luce ambientale
+            luce porta
         ---------------------------------------------------- */
         const lightDoor = document.createElement('a-entity');
-        lightDoor.setAttribute('id', "luce-ambient");
+        lightDoor.setAttribute('id', "luce-porta");
+        lightDoor.setAttribute('rotation', "0 -180 0");
         lightDoor.setAttribute('light', {
-            type: "ambient",
-            intensity: .2
+            type: "spot",
+            intensity: 1,
+            penumbra: 1,  
         });
-        setPos(lightDoor, [ roomW - .45, 1.5, roomD / 2]);
+        setPos(lightDoor, [ roomW - .45, 1.5, 0]);
         sceneEl.appendChild(lightDoor);
 
 
@@ -148,7 +150,7 @@ AFRAME.registerComponent('scene-init', {
         floorEl.setAttribute("width", roomW);
         floorEl.setAttribute("height", ".1");
         floorEl.setAttribute("depth", roomD);
-        floorEl.setAttribute('material', 'src: #parquet; roughness: .1; side: double');
+        floorEl.setAttribute('material', 'src: #parquet; roughness: .5; side: double');
         floorEl.setAttribute("shadow", "cast: false; receive: true");
         setPos(floorEl, [0, -.1, 0]);
         sceneEl.appendChild(floorEl);
