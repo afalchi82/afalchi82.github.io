@@ -7,32 +7,31 @@
     <meta name="description"
         content="Hello, WebVR! • A-Frame" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/script.js" type="module"></script>  
 </head>
 
 <body>
 
-    <script src="script.js" type="module"></script>   
+     
 
 
     <a-scene scene-init renderer="antialias: true" shadow="type: pcfsoft">
 
         <a-assets>
-            <img id="parquet"
-                src="assets/parquet.png" />
-            <img id="stucco"
-                src="assets/stucco.jpg" />
-            <img id="stucco-nrm"
-                src="assets/stucco-nrm.jpg" />
+            <img id="parquet" src="assets/parquet.png" />
+            <img id="stucco" src="assets/stucco.jpg" />
+            <img id="stucco-nrm" src="assets/stucco-nrm.jpg" />
             <img id="flora" src="assets/flora.png">
             <img id="mandorlo" src="assets/mandorlo.jpg">
             <img id="zenzero" src="assets/zenzero.jpg">
+            <img id="denim" src="assets/denim_s.jpg">
             <img id="mirtillo" src="assets/mirtillo_s.jpg">
             <img id="nuvola" src="assets/nuvola_s.jpg">
             <img id="papaya" src="assets/papaya.jpg">
             <img id="olmo" src="assets/olmo.jpg">
             <a-asset-item id="settimino" src="assets/COM 6 CASS 45 DM24351.gltf"></a-asset-item>
             <a-asset-item id="letto" src="assets/ie104y3k5uuj.gltf"></a-asset-item>
-            <a-asset-item id="chair" src="assets/chair.gltf"></a-asset-item>
+            <a-asset-item id="chair" src="assets/nina/chair.gltf"></a-asset-item>
         </a-assets>
 
         <a-marker-camera preset='hiro'></a-marker-camera>
@@ -55,10 +54,22 @@
             shadow="cast: true; receive: true"
         ></a-entity>
 
+        <a-entity geometry="depth: 0.8; height: 0.18; width: 1.9"
+            position="1 .437 1.86"
+            material="color: #eaeeef"
+            shadow="cast: true; receive: true"
+        ></a-entity>
+
+        <a-entity geometry="depth: 0.8; height: 0.18; width: 1.9"
+            position="1 .437 3.258" 
+            material="color: #eaeeef"
+            shadow="cast: true; receive: true"
+        ></a-entity>
+
+        <!-- <a-entity id="test" geometry="primitive: example; vertices: 1 1 -3, 3 1 -3, 2 2 -3, 1 2 -3"></a-entity> -->
+
         <!-- <a-entity gltf-model="#chair"
-            modify-materials
             id="chair   "
-            scale=".001 .001 .001"
             position="0 0 2.3"
             shadow="cast: true; receive: true"
         ></a-entity> -->

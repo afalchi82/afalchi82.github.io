@@ -1,36 +1,17 @@
 import { 
     makeBox,
     materials,
-    room
-} from "./const.js";
+    room,
+    setPos
+} from "./utils.js";
+import { comodinoWrapper } from "./comodino.js";
+import { scrivaniaWrapper } from "./scrivania.js";
 
 
 const roomW = room.width;
 const roomD = room.depth;
 
 
-
-function setPos (el, position) {
-
-    const w = el?.getAttribute("width") || 0;
-    const h = el?.getAttribute("height") || 0;
-    const d = el?.getAttribute("depth") || 0;
-
-    
-    const [x, y, z] = position;
-
-    el?.object3D.position.set(
-        x + (w/2),
-        y + (h/2),
-        z + (d/2)
-    );
-}
-
-
-function o (val) {
-    return val * .5;
-
-}
 
 
 AFRAME.registerComponent('letto', {
@@ -402,19 +383,19 @@ AFRAME.registerComponent('scene-init', {
         const manigliaSettimino1El = makeBox(manigliaSettimino, materials.col1);
         setPos(manigliaSettimino1El, [
             manigliaSettimino.x,
-            (cestone.height * 2) + (cassetto.height * 3) - manigliaSettimino.height, 
+            (cestone.height * 2) + (cassetto.height * 2), 
             manigliaSettimino.z
         ]);
         const manigliaSettimino2El = makeBox(manigliaSettimino, materials.col1);
         setPos(manigliaSettimino2El, [
             manigliaSettimino.x,
-            (cestone.height * 2) + cassetto.height, 
+            (cestone.height * 2) + (cassetto.height * 2) - manigliaSettimino.height,  
             manigliaSettimino.z
         ]);
         const manigliaSettimino3El = makeBox(manigliaSettimino, materials.col1);
         setPos(manigliaSettimino3El, [
             manigliaSettimino.x,
-            (cestone.height * 2) + cassetto.height - manigliaSettimino.height, 
+            (cestone.height * 2), 
             manigliaSettimino.z
         ]);
         const manigliaSettimino4El = makeBox(manigliaSettimino, materials.chiaro);
@@ -447,44 +428,8 @@ AFRAME.registerComponent('scene-init', {
         
 
         /* ----------------------------------------------------
-            comodino
+            Comodino
         ---------------------------------------------------- */
-        const comodinoWrapper = document.createElement('a-entity');
-        comodinoWrapper.setAttribute("id", "comodino");
-        
-
-        const comodino = {
-            width: .45,
-            height: (cassetto.height * 2),
-            depth: .482
-        };
-        const comodinoEl = document.createElement('a-box');
-        comodinoEl.setAttribute('material', materials.col1);
-        comodinoEl.setAttribute("shadow", "cast: true; receive: true");
-        comodinoEl.setAttribute("width", comodino.width);
-        comodinoEl.setAttribute("height", comodino.height);
-        comodinoEl.setAttribute("depth", comodino.depth);
-        setPos(comodinoEl, [0, 0, 0]);
-        
-
-        // cassetti
-        for (let i=0; i<2; i++) {
-            const cassettoEl = document.createElement('a-box');
-            cassettoEl.setAttribute('material', materials.col1);
-            cassettoEl.setAttribute("width", comodino.width);
-            cassettoEl.setAttribute("height", cassetto.height);
-            cassettoEl.setAttribute("depth", cassetto.depth);
-            cassettoEl.setAttribute("shadow", "cast: true; receive: true");
-            cassettoEl.object3D.scale.set(.99, .99, 1);
-            
-            comodinoWrapper.appendChild(cassettoEl);
-            setPos(cassettoEl, [0, cassetto.height * i, comodino.depth]);
-        }
-        
-        setPos(comodinoWrapper, [ 0, 0, 2.8]);        
-        comodinoWrapper.setAttribute("rotation", "0 90 0");
-
-        comodinoWrapper.appendChild(comodinoEl);
         sceneEl.appendChild(comodinoWrapper);
 
 
@@ -492,107 +437,6 @@ AFRAME.registerComponent('scene-init', {
         /* ----------------------------------------------------
             scrivania
         ---------------------------------------------------- */
-        const scrivaniaWrapper = document.createElement('a-entity');
-        const ponteWrapper = document.createElement('a-entity');
-    
-        const scrittoio = {
-            width: 1.5,
-            height: .03,
-            depth: .60,
-            x: 0,
-            y: .63,
-            z: 0
-        };
-        const scrittoioEl = document.createElement('a-box');
-        scrittoioEl.setAttribute('material', 'src: #mandorlo; roughness: 1; repeat: 5 2');
-        scrittoioEl.setAttribute("shadow", "cast: true; receive: true");
-        scrittoioEl.setAttribute("width", scrittoio.width);
-        scrittoioEl.setAttribute("height", scrittoio.height);
-        scrittoioEl.setAttribute("depth", scrittoio.depth);
-        setPos(scrittoioEl, [0, scrittoio.y, 0]);
-
-        const ripianoScrivaniaEl = makeBox(
-            {width: scrittoio.width, height: scrittoio.height, depth: .3},
-            materials.chiaro
-        );
-        setPos(ripianoScrivaniaEl, [0, 1.2, 0]);
-        ponteWrapper.appendChild(ripianoScrivaniaEl);
-
-        
-        const ponteSide = {
-            width: .03,
-            height: 2.2,
-            depth: .30
-        };
-        const ponteSxEl = document.createElement('a-box');
-        ponteSxEl.setAttribute('material', materials.chiaro);
-        ponteSxEl.setAttribute("shadow", "cast: true; receive: true");
-        ponteSxEl.setAttribute("width", ponteSide.width);
-        ponteSxEl.setAttribute("height", ponteSide.height);
-        ponteSxEl.setAttribute("depth", ponteSide.depth);
-        setPos(ponteSxEl, [-ponteSide.width, 0, 0]);
-        ponteWrapper.appendChild(ponteSxEl);
-
-        const ponteDxEl = document.createElement('a-box');
-        ponteDxEl.setAttribute('material', materials.chiaro);
-        ponteDxEl.setAttribute("shadow", "cast: true; receive: true");
-        ponteDxEl.setAttribute("width", ponteSide.width);
-        ponteDxEl.setAttribute("height", ponteSide.height);
-        ponteDxEl.setAttribute("depth", ponteSide.depth);
-        setPos(ponteDxEl, [scrittoio.width, 0, 0]);
-        ponteWrapper.appendChild(ponteDxEl);
-
-        // cassone
-        const cassone = {
-            height: .6
-        };
-        const ponteCassone = document.createElement('a-box');
-        ponteCassone.setAttribute('material', materials.chiaro);
-        ponteCassone.setAttribute("shadow", "cast: true; receive: true");
-        ponteCassone.setAttribute("width", scrittoio.width);
-        ponteCassone.setAttribute("height", cassone.height);
-        ponteCassone.setAttribute("depth", ponteSide.depth);
-        setPos(ponteCassone, [0, ponteSide.height - cassone.height, 0]);
-        ponteWrapper.appendChild(ponteCassone);
-
-        // maniglie
-        const manigliaScrivania = {
-            width: .05,
-            height: .1,
-            depth: .02,
-            y: ponteSide.height - cassone.height,
-            z: ponteSide.depth
-        };
-        const manigliaScrivania1El = makeBox(manigliaScrivania, materials.col1);
-        setPos(manigliaScrivania1El, [
-            scrittoio.width / 3 - manigliaScrivania.width,
-            manigliaScrivania.y, 
-            manigliaScrivania.z
-        ]);
-        const manigliaScrivania2El = makeBox(manigliaScrivania, materials.col1);
-        setPos(manigliaScrivania2El, [
-            scrittoio.width / 3,
-            manigliaScrivania.y,
-            manigliaScrivania.z
-        ]);
-        const manigliaScrivania3El = makeBox(manigliaScrivania, materials.col1);
-        setPos(manigliaScrivania3El, [
-            (scrittoio.width / 3) * 2,
-            manigliaScrivania.y,
-            manigliaScrivania.z
-        ]);
-
-        scrivaniaWrapper.appendChild(manigliaScrivania1El);
-        scrivaniaWrapper.appendChild(manigliaScrivania2El);
-        scrivaniaWrapper.appendChild(manigliaScrivania3El);
-        
-       
-        // append
-        setPos(scrivaniaWrapper, [roomW, 0, roomD - (scrittoio.width + ponteSide.width)]); 
-        scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
-
-        scrivaniaWrapper.appendChild(ponteWrapper);
-        scrivaniaWrapper.appendChild(scrittoioEl);
         sceneEl.appendChild(scrivaniaWrapper);
 
 
@@ -658,4 +502,34 @@ AFRAME.registerComponent('modify-materials', {
     },
 
     multiple: true,
+});
+
+
+AFRAME.registerGeometry('example', {
+    schema: {
+        vertices: {
+            default: ['-10 10 0', '-10 -10 0', '10 -10 0', '10 -10 0'],
+        }
+    },
+
+    init: function (data) {
+        debugger; 
+
+
+
+        var geometry = new THREE.BufferGeometry();
+
+
+        geometry.vertices = data.vertices.map(function (vertex) {
+            var points = vertex.split(' ').map(function (x) { return parseInt(x); });
+            return new THREE.Vector3(points[0], points[1], points[2]);
+        });
+        geometry.computeBoundingBox();
+        geometry.faces.push(new THREE.Face3(0, 1, 2));
+        geometry.faces.push(new THREE.Face3(0, 2, 3));
+        geometry.mergeVertices();
+        geometry.computeFaceNormals();
+        geometry.computeVertexNormals();
+        this.geometry = geometry;
+    }
 });

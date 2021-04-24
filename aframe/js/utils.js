@@ -23,3 +23,20 @@ export function makeBox (sizeObj, materialStr, shadow = true) {
 
     return boxEl;
 };
+
+
+export function setPos (el, position) {
+
+    const w = el?.getAttribute("width") || 0;
+    const h = el?.getAttribute("height") || 0;
+    const d = el?.getAttribute("depth") || 0;
+
+    
+    const [x, y, z] = position;
+
+    el?.object3D.position.set(
+        x + (w/2),
+        y + (h/2),
+        z + (d/2)
+    );
+}
