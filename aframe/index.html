@@ -14,7 +14,7 @@
     <script src="script.js" type="module"></script>   
 
 
-    <a-scene scene-init antialias="true" shadow="type: pcfsoft">
+    <a-scene scene-init renderer="antialias: true" shadow="type: pcfsoft">
 
         <a-assets>
             <img id="parquet"
@@ -23,6 +23,7 @@
                 src="assets/stucco.jpg" />
             <img id="stucco-nrm"
                 src="assets/stucco-nrm.jpg" />
+            <img id="flora" src="assets/flora.png">
             <img id="mandorlo" src="assets/mandorlo.jpg">
             <img id="zenzero" src="assets/zenzero.jpg">
             <img id="mirtillo" src="assets/mirtillo_s.jpg">
@@ -33,6 +34,8 @@
             <a-asset-item id="letto" src="assets/ie104y3k5uuj.gltf"></a-asset-item>
             <a-asset-item id="chair" src="assets/chair.gltf"></a-asset-item>
         </a-assets>
+
+        <a-marker-camera preset='hiro'></a-marker-camera>
 
         <a-sky color="#aaaaef"></a-sky>
 

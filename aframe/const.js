@@ -1,5 +1,5 @@
 export const materials = {
-    col1: 'src: #papaya; roughness: .45;',
+    col1: 'src: #papaya; roughness: .1;',
     col2: 'src: #zenzero; roughness: 1;',
     chiaro: 'src: #nuvola; roughness: .45;'
 };
