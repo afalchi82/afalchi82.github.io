@@ -1,3 +1,22 @@
+const roomW = 3.73;
+const roomD = 3.73;
+
+// class Maniglia {
+//     constructor(sizeObj) {
+//         this.width
+//     }
+// }
+
+function makeManiglia (sizeObj, materialStr, shadow = true) {
+    const manigliaEl = document.createElement('a-box');
+    manigliaEl.setAttribute('material', materialStr);
+    shadow && manigliaEl.setAttribute("shadow", "cast: true; receive: true");
+    manigliaEl.setAttribute("width", sizeObj.width);
+    manigliaEl.setAttribute("height", sizeObj.height);
+    manigliaEl.setAttribute("depth", sizeObj.depth);
+
+    return manigliaEl;
+}
 
 
 function setPos (el, position) {
@@ -35,8 +54,7 @@ AFRAME.registerComponent('letto', {
 
 AFRAME.registerComponent('scene-init', {
     init () {
-        const roomW = 3.73;
-        const roomD = 3.73;
+        
 
 
 
@@ -107,14 +125,10 @@ AFRAME.registerComponent('scene-init', {
         const lightDoor = document.createElement('a-entity');
         lightDoor.setAttribute('id', "luce-ambient");
         lightDoor.setAttribute('light', {
-            angle: 120,
             type: "ambient",
-            intensity: .16,
-            penumbra: .8,  
-            castShadow: true
+            intensity: .3
         });
-        lightDoor.setAttribute('rotation', "-180");
-        setPos(lightDoor, [ roomW - .45, 1.5, .1]);
+        setPos(lightDoor, [ roomW - .45, 1.5, roomD / 2]);
         sceneEl.appendChild(lightDoor);
 
 
@@ -248,6 +262,55 @@ AFRAME.registerComponent('scene-init', {
         
         armadioWrapper.appendChild(cestoneEl);
 
+
+
+        // maniglie
+        const maniglia = {
+            width: .05,
+            height: .1,
+            depth: .02,
+            y: 1.2,
+            z: armadio.depth + antaFull.depth
+        };
+        const maniglia1El = makeManiglia(maniglia, 'src: #mirtillo; roughness: 1;');
+        setPos(maniglia1El, [
+            antaFull.width - maniglia.width, 
+            maniglia.y, 
+            maniglia.z
+        ]);
+        const maniglia2El = makeManiglia(maniglia, 'src: #mirtillo; roughness: 1;');
+        setPos(maniglia2El, [
+            antaFull.width, 
+            maniglia.y, 
+            maniglia.z
+        ]);
+        const maniglia3El = makeManiglia(maniglia, 'src: #mirtillo; roughness: 1;');
+        setPos(maniglia3El, [
+            (antaFull.width * 3) - maniglia.width, 
+            maniglia.y, 
+            maniglia.z
+        ]);
+        const maniglia4El = makeManiglia(maniglia, 'src: #mirtillo; roughness: 1;');
+        setPos(maniglia4El, [
+            (antaFull.width * 4) - maniglia.width, 
+            maniglia.y, 
+            maniglia.z
+        ]);
+        const maniglia5El = makeManiglia(maniglia, 'src: #mirtillo; roughness: 1;');
+        setPos(maniglia5El, [
+            (antaFull.width * 4), 
+            maniglia.y, 
+            maniglia.z
+        ]);
+
+        armadioWrapper.appendChild(maniglia1El);
+        armadioWrapper.appendChild(maniglia2El);
+        armadioWrapper.appendChild(maniglia3El);
+        armadioWrapper.appendChild(maniglia4El);
+        armadioWrapper.appendChild(maniglia5El);
+
+
+        // append 
         armadioWrapper.appendChild(armadioEl);
         sceneEl.appendChild(armadioWrapper);
 
@@ -514,7 +577,7 @@ AFRAME.registerComponent('modify-materials', {
             
 
             obj.traverse(node => {
-                console.log(node.material)
+                // console.log(node.material)
                 if (node.name.indexOf('M') !== -1) { 
                     // node.material.map.repeat = "2 1 0";
                     // node.material.color.set('#4c7a91');
