@@ -162,7 +162,7 @@ ponteWrapper.appendChild(ponteCassone);
 setPos(scrivaniaWrapper, [
     room.width, 
     0, 
-    room.depth - (scrittoio.width + ponteSide.width) - .45
+    room.depth - (scrittoio.width) - .45
 ]); 
 scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
 

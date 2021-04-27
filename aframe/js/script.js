@@ -45,7 +45,7 @@ AFRAME.registerComponent('scene-init', {
         
 
         const cameraEl = document.createElement('a-camera');
-        cameraEl.setAttribute("wasd-controls", "acceleration: 40");
+        cameraEl.setAttribute("wasd-controls", "acceleration: 20");
         cameraEl.setAttribute("fov", "60");
         setPos(cameraEl, [0, 1.4, 0]);
 
@@ -497,6 +497,25 @@ AFRAME.registerComponent('scene-init', {
         colonnaWrapper.setAttribute("rotation", "0 -90 0");
         sceneEl.appendChild(colonnaWrapper);
 
+        const fianco2 = makeWrappedBox(
+            new Size(.03, room.height, .3),
+            materials.col1
+        );
+        fianco2.setAttribute("id", "fianco2");
+        fianco2.setAttribute("position", `${room.width}, 0, 1.75`);
+        fianco2.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(fianco2);
+
+
+        const mensolona = makeWrappedBox(
+            new Size(1.5, .03, .3),
+            materials.col1
+        );
+        mensolona.setAttribute("id", "mensolona");
+        mensolona.setAttribute("position", `${room.width}, 2.27, 1.77`);
+        mensolona.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(mensolona);
+
 
         
 
@@ -504,7 +523,7 @@ AFRAME.registerComponent('scene-init', {
         /* ----------------------------------------------------
             blocchi
         ---------------------------------------------------- */
-        const bloccoSize = new Size(.75, .3, .3);
+        const bloccoSize = new Size(.75, .6, .3);
         const blocco1el = makeWrappedBox(
             bloccoSize,
             materials.col1
