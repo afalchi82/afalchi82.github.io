@@ -6,6 +6,7 @@ import {
     setPos,
     Size
 } from "./utils.js";
+import { colonnaWrapper } from "./colonna.js";
 import { comodinoWrapper } from "./comodino.js";
 import { scrivaniaWrapper } from "./scrivania.js";
 import { mensolaWrapper } from "./mensola.js";
@@ -119,10 +120,10 @@ AFRAME.registerComponent('scene-init', {
         roomEl.setAttribute('material', {
             src: "#stucco", 
             normalMap: "#stucco-nrm", 
-            normalTextureRepeat: "1 1", 
-            normalScale: "-.1 -.1",
-            repeat: "1 1", 
-            roughness: .9,
+            normalTextureRepeat: "2 2", 
+            normalScale: "-.01 -.01",
+            repeat: "2 2", 
+            roughness: .99,
             side: "back"
         });
         roomEl.object3D.scale.set(-1, 1, 1);
@@ -487,14 +488,14 @@ AFRAME.registerComponent('scene-init', {
             Colonna
         ---------------------------------------------------- */
         const colonnaSize = new Size(.45, 2.1, .4);
-        const colonna = makeWrappedBox(
-            colonnaSize,
-            materials.chiaro
-        );
-        colonna.setAttribute("id", `colonna`);
-        colonna.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width}`);
-        colonna.setAttribute("rotation", "0 -90 0");
-        sceneEl.appendChild(colonna);
+        // const colonna = makeWrappedBox(
+        //     colonnaSize,
+        //     materials.chiaro
+        // );
+        // colonna.setAttribute("id", `colonna`);
+        colonnaWrapper.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width}`);
+        colonnaWrapper.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(colonnaWrapper);
 
 
         
@@ -596,6 +597,28 @@ AFRAME.registerComponent('modify-materials', {
     multiple: true,
 });
 
+AFRAME.registerGeometry('example1', {
+    schema: {
+        vertices: {
+            default: ['-10 10 0', '-10 -10 0', '10 -10 0'],
+        }
+    },
+
+    init: function (data) {
+        var geometry = new THREE.BufferGeometry();
+        geometry.vertices = data.vertices.map(function (vertex) {
+            var points = vertex.split(' ').map(function (x) { return parseInt(x); });
+            return new THREE.Vector3(points[0], points[1], points[2]);
+        });
+        geometry.computeBoundingBox();
+        geometry.faces.push(new THREE.Face3(0, 1, 2));
+        geometry.mergeVertices();
+        geometry.computeFaceNormals();
+        geometry.computeVertexNormals();
+        this.geometry = geometry;
+    }
+});
+
 
 AFRAME.registerGeometry('example', {
     schema: {
@@ -607,17 +630,29 @@ AFRAME.registerGeometry('example', {
     init: function (data) {
         var geometry = new THREE.BufferGeometry();
 
+        const vertices = new Float32Array( [
+            -1.0, -1.0,  1.0,
+             1.0, -1.0,  1.0,
+             1.0,  1.0,  1.0,
+        
+             1.0,  1.0,  1.0,
+            -1.0,  1.0,  1.0,
+            -1.0, -1.0,  1.0
+        ] );
 
-        geometry.vertices = data.vertices.map(function (vertex) {
-            var points = vertex.split(' ').map(function (x) { return parseInt(x); });
-            return new THREE.Vector3(points[0], points[1], points[2]);
-        });
-        geometry.computeBoundingBox();
-        geometry.faces.push(new THREE.Face3(0, 1, 2));
-        geometry.faces.push(new THREE.Face3(0, 2, 3));
-        geometry.mergeVertices();
-        geometry.computeFaceNormals();
-        geometry.computeVertexNormals();
+        geometry.setAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+
+
+        // geometry.vertices = data.vertices.map(function (vertex) {
+        //     var points = vertex.split(' ').map(function (x) { return parseInt(x); });
+        //     return new THREE.Vector3(points[0], points[1], points[2]);
+        // });
+        // geometry.computeBoundingBox();
+        // geometry.faces.push(new THREE.Face3(0, 1, 2));
+        // geometry.faces.push(new THREE.Face3(0, 2, 3));
+        // geometry.mergeVertices();
+        // geometry.computeFaceNormals();
+        // geometry.computeVertexNormals();
         this.geometry = geometry;
     }
 });
