@@ -1,6 +1,6 @@
 export const materials = {
     col1: 'src: #mirtillo; roughness: .1;',
-    col2: 'src: #zenzero; roughness: 1;',
+    col2: 'src: #zenzero; roughness: 1;', 
     chiaro: 'src: #nuvola; roughness: .45;'
 };
 

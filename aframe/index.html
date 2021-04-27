@@ -15,7 +15,7 @@
      
 
 
-    <a-scene scene-init renderer="antialias: true" shadow="type: pcfsoft">
+    <a-scene scene-init renderer="antialias: true; colorManagement: true; physicallyCorrectLights:true;" shadow="type: pcfsoft">
 
         <a-assets>
             <img id="parquet" src="assets/parquet.png" />
@@ -66,13 +66,15 @@
             shadow="cast: true; receive: true"
         ></a-entity>
 
-        <a-entity 
+        <!-- <a-entity 
             id="finestra"
             geometry="depth: 0.1; height: 1.5; width: 1.5"
             position="2.41, 1.61281, 3.76592"
         ></a-entity>
 
-        <!-- <a-entity id="test" geometry="primitive: example;"></a-entity> -->
+
+
+         -->
 
         <!-- <a-entity gltf-model="#chair"
             id="chair   "

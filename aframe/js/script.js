@@ -6,6 +6,7 @@ import {
     setPos,
     Size
 } from "./utils.js";
+import { armadioWrapper } from "./armadio.js";
 import { colonnaWrapper } from "./colonna.js";
 import { comodinoWrapper } from "./comodino.js";
 import { scrivaniaWrapper } from "./scrivania.js";
@@ -14,17 +15,96 @@ import { mensolaWrapper } from "./mensola.js";
 
 
 
+AFRAME.registerGeometry('muro-finestra', {
+    init: function (data) {
+
+        const finestraSize = new Size(1.5, 1.5, .3);
+        const finestraX = room.width - .5 - finestraSize.width;
+
+        const muro = new THREE.Shape();
+
+        muro.moveTo( 0, 0 );
+        muro.lineTo( 0, room.height );
+        muro.lineTo( room.width, room.height );
+        muro.lineTo( room.width, 0 );
+
+        const hole = new THREE.Shape();
+        hole.moveTo( finestraX, .95 );
+        hole.lineTo( finestraX, .95 + finestraSize.height );
+        hole.lineTo( finestraX + finestraSize.width, .95 + finestraSize.height );
+        hole.lineTo( finestraX + finestraSize.width, .95 );
 
 
+        muro.holes.push(hole);
 
-AFRAME.registerComponent('letto', {
-    schema: {
-        width: {type: "number", default: .8},
-        height: {type: "number", default: .2},
-        depth: {type: "number", default: 1.9},
+        const extrudeSettings = { depth: .2, bevelEnabled: true, bevelSegments: 1, steps: 1, bevelSize: 0, bevelThickness: 0 };
+
+        const geometry = new THREE.ExtrudeGeometry( muro, extrudeSettings );
+        geometry.computeFaceNormals();
+
+        this.geometry = geometry;
+
     }
 });
 
+
+AFRAME.registerGeometry('muro-porta', {
+    init: function () {
+
+        const portaSize = new Size(.83, 2.1, .3);
+        const portaX = room.width - 1;
+
+        const muro = new THREE.Shape();
+
+        muro.moveTo( 0, 0 );
+        muro.lineTo( 0, room.height );
+        muro.lineTo( room.width, room.height );
+        muro.lineTo( room.width, 0 );
+
+        const hole = new THREE.Shape();
+        hole.moveTo( portaX, 0 );
+        hole.lineTo( portaX, portaSize.height );
+        hole.lineTo( portaX + portaSize.width, portaSize.height );
+        hole.lineTo( portaX + portaSize.width, 0 );
+
+
+        muro.holes.push(hole);
+
+        const extrudeSettings = { depth: .2, bevelEnabled: true, bevelSegments: 1, steps: 1, bevelSize: 0, bevelThickness: 0 };
+
+        const geometry = new THREE.ExtrudeGeometry( muro, extrudeSettings );
+        geometry.computeFaceNormals();
+
+        this.geometry = geometry;
+
+    }
+});
+
+
+
+AFRAME.registerGeometry('maniglia-triangolo', {
+    schema: {
+        depth: {default: 1, min: 0},
+        height: {default: 1, min: 0},
+        width: {default: 1, min: 0}
+    },
+    init: function (data) {
+
+        const shape = new THREE.Shape();
+        shape.moveTo( 0, .05 );
+        shape.lineTo( .05, 0 );
+        shape.lineTo( 0, -.05 );
+        shape.lineTo( 0, .05 );
+        
+        
+        const extrudeSettings = { depth: .01, bevelEnabled: true, bevelSegments: 1, steps: 1, bevelSize: 0, bevelThickness: 0 };
+
+        const geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
+
+        this.geometry = geometry;
+
+    }
+});
 
 
 AFRAME.registerComponent('scene-init', {
@@ -37,6 +117,9 @@ AFRAME.registerComponent('scene-init', {
 
         sceneEl.setAttribute("color", "#cccccc")
 
+
+
+        
 
         /* ----------------------------------------------------
             camera
@@ -66,14 +149,14 @@ AFRAME.registerComponent('scene-init', {
         lightEl.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .7,
+            intensity: 7,
             penumbra: 0,  
             castShadow: true
         });
         
         setPos(lampadarioWrapper, [
             room.width / 2,
-            3,
+            2.667,
             room.depth / 2
         ]);
         lampadarioWrapper.setAttribute('rotation', "-90 0 0");
@@ -89,11 +172,11 @@ AFRAME.registerComponent('scene-init', {
         lightWindow.setAttribute('light', {
             angle: 100,
             type: "spot",
-            intensity: .8,
+            intensity: 4,
             penumbra: 1,  
             castShadow: true
         });
-        setPos(lightWindow, [ room.width - .7, 2, room.depth]);
+        setPos(lightWindow, [ room.width - 1.5, 2, 5]);
         sceneEl.appendChild(lightWindow);
 
 
@@ -131,7 +214,59 @@ AFRAME.registerComponent('scene-init', {
         });
         roomEl.object3D.scale.set(-1, 1, 1);
         roomEl.setAttribute("shadow", "receive: true");
-        sceneEl.appendChild(roomEl);
+        // sceneEl.appendChild(roomEl);
+
+        const muroFinestra = document.createElement('a-entity');
+        muroFinestra.setAttribute("id", "muro-finestra");
+        muroFinestra.setAttribute("geometry", "primitive: muro-finestra");
+        muroFinestra.setAttribute("position", `0, 0, ${room.depth}`);
+        muroFinestra.setAttribute("material", {
+            src: "#stucco", 
+            normalMap: "#stucco-nrm", 
+            normalTextureRepeat: "2 2", 
+            normalScale: "-.01 -.01",
+            repeat: "2 2", 
+            roughness: .99,
+            side: "double"
+        });
+        sceneEl.appendChild(muroFinestra);
+
+        const muroPorta = document.createElement('a-entity');
+        muroPorta.setAttribute("id", "muro-porta");
+        muroPorta.setAttribute("geometry", "primitive: muro-porta");
+        muroPorta.setAttribute("position", "0, -.001, 0");
+        muroPorta.setAttribute("material", {
+            src: "#stucco", 
+            normalMap: "#stucco-nrm", 
+            normalTextureRepeat: "2 2", 
+            normalScale: "-.01 -.01",
+            repeat: "2 2", 
+            roughness: .99,
+            side: "double"
+        });
+        sceneEl.appendChild(muroPorta);
+
+
+        const muroScrivania = makeWrappedBox(
+            new Size(.2, room.height, room.depth),
+            "src: #stucco"
+        );
+        setPos(muroScrivania, [room.width, 0, 0]);
+        sceneEl.appendChild(muroScrivania);
+
+        const muroletti = makeWrappedBox(
+            new Size(.2, room.height, room.depth),
+            "src: #stucco; color: #50a7d3"
+        );
+        setPos(muroletti, [-.2, 0, 0]);
+        sceneEl.appendChild(muroletti);
+
+        const soffitto = makeWrappedBox(
+            new Size(room.width, .2, room.depth),
+            "src: #stucco; roughness: .5; side: double"
+        );
+        setPos(soffitto, [0, room.height, 0]);
+        sceneEl.appendChild(soffitto);
 
 
         /* ----------------------------------------------------
@@ -146,7 +281,7 @@ AFRAME.registerComponent('scene-init', {
         serrandaEl.setAttribute("rotation", `0 180 0`);
         serrandaEl.setAttribute("position", `${room.width - .5}, ${room.height - serranda.height}, ${room.depth}`);
         sceneEl.appendChild(serrandaEl);
-
+ 
 
 
         /* ----------------------------------------------------
@@ -161,189 +296,11 @@ AFRAME.registerComponent('scene-init', {
         setPos(floorEl, [0, -.001, 0]);
         sceneEl.appendChild(floorEl);
 
-       
 
 
         /* ----------------------------------------------------
             armadio
         ---------------------------------------------------- */
-        const armadio = {
-            width: 2.35,
-            height: 2.6,
-            depth: .6
-        };        
-
-        const antaFull = {
-            width: armadio.width / 5,
-            height: armadio.height,
-            depth: .03
-        };  
-
-        const cassetto = {
-            width: (armadio.width / 5) * 2,
-            height: .18,
-            depth: .03
-        };        
-
-        const cestone = {
-            width: (armadio.width / 5) * 2,
-            height: cassetto.height * 2,
-            depth: .03
-        };        
-
-        const cassettiTotalH = cestone.height + (cassetto.height * 2);
-
-        const antaNotFull = {
-            width: armadio.width / 5,
-            height: armadio.height - cassettiTotalH,
-            depth: .03
-        };  
-
-
-        const armadioWrapper = document.createElement('a-entity');
-
-
-        const armadioEl = document.createElement('a-box');
-        armadioEl.setAttribute('material', materials.chiaro);
-        armadioEl.setAttribute('color', 'white');
-        ["width", "height", "depth"].forEach(p => {
-            armadioEl.setAttribute(p, armadio[p]);
-        });
-        setPos(armadioEl, [0, 0, 0]);
-        
-        // ante h 100%
-        for (let i=0; i<3; i++) {
-            const antaWrapper = document.createElement('a-box');
-            antaWrapper.setAttribute('material', materials.chiaro);
-            antaWrapper.setAttribute("width", antaFull.width);
-            antaWrapper.setAttribute("height", antaFull.height);
-            antaWrapper.setAttribute("depth", antaFull.depth);
-            antaWrapper.object3D.scale.set(.99, 1, 1);
-            setPos(antaWrapper, [antaFull.width * i, 0, armadio.depth]);
-            
-            armadioWrapper.appendChild(antaWrapper);
-        }
-
-        // ante h 60%
-        for (let i=0; i<2; i++) {
-            const antaWrapper = document.createElement('a-box');
-            antaWrapper.setAttribute('material', materials.chiaro);
-            antaWrapper.setAttribute("width", antaNotFull.width);
-            antaWrapper.setAttribute("height", antaNotFull.height);
-            antaWrapper.setAttribute("depth", antaNotFull.depth);
-            antaWrapper.object3D.scale.set(.99, 1, 1);
-            setPos(antaWrapper, [(antaFull.width * 3) + antaNotFull.width * i, cassettiTotalH, armadio.depth]);
-            
-            armadioWrapper.appendChild(antaWrapper);
-        }
-
-        // maniglie ante
-        const maniglia = {
-            width: .05,
-            height: .1,
-            depth: .02,
-            y: 1.2,
-            z: armadio.depth + antaFull.depth
-        };
-        const maniglia1El = makeBox(maniglia, materials.col1);
-        setPos(maniglia1El, [
-            antaFull.width - maniglia.width, 
-            maniglia.y, 
-            maniglia.z
-        ]);
-        const maniglia2El = makeBox(maniglia, materials.col1);
-        setPos(maniglia2El, [
-            antaFull.width, 
-            maniglia.y, 
-            maniglia.z
-        ]);
-        const maniglia3El = makeBox(maniglia, materials.col1);
-        setPos(maniglia3El, [
-            (antaFull.width * 3) - maniglia.width, 
-            maniglia.y, 
-            maniglia.z
-        ]);
-        const maniglia4El = makeBox(maniglia, materials.col1);
-        setPos(maniglia4El, [
-            (antaFull.width * 4) - maniglia.width, 
-            maniglia.y, 
-            maniglia.z
-        ]);
-        const maniglia5El = makeBox(maniglia, materials.col1);
-        setPos(maniglia5El, [
-            (antaFull.width * 4), 
-            maniglia.y, 
-            maniglia.z
-        ]);
-
-        armadioWrapper.appendChild(maniglia1El);
-        armadioWrapper.appendChild(maniglia2El);
-        armadioWrapper.appendChild(maniglia3El);
-        armadioWrapper.appendChild(maniglia4El);
-        armadioWrapper.appendChild(maniglia5El);
-
-
-        // cassetti
-        for (let i=0; i<2; i++) {
-            const cassettoEl = document.createElement('a-box');
-            cassettoEl.setAttribute('material', materials.col1);
-            cassettoEl.setAttribute("width", cassetto.width);
-            cassettoEl.setAttribute("height", cassetto.height);
-            cassettoEl.setAttribute("depth", cassetto.depth);
-            cassettoEl.setAttribute("shadow", "cast: true; receive: true");
-            cassettoEl.object3D.scale.set(.99, .99, 1);
-            setPos(cassettoEl, [antaFull.width * 3, cestone.height + (cassetto.height * i), armadio.depth]);
-            
-            armadioWrapper.appendChild(cassettoEl);
-        }
-
-
-        const manigliaHor = {
-            width: .1,
-            height: .05,
-            depth: .02,
-            z: armadio.depth + antaFull.depth
-        };
-        const manigliaCass1El = makeBox(manigliaHor, materials.chiaro);
-        setPos(manigliaCass1El, [
-            (antaFull.width * 4) - (manigliaHor.width / 2), 
-            cestone.height + cassetto.height * 2 - manigliaHor.height, 
-            manigliaHor.z
-        ]);
-        const manigliaCass2El = makeBox(manigliaHor, materials.chiaro);
-        setPos(manigliaCass2El, [
-            (antaFull.width * 4) - (manigliaHor.width / 2), 
-            cestone.height + cassetto.height - manigliaHor.height, 
-            manigliaHor.z
-        ]);
-        const manigliaCass3El = makeBox(manigliaHor, materials.chiaro);
-        setPos(manigliaCass3El, [
-            (antaFull.width * 4) - (manigliaHor.width / 2), 
-            cestone.height - manigliaHor.height, 
-            manigliaHor.z
-        ]);
-
-        armadioWrapper.appendChild(manigliaCass1El);
-        armadioWrapper.appendChild(manigliaCass2El);
-        armadioWrapper.appendChild(manigliaCass3El);
-
-
-
-        // cestone
-        const cestoneEl = document.createElement('a-box');
-        cestoneEl.setAttribute('material', materials.col1);
-        cestoneEl.setAttribute("shadow", "cast: true; receive: true");
-        cestoneEl.setAttribute("width", cestone.width);
-        cestoneEl.setAttribute("height", cestone.height);
-        cestoneEl.setAttribute("depth", cestone.depth);
-        cestoneEl.object3D.scale.set(.99, .99, 1);
-        setPos(cestoneEl, [antaFull.width * 3, 0, armadio.depth]);
-        
-        armadioWrapper.appendChild(cestoneEl);
-
-
-        // append 
-        armadioWrapper.appendChild(armadioEl);
         sceneEl.appendChild(armadioWrapper);
 
 
@@ -354,12 +311,20 @@ AFRAME.registerComponent('scene-init', {
         const settiminoWrapper = document.createElement('a-entity');
         settiminoWrapper.setAttribute("id", "settimino");
         
-
+        const cassetto = {
+            height: .18,
+            depth: .03
+        };   
+        const cestone = {
+            height: cassetto.height * 2,
+            depth: .03
+        };   
         const settimino = {
             width: .6,
             height: (cassetto.height * 3) + (cestone.height * 2),
             depth: .4
         };
+        
         const settiminoEl = document.createElement('a-box');
         settiminoEl.setAttribute('material', materials.chiaro);
         settiminoEl.setAttribute("shadow", "cast: true; receive: true");
@@ -597,6 +562,9 @@ AFRAME.registerComponent('scene-init', {
         sceneEl.appendChild(radiatorWrapper);
 
 
+        
+
+
     }
 });
 
@@ -650,47 +618,3 @@ AFRAME.registerGeometry('example1', {
     }
 });
 
-
-AFRAME.registerGeometry('example', {
-    schema: {
-        vertices: {
-            default: ['-10 10 0', '-10 -10 0', '10 -10 0', '10 -10 0'],
-        }
-    },
-
-    init: function (data) {
-        var geometry = new THREE.BufferGeometry();
-
-        const vertices = new Float32Array( [
-            -1.0, -1.0,  1.0,
-             1.0, -1.0,  1.0,
-             1.0,  1.0,  1.0,
-        
-             1.0,  1.0,  1.0,
-            -1.0,  1.0,  1.0,
-            -1.0, -1.0,  1.0
-        ] );
-
-        geometry.setAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
-
-
-        // geometry.vertices = data.vertices.map(function (vertex) {
-        //     var points = vertex.split(' ').map(function (x) { return parseInt(x); });
-        //     return new THREE.Vector3(points[0], points[1], points[2]);
-        // });
-        // geometry.computeBoundingBox();
-        // geometry.faces.push(new THREE.Face3(0, 1, 2));
-        // geometry.faces.push(new THREE.Face3(0, 2, 3));
-        // geometry.mergeVertices();
-        // geometry.computeFaceNormals();
-        // geometry.computeVertexNormals();
-        this.geometry = geometry;
-    }
-});
-
-
-AFRAME.registerComponent('couch', {
-    init: function () {
-      console.log('Hello, World!');
-    }
-});

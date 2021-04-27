@@ -24,7 +24,7 @@ const scrittoio = {
     z: 0
 };
 const scrittoioEl = document.createElement('a-box');
-scrittoioEl.setAttribute('material', 'src: #mandorlo; roughness: 1; repeat: 5 2');
+scrittoioEl.setAttribute('material', 'src: #mandorlo; roughness: 1; repeat: 5 1'); 
 scrittoioEl.setAttribute("shadow", "cast: true; receive: true");
 scrittoioEl.setAttribute("width", scrittoio.width);
 scrittoioEl.setAttribute("height", scrittoio.height);
