@@ -47,7 +47,7 @@ sportello1.setAttribute("position", `0, 0, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello1);
 
 const sportello2 = makeWrappedBox( sportelloSize, materials.col1 );
-sportello2.setAttribute("position", `0, 1.2, ${colonnaSize.depth}`);
+sportello2.setAttribute("position", `0, 1.1, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello2);
 
 const sportello3 = makeWrappedBox( sportelloSize, materials.col1 );
