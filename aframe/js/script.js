@@ -242,8 +242,8 @@ AFRAME.registerComponent('scene-init', {
             normalScale: "-.01 -.01",
             repeat: "2 2", 
             roughness: .99,
-            side: "double"
-        });
+            side: "double" 
+        });  
         sceneEl.appendChild(muroPorta);
 
 
@@ -256,7 +256,8 @@ AFRAME.registerComponent('scene-init', {
 
         const muroletti = makeWrappedBox(
             new Size(.2, room.height, room.depth),
-            "src: #stucco; color: #50a7d3"
+            //"src: #stucco; color: #50a7d3"
+            "src: #carta-parati; repeat: 2 2;"
         );
         setPos(muroletti, [-.2, 0, 0]);
         sceneEl.appendChild(muroletti);
