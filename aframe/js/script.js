@@ -47,9 +47,10 @@ AFRAME.registerComponent('scene-init', {
         const cameraEl = document.createElement('a-camera');
         cameraEl.setAttribute("wasd-controls", "acceleration: 20");
         cameraEl.setAttribute("fov", "60");
+        cameraWrapper.setAttribute("rotation", "0 -180 0");
         setPos(cameraEl, [0, 1.4, 0]);
 
-        setPos(cameraWrapper, [ room.width / 2, 0, room.depth / 2]);
+        setPos(cameraWrapper, [2.8, 0, 1]);
         cameraWrapper.appendChild(cameraEl);
         sceneEl.appendChild(cameraWrapper);
 
