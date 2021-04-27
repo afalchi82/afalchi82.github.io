@@ -114,7 +114,7 @@ AFRAME.registerComponent('scene-init', {
         ---------------------------------------------------- */
         const roomEl = document.createElement('a-box');
         roomEl.setAttribute("width", room.width);
-        roomEl.setAttribute("height", "2.8");
+        roomEl.setAttribute("height", room.height);
         roomEl.setAttribute("depth", room.depth);
         setPos(roomEl, [0, -.001, 0]);
         roomEl.setAttribute('material', {
@@ -151,11 +151,11 @@ AFRAME.registerComponent('scene-init', {
         ---------------------------------------------------- */
         const floorEl = document.createElement('a-box');
         floorEl.setAttribute("width", room.width);
-        floorEl.setAttribute("height", ".1");
+        floorEl.setAttribute("height", ".001");
         floorEl.setAttribute("depth", room.depth);
         floorEl.setAttribute('material', 'src: #parquet; roughness: .5; side: double');
         floorEl.setAttribute("shadow", "cast: false; receive: true");
-        setPos(floorEl, [0, -.1, 0]);
+        setPos(floorEl, [0, -.001, 0]);
         sceneEl.appendChild(floorEl);
 
        

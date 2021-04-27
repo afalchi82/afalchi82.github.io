@@ -16,7 +16,7 @@ const ripianoSize = new Size(
 );
 const sportelloSize = new Size(
     colonnaSize.width, 
-    .7, 
+    .6, 
     .03
 );
 
@@ -51,7 +51,7 @@ sportello2.setAttribute("position", `0, 1.2, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello2);
 
 const sportello3 = makeWrappedBox( sportelloSize, materials.col1 );
-sportello3.setAttribute("position", `0, 1.9, ${colonnaSize.depth}`);
+sportello3.setAttribute("position", `0, 1.7, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello3);
 
 
