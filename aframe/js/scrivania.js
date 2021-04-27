@@ -1,8 +1,10 @@
 import {
     makeBox,
+    makeWrappedBox,
     materials,
     room,
-    setPos
+    setPos,
+    Size
 } from "./utils.js";
 
 
@@ -18,7 +20,7 @@ const scrittoio = {
     height: .03,
     depth: .60,
     x: 0,
-    y: .63,
+    y: .78,
     z: 0
 };
 const scrittoioEl = document.createElement('a-box');
@@ -28,6 +30,29 @@ scrittoioEl.setAttribute("width", scrittoio.width);
 scrittoioEl.setAttribute("height", scrittoio.height);
 scrittoioEl.setAttribute("depth", scrittoio.depth);
 setPos(scrittoioEl, [0, scrittoio.y, 0]);
+
+
+
+{
+    /* ----------------------------------------------------
+        gamba
+    ---------------------------------------------------- */
+    const gambaSize = new Size(.05, scrittoio.y, .02);
+    const gamba1 = makeWrappedBox(
+        gambaSize,
+        materials.chiaro
+    );
+    gamba1.setAttribute("id", `gamba1`);
+    gamba1.setAttribute("position", `0, 0, ${scrittoio.depth - gambaSize.depth}`);
+
+    const gamba2 = makeWrappedBox(gambaSize, materials.chiaro);
+    gamba2.setAttribute("id", `gamba2`);
+    gamba2.setAttribute("position", `${scrittoio.width - gambaSize.width}, 0, ${scrittoio.depth - gambaSize.depth}`);
+    
+    scrivaniaWrapper.appendChild(gamba1);
+    scrivaniaWrapper.appendChild(gamba2);
+}
+
 
 const ripianoScrivaniaEl = makeBox(
     {width: scrittoio.width, height: scrittoio.height, depth: .3},
@@ -114,17 +139,34 @@ ponteWrapper.appendChild(ponteCassone);
         manigliaScrivania.z
     ]);
 
-    scrivaniaWrapper.appendChild(manigliaScrivania1El);
-    scrivaniaWrapper.appendChild(manigliaScrivania2El);
-    scrivaniaWrapper.appendChild(manigliaScrivania3El);
+    // scrivaniaWrapper.appendChild(manigliaScrivania1El);
+    // scrivaniaWrapper.appendChild(manigliaScrivania2El);
+    // scrivaniaWrapper.appendChild(manigliaScrivania3El);
 }
 
+{
+    /* ----------------------------------------------------
+        mensola
+    ---------------------------------------------------- */
+    const mensolaSize = new Size(scrittoio.width, .03, .3);
+    const mensola = makeWrappedBox(
+        mensolaSize,
+        materials.chiaro
+    );
+    mensola.setAttribute("id", `mensola`);
+    mensola.setAttribute("position", `0, 1.4, 0`);
+    scrivaniaWrapper.appendChild(mensola);
+}
 
 // append
-setPos(scrivaniaWrapper, [room.width, 0, room.depth - (scrittoio.width + ponteSide.width)]); 
+setPos(scrivaniaWrapper, [
+    room.width, 
+    0, 
+    room.depth - (scrittoio.width + ponteSide.width) - .45
+]); 
 scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
 
-scrivaniaWrapper.appendChild(ponteWrapper);
+// scrivaniaWrapper.appendChild(ponteWrapper);
 scrivaniaWrapper.appendChild(scrittoioEl);
 
 

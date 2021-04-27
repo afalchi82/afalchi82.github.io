@@ -1,15 +1,17 @@
 import { 
     makeBox,
+    makeWrappedBox,
     materials,
     room,
-    setPos
+    setPos,
+    Size
 } from "./utils.js";
 import { comodinoWrapper } from "./comodino.js";
 import { scrivaniaWrapper } from "./scrivania.js";
+import { mensolaWrapper } from "./mensola.js";
 
 
-const roomW = room.width;
-const roomD = room.depth;
+
 
 
 
@@ -44,9 +46,9 @@ AFRAME.registerComponent('scene-init', {
         const cameraEl = document.createElement('a-camera');
         cameraEl.setAttribute("wasd-controls", "acceleration: 40");
         cameraEl.setAttribute("fov", "60");
-        setPos(cameraEl, [0, 0, 0]);
+        setPos(cameraEl, [0, 1.4, 0]);
 
-        setPos(cameraWrapper, [ roomW / 2, 0, roomD / 2]);
+        setPos(cameraWrapper, [ room.width / 2, 0, room.depth / 2]);
         cameraWrapper.appendChild(cameraEl);
         sceneEl.appendChild(cameraWrapper);
 
@@ -60,15 +62,15 @@ AFRAME.registerComponent('scene-init', {
         lightEl.setAttribute('light', {
             angle: 120,
             type: "spot",
-            intensity: .5,
-            penumbra: 1,  
+            intensity: .7,
+            penumbra: 0,  
             castShadow: true
         });
         
         setPos(lampadarioWrapper, [
-            roomW / 2,
+            room.width / 2,
             3,
-            roomD / 2
+            room.depth / 2
         ]);
         lampadarioWrapper.setAttribute('rotation', "-90 0 0");
         lampadarioWrapper.appendChild(lightEl);
@@ -87,7 +89,7 @@ AFRAME.registerComponent('scene-init', {
             penumbra: 1,  
             castShadow: true
         });
-        setPos(lightWindow, [ roomW - .7, 2, roomD]);
+        setPos(lightWindow, [ room.width - .7, 2, room.depth]);
         sceneEl.appendChild(lightWindow);
 
 
@@ -102,17 +104,19 @@ AFRAME.registerComponent('scene-init', {
             intensity: 1,
             penumbra: 1,  
         });
-        setPos(lightDoor, [ roomW - .45, 1.5, 0]);
+        setPos(lightDoor, [ room.width - .45, 1.5, 0]);
         sceneEl.appendChild(lightDoor);
 
 
-        // stanza
-        const room = document.createElement('a-box');
-        room.setAttribute("width", roomW);
-        room.setAttribute("height", "2.8");
-        room.setAttribute("depth", roomD);
-        setPos(room, [0, -.001, 0]);
-        room.setAttribute('material', {
+        /* ----------------------------------------------------
+            stanza
+        ---------------------------------------------------- */
+        const roomEl = document.createElement('a-box');
+        roomEl.setAttribute("width", room.width);
+        roomEl.setAttribute("height", "2.8");
+        roomEl.setAttribute("depth", room.depth);
+        setPos(roomEl, [0, -.001, 0]);
+        roomEl.setAttribute('material', {
             src: "#stucco", 
             normalMap: "#stucco-nrm", 
             normalTextureRepeat: "1 1", 
@@ -121,16 +125,33 @@ AFRAME.registerComponent('scene-init', {
             roughness: .9,
             side: "back"
         });
-        room.object3D.scale.set(-1, 1, 1);
-        room.setAttribute("shadow", "receive: true");
-        sceneEl.appendChild(room);
+        roomEl.object3D.scale.set(-1, 1, 1);
+        roomEl.setAttribute("shadow", "receive: true");
+        sceneEl.appendChild(roomEl);
 
 
-        // pavimento
+        /* ----------------------------------------------------
+            Cassa Serranda
+        ---------------------------------------------------- */
+        const serranda = new Size(1.5, .29, .12);
+        const serrandaEl = makeWrappedBox(
+            serranda,
+            "src: #stucco"
+        );
+        serrandaEl.setAttribute("id", `serranda`);
+        serrandaEl.setAttribute("rotation", `0 180 0`);
+        serrandaEl.setAttribute("position", `${room.width - .5}, ${room.height - serranda.height}, ${room.depth}`);
+        sceneEl.appendChild(serrandaEl);
+
+
+
+        /* ----------------------------------------------------
+            parquet
+        ---------------------------------------------------- */
         const floorEl = document.createElement('a-box');
-        floorEl.setAttribute("width", roomW);
+        floorEl.setAttribute("width", room.width);
         floorEl.setAttribute("height", ".1");
-        floorEl.setAttribute("depth", roomD);
+        floorEl.setAttribute("depth", room.depth);
         floorEl.setAttribute('material', 'src: #parquet; roughness: .5; side: double');
         floorEl.setAttribute("shadow", "cast: false; receive: true");
         setPos(floorEl, [0, -.1, 0]);
@@ -139,6 +160,9 @@ AFRAME.registerComponent('scene-init', {
        
 
 
+        /* ----------------------------------------------------
+            armadio
+        ---------------------------------------------------- */
         const armadio = {
             width: 2.35,
             height: 2.6,
@@ -314,10 +338,6 @@ AFRAME.registerComponent('scene-init', {
         armadioWrapper.appendChild(cestoneEl);
 
 
-
-        
-
-
         // append 
         armadioWrapper.appendChild(armadioEl);
         sceneEl.appendChild(armadioWrapper);
@@ -420,7 +440,7 @@ AFRAME.registerComponent('scene-init', {
 
 
         
-        setPos(settiminoWrapper, [ roomW, 0, 1]);        
+        setPos(settiminoWrapper, [ room.width, 0, .88]);        
         settiminoWrapper.setAttribute("rotation", "0 -90 0");
 
         settiminoWrapper.appendChild(settiminoEl);
@@ -435,9 +455,71 @@ AFRAME.registerComponent('scene-init', {
 
 
         /* ----------------------------------------------------
+            prese a muro sx
+        ---------------------------------------------------- */
+        const preseMuroSx = new Size(.26, .08, .01);
+        const preseMuroSxWrapper = document.createElement('a-entity'); 
+        preseMuroSxWrapper.setAttribute('rotation', "0 -90 0"); 
+        preseMuroSxWrapper.setAttribute('id', "prese-muro-sx"); 
+        setPos(preseMuroSxWrapper, [ room.width, .26, room.depth - 1.97 - preseMuroSx.width]);
+
+        const preseMuroSxEl = makeBox(
+            preseMuroSx,
+            materials.chiaro
+        );
+        setPos(preseMuroSxEl, [0, 0, 0]);
+        
+        preseMuroSxWrapper.appendChild(preseMuroSxEl);
+        sceneEl.appendChild(preseMuroSxWrapper);
+
+
+
+
+
+
+        /* ----------------------------------------------------
             scrivania
         ---------------------------------------------------- */
         sceneEl.appendChild(scrivaniaWrapper);
+
+
+        /* ----------------------------------------------------
+            Colonna
+        ---------------------------------------------------- */
+        const colonnaSize = new Size(.45, 2.1, .4);
+        const colonna = makeWrappedBox(
+            colonnaSize,
+            materials.chiaro
+        );
+        colonna.setAttribute("id", `colonna`);
+        colonna.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width}`);
+        colonna.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(colonna);
+
+
+        
+
+
+        /* ----------------------------------------------------
+            blocco1
+        ---------------------------------------------------- */
+        const bloccoSize = new Size(.9, .3, .3);
+        const blocco1el = makeWrappedBox(
+            bloccoSize,
+            materials.col1
+        );
+        blocco1el.setAttribute("id", `blocco1el`);
+        blocco1el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - bloccoSize.width}`);
+        blocco1el.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(blocco1el);
+
+
+        /* ----------------------------------------------------
+            mensola
+        ---------------------------------------------------- */
+        mensolaWrapper.setAttribute("position", `3.73, 2, 1`);
+        sceneEl.appendChild(mensolaWrapper);
+
 
 
 
@@ -464,9 +546,9 @@ AFRAME.registerComponent('scene-init', {
         setPos(radiatorEl, [0, 0, 0]);
 
         setPos(radiatorWrapper, [
-            roomW - .85 - radiator.width, 
+            room.width - .85 - radiator.width, 
             radiator.y, 
-            roomD - radiator.depth
+            room.depth - radiator.depth
         ]);
 
         radiatorWrapper.appendChild(radiatorEl);
@@ -491,7 +573,7 @@ AFRAME.registerComponent('modify-materials', {
             obj.traverse(node => {
                 // console.log(node.material)
                 if (node.name.indexOf('M') !== -1) { 
-                    console.log(node.material)
+                    //console.log(node.material)
                     // node.material.map.image.set("#nuvola");
                     // node.material.map.repeat = "2 1 0";
                     node.material.color.set('#ffffff');
@@ -513,10 +595,6 @@ AFRAME.registerGeometry('example', {
     },
 
     init: function (data) {
-        debugger; 
-
-
-
         var geometry = new THREE.BufferGeometry();
 
 
@@ -531,5 +609,12 @@ AFRAME.registerGeometry('example', {
         geometry.computeFaceNormals();
         geometry.computeVertexNormals();
         this.geometry = geometry;
+    }
+});
+
+
+AFRAME.registerComponent('couch', {
+    init: function () {
+      console.log('Hello, World!');
     }
 });

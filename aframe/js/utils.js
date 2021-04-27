@@ -25,14 +25,30 @@ export function makeBox (sizeObj, materialStr, shadow = true) {
 };
 
 
-export function setPos (el, position) {
+export function makeWrappedBox (sizeObj, materialStr, shadow = true) {
+    const wrapper = document.createElement('a-entity');
+    const boxEl = document.createElement('a-box');
+    boxEl.setAttribute('material', materialStr);
+    shadow && boxEl.setAttribute("shadow", "cast: true; receive: true");
+    boxEl.setAttribute("width", sizeObj.width);
+    boxEl.setAttribute("height", sizeObj.height);
+    boxEl.setAttribute("depth", sizeObj.depth);
+
+    setPos(boxEl, [0,0,0]);
+    wrapper.appendChild(boxEl);
+
+    return wrapper;
+};
+
+
+export function setPos (el, positionArr) {
 
     const w = el?.getAttribute("width") || 0;
     const h = el?.getAttribute("height") || 0;
     const d = el?.getAttribute("depth") || 0;
 
     
-    const [x, y, z] = position;
+    const [x, y, z] = positionArr;
 
     el?.object3D.position.set(
         x + (w/2),
@@ -40,3 +56,11 @@ export function setPos (el, position) {
         z + (d/2)
     );
 }
+
+export class Size {
+    constructor (width = 1, height = 1, depth = 1) {
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+    }
+};
