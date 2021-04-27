@@ -48,7 +48,7 @@ AFRAME.registerComponent('scene-init', {
         cameraEl.setAttribute("wasd-controls", "acceleration: 20");
         cameraEl.setAttribute("fov", "60");
         cameraWrapper.setAttribute("rotation", "0 -180 0");
-        setPos(cameraEl, [0, 1.4, 0]);
+        //setPos(cameraEl, [0, 1.4, 0]);
 
         setPos(cameraWrapper, [2.8, 0, 1]);
         cameraWrapper.appendChild(cameraEl);
