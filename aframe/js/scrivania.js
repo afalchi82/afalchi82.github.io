@@ -148,13 +148,13 @@ ponteWrapper.appendChild(ponteCassone);
     /* ----------------------------------------------------
         mensola
     ---------------------------------------------------- */
-    const mensolaSize = new Size(scrittoio.width, .03, .3);
+    const mensolaSize = new Size(scrittoio.width, .03, .2);
     const mensola = makeWrappedBox(
         mensolaSize,
         materials.chiaro
     );
     mensola.setAttribute("id", `mensola`);
-    mensola.setAttribute("position", `0, 1.4, 0`);
+    mensola.setAttribute("position", `0, 1.35, 0`);
     scrivaniaWrapper.appendChild(mensola);
 }
 

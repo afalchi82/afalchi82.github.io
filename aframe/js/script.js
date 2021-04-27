@@ -501,9 +501,9 @@ AFRAME.registerComponent('scene-init', {
 
 
         /* ----------------------------------------------------
-            blocco1
+            blocchi
         ---------------------------------------------------- */
-        const bloccoSize = new Size(.9, .3, .3);
+        const bloccoSize = new Size(.75, .3, .3);
         const blocco1el = makeWrappedBox(
             bloccoSize,
             materials.col1
@@ -514,11 +514,21 @@ AFRAME.registerComponent('scene-init', {
         sceneEl.appendChild(blocco1el);
 
 
+        const blocco2el = makeWrappedBox(
+            bloccoSize,
+            materials.col1
+        );
+        blocco2el.setAttribute("id", `blocco2el`);
+        blocco2el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - (bloccoSize.width * 2)}`);
+        blocco2el.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(blocco2el);
+
+
         /* ----------------------------------------------------
             mensola
         ---------------------------------------------------- */
-        mensolaWrapper.setAttribute("position", `3.73, 2, 1`);
-        sceneEl.appendChild(mensolaWrapper);
+        mensolaWrapper.setAttribute("position", `3.73, 1.8, 1`);
+        // sceneEl.appendChild(mensolaWrapper);
 
 
 
