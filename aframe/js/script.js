@@ -515,9 +515,18 @@ AFRAME.registerComponent('scene-init', {
             materials.col1
         );
         mensolona.setAttribute("id", "mensolona");
-        mensolona.setAttribute("position", `${room.width}, 2.27, 1.77`);
+        mensolona.setAttribute("position", `${room.width}, 2.27, 1.78`);
         mensolona.setAttribute("rotation", "0 -90 0");
         sceneEl.appendChild(mensolona);
+
+        const mensolona2 = makeWrappedBox(
+            new Size(1.5, .03, .3),
+            materials.col1
+        );
+        mensolona2.setAttribute("id", "mensolona2");
+        mensolona2.setAttribute("position", `${room.width}, ${room.height - .03}, 1.78`);
+        mensolona2.setAttribute("rotation", "0 -90 0");
+        sceneEl.appendChild(mensolona2);
 
 
         
