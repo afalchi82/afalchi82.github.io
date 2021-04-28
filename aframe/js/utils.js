@@ -2,7 +2,8 @@ export const materials = {
     col1: 'src: #mirtillo; roughness: .1;',
     col2: 'src: #zenzero; roughness: 1;', 
     col3: 'src: #pino; roughness: .45;',
-    chiaro: 'src: #nuvola; roughness: .45;'
+    chiaro: 'src: #nuvola; roughness: .2;',
+    mandorlo: 'src: #mandorlo; roughness: 1; repeat: 5 1'
 };
 
 
@@ -29,7 +30,7 @@ export function makeBox (sizeObj, materialStr, shadow = true) {
 export function makeWrappedBox (sizeObj, materialStr, shadow = true) {
     const wrapper = document.createElement('a-entity');
     const boxEl = document.createElement('a-box');
-    boxEl.setAttribute('material', materialStr);
+    materialStr && boxEl.setAttribute('material', materialStr);
     shadow && boxEl.setAttribute("shadow", "cast: true; receive: true");
     boxEl.setAttribute("width", sizeObj.width);
     boxEl.setAttribute("height", sizeObj.height);

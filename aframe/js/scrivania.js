@@ -14,6 +14,7 @@ import {
 const scrivaniaWrapper = document.createElement('a-entity');
 
 const ponteWrapper = document.createElement('a-entity');
+ponteWrapper.setAttribute('material', materials.col1); 
 
 const scrittoio = {
     width: 1.5,
@@ -21,10 +22,10 @@ const scrittoio = {
     depth: .60,
     x: 0,
     y: .78,
-    z: 0
+    z: 0 
 };
 const scrittoioEl = document.createElement('a-box');
-scrittoioEl.setAttribute('material', 'src: #mandorlo; roughness: 1; repeat: 5 1'); 
+scrittoioEl.setAttribute('material', materials.mandorlo); 
 scrittoioEl.setAttribute("shadow", "cast: true; receive: true");
 scrittoioEl.setAttribute("width", scrittoio.width);
 scrittoioEl.setAttribute("height", scrittoio.height);
@@ -55,59 +56,71 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
 
 
 const ripianoScrivaniaEl = makeBox(
-    {width: scrittoio.width, height: scrittoio.height, depth: .3},
-    materials.chiaro
+    new Size(scrittoio.width, scrittoio.height, .2),
+    materials.mandorlo 
 );
 setPos(ripianoScrivaniaEl, [0, 1.2, 0]);
 ponteWrapper.appendChild(ripianoScrivaniaEl);
 
 
+
+
 const ponteSide = {
     width: .03,
-    height: 2.2,
+    height: 2.6,
     depth: .30
 };
 const ponteSxEl = document.createElement('a-box');
-ponteSxEl.setAttribute('material', materials.chiaro);
 ponteSxEl.setAttribute("shadow", "cast: true; receive: true");
-ponteSxEl.setAttribute("width", ponteSide.width);
+ponteSxEl.setAttribute("material", materials.chiaro);
+ponteSxEl.setAttribute("width", ponteSide.width); 
 ponteSxEl.setAttribute("height", ponteSide.height);
 ponteSxEl.setAttribute("depth", ponteSide.depth);
 setPos(ponteSxEl, [-ponteSide.width, 0, 0]);
 ponteWrapper.appendChild(ponteSxEl);
 
 const ponteDxEl = document.createElement('a-box');
-ponteDxEl.setAttribute('material', materials.chiaro);
 ponteDxEl.setAttribute("shadow", "cast: true; receive: true");
+ponteDxEl.setAttribute("material", materials.chiaro);
 ponteDxEl.setAttribute("width", ponteSide.width);
 ponteDxEl.setAttribute("height", ponteSide.height);
 ponteDxEl.setAttribute("depth", ponteSide.depth);
 setPos(ponteDxEl, [scrittoio.width, 0, 0]);
 ponteWrapper.appendChild(ponteDxEl);
 
+
+const ponteTop = makeBox(
+    new Size(scrittoio.width, scrittoio.height, .3),
+    materials.chiaro
+);
+setPos(ponteTop, [0, ponteSide.height - scrittoio.height, 0]);
+ponteWrapper.appendChild(ponteTop);
+ 
+  
+
 // cassone
 const cassone = {
     height: .6
 };
 const ponteCassone = document.createElement('a-box');
-ponteCassone.setAttribute('material', materials.chiaro);
 ponteCassone.setAttribute("shadow", "cast: true; receive: true");
+ponteCassone.setAttribute("material", materials.chiaro);
 ponteCassone.setAttribute("width", scrittoio.width);
 ponteCassone.setAttribute("height", cassone.height);
 ponteCassone.setAttribute("depth", ponteSide.depth);
-setPos(ponteCassone, [0, ponteSide.height - cassone.height, 0]);
+setPos(ponteCassone, [0, ponteSide.height - cassone.height - .4, 0]);
 ponteWrapper.appendChild(ponteCassone);
 
-// schienale
+// schienale 
 {
     const schienaleEl = makeBox({
         width: scrittoio.width,
         height: ponteSide.height,
         depth: .01
-    }, materials.chiaro);
+    }, materials.col1);
     setPos(schienaleEl, [0, 0, 0]);
     ponteWrapper.appendChild(schienaleEl);
-}
+} 
 
 
 
@@ -139,24 +152,12 @@ ponteWrapper.appendChild(ponteCassone);
         manigliaScrivania.z
     ]);
 
-    // scrivaniaWrapper.appendChild(manigliaScrivania1El);
-    // scrivaniaWrapper.appendChild(manigliaScrivania2El);
-    // scrivaniaWrapper.appendChild(manigliaScrivania3El);
+    scrivaniaWrapper.appendChild(manigliaScrivania1El);
+    scrivaniaWrapper.appendChild(manigliaScrivania2El);
+    scrivaniaWrapper.appendChild(manigliaScrivania3El);
 }
 
-{
-    /* ----------------------------------------------------
-        mensola
-    ---------------------------------------------------- */
-    const mensolaSize = new Size(scrittoio.width, .03, .2);
-    const mensola = makeWrappedBox(
-        mensolaSize,
-        materials.chiaro
-    );
-    mensola.setAttribute("id", `mensola`);
-    mensola.setAttribute("position", `0, 1.35, 0`);
-    scrivaniaWrapper.appendChild(mensola);
-}
+ 
 
 // append
 setPos(scrivaniaWrapper, [
@@ -164,9 +165,9 @@ setPos(scrivaniaWrapper, [
     0, 
     room.depth - (scrittoio.width) - .45
 ]); 
-scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
+scrivaniaWrapper.setAttribute("rotation", "0 -90 0"); 
 
-// scrivaniaWrapper.appendChild(ponteWrapper);
+scrivaniaWrapper.appendChild(ponteWrapper);
 scrivaniaWrapper.appendChild(scrittoioEl);
 
 

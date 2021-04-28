@@ -10,10 +10,55 @@ import { armadioWrapper } from "./armadio.js";
 import { colonnaWrapper } from "./colonna.js";
 import { comodinoWrapper } from "./comodino.js";
 import { scrivaniaWrapper } from "./scrivania.js";
-import { mensolaWrapper } from "./mensola.js";
 
 
 
+
+AFRAME.registerGeometry('tenda', {
+    init () {
+        const w = .1 //.025;
+
+        const tenda = new THREE.Shape();
+
+        tenda.moveTo( 0, 0 );
+        for (let i=0; i<1; i++) {
+            if (i % 2 === 0) {
+                tenda.bezierCurveTo( 
+                    // w * i, w, 
+                    // w * i, w, 
+                    // w * i, w
+                    0, .2,
+                    .2, .2,
+                    .2, 0,
+                );
+                tenda.bezierCurveTo( 
+                    // w * i, w, 
+                    // w * i, w, 
+                    // w * i, w
+                    .2, -.2,
+                    .4, -.2,
+                    .4, 0,
+                );
+            } else {
+                tenda.bezierCurveTo( 
+                    w * i, w * -1, 
+                    w * i, w * -1, 
+                    w * i, w
+                );
+            }
+        }
+
+        
+
+        const extrudeSettings = { depth: 2.2, bevelEnabled: true, bevelSegments: 1, steps: 1, bevelSize: 0, bevelThickness: 0 };
+
+        const geometry = new THREE.ExtrudeGeometry( tenda, extrudeSettings );
+        geometry.computeFaceNormals();
+
+        this.geometry = geometry;
+
+    }
+});
 
 AFRAME.registerGeometry('muro-finestra', {
     init: function (data) {
@@ -456,13 +501,10 @@ AFRAME.registerComponent('scene-init', {
         /* ----------------------------------------------------
             Colonna
         ---------------------------------------------------- */
-        const colonnaSize = new Size(.45, 2.1, .4);
-        // const colonna = makeWrappedBox(
-        //     colonnaSize,
-        //     materials.chiaro
-        // );
-        // colonna.setAttribute("id", `colonna`);
-        colonnaWrapper.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width}`);
+        const colonnaSize = new Size(.4, 2.1, .4);
+        
+        
+        colonnaWrapper.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width - .01}`);
         colonnaWrapper.setAttribute("rotation", "0 -90 0");
         sceneEl.appendChild(colonnaWrapper);
 
@@ -473,26 +515,8 @@ AFRAME.registerComponent('scene-init', {
         fianco2.setAttribute("id", "fianco2");
         fianco2.setAttribute("position", `${room.width}, 0, 1.75`);
         fianco2.setAttribute("rotation", "0 -90 0");
-        sceneEl.appendChild(fianco2);
+        // sceneEl.appendChild(fianco2);
 
-
-        const mensolona = makeWrappedBox(
-            new Size(1.5, .03, .3),
-            materials.col3
-        );
-        mensolona.setAttribute("id", "mensolona");
-        mensolona.setAttribute("position", `${room.width}, 2.27, 1.78`);
-        mensolona.setAttribute("rotation", "0 -90 0");
-        sceneEl.appendChild(mensolona);
-
-        const mensolona2 = makeWrappedBox(
-            new Size(1.5, .03, .3),
-            materials.col3
-        );
-        mensolona2.setAttribute("id", "mensolona2");
-        mensolona2.setAttribute("position", `${room.width}, ${room.height - .03}, 1.78`);
-        mensolona2.setAttribute("rotation", "0 -90 0");
-        sceneEl.appendChild(mensolona2);
 
 
         
@@ -509,7 +533,7 @@ AFRAME.registerComponent('scene-init', {
         blocco1el.setAttribute("id", `blocco1el`);
         blocco1el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - bloccoSize.width}`);
         blocco1el.setAttribute("rotation", "0 -90 0");
-        sceneEl.appendChild(blocco1el);
+       //  sceneEl.appendChild(blocco1el);
 
 
         const blocco2el = makeWrappedBox(
@@ -519,18 +543,10 @@ AFRAME.registerComponent('scene-init', {
         blocco2el.setAttribute("id", `blocco2el`);
         blocco2el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - (bloccoSize.width * 2)}`);
         blocco2el.setAttribute("rotation", "0 -90 0");
-        sceneEl.appendChild(blocco2el);
+       //  sceneEl.appendChild(blocco2el);
 
 
-        /* ----------------------------------------------------
-            mensola
-        ---------------------------------------------------- */
-        mensolaWrapper.setAttribute("position", `3.73, 1.8, 1`);
-        // sceneEl.appendChild(mensolaWrapper);
-
-
-
-
+        
 
 
         /* ----------------------------------------------------
@@ -563,7 +579,28 @@ AFRAME.registerComponent('scene-init', {
         sceneEl.appendChild(radiatorWrapper);
 
 
-        
+        /* ----------------------------------------------------
+            guida tenda
+        ---------------------------------------------------- */
+        const guidaTendaSize = new Size(1.9, .05, .015);
+        const guidaTenda = makeWrappedBox(
+            guidaTendaSize,
+            materials.chiaro
+        );
+        setPos(guidaTenda, [
+            room.width - guidaTendaSize.width - .3, 
+            room.height - guidaTendaSize.height, 
+            room.depth - .16
+        ]);
+        sceneEl.appendChild(guidaTenda);
+
+        const tenda = makeWrappedBox(
+            new Size(guidaTendaSize.width - .3, room.height - guidaTendaSize.height, .002), 
+            'src: #tenda; roughness: .45; opacity: .7; repeat: 2 6'
+        );
+        tenda.setAttribute('id', "tenda");
+        tenda.setAttribute("position", `${room.width - guidaTendaSize.width - .2}, 0, ${room.depth - .16}`);
+        sceneEl.appendChild(tenda);
 
 
     }
