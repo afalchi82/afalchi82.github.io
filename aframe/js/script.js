@@ -468,7 +468,7 @@ AFRAME.registerComponent('scene-init', {
 
         const fianco2 = makeWrappedBox(
             new Size(.03, room.height, .3),
-            materials.col1
+            materials.col3
         );
         fianco2.setAttribute("id", "fianco2");
         fianco2.setAttribute("position", `${room.width}, 0, 1.75`);
@@ -478,7 +478,7 @@ AFRAME.registerComponent('scene-init', {
 
         const mensolona = makeWrappedBox(
             new Size(1.5, .03, .3),
-            materials.col1
+            materials.col3
         );
         mensolona.setAttribute("id", "mensolona");
         mensolona.setAttribute("position", `${room.width}, 2.27, 1.78`);
@@ -487,7 +487,7 @@ AFRAME.registerComponent('scene-init', {
 
         const mensolona2 = makeWrappedBox(
             new Size(1.5, .03, .3),
-            materials.col1
+            materials.col3
         );
         mensolona2.setAttribute("id", "mensolona2");
         mensolona2.setAttribute("position", `${room.width}, ${room.height - .03}, 1.78`);
@@ -504,7 +504,7 @@ AFRAME.registerComponent('scene-init', {
         const bloccoSize = new Size(.75, .6, .3);
         const blocco1el = makeWrappedBox(
             bloccoSize,
-            materials.col1
+            materials.col3
         );
         blocco1el.setAttribute("id", `blocco1el`);
         blocco1el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - bloccoSize.width}`);
@@ -514,7 +514,7 @@ AFRAME.registerComponent('scene-init', {
 
         const blocco2el = makeWrappedBox(
             bloccoSize,
-            materials.col1
+            materials.col3
         );
         blocco2el.setAttribute("id", `blocco2el`);
         blocco2el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - (bloccoSize.width * 2)}`);

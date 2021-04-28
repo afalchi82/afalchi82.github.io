@@ -25,32 +25,32 @@ const sportelloSize = new Size(
 const colonnaWrapper = document.createElement('a-entity');
 colonnaWrapper.setAttribute("id", "colonna");
 
-const fiancoSx = makeWrappedBox( fiancoSize, materials.col1 );
+const fiancoSx = makeWrappedBox( fiancoSize, materials.col3 );
 setPos(fiancoSx, [0,0,0]);
 colonnaWrapper.appendChild(fiancoSx);
 
-const fiancoDx = makeWrappedBox( fiancoSize, materials.col1 );
+const fiancoDx = makeWrappedBox( fiancoSize, materials.col3 );
 setPos(fiancoDx, [colonnaSize.width - fiancoSize.width, 0, 0]);
 colonnaWrapper.appendChild(fiancoDx);
 
 
-const ripiano1 = makeWrappedBox( ripianoSize, materials.col1 );
+const ripiano1 = makeWrappedBox( ripianoSize, materials.col3 );
 setPos(ripiano1, [fiancoSize.width, sportelloSize.height - ripianoSize.height, 0]);
 colonnaWrapper.appendChild(ripiano1);
 
-const ripiano2 = makeWrappedBox( ripianoSize, materials.col1 );
+const ripiano2 = makeWrappedBox( ripianoSize, materials.col3 );
 setPos(ripiano2, [fiancoSize.width, colonnaSize.height - ripianoSize.height, 0]);
 colonnaWrapper.appendChild(ripiano2);
 
-const sportello1 = makeWrappedBox( sportelloSize, materials.col1 );
+const sportello1 = makeWrappedBox( sportelloSize, materials.col3 );
 sportello1.setAttribute("position", `0, 0, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello1);
 
-const sportello2 = makeWrappedBox( sportelloSize, materials.col1 );
+const sportello2 = makeWrappedBox( sportelloSize, materials.col3 );
 sportello2.setAttribute("position", `0, 1.1, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello2);
 
-const sportello3 = makeWrappedBox( sportelloSize, materials.col1 );
+const sportello3 = makeWrappedBox( sportelloSize, materials.col3 );
 sportello3.setAttribute("position", `0, 1.7, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello3);
 
