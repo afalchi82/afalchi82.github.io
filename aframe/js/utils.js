@@ -3,7 +3,8 @@ export const materials = {
     col2: 'src: #zenzero; roughness: 1;', 
     col3: 'src: #pino; roughness: .45;',
     chiaro: 'src: #nuvola; roughness: .2;',
-    mandorlo: 'src: #mandorlo; roughness: 1; repeat: 5 1'
+    mandorlo: 'src: #mandorlo; roughness: 1; repeat: 5 1',
+    stucco: "src: #stucco; roughness: .5; " // side: double"
 };
 
 

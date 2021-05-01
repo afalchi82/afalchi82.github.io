@@ -301,9 +301,11 @@ AFRAME.registerComponent('scene-init', {
 
         const muroletti = makeWrappedBox(
             new Size(.2, room.height, room.depth),
+            materials.stucco
             //"src: #stucco; color: #50a7d3"
-            "src: #carta-parati; repeat: 2 2;"
+            // "src: #carta-parati; repeat: 2 2;"
         );
+        muroletti.setAttribute("id",  "muroletti");
         setPos(muroletti, [-.2, 0, 0]);
         sceneEl.appendChild(muroletti);
 
@@ -383,7 +385,10 @@ AFRAME.registerComponent('scene-init', {
         // cestoni
         for (let i=0; i<2; i++) {
             const cestoneEl = document.createElement('a-box');
-            cestoneEl.setAttribute('material', materials.col1);
+            cestoneEl.setAttribute(
+                'material', 
+                i === 0 ? materials.col1 : materials.chiaro
+            );
             cestoneEl.setAttribute("width", settimino.width);
             cestoneEl.setAttribute("height", cestone.height);
             cestoneEl.setAttribute("depth", cestone.depth);
@@ -433,7 +438,7 @@ AFRAME.registerComponent('scene-init', {
             (cestone.height * 2), 
             manigliaSettimino.z
         ]);
-        const manigliaSettimino4El = makeBox(manigliaSettimino, materials.chiaro);
+        const manigliaSettimino4El = makeBox(manigliaSettimino, materials.col1);
         setPos(manigliaSettimino4El, [
             manigliaSettimino.x,
             (cestone.height * 2) - manigliaSettimino.height, 

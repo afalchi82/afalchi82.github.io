@@ -22,7 +22,7 @@ comodinoWrapper.setAttribute("id", "comodino");
 
 
 const comodinoEl = document.createElement('a-box');
-comodinoEl.setAttribute('material', materials.col2);
+comodinoEl.setAttribute('material', materials.chiaro);
 comodinoEl.setAttribute("shadow", "cast: true; receive: true");
 comodinoEl.setAttribute("width", comodino.width);
 comodinoEl.setAttribute("height", comodino.height);
@@ -33,7 +33,7 @@ setPos(comodinoEl, [0, 0, 0]);
 // cassetti
 for (let i = 0; i < 2; i++) {
     const cassettoEl = document.createElement('a-box');
-    cassettoEl.setAttribute('material', materials.col2);
+    cassettoEl.setAttribute('material', materials.col1);   
     cassettoEl.setAttribute("width", comodino.width);
     cassettoEl.setAttribute("height", cassetto.height);
     cassettoEl.setAttribute("depth", cassetto.depth);
