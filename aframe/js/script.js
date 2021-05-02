@@ -416,16 +416,26 @@ AFRAME.registerComponent('scene-init', {
         const manigliaSettimino = {
             width: .1,
             height: .05,
-            depth: .02,
+            depth: .01,
             x: (settimino.width / 2) - .05,
-            z: settimino.depth + cassetto.depth
+            z: settimino.depth + cassetto.depth + .01
         };
         const manigliaSettimino1El = makeBox(manigliaSettimino, materials.col1);
+        manigliaSettimino1El.setAttribute("geometry", {
+            primitive: "maniglia-triangolo"
+        });
+        manigliaSettimino1El.setAttribute("rotation", "0, 0, 90");
         setPos(manigliaSettimino1El, [
             manigliaSettimino.x,
-            (cestone.height * 2) + (cassetto.height * 2), 
-            manigliaSettimino.z
-        ]);
+            (cestone.height * 2) + (cassetto.height * 2) - (manigliaSettimino.height / 2), 
+            manigliaSettimino.z - .005
+        ]); 
+        // const manigliaSettimino1El = makeBox(manigliaSettimino, materials.col1);
+        // setPos(manigliaSettimino1El, [
+        //     manigliaSettimino.x,
+        //     (cestone.height * 2) + (cassetto.height * 2), 
+        //     manigliaSettimino.z
+        // ]);
         const manigliaSettimino2El = makeBox(manigliaSettimino, materials.col1);
         setPos(manigliaSettimino2El, [
             manigliaSettimino.x,

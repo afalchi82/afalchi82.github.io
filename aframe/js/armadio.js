@@ -164,21 +164,22 @@ for (let i=0; i<2; i++) {
 
 
 const manigliaCass1El = makeBox(manigliaHor, materials.chiaro);
-setPos(manigliaCass1El, [
-    (antaFull.width * 4) - (manigliaHor.width / 2), 
-    cestone.height + cassetto.height, 
-    manigliaHor.z
-]);
-const manigliaCass2El = makeBox(manigliaHor, materials.chiaro);
-manigliaCass2El.setAttribute("geometry", {
+manigliaCass1El.setAttribute("geometry", {
     primitive: "maniglia-triangolo"
 });
-manigliaCass2El.setAttribute("rotation", "0, 0, -90");
-setPos(manigliaCass2El, [
+manigliaCass1El.setAttribute("rotation", "0, 0, 90");
+setPos(manigliaCass1El, [
     (antaFull.width * 4) - (manigliaHor.width / 2), 
     cestone.height + cassetto.height - (manigliaHor.height / 2), 
     manigliaHor.z
+]); 
+const manigliaCass2El = makeBox(manigliaHor, materials.chiaro);
+setPos(manigliaCass2El, [
+    (antaFull.width * 4) - (manigliaHor.width / 2), 
+    cestone.height + cassetto.height - manigliaHor.height, 
+    manigliaHor.z
 ]);
+
 const manigliaCass3El = makeBox(manigliaHor, materials.chiaro);
 setPos(manigliaCass3El, [
     (antaFull.width * 4) - (manigliaHor.width / 2), 

@@ -46,18 +46,18 @@ const maniglia1El = makeBox(maniglia, materials.chiaro);
 maniglia1El.setAttribute("geometry", {
     primitive: "maniglia-triangolo"
 });
-maniglia1El.setAttribute("rotation", "0, 0, -90");
+maniglia1El.setAttribute("rotation", "0, 0, 90");
 setPos(maniglia1El, [
     maniglia.x, 
     cassetto.height - (maniglia.height / 2), 
-    maniglia.z
+    maniglia.z - .005
 ]);
 comodinoWrapper.appendChild(maniglia1El);
 
 const maniglia2El = makeBox(maniglia, materials.chiaro);
 setPos(maniglia2El, [
     maniglia.x, 
-    cassetto.height, 
+    cassetto.height - maniglia.height, 
     maniglia.z
 ]);
 comodinoWrapper.appendChild(maniglia2El);
