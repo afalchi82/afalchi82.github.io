@@ -87,6 +87,13 @@ const maniglia = {
     y: 1.2,
     z: armadio.depth + antaFull.depth + .01 
 };
+const manigliaWide = {
+    width: .1,
+    height: .1,
+    depth: .01,
+    y: 1.2, 
+    z: armadio.depth + antaFull.depth + .01 
+};
 
 const manigliaHor = {
     width: .1,
@@ -96,29 +103,20 @@ const manigliaHor = {
 };
 const maniglia1El = makeBox(maniglia, materials.col1);
 setPos(maniglia1El, [
-    antaFull.width - maniglia.width, 
+    antaFull.width - maniglia.width,  
     maniglia.y, 
     maniglia.z
 ]);
 
-const maniglia2El = document.createElement("a-entity");
-maniglia2El.setAttribute("geometry", {
-    primitive: "maniglia-triangolo"
-});
+const maniglia2El = makeWrappedBox(manigliaWide, materials.col1);
 maniglia2El.setAttribute("material", materials.col1);
 maniglia2El.setAttribute("shadow", "cast: true; receive: true");
 setPos(maniglia2El, [
-    antaFull.width, 
-    maniglia.y + .05,  
-    maniglia.z
+    antaFull.width + .002, 
+    manigliaWide.y,  
+    manigliaWide.z
 ]);
 
-// const maniglia2El = makeBox(maniglia, materials.col1);
-// setPos(maniglia2El, [
-//     antaFull.width, 
-//     maniglia.y, 
-//     maniglia.z
-// ]);
 const maniglia3El = makeBox(maniglia, materials.col1);
 setPos(maniglia3El, [
     (antaFull.width * 3) - maniglia.width, 
@@ -131,15 +129,15 @@ setPos(maniglia4El, [
     maniglia.y, 
     maniglia.z
 ]);
-const maniglia5El = makeBox(maniglia, materials.col1);
-maniglia5El.setAttribute("geometry", {
-    primitive: "maniglia-triangolo"
-});
+const maniglia5El = makeWrappedBox(manigliaWide, materials.col1);
+maniglia5El.setAttribute("material", materials.col1);
+maniglia5El.setAttribute("shadow", "cast: true; receive: true");
 setPos(maniglia5El, [
-    (antaFull.width * 4) - (maniglia.width / 2), 
+    (antaFull.width * 4) + .002, 
     maniglia.y, 
     maniglia.z
 ]);
+
 
 armadioWrapper.appendChild(maniglia1El);
 armadioWrapper.appendChild(maniglia2El);
