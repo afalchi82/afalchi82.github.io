@@ -100,7 +100,8 @@ ponteWrapper.appendChild(ponteTop);
 
 // cassone
 const cassone = {
-    height: .6
+    height: .6,
+    y: 1.6
 };
 const ponteCassone = document.createElement('a-box');
 ponteCassone.setAttribute("shadow", "cast: true; receive: true");
@@ -108,7 +109,7 @@ ponteCassone.setAttribute("material", materials.chiaro);
 ponteCassone.setAttribute("width", scrittoio.width);
 ponteCassone.setAttribute("height", cassone.height);
 ponteCassone.setAttribute("depth", ponteSide.depth);
-setPos(ponteCassone, [0, ponteSide.height - cassone.height - .4, 0]);
+setPos(ponteCassone, [0, cassone.y, 0]);
 ponteWrapper.appendChild(ponteCassone);
 
 // schienale 
@@ -130,7 +131,7 @@ ponteWrapper.appendChild(ponteCassone);
         width: .05,
         height: .1,
         depth: .02,
-        y: ponteSide.height - cassone.height,
+        y: cassone.y,
         z: ponteSide.depth
     };
     const manigliaScrivania1El = makeBox(manigliaScrivania, materials.col1);
