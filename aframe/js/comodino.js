@@ -5,6 +5,7 @@ import {
     setPos
 } from "./utils.js";
 
+
 const comodino = {
     width: .45,
     height: .36,
@@ -16,6 +17,17 @@ const cassetto = {
     depth: .03
 };  
 
+
+const maniglia = {
+    width: .1,
+    height: .05,
+    depth: .01,
+    x: (comodino.width / 2) - .05,
+    z: comodino.depth + cassetto.depth + .02
+};
+
+
+
 const comodinoWrapper = document.createElement('a-entity');
 comodinoWrapper.setAttribute("id", "comodino");
 
@@ -26,8 +38,29 @@ comodinoEl.setAttribute('material', materials.chiaro);
 comodinoEl.setAttribute("shadow", "cast: true; receive: true");
 comodinoEl.setAttribute("width", comodino.width);
 comodinoEl.setAttribute("height", comodino.height);
-comodinoEl.setAttribute("depth", comodino.depth);
+comodinoEl.setAttribute("depth", comodino.depth);  
 setPos(comodinoEl, [0, 0, 0]);
+
+
+const maniglia1El = makeBox(maniglia, materials.chiaro);
+maniglia1El.setAttribute("geometry", {
+    primitive: "maniglia-triangolo"
+});
+maniglia1El.setAttribute("rotation", "0, 0, -90");
+setPos(maniglia1El, [
+    maniglia.x, 
+    cassetto.height - (maniglia.height / 2), 
+    maniglia.z
+]);
+comodinoWrapper.appendChild(maniglia1El);
+
+const maniglia2El = makeBox(maniglia, materials.chiaro);
+setPos(maniglia2El, [
+    maniglia.x, 
+    cassetto.height, 
+    maniglia.z
+]);
+comodinoWrapper.appendChild(maniglia2El);
 
 
 // cassetti

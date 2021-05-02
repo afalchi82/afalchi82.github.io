@@ -659,7 +659,7 @@
             "byteStride": 20,
             "target": 34962
         },
-        {
+        { 
             "buffer": 0,
             "byteOffset": 38448,
             "byteLength": 3840,

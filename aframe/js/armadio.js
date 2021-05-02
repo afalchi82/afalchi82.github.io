@@ -87,6 +87,13 @@ const maniglia = {
     y: 1.2,
     z: armadio.depth + antaFull.depth + .01 
 };
+
+const manigliaHor = {
+    width: .1,
+    height: .05,
+    depth: maniglia.depth,
+    z: maniglia.z
+};
 const maniglia1El = makeBox(maniglia, materials.col1);
 setPos(maniglia1El, [
     antaFull.width - maniglia.width, 
@@ -125,8 +132,11 @@ setPos(maniglia4El, [
     maniglia.z
 ]);
 const maniglia5El = makeBox(maniglia, materials.col1);
+maniglia5El.setAttribute("geometry", {
+    primitive: "maniglia-triangolo"
+});
 setPos(maniglia5El, [
-    (antaFull.width * 4), 
+    (antaFull.width * 4) - (maniglia.width / 2), 
     maniglia.y, 
     maniglia.z
 ]);
@@ -153,22 +163,20 @@ for (let i=0; i<2; i++) {
 }
 
 
-const manigliaHor = {
-    width: .1,
-    height: .05,
-    depth: .02,
-    z: armadio.depth + antaFull.depth
-};
 const manigliaCass1El = makeBox(manigliaHor, materials.chiaro);
 setPos(manigliaCass1El, [
     (antaFull.width * 4) - (manigliaHor.width / 2), 
-    cestone.height + cassetto.height * 2 - manigliaHor.height, 
+    cestone.height + cassetto.height, 
     manigliaHor.z
 ]);
 const manigliaCass2El = makeBox(manigliaHor, materials.chiaro);
+manigliaCass2El.setAttribute("geometry", {
+    primitive: "maniglia-triangolo"
+});
+manigliaCass2El.setAttribute("rotation", "0, 0, -90");
 setPos(manigliaCass2El, [
     (antaFull.width * 4) - (manigliaHor.width / 2), 
-    cestone.height + cassetto.height - manigliaHor.height, 
+    cestone.height + cassetto.height - (manigliaHor.height / 2), 
     manigliaHor.z
 ]);
 const manigliaCass3El = makeBox(manigliaHor, materials.chiaro);

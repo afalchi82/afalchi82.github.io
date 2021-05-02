@@ -301,9 +301,9 @@ AFRAME.registerComponent('scene-init', {
 
         const muroletti = makeWrappedBox(
             new Size(.2, room.height, room.depth),
-            materials.stucco
+            materials.col1
             //"src: #stucco; color: #50a7d3"
-            // "src: #carta-parati; repeat: 2 2;"
+            //"src: #carta-parati; repeat: 2 2;"
         );
         muroletti.setAttribute("id",  "muroletti");
         setPos(muroletti, [-.2, 0, 0]);
