@@ -1,4 +1,5 @@
 import { 
+    cicleMaterials,
     makeBox,
     makeWrappedBox,
     materials,
@@ -152,6 +153,25 @@ AFRAME.registerGeometry('maniglia-triangolo', {
 });
 
 
+// change color
+AFRAME.registerComponent('change-color', {
+    schema: {
+        colorId: { default: 1 }
+    },
+
+    init: function () {
+        let currentIndex = parseInt(this.data);
+        const el = this.el;
+
+        el.addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) <= Object.keys(materials).length ? currentIndex + 1 : 0;
+            el.setAttribute('material', cicleMaterials(currentIndex));
+            el.setAttribute('change-color', `${currentIndex}`);
+        }); 
+    }
+}); 
+
+
 AFRAME.registerComponent('scene-init', {
     init () {
         
@@ -181,6 +201,13 @@ AFRAME.registerComponent('scene-init', {
         //setPos(cameraEl, [0, 1.4, 0]);
 
         setPos(cameraWrapper, [1.475, 0, 2.634]);
+
+        // cursor 
+        const cursor = document.createElement("a-cursor");
+        cursor.setAttribute("event-set__change-color", "_event: click; ");
+
+
+        cameraEl.appendChild(cursor);
         cameraWrapper.appendChild(cameraEl);
         sceneEl.appendChild(cameraWrapper);
 
@@ -301,9 +328,7 @@ AFRAME.registerComponent('scene-init', {
 
         const muroletti = makeWrappedBox(
             new Size(.2, room.height, room.depth),
-            materials.col1
-            //"src: #stucco; color: #50a7d3"
-            //"src: #carta-parati; repeat: 2 2;"
+            "src: #stucco;"
         );
         muroletti.setAttribute("id",  "muroletti");
         setPos(muroletti, [-.2, 0, 0]);
@@ -474,6 +499,12 @@ AFRAME.registerComponent('scene-init', {
         settiminoWrapper.setAttribute("rotation", "0 -90 0");
 
         settiminoWrapper.appendChild(settiminoEl);
+
+        Array.from(settiminoWrapper.children).forEach(child => {
+            child.setAttribute("change-color", "0");
+        });
+        
+
         sceneEl.appendChild(settiminoWrapper);
         
 

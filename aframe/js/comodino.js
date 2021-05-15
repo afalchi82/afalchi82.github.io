@@ -34,7 +34,7 @@ comodinoWrapper.setAttribute("id", "comodino");
 
 
 const comodinoEl = document.createElement('a-box');
-comodinoEl.setAttribute('material', materials.chiaro);
+comodinoEl.setAttribute('material', materials.col1);
 comodinoEl.setAttribute("shadow", "cast: true; receive: true");
 comodinoEl.setAttribute("width", comodino.width);
 comodinoEl.setAttribute("height", comodino.height);
@@ -42,22 +42,22 @@ comodinoEl.setAttribute("depth", comodino.depth);
 setPos(comodinoEl, [0, 0, 0]);
 
 
-const maniglia1El = makeBox(maniglia, materials.chiaro);
+const maniglia1El = makeBox(maniglia, materials.col1);
 maniglia1El.setAttribute("geometry", {
     primitive: "maniglia-triangolo"
 });
-maniglia1El.setAttribute("rotation", "0, 0, 90");
+maniglia1El.setAttribute("rotation", "0, 0, -90");
 setPos(maniglia1El, [
     maniglia.x, 
     cassetto.height - (maniglia.height / 2), 
     maniglia.z - .005
 ]);
-comodinoWrapper.appendChild(maniglia1El);
+comodinoWrapper.appendChild(maniglia1El); 
 
-const maniglia2El = makeBox(maniglia, materials.chiaro);
+const maniglia2El = makeBox(maniglia, materials.col1);
 setPos(maniglia2El, [
     maniglia.x, 
-    cassetto.height - maniglia.height, 
+    cassetto.height, 
     maniglia.z
 ]);
 comodinoWrapper.appendChild(maniglia2El);
@@ -81,5 +81,8 @@ setPos(comodinoWrapper, [0, 0, 2.8]);
 comodinoWrapper.setAttribute("rotation", "0 90 0");
 
 comodinoWrapper.appendChild(comodinoEl);
+Array.from(comodinoWrapper.children).forEach(child => {
+    child.setAttribute("change-color", "0");
+});
 
 export { comodinoWrapper };

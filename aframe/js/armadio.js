@@ -54,7 +54,13 @@ setPos(armadioEl, [0, 0, 0]);
 // ante h 100%
 for (let i=0; i<3; i++) {
     const antaWrapper = document.createElement('a-box');
+
+    // i === 0 && antaWrapper.setAttribute('material', materials.col1);
+    // i === 1 && antaWrapper.setAttribute('material', materials.chiaro);
+    // i === 2 && antaWrapper.setAttribute('material', materials.col2);
+
     antaWrapper.setAttribute('material', materials.chiaro);
+
     antaWrapper.setAttribute("width", antaFull.width);
     antaWrapper.setAttribute("height", antaFull.height);
     antaWrapper.setAttribute("depth", antaFull.depth);
@@ -101,35 +107,34 @@ const manigliaHor = {
     depth: maniglia.depth,
     z: maniglia.z
 };
-const maniglia1El = makeBox(maniglia, materials.col1);
+const maniglia1El = makeBox(maniglia, materials.chiaro);
 setPos(maniglia1El, [
     antaFull.width - maniglia.width,  
     maniglia.y, 
     maniglia.z
 ]);
 
-const maniglia2El = makeWrappedBox(manigliaWide, materials.col1);
-maniglia2El.setAttribute("material", materials.col1);
+const maniglia2El = makeWrappedBox(maniglia, materials.chiaro);
 maniglia2El.setAttribute("shadow", "cast: true; receive: true");
 setPos(maniglia2El, [
     antaFull.width + .002, 
-    manigliaWide.y,  
-    manigliaWide.z
+    maniglia.y,  
+    maniglia.z
 ]);
 
-const maniglia3El = makeBox(maniglia, materials.col1);
+const maniglia3El = makeBox(maniglia, materials.chiaro);
 setPos(maniglia3El, [
     (antaFull.width * 3) - maniglia.width, 
     maniglia.y, 
     maniglia.z
 ]);
-const maniglia4El = makeBox(maniglia, materials.col1);
+const maniglia4El = makeBox(maniglia, materials.chiaro);
 setPos(maniglia4El, [
     (antaFull.width * 4) - maniglia.width, 
     maniglia.y, 
     maniglia.z
 ]);
-const maniglia5El = makeWrappedBox(manigliaWide, materials.col1);
+const maniglia5El = makeWrappedBox(maniglia, materials.chiaro);
 maniglia5El.setAttribute("material", materials.col1);
 maniglia5El.setAttribute("shadow", "cast: true; receive: true");
 setPos(maniglia5El, [
@@ -149,7 +154,7 @@ armadioWrapper.appendChild(maniglia5El);
 // cassetti
 for (let i=0; i<2; i++) {
     const cassettoEl = document.createElement('a-box');
-    cassettoEl.setAttribute('material', materials.col1);
+    cassettoEl.setAttribute('material', materials.chiaro);
     cassettoEl.setAttribute("width", cassetto.width);
     cassettoEl.setAttribute("height", cassetto.height);
     cassettoEl.setAttribute("depth", cassetto.depth);
@@ -193,7 +198,7 @@ armadioWrapper.appendChild(manigliaCass3El);
 
 // cestone
 const cestoneEl = document.createElement('a-box');
-cestoneEl.setAttribute('material', materials.col1);
+cestoneEl.setAttribute('material', materials.chiaro);
 cestoneEl.setAttribute("shadow", "cast: true; receive: true");
 cestoneEl.setAttribute("width", cestone.width);
 cestoneEl.setAttribute("height", cestone.height);
@@ -205,7 +210,11 @@ armadioWrapper.appendChild(cestoneEl);
 
 
 // append 
+console.log(armadioWrapper)
 armadioWrapper.appendChild(armadioEl);
+Array.from(armadioWrapper.children).forEach(child => {
+    child.setAttribute("change-color", "0");
+});
 
 
 export { armadioWrapper };

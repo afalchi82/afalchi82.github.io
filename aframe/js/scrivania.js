@@ -54,12 +54,13 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
     scrivaniaWrapper.appendChild(gamba2);
 }
 
-
+// mensola
 const ripianoScrivaniaEl = makeBox(
     new Size(scrittoio.width, scrittoio.height, .2),
-    materials.mandorlo 
+    materials.chiaro 
 );
-setPos(ripianoScrivaniaEl, [0, 1.2, 0]);
+ripianoScrivaniaEl.setAttribute("id", "mensola");
+setPos(ripianoScrivaniaEl, [0, 1.3, 0]);
 ponteWrapper.appendChild(ripianoScrivaniaEl);
 
 
@@ -67,7 +68,7 @@ ponteWrapper.appendChild(ripianoScrivaniaEl);
 
 const ponteSide = {
     width: .03,
-    height: 2.6,
+    height: 2.2,
     depth: .30
 };
 const ponteSxEl = document.createElement('a-box');
@@ -118,10 +119,10 @@ ponteWrapper.appendChild(ponteCassone);
         width: scrittoio.width,
         height: ponteSide.height,
         depth: .01
-    }, materials.col1);
+    }, materials.mandorlo);
     setPos(schienaleEl, [0, 0, 0]);
     ponteWrapper.appendChild(schienaleEl);
-} 
+}  
 
 
 
@@ -153,9 +154,9 @@ ponteWrapper.appendChild(ponteCassone);
         manigliaScrivania.z
     ]);
 
-    scrivaniaWrapper.appendChild(manigliaScrivania1El);
-    scrivaniaWrapper.appendChild(manigliaScrivania2El);
-    scrivaniaWrapper.appendChild(manigliaScrivania3El);
+    // scrivaniaWrapper.appendChild(manigliaScrivania1El);
+    // scrivaniaWrapper.appendChild(manigliaScrivania2El);
+    // scrivaniaWrapper.appendChild(manigliaScrivania3El);
 }
 
  
@@ -170,6 +171,14 @@ scrivaniaWrapper.setAttribute("rotation", "0 -90 0");
 
 scrivaniaWrapper.appendChild(ponteWrapper);
 scrivaniaWrapper.appendChild(scrittoioEl);
+
+Array.from(ponteWrapper.children).forEach(child => {
+    child.setAttribute("change-color", "0");
+});
+Array.from(scrivaniaWrapper.children).forEach(child => {
+    child.setAttribute("change-color", "0");
+});
+
 
 
 export { scrivaniaWrapper };

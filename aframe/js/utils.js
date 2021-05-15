@@ -1,17 +1,24 @@
 export const materials = {
+    nuvola: "src: #nuvola; roughness: .5;",
+    olmo: "src: #olmo; roughness: .5;",
     col1: 'src: #mirtillo; roughness: .1;',
-    col2: 'src: #zenzero; roughness: 1;', 
+    col2: 'src: #ciliegia; roughness: 1;', 
+    zenzero: 'src: #zenzero; roughness: 1;', 
     col3: 'src: #pino; roughness: .45;',
     chiaro: 'src: #nuvola; roughness: .2;',
     mandorlo: 'src: #mandorlo; roughness: 1; repeat: 5 1',
-    stucco: "src: #stucco; roughness: .5; " // side: double"
+    stucco: "src: #stucco; roughness: .5; color: #ffffff", // side: double"
+        
 };
 
-
+export const cicleMaterials = (index) => {
+    const materialsKeys = Object.keys(materials); 
+    return materials[materialsKeys[index]];
+};
 
 export const room = {
-    width: 3.73,
-    height: 2.7,
+    width: 3.73, 
+    height: 2.7, 
     depth: 3.73
 };
 
@@ -25,7 +32,7 @@ export function makeBox (sizeObj, materialStr, shadow = true) {
     boxEl.setAttribute("depth", sizeObj.depth);
 
     return boxEl;
-};
+}; 
 
 
 export function makeWrappedBox (sizeObj, materialStr, shadow = true) {
@@ -57,7 +64,7 @@ export function setPos (el, positionArr) {
         x + (w/2),
         y + (h/2),
         z + (d/2)
-    );
+    ); 
 }
 
 export class Size {
