@@ -1,13 +1,14 @@
 export const materials = {
+    denim: "src: #denim; roughness: .5;",
     nuvola: "src: #nuvola; roughness: .5;",
-    olmo: "src: #olmo; roughness: .5;",
+    // olmo: "src: #olmo; roughness: .5;",
     col1: 'src: #mirtillo; roughness: .1;',
     col2: 'src: #ciliegia; roughness: 1;', 
     zenzero: 'src: #zenzero; roughness: 1;', 
     col3: 'src: #pino; roughness: .45;',
     chiaro: 'src: #nuvola; roughness: .2;',
     mandorlo: 'src: #mandorlo; roughness: 1; repeat: 5 1',
-    stucco: "src: #stucco; roughness: .5; color: #ffffff", // side: double"
+    //stucco: "src: #stucco; roughness: .5; color: #ffffff", // side: double"
         
 };
 

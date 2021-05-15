@@ -163,7 +163,8 @@ AFRAME.registerComponent('change-color', {
         let currentIndex = parseInt(this.data);
         const el = this.el;
 
-        el.addEventListener('click', function () {
+        el.addEventListener('click', function (ev) {
+            console.log(ev)
             currentIndex = (currentIndex + 1) <= Object.keys(materials).length ? currentIndex + 1 : 0;
             el.setAttribute('material', cicleMaterials(currentIndex));
             el.setAttribute('change-color', `${currentIndex}`);
@@ -205,6 +206,7 @@ AFRAME.registerComponent('scene-init', {
         // cursor 
         const cursor = document.createElement("a-cursor");
         cursor.setAttribute("event-set__change-color", "_event: click; ");
+        cursor.setAttribute("raycaster", "objects: [data-raycastable]");
 
 
         cameraEl.appendChild(cursor);
@@ -502,6 +504,7 @@ AFRAME.registerComponent('scene-init', {
 
         Array.from(settiminoWrapper.children).forEach(child => {
             child.setAttribute("change-color", "0");
+            child.setAttribute("data-raycastable", "true");
         });
         
 

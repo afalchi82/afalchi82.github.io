@@ -83,6 +83,7 @@ comodinoWrapper.setAttribute("rotation", "0 90 0");
 comodinoWrapper.appendChild(comodinoEl);
 Array.from(comodinoWrapper.children).forEach(child => {
     child.setAttribute("change-color", "0");
+    child.setAttribute("data-raycastable", "true");
 });
 
 export { comodinoWrapper };

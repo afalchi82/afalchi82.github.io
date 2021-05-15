@@ -214,6 +214,7 @@ console.log(armadioWrapper)
 armadioWrapper.appendChild(armadioEl);
 Array.from(armadioWrapper.children).forEach(child => {
     child.setAttribute("change-color", "0");
+    child.setAttribute("data-raycastable", "true");
 });
 
 

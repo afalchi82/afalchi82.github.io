@@ -174,9 +174,11 @@ scrivaniaWrapper.appendChild(scrittoioEl);
 
 Array.from(ponteWrapper.children).forEach(child => {
     child.setAttribute("change-color", "0");
+    child.setAttribute("data-raycastable", "true");
 });
 Array.from(scrivaniaWrapper.children).forEach(child => {
     child.setAttribute("change-color", "0");
+    child.setAttribute("data-raycastable", "true");
 });
 
 

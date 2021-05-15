@@ -58,7 +58,10 @@ const schienale = makeWrappedBox( new Size(colonnaSize.width, colonnaSize.height
 colonnaWrapper.appendChild(schienale);
 
 Array.from(colonnaWrapper.children).forEach(child => {
-    child.setAttribute("change-color", "0");
+    Array.from(child.children).forEach(box => {
+        box.setAttribute("change-color", "0");
+        box.setAttribute("data-raycastable", "true");
+    });
 });
 
 
