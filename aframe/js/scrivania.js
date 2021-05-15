@@ -14,7 +14,7 @@ import {
 const scrivaniaWrapper = document.createElement('a-entity');
 
 const ponteWrapper = document.createElement('a-entity');
-ponteWrapper.setAttribute('material', materials.col1); 
+ponteWrapper.setAttribute('material', materials.ciliegia); 
 
 const scrittoio = {
     width: 1.5,
@@ -41,12 +41,12 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
     const gambaSize = new Size(.05, scrittoio.y, .02);
     const gamba1 = makeWrappedBox(
         gambaSize,
-        materials.chiaro
+        materials.nuvola
     );
     gamba1.setAttribute("id", `gamba1`);
     gamba1.setAttribute("position", `0, 0, ${scrittoio.depth - gambaSize.depth}`);
 
-    const gamba2 = makeWrappedBox(gambaSize, materials.chiaro);
+    const gamba2 = makeWrappedBox(gambaSize, materials.nuvola);
     gamba2.setAttribute("id", `gamba2`);
     gamba2.setAttribute("position", `${scrittoio.width - gambaSize.width}, 0, ${scrittoio.depth - gambaSize.depth}`);
     
@@ -57,7 +57,7 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
 // mensola
 const ripianoScrivaniaEl = makeBox(
     new Size(scrittoio.width, scrittoio.height, .2),
-    materials.chiaro 
+    materials.nuvola 
 );
 ripianoScrivaniaEl.setAttribute("id", "mensola");
 setPos(ripianoScrivaniaEl, [0, 1.3, 0]);
@@ -95,7 +95,7 @@ const ponteTop = makeBox(
     materials.chiaro
 );
 setPos(ponteTop, [0, ponteSide.height - scrittoio.height, 0]);
-ponteWrapper.appendChild(ponteTop);
+// ponteWrapper.appendChild(ponteTop);
  
   
 
@@ -135,28 +135,28 @@ ponteWrapper.appendChild(ponteCassone);
         y: cassone.y,
         z: ponteSide.depth
     };
-    const manigliaScrivania1El = makeBox(manigliaScrivania, materials.col1);
+    const manigliaScrivania1El = makeBox(manigliaScrivania, materials.mirtillo);
     setPos(manigliaScrivania1El, [
         scrittoio.width / 3 - manigliaScrivania.width,
         manigliaScrivania.y, 
         manigliaScrivania.z
     ]);
-    const manigliaScrivania2El = makeBox(manigliaScrivania, materials.col1);
+    const manigliaScrivania2El = makeBox(manigliaScrivania, materials.mirtillo);
     setPos(manigliaScrivania2El, [
         scrittoio.width / 3,
         manigliaScrivania.y,
         manigliaScrivania.z
     ]);
-    const manigliaScrivania3El = makeBox(manigliaScrivania, materials.col1);
+    const manigliaScrivania3El = makeBox(manigliaScrivania, materials.mirtillo);
     setPos(manigliaScrivania3El, [
         (scrittoio.width / 3) * 2,
         manigliaScrivania.y,
         manigliaScrivania.z
     ]);
 
-    // scrivaniaWrapper.appendChild(manigliaScrivania1El);
-    // scrivaniaWrapper.appendChild(manigliaScrivania2El);
-    // scrivaniaWrapper.appendChild(manigliaScrivania3El);
+    scrivaniaWrapper.appendChild(manigliaScrivania1El);
+    scrivaniaWrapper.appendChild(manigliaScrivania2El);
+    scrivaniaWrapper.appendChild(manigliaScrivania3El); 
 }
 
  
@@ -165,7 +165,7 @@ ponteWrapper.appendChild(ponteCassone);
 setPos(scrivaniaWrapper, [
     room.width, 
     0, 
-    room.depth - (scrittoio.width) - .45
+    room.depth - (scrittoio.width) - .45 - .20
 ]); 
 scrivaniaWrapper.setAttribute("rotation", "0 -90 0"); 
 

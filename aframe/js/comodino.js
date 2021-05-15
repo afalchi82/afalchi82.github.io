@@ -34,7 +34,7 @@ comodinoWrapper.setAttribute("id", "comodino");
 
 
 const comodinoEl = document.createElement('a-box');
-comodinoEl.setAttribute('material', materials.col1);
+comodinoEl.setAttribute('material', materials.nuvola);
 comodinoEl.setAttribute("shadow", "cast: true; receive: true");
 comodinoEl.setAttribute("width", comodino.width);
 comodinoEl.setAttribute("height", comodino.height);
@@ -42,7 +42,7 @@ comodinoEl.setAttribute("depth", comodino.depth);
 setPos(comodinoEl, [0, 0, 0]);
 
 
-const maniglia1El = makeBox(maniglia, materials.col1);
+const maniglia1El = makeBox(maniglia, materials.nuvola);
 maniglia1El.setAttribute("geometry", {
     primitive: "maniglia-triangolo"
 });
@@ -54,7 +54,7 @@ setPos(maniglia1El, [
 ]);
 comodinoWrapper.appendChild(maniglia1El); 
 
-const maniglia2El = makeBox(maniglia, materials.col1);
+const maniglia2El = makeBox(maniglia, materials.nuvola);
 setPos(maniglia2El, [
     maniglia.x, 
     cassetto.height, 
@@ -66,10 +66,10 @@ comodinoWrapper.appendChild(maniglia2El);
 // cassetti
 for (let i = 0; i < 2; i++) {
     const cassettoEl = document.createElement('a-box');
-    cassettoEl.setAttribute('material', materials.col1);   
+    cassettoEl.setAttribute('material', materials.mirtillo);   
     cassettoEl.setAttribute("width", comodino.width);
     cassettoEl.setAttribute("height", cassetto.height);
-    cassettoEl.setAttribute("depth", cassetto.depth);
+    cassettoEl.setAttribute("depth", cassetto.depth); 
     cassettoEl.setAttribute("shadow", "cast: true; receive: true");
     cassettoEl.object3D.scale.set(.99, .99, 1);
 

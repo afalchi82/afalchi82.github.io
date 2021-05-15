@@ -16,7 +16,7 @@ mensolaWrapper.setAttribute("id", "mensola");
 
 
 
-const mensolaEl = makeBox(mensola, materials.col1)
+const mensolaEl = makeBox(mensola, materials.ciliegia)
 setPos(mensolaEl, [0, 0, 0]);
 
 

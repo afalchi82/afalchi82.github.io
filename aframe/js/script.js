@@ -164,7 +164,6 @@ AFRAME.registerComponent('change-color', {
         const el = this.el;
 
         el.addEventListener('click', function (ev) {
-            console.log(ev)
             currentIndex = (currentIndex + 1) <= Object.keys(materials).length ? currentIndex + 1 : 0;
             el.setAttribute('material', cicleMaterials(currentIndex));
             el.setAttribute('change-color', `${currentIndex}`);
@@ -251,7 +250,7 @@ AFRAME.registerComponent('scene-init', {
             castShadow: true
         });
         setPos(lightWindow, [ room.width - 1.5, 2, 5]);
-        sceneEl.appendChild(lightWindow);
+        // sceneEl.appendChild(lightWindow);
 
 
         /* ----------------------------------------------------
@@ -266,7 +265,7 @@ AFRAME.registerComponent('scene-init', {
             penumbra: 1,  
         });
         setPos(lightDoor, [ room.width - .45, 1.5, 0]);
-        sceneEl.appendChild(lightDoor);
+        // sceneEl.appendChild(lightDoor);
 
 
         /* ----------------------------------------------------
@@ -330,7 +329,7 @@ AFRAME.registerComponent('scene-init', {
 
         const muroletti = makeWrappedBox(
             new Size(.2, room.height, room.depth),
-            "src: #stucco;"
+            "src: #carta-parati;"
         );
         muroletti.setAttribute("id",  "muroletti");
         setPos(muroletti, [-.2, 0, 0]);
@@ -396,7 +395,7 @@ AFRAME.registerComponent('scene-init', {
         };   
         const settimino = {
             width: .6,
-            height: (cassetto.height * 3) + (cestone.height * 2),
+            height: (cassetto.height * 4) + (cestone.height * 1),
             depth: .4
         };
         
@@ -410,26 +409,25 @@ AFRAME.registerComponent('scene-init', {
         
 
         // cestoni
-        for (let i=0; i<2; i++) {
-            const cestoneEl = document.createElement('a-box');
-            cestoneEl.setAttribute(
-                'material', 
-                i === 0 ? materials.col1 : materials.chiaro
-            );
-            cestoneEl.setAttribute("width", settimino.width);
-            cestoneEl.setAttribute("height", cestone.height);
-            cestoneEl.setAttribute("depth", cestone.depth);
-            cestoneEl.setAttribute("shadow", "cast: true; receive: true");
-            cestoneEl.object3D.scale.set(.99, .99, 1);
-            
-            settiminoWrapper.appendChild(cestoneEl);
-            setPos(cestoneEl, [0, (cestone.height * i), settimino.depth]);
-        }
+        const cestoneEl = document.createElement('a-box');
+        cestoneEl.setAttribute(
+            'material', 
+            materials.ciliegia
+        );
+        cestoneEl.setAttribute("width", settimino.width);
+        cestoneEl.setAttribute("height", cestone.height);
+        cestoneEl.setAttribute("depth", cestone.depth);
+        cestoneEl.setAttribute("shadow", "cast: true; receive: true");
+        cestoneEl.object3D.scale.set(.99, .99, 1);
+        
+        settiminoWrapper.appendChild(cestoneEl);
+        setPos(cestoneEl, [0, 0, settimino.depth]);
 
         // cassetti
-        for (let i=0; i<3; i++) {
+        for (let i=0; i<4; i++) {
             const cassettoEl = document.createElement('a-box');
-            cassettoEl.setAttribute('material', materials.chiaro);
+            i > 0 && cassettoEl.setAttribute('material', materials.chiaro);
+            i === 0 && cassettoEl.setAttribute('material', materials.mandorlo);
             cassettoEl.setAttribute("width", settimino.width);
             cassettoEl.setAttribute("height", cassetto.height);
             cassettoEl.setAttribute("depth", cassetto.depth);
@@ -437,7 +435,7 @@ AFRAME.registerComponent('scene-init', {
             cassettoEl.object3D.scale.set(.99, .99, 1);
             
             settiminoWrapper.appendChild(cassettoEl);
-            setPos(cassettoEl, [0, (cestone.height * 2) + (cassetto.height * i), settimino.depth]);
+            setPos(cassettoEl, [0, cestone.height + (cassetto.height * i), settimino.depth]);
         }
 
         const manigliaSettimino = {
@@ -447,38 +445,38 @@ AFRAME.registerComponent('scene-init', {
             x: (settimino.width / 2) - .05,
             z: settimino.depth + cassetto.depth + .01
         };
-        const manigliaSettimino1El = makeBox(manigliaSettimino, materials.col1);
+        const manigliaSettimino1El = makeBox(manigliaSettimino, materials.ciliegia);
         manigliaSettimino1El.setAttribute("geometry", {
             primitive: "maniglia-triangolo"
         });
         manigliaSettimino1El.setAttribute("rotation", "0, 0, 90");
         setPos(manigliaSettimino1El, [
             manigliaSettimino.x,
-            (cestone.height * 2) + (cassetto.height * 2) - (manigliaSettimino.height / 2), 
+            cestone.height + (cassetto.height * 3) - (manigliaSettimino.height / 2), 
             manigliaSettimino.z - .005
         ]); 
-        // const manigliaSettimino1El = makeBox(manigliaSettimino, materials.col1);
+        // const manigliaSettimino1El = makeBox(manigliaSettimino, materials.ciliegia);
         // setPos(manigliaSettimino1El, [
         //     manigliaSettimino.x,
         //     (cestone.height * 2) + (cassetto.height * 2), 
         //     manigliaSettimino.z
-        // ]);
-        const manigliaSettimino2El = makeBox(manigliaSettimino, materials.col1);
+        // ]); 
+        const manigliaSettimino2El = makeBox(manigliaSettimino, materials.ciliegia);
         setPos(manigliaSettimino2El, [
             manigliaSettimino.x,
-            (cestone.height * 2) + (cassetto.height * 2) - manigliaSettimino.height,  
+            cestone.height + (cassetto.height * 3) - manigliaSettimino.height,  
             manigliaSettimino.z
         ]);
-        const manigliaSettimino3El = makeBox(manigliaSettimino, materials.col1);
+        const manigliaSettimino3El = makeBox(manigliaSettimino, materials.ciliegia);
         setPos(manigliaSettimino3El, [
             manigliaSettimino.x,
-            (cestone.height * 2), 
+            cestone.height + cassetto.height, 
             manigliaSettimino.z
         ]);
-        const manigliaSettimino4El = makeBox(manigliaSettimino, materials.col1);
+        const manigliaSettimino4El = makeBox(manigliaSettimino, materials.ciliegia);
         setPos(manigliaSettimino4El, [
             manigliaSettimino.x,
-            (cestone.height * 2) - manigliaSettimino.height, 
+            cestone.height + cassetto.height - manigliaSettimino.height, 
             manigliaSettimino.z
         ]);
         const manigliaSettimino5El = makeBox(manigliaSettimino, materials.chiaro);
@@ -553,13 +551,13 @@ AFRAME.registerComponent('scene-init', {
         const colonnaSize = new Size(.4, 2.1, .4);
         
         
-        colonnaWrapper.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width - .01}`);
+        colonnaWrapper.setAttribute("position", `${room.width}, 0, ${room.depth - colonnaSize.width - .21}`);
         colonnaWrapper.setAttribute("rotation", "0 -90 0");
         sceneEl.appendChild(colonnaWrapper);
 
         const fianco2 = makeWrappedBox(
             new Size(.03, room.height, .3),
-            materials.col3
+            materials.pino
         );
         fianco2.setAttribute("id", "fianco2");
         fianco2.setAttribute("position", `${room.width}, 0, 1.75`);
@@ -577,7 +575,7 @@ AFRAME.registerComponent('scene-init', {
         const bloccoSize = new Size(.75, .6, .3);
         const blocco1el = makeWrappedBox(
             bloccoSize,
-            materials.col3
+            materials.pino
         );
         blocco1el.setAttribute("id", `blocco1el`);
         blocco1el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - bloccoSize.width}`);
@@ -587,7 +585,7 @@ AFRAME.registerComponent('scene-init', {
 
         const blocco2el = makeWrappedBox(
             bloccoSize,
-            materials.col3
+            materials.pino
         );
         blocco2el.setAttribute("id", `blocco2el`);
         blocco2el.setAttribute("position", `${room.width}, 1.70, ${room.depth - colonnaSize.width - (bloccoSize.width * 2)}`);
