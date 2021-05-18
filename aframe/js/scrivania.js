@@ -41,12 +41,12 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
     const gambaSize = new Size(.05, scrittoio.y, .02);
     const gamba1 = makeWrappedBox(
         gambaSize,
-        materials.nuvola
+        materials.olmo
     );
     gamba1.setAttribute("id", `gamba1`);
     gamba1.setAttribute("position", `0, 0, ${scrittoio.depth - gambaSize.depth}`);
 
-    const gamba2 = makeWrappedBox(gambaSize, materials.nuvola);
+    const gamba2 = makeWrappedBox(gambaSize, materials.olmo);
     gamba2.setAttribute("id", `gamba2`);
     gamba2.setAttribute("position", `${scrittoio.width - gambaSize.width}, 0, ${scrittoio.depth - gambaSize.depth}`);
     
@@ -57,7 +57,7 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
 // mensola
 const ripianoScrivaniaEl = makeBox(
     new Size(scrittoio.width, scrittoio.height, .2),
-    materials.nuvola 
+    materials.olmo 
 );
 ripianoScrivaniaEl.setAttribute("id", "mensola");
 setPos(ripianoScrivaniaEl, [0, 1.3, 0]);

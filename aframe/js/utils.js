@@ -1,7 +1,7 @@
 export const materials = {
     denim: "src: #denim; roughness: .5;",
     nuvola: "src: #nuvola; roughness: .5;",
-    // olmo: "src: #olmo; roughness: .5;",
+    olmo: "src: #olmo; roughness: .5;",
     mirtillo: 'src: #mirtillo; roughness: .1;',
     ciliegia: 'src: #ciliegia; roughness: 1;', 
     zenzero: 'src: #zenzero; roughness: 1;', 
@@ -22,7 +22,7 @@ export const room = {
     height: 2.7, 
     depth: 3.73
 };
-
+ 
 
 export function makeBox (sizeObj, materialStr, shadow = true) {
     const boxEl = document.createElement('a-box');

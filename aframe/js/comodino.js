@@ -34,7 +34,7 @@ comodinoWrapper.setAttribute("id", "comodino");
 
 
 const comodinoEl = document.createElement('a-box');
-comodinoEl.setAttribute('material', materials.nuvola);
+comodinoEl.setAttribute('material', materials.olmo);
 comodinoEl.setAttribute("shadow", "cast: true; receive: true");
 comodinoEl.setAttribute("width", comodino.width);
 comodinoEl.setAttribute("height", comodino.height);
@@ -42,7 +42,7 @@ comodinoEl.setAttribute("depth", comodino.depth);
 setPos(comodinoEl, [0, 0, 0]);
 
 
-const maniglia1El = makeBox(maniglia, materials.nuvola);
+const maniglia1El = makeBox(maniglia, materials.olmo);
 maniglia1El.setAttribute("geometry", {
     primitive: "maniglia-triangolo"
 });
@@ -54,7 +54,7 @@ setPos(maniglia1El, [
 ]);
 comodinoWrapper.appendChild(maniglia1El); 
 
-const maniglia2El = makeBox(maniglia, materials.nuvola);
+const maniglia2El = makeBox(maniglia, materials.olmo);
 setPos(maniglia2El, [
     maniglia.x, 
     cassetto.height, 
