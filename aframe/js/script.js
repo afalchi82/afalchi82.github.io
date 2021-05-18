@@ -223,7 +223,7 @@ AFRAME.registerComponent('scene-init', {
             angle: 120,
             type: "spot",
             intensity: 7,
-            penumbra: 0,  
+            penumbra: 1,  
             castShadow: true
         });
         
@@ -238,19 +238,19 @@ AFRAME.registerComponent('scene-init', {
 
 
         /* ----------------------------------------------------
-            luce finestra
+            luce ambient
         ---------------------------------------------------- */
-        const lightWindow = document.createElement('a-entity');
-        lightWindow.setAttribute('id', "luce-finestra");
-        lightWindow.setAttribute('light', {
+        const ambientLight = document.createElement('a-entity');
+        ambientLight.setAttribute('id', "ambientLight");
+        ambientLight.setAttribute('light', {
             angle: 100,
-            type: "spot",
-            intensity: 4,
+            type: "ambient",
+            intensity: .18,
             penumbra: 1,  
             castShadow: true
         });
-        setPos(lightWindow, [ room.width - 1.5, 2, 5]);
-        sceneEl.appendChild(lightWindow);
+        setPos(ambientLight, [ room.width - 1.5, 2, 5]);
+        sceneEl.appendChild(ambientLight);
 
 
         /* ----------------------------------------------------

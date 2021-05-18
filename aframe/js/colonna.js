@@ -30,7 +30,7 @@ const sportelloSize = new Size(
 const colonnaWrapper = document.createElement('a-entity');
 colonnaWrapper.setAttribute("id", "colonna");
 
-const fiancoSx = makeWrappedBox( fiancoSize, materials.mirtillo );
+const fiancoSx = makeWrappedBox( fiancoSize, materials.olmo );
 setPos(fiancoSx, [0,0,0]);
 colonnaWrapper.appendChild(fiancoSx);
 
@@ -47,6 +47,10 @@ const ripiano2 = makeWrappedBox( ripianoSize, materials.olmo );
 setPos(ripiano2, [fiancoSize.width, colonnaSize.height - ripianoSize.height, 0]);
 colonnaWrapper.appendChild(ripiano2);
 
+const ripiano3 = makeWrappedBox( ripianoSize, materials.olmo );
+setPos(ripiano3, [fiancoSize.width, 1.3, 0]);
+colonnaWrapper.appendChild(ripiano3);
+
 const sportello1 = makeWrappedBox( sportelloSize, materials.mirtillo );
 sportello1.setAttribute("position", `0, 0, ${colonnaSize.depth}`);
 colonnaWrapper.appendChild(sportello1);
@@ -56,7 +60,7 @@ sportello2.setAttribute("position", `0, ${colonnaSize.height - sportelloTopSize.
 colonnaWrapper.appendChild(sportello2);
 
 const sportello3 = makeWrappedBox( sportelloSize, materials.mirtillo );
-sportello3.setAttribute("position", `0, 1.7, ${colonnaSize.depth}`);
+sportello3.setAttribute("position", `0, 1.7, ${colonnaSize.depth}`); 
 // colonnaWrapper.appendChild(sportello3);
 
 const schienale = makeWrappedBox( new Size(colonnaSize.width, colonnaSize.height, .001), materials.mirtillo );
