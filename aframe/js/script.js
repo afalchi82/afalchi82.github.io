@@ -250,7 +250,7 @@ AFRAME.registerComponent('scene-init', {
             castShadow: true
         });
         setPos(lightWindow, [ room.width - 1.5, 2, 5]);
-        // sceneEl.appendChild(lightWindow);
+        sceneEl.appendChild(lightWindow);
 
 
         /* ----------------------------------------------------
@@ -400,7 +400,7 @@ AFRAME.registerComponent('scene-init', {
         };
         
         const settiminoEl = document.createElement('a-box');
-        settiminoEl.setAttribute('material', materials.chiaro);
+        settiminoEl.setAttribute('material', materials.olmo);
         settiminoEl.setAttribute("shadow", "cast: true; receive: true");
         settiminoEl.setAttribute("width", settimino.width);
         settiminoEl.setAttribute("height", settimino.height);
@@ -426,7 +426,7 @@ AFRAME.registerComponent('scene-init', {
         // cassetti
         for (let i=0; i<4; i++) {
             const cassettoEl = document.createElement('a-box');
-            i > 0 && cassettoEl.setAttribute('material', materials.chiaro);
+            i > 0 && cassettoEl.setAttribute('material', materials.olmo);
             i === 0 && cassettoEl.setAttribute('material', materials.mandorlo);
             cassettoEl.setAttribute("width", settimino.width);
             cassettoEl.setAttribute("height", cassetto.height);
@@ -479,7 +479,7 @@ AFRAME.registerComponent('scene-init', {
             cestone.height + cassetto.height - manigliaSettimino.height, 
             manigliaSettimino.z
         ]);
-        const manigliaSettimino5El = makeBox(manigliaSettimino, materials.chiaro);
+        const manigliaSettimino5El = makeBox(manigliaSettimino, materials.olmo);
         setPos(manigliaSettimino5El, [
             manigliaSettimino.x,
             cestone.height - manigliaSettimino.height, 
@@ -527,7 +527,7 @@ AFRAME.registerComponent('scene-init', {
 
         const preseMuroSxEl = makeBox(
             preseMuroSx,
-            materials.chiaro
+            materials.olmo
         );
         setPos(preseMuroSxEl, [0, 0, 0]);
         
@@ -632,7 +632,7 @@ AFRAME.registerComponent('scene-init', {
         const guidaTendaSize = new Size(1.9, .05, .015);
         const guidaTenda = makeWrappedBox(
             guidaTendaSize,
-            materials.chiaro
+            materials.olmo
         );
         setPos(guidaTenda, [
             room.width - guidaTendaSize.width - .3, 
