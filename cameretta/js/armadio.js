@@ -44,7 +44,7 @@ const armadioWrapper = document.createElement('a-entity');
 
 
 const armadioEl = document.createElement('a-box');
-armadioEl.setAttribute('material', materials.olmo);
+armadioEl.setAttribute('material', materials.canapa);
 armadioEl.setAttribute('color', 'white');
 ["width", "height", "depth"].forEach(p => {
     armadioEl.setAttribute(p, armadio[p]);
@@ -56,10 +56,10 @@ for (let i=0; i<3; i++) {
     const antaWrapper = document.createElement('a-box');
 
     // i === 0 && antaWrapper.setAttribute('material', materials.ciliegia);
-    // i === 1 && antaWrapper.setAttribute('material', materials.olmo);
+    // i === 1 && antaWrapper.setAttribute('material', materials.canapa);
     // i === 2 && antaWrapper.setAttribute('material', materials.mirtillo);
 
-    antaWrapper.setAttribute('material', materials.olmo);
+    antaWrapper.setAttribute('material', materials.canapa);
 
     antaWrapper.setAttribute("width", antaFull.width);
     antaWrapper.setAttribute("height", antaFull.height);
@@ -74,7 +74,7 @@ for (let i=0; i<3; i++) {
 // ante h 60%
 for (let i=0; i<2; i++) {
     const antaWrapper = document.createElement('a-box');
-    antaWrapper.setAttribute('material', materials.olmo);
+    antaWrapper.setAttribute('material', materials.canapa);
     antaWrapper.setAttribute("width", antaNotFull.width);
     antaWrapper.setAttribute("height", antaNotFull.height);
     antaWrapper.setAttribute("depth", antaNotFull.depth);
@@ -153,9 +153,8 @@ armadioWrapper.appendChild(maniglia5El);
 
 // cassetti
 for (let i=0; i<2; i++) {
-    const cassettoEl = document.createElement('a-box');
-    i === 0 && cassettoEl.setAttribute('material', materials.ciliegia);
-    i === 1 && cassettoEl.setAttribute('material', materials.mandorlo);
+    const cassettoEl = document.createElement('a-box'); 
+    cassettoEl.setAttribute('material', materials.ciliegia);
     cassettoEl.setAttribute("width", cassetto.width);
     cassettoEl.setAttribute("height", cassetto.height);
     cassettoEl.setAttribute("depth", cassetto.depth);
@@ -167,7 +166,7 @@ for (let i=0; i<2; i++) {
 } 
  
 
-const manigliaCass1El = makeBox(manigliaHor, materials.olmo);
+const manigliaCass1El = makeBox(manigliaHor, materials.canapa);
 manigliaCass1El.setAttribute("geometry", {
     primitive: "maniglia-triangolo"
 });
@@ -177,14 +176,14 @@ setPos(manigliaCass1El, [
     cestone.height + cassetto.height - (manigliaHor.height / 2), 
     manigliaHor.z
 ]); 
-const manigliaCass2El = makeBox(manigliaHor, materials.olmo);
+const manigliaCass2El = makeBox(manigliaHor, materials.canapa);
 setPos(manigliaCass2El, [
     (antaFull.width * 4) - (manigliaHor.width / 2), 
     cestone.height + cassetto.height - manigliaHor.height, 
     manigliaHor.z
 ]);
 
-const manigliaCass3El = makeBox(manigliaHor, materials.olmo);
+const manigliaCass3El = makeBox(manigliaHor, materials.canapa);
 setPos(manigliaCass3El, [
     (antaFull.width * 4) - (manigliaHor.width / 2), 
     cestone.height - manigliaHor.height, 

@@ -41,12 +41,12 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
     const gambaSize = new Size(.05, scrittoio.y, .02);
     const gamba1 = makeWrappedBox(
         gambaSize,
-        materials.olmo
+        materials.canapa
     );
     gamba1.setAttribute("id", `gamba1`);
     gamba1.setAttribute("position", `0, 0, ${scrittoio.depth - gambaSize.depth}`);
 
-    const gamba2 = makeWrappedBox(gambaSize, materials.olmo);
+    const gamba2 = makeWrappedBox(gambaSize, materials.canapa);
     gamba2.setAttribute("id", `gamba2`);
     gamba2.setAttribute("position", `${scrittoio.width - gambaSize.width}, 0, ${scrittoio.depth - gambaSize.depth}`);
     
@@ -57,7 +57,7 @@ setPos(scrittoioEl, [0, scrittoio.y, 0]);
 // mensola
 const ripianoScrivaniaEl = makeBox(
     new Size(scrittoio.width, scrittoio.height, .2),
-    materials.olmo 
+    materials.canapa 
 );
 ripianoScrivaniaEl.setAttribute("id", "mensola");
 setPos(ripianoScrivaniaEl, [0, 1.3, 0]);
@@ -73,7 +73,7 @@ const ponteSide = {
 };
 const ponteSxEl = document.createElement('a-box');
 ponteSxEl.setAttribute("shadow", "cast: true; receive: true");
-ponteSxEl.setAttribute("material", materials.olmo);
+ponteSxEl.setAttribute("material", materials.canapa);
 ponteSxEl.setAttribute("width", ponteSide.width); 
 ponteSxEl.setAttribute("height", ponteSide.height);
 ponteSxEl.setAttribute("depth", ponteSide.depth);
@@ -82,7 +82,7 @@ ponteWrapper.appendChild(ponteSxEl);
 
 const ponteDxEl = document.createElement('a-box');
 ponteDxEl.setAttribute("shadow", "cast: true; receive: true");
-ponteDxEl.setAttribute("material", materials.olmo);
+ponteDxEl.setAttribute("material", materials.canapa);
 ponteDxEl.setAttribute("width", ponteSide.width);
 ponteDxEl.setAttribute("height", ponteSide.height);
 ponteDxEl.setAttribute("depth", ponteSide.depth);
@@ -92,7 +92,7 @@ ponteWrapper.appendChild(ponteDxEl);
 
 const ponteTop = makeBox(
     new Size(scrittoio.width, scrittoio.height, .3),
-    materials.olmo
+    materials.canapa
 );
 setPos(ponteTop, [0, ponteSide.height - scrittoio.height, 0]);
 // ponteWrapper.appendChild(ponteTop);
@@ -106,7 +106,7 @@ const cassone = {
 };
 const ponteCassone = document.createElement('a-box');
 ponteCassone.setAttribute("shadow", "cast: true; receive: true");
-ponteCassone.setAttribute("material", materials.olmo);
+ponteCassone.setAttribute("material", materials.canapa);
 ponteCassone.setAttribute("width", scrittoio.width);
 ponteCassone.setAttribute("height", cassone.height);
 ponteCassone.setAttribute("depth", ponteSide.depth);

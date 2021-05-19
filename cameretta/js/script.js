@@ -400,7 +400,7 @@ AFRAME.registerComponent('scene-init', {
         };
         
         const settiminoEl = document.createElement('a-box');
-        settiminoEl.setAttribute('material', materials.olmo);
+        settiminoEl.setAttribute('material', materials.canapa);
         settiminoEl.setAttribute("shadow", "cast: true; receive: true");
         settiminoEl.setAttribute("width", settimino.width);
         settiminoEl.setAttribute("height", settimino.height);
@@ -426,10 +426,9 @@ AFRAME.registerComponent('scene-init', {
         // cassetti
         for (let i=0; i<4; i++) {
             const cassettoEl = document.createElement('a-box');
-            i > 0 && cassettoEl.setAttribute('material', materials.olmo);
-            i === 0 && cassettoEl.setAttribute('material', materials.mandorlo);
+            cassettoEl.setAttribute('material', materials.canapa);
             cassettoEl.setAttribute("width", settimino.width);
-            cassettoEl.setAttribute("height", cassetto.height);
+            cassettoEl.setAttribute("height", cassetto.height); 
             cassettoEl.setAttribute("depth", cassetto.depth);
             cassettoEl.setAttribute("shadow", "cast: true; receive: true");
             cassettoEl.object3D.scale.set(.99, .99, 1);
@@ -479,7 +478,7 @@ AFRAME.registerComponent('scene-init', {
             cestone.height + cassetto.height - manigliaSettimino.height, 
             manigliaSettimino.z
         ]);
-        const manigliaSettimino5El = makeBox(manigliaSettimino, materials.olmo);
+        const manigliaSettimino5El = makeBox(manigliaSettimino, materials.canapa);
         setPos(manigliaSettimino5El, [
             manigliaSettimino.x,
             cestone.height - manigliaSettimino.height, 
@@ -527,7 +526,7 @@ AFRAME.registerComponent('scene-init', {
 
         const preseMuroSxEl = makeBox(
             preseMuroSx,
-            materials.olmo
+            materials.canapa
         );
         setPos(preseMuroSxEl, [0, 0, 0]);
         
@@ -632,7 +631,7 @@ AFRAME.registerComponent('scene-init', {
         const guidaTendaSize = new Size(1.9, .05, .015);
         const guidaTenda = makeWrappedBox(
             guidaTendaSize,
-            materials.olmo
+            materials.canapa
         );
         setPos(guidaTenda, [
             room.width - guidaTendaSize.width - .3, 
@@ -669,7 +668,7 @@ AFRAME.registerComponent('modify-materials', {
                 // console.log(node.material)
                 if (node.name.indexOf('M') !== -1) { 
                     //console.log(node.material)
-                    // node.material.map.image.set("#nuvola");
+                    // node.material.map.image.set("#canapa");
                     // node.material.map.repeat = "2 1 0";
                     node.material.color.set('#ffffff');
                     // node.material.opacity = 0;
