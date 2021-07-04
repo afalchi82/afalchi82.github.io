@@ -94,6 +94,9 @@ AFRAME.registerGeometry('muro-finestra', {
 });
 
 
+
+
+
 AFRAME.registerGeometry('muro-porta', {
     init: function () {
 

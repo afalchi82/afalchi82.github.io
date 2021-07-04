@@ -1,0 +1,28 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 40px 50px 1fr;
+  grid-template-areas: "fedbar fedbar" "topbar topbar" "nav main";
+  overflow: hidden;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.barra-fed {
+  grid-area: fedbar;
+  background: red;
+}
+
+.topbar {
+  grid-area: topbar;
+  border-bottom: 1px solid grey;
+}
+
+.navbar {
+  grid-area: nav;
+  overflow-y: auto;
+}
+
+.content {
+  grid-area: main;
+}/*# sourceMappingURL=style.css.map */
