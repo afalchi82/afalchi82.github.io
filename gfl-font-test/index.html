@@ -1,1 +1,162 @@
-dd
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="GFL icon font">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="gfl_iconfont.css">
+
+  <style>
+    body {
+      padding: 80px;
+      font-family:Arial, Helvetica, sans-serif;
+      color: #333;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 180px;
+      margin: 8px 8px 24px;
+      text-align: center;
+    }
+
+    .icon-item span {
+      font-size: 11px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+  </style>
+
+</head>
+
+<body>
+  
+  <main id="main"></main>
+
+
+  <script>
+    const icons = {
+      alarm: "\f018",
+      alert_triangle: "\f019",
+      arrow_down_circle: "\f01a",
+      arrow_left: "\f01b",
+      arrow_right: "\f01c",
+      auto_alarm: "\f01d",
+      bell: "\f01e",
+      calendar: "\f01f",
+      check: "\f020",
+      chevron_down: "\f021",
+      chevron_left: "\f022",
+      chevron_right: "\f023",
+      chevron_right_alt: "\f024",
+      circle: "\f025",
+      circle_full: "\f026",
+      clock: "\f027",
+      copy: "\f028",
+      download: "\f029",
+      drag: "\f02a",
+      edit: "\f02b",
+      edit_alt: "\f02c",
+      euro: "\f02d",
+      ext_link: "\f02e",
+      eye: "\f02f",
+      file_move: "\f030",
+      filter: "\f031",
+      flag: "\f032",
+      folder: "\f033",
+      folder_full: "\f034",
+      google: "\f035",
+      group: "\f036",
+      help_circle: "\f037",
+      history: "\f038",
+      home: "\f039",
+      inbox: "\f03a",
+      info: "\f03b",
+      kanban: "\f03c",
+      link: "\f03d",
+      list: "\f03e",
+      loader: "\f03f",
+      lock: "\f040",
+      logout: "\f041",
+      mail: "\f042",
+      maximize: "\f043",
+      message_circle: "\f044",
+      minimize: "\f045",
+      minus: "\f046",
+      monitor: "\f047",
+      more_horizontal: "\f048",
+      more_vertical: "\f049",
+      move: "\f04a",
+      move_vertical: "\f04b",
+      paperclip: "\f04c",
+      phone: "\f04d",
+      pie: "\f04e",
+      plus: "\f04f",
+      refresh: "\f050",
+      repeat: "\f051",
+      rinvia: "\f052",
+      search: "\f053",
+      send: "\f054",
+      settings: "\f055",
+      share: "\f056",
+      star: "\f057",
+      tag: "\f058",
+      text: "\f059",
+      times: "\f05a",
+      tool: "\f05b",
+      trash: "\f05c",
+      trash_delete: "\f05d",
+      trash_restore: "\f05e",
+      udienza: "\f05f",
+      upload: "\f060",
+      user: "\f061",
+      users: "\f062",    
+    }
+
+
+
+    Object.keys(icons).forEach(i => {
+      const divEl = document.createElement("div");
+      const spanEl = document.createElement("span");
+      const iconEl = document.createElement("i");
+
+      divEl.setAttribute("class", `icon-item`);
+      iconEl.setAttribute("class", `gflicon gfl-fth_${i}`);
+      spanEl.innerText = i;
+
+      divEl.appendChild(iconEl);
+      divEl.appendChild(spanEl);
+      document.getElementById("main").appendChild(divEl);
+    });
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
