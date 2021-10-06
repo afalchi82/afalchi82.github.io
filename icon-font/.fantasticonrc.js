@@ -1,8 +1,9 @@
 module.exports = {
 	inputDir: './icons_svg', // (required)
 	outputDir: './dist2', // (required)
-	fontTypes: ['ttf', 'woff', 'woff2'],
+	fontTypes: ['ttf', 'woff', 'woff2', 'svg'],
 	assetTypes: ['ts', 'css', 'json', 'html'],
+	name: "GFLFontIcon",
 	// fontsUrl: '/static/fonts',
 	// formatOptions: {
 	//   // Pass options directly to `svgicons2svgfont`
