@@ -1,6 +1,6 @@
 module.exports = {
 	inputDir: './icons_svg', // (required)
-	outputDir: './dist', // (required)
+	outputDir: './dist2', // (required)
 	fontTypes: ['ttf', 'woff', 'woff2'],
 	assetTypes: ['ts', 'css', 'json', 'html'],
 	// fontsUrl: '/static/fonts',
