@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,700;1,400;1,700&display=swap');
+
+$c-grey-10: hsl(215deg, 25%, 98%);
+$c-grey-20: hsl(215deg, 24%, 96%);
+$c-grey-30: hsl(215deg, 24%, 94%);
+$c-grey-40: hsl(215deg, 23%, 92%);
+$c-grey-50: hsl(216deg, 23%, 90%);
+$c-grey-60: hsl(216deg, 21%, 80%);
+$c-grey-70: hsl(217deg, 19%, 70%);
+$c-grey-80: hsl(217deg, 17%, 60%);
+$c-grey-90: hsl(218deg, 12%, 36%);
+$c-grey-100: hsl(219deg, 10%, 26%);
+ 
+$c-blue-10: hsl(215deg, 78%, 98%);
+$c-blue-20: hsl(215deg, 78%, 96%); 
+$c-blue-30: hsl(215deg, 78%, 94%);
+$c-blue-40: hsl(216deg, 77%, 92%);
+$c-blue-50: hsl(216deg, 77%, 90%);
+$c-blue-60: hsl(216deg, 76%, 80%);
+$c-blue-70: hsl(218deg, 74%, 60%);
+$c-blue-80: hsl(219deg, 72%, 40%);
+$c-blue-90: hsl(220deg, 71%, 26%);
+$c-blue-100: hsl(221deg, 70%, 14%);
+ 
+$c-red-10: hsl(0deg, 53%, 98%); 
+$c-red-20: hsl(0deg, 53%, 96%);
+$c-red-30: hsl(0deg, 53%, 94%);
+$c-red-40: hsl(0deg, 53%, 92%);
+$c-red-50: hsl(0deg, 53%, 90%);
+$c-red-60: hsl(0deg, 53%, 80%);
+$c-red-70: hsl(0deg, 51%, 55%);
+$c-red-80: hsl(0deg, 53%, 43%);
+$c-red-90: hsl(0deg, 53%, 26%);
+$c-red-100: hsl(0deg, 53%, 16%);
+
+$text-primary: $c-grey-100;
+$text-secondary: $c-grey-90;
+$text-tertiary: $c-grey-80;
+$c-links: $c-blue-90;
+
+:root {
+    --btn-primary-hover-border-color: hsl(220deg, 71%, 26%);
+    --btn-primary-background-color: hsl(220deg, 71%, 26%);
+    --btn-primary-border-color: hsl(220deg, 71%, 26%);
+}
+
+body {
+    font-family: 'Quattrocento Sans', sans-serif!important;
+    color: red;
+}
+
+body, #wrapper,
+.table-list,
+select.form-control,
+.toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
+    color: $text-primary;
+}
+
+.btn-primary:not(.dropdown-item):hover {
+    border-color: $c-links;
+    background-color: $c-links;
+}
+
+.portlet-decorate .portlet-content,
+.table-list {
+    border: 0;
+}
+
+.form-control,
+.btn {
+    border-radius: 0;
+}
+
+.input-group .input-group-inset-item-after {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-control:focus, .form-control.focus,
+.btn:focus, .btn.focus {
+    box-shadow: 0 0 0 0.1rem #80acff;
+    outline: 0;
+}
+
+.taglib-empty-result-message .taglib-empty-state {
+    background: url('https://test-cube.giuffre.it/cliens_theme/static/src/images/clienscube-bw.svg') no-repeat bottom center;
+}
+
+// Sidebar
+.toolpec-webmail-portlet .wm-folders,
+.toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
+    background-color: $c-grey-40;
+}
+
+.toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
+    border-bottom-color: $c-grey-60;
+}
+

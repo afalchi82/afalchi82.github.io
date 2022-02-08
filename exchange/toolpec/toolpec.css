@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,700;1,400;1,700&display=swap");
+:root {
+  --btn-primary-hover-border-color: hsl(220deg, 71%, 26%);
+  --btn-primary-background-color: hsl(220deg, 71%, 26%);
+  --btn-primary-border-color: hsl(220deg, 71%, 26%);
+}
+
+body {
+  font-family: "Quattrocento Sans", sans-serif !important;
+  color: red;
+}
+
+body, #wrapper,
+.table-list,
+select.form-control,
+.toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
+  color: #3c4049;
+}
+
+.btn-primary:not(.dropdown-item):hover {
+  border-color: #133371;
+  background-color: #133371;
+}
+
+.portlet-decorate .portlet-content,
+.table-list {
+  border: 0;
+}
+
+.form-control,
+.btn {
+  border-radius: 0;
+}
+
+.input-group .input-group-inset-item-after {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-control:focus, .form-control.focus,
+.btn:focus, .btn.focus {
+  -webkit-box-shadow: 0 0 0 0.1rem #80acff;
+          box-shadow: 0 0 0 0.1rem #80acff;
+  outline: 0;
+}
+
+.taglib-empty-result-message .taglib-empty-state {
+  background: url("https://test-cube.giuffre.it/cliens_theme/static/src/images/clienscube-bw.svg") no-repeat bottom center;
+}
+
+.toolpec-webmail-portlet .wm-folders,
+.toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
+  background-color: #e6eaef;
+}
+
+.toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
+  border-bottom-color: #c1cad7;
+}
+/*# sourceMappingURL=toolpec.css.map */
