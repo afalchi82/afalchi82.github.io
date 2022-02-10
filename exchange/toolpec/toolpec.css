@@ -7,7 +7,14 @@
 
 body {
   font-family: "Quattrocento Sans", sans-serif !important;
-  color: red;
+}
+
+a {
+  color: #133371;
+}
+
+a:hover {
+  color: #1d50af;
 }
 
 body, #wrapper,
@@ -28,7 +35,9 @@ select.form-control,
 }
 
 .form-control,
-.btn {
+.btn,
+.wm-message-composer .ts-input,
+.wm-message-composer .ts-input.focus {
   border-radius: 0;
 }
 
@@ -44,8 +53,10 @@ select.form-control,
   outline: 0;
 }
 
-.taglib-empty-result-message .taglib-empty-state {
+.taglib-empty-result-message .taglib-empty-state,
+.taglib-empty-result-message .taglib-empty-result-message-header, .taglib-empty-result-message .taglib-empty-result-message-header-has-plus-btn {
   background: url("https://test-cube.giuffre.it/cliens_theme/static/src/images/clienscube-bw.svg") no-repeat bottom center;
+  background-size: contain;
 }
 
 .toolpec-webmail-portlet .wm-folders,
@@ -55,5 +66,15 @@ select.form-control,
 
 .toolpec-webmail-portlet .wm-folders .wm-folders-list li a {
   border-bottom-color: #c1cad7;
+}
+
+@media (min-width: 768px) {
+  .navbar-underline.navbar-expand-md .navbar-nav .nav-link.active:after, .navbar-underline.navbar-expand-md .navbar-nav .nav-underline .tab a.active:after, .nav-underline .tab .navbar-underline.navbar-expand-md .navbar-nav a.active:after, .navbar-underline.navbar-expand-md .navbar-nav .nav-underline .tab.active a:after, .nav-underline .tab.active .navbar-underline.navbar-expand-md .navbar-nav a:after {
+    background-color: #a83434;
+  }
+}
+
+.wm-tab-close-link {
+  color: #EC4B4B;
 }
 /*# sourceMappingURL=toolpec.css.map */

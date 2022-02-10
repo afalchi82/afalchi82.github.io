@@ -12,7 +12,7 @@ $c-grey-90: hsl(218deg, 12%, 36%);
 $c-grey-100: hsl(219deg, 10%, 26%);
  
 $c-blue-10: hsl(215deg, 78%, 98%);
-$c-blue-20: hsl(215deg, 78%, 96%); 
+$c-blue-20: hsl(215deg, 78%, 96%);
 $c-blue-30: hsl(215deg, 78%, 94%);
 $c-blue-40: hsl(216deg, 77%, 92%);
 $c-blue-50: hsl(216deg, 77%, 90%);
@@ -22,7 +22,7 @@ $c-blue-80: hsl(219deg, 72%, 40%);
 $c-blue-90: hsl(220deg, 71%, 26%);
 $c-blue-100: hsl(221deg, 70%, 14%);
  
-$c-red-10: hsl(0deg, 53%, 98%); 
+$c-red-10: hsl(0deg, 53%, 98%);
 $c-red-20: hsl(0deg, 53%, 96%);
 $c-red-30: hsl(0deg, 53%, 94%);
 $c-red-40: hsl(0deg, 53%, 92%);
@@ -36,7 +36,15 @@ $c-red-100: hsl(0deg, 53%, 16%);
 $text-primary: $c-grey-100;
 $text-secondary: $c-grey-90;
 $text-tertiary: $c-grey-80;
+
 $c-links: $c-blue-90;
+$c-danger: #EC4B4B;
+
+// Links
+$link-color: $c-blue-90;
+$link-color-hover: $c-blue-80;
+$link-color-active: $c-blue-70;
+$link-ghost-hover-bg: $c-blue-20;
 
 :root {
     --btn-primary-hover-border-color: hsl(220deg, 71%, 26%);
@@ -46,7 +54,14 @@ $c-links: $c-blue-90;
 
 body {
     font-family: 'Quattrocento Sans', sans-serif!important;
-    color: red;
+}
+
+a {
+    color: $c-links;
+} 
+
+a:hover {
+    color: $link-color-hover;
 }
 
 body, #wrapper,
@@ -67,7 +82,9 @@ select.form-control,
 }
 
 .form-control,
-.btn {
+.btn,
+.wm-message-composer .ts-input,
+.wm-message-composer .ts-input.focus {
     border-radius: 0;
 }
 
@@ -82,8 +99,10 @@ select.form-control,
     outline: 0;
 }
 
-.taglib-empty-result-message .taglib-empty-state {
+.taglib-empty-result-message .taglib-empty-state,
+.taglib-empty-result-message .taglib-empty-result-message-header, .taglib-empty-result-message .taglib-empty-result-message-header-has-plus-btn {
     background: url('https://test-cube.giuffre.it/cliens_theme/static/src/images/clienscube-bw.svg') no-repeat bottom center;
+    background-size: contain;
 }
 
 // Sidebar
@@ -96,3 +115,12 @@ select.form-control,
     border-bottom-color: $c-grey-60;
 }
 
+@media (min-width: 768px) {
+    .navbar-underline.navbar-expand-md .navbar-nav .nav-link.active:after, .navbar-underline.navbar-expand-md .navbar-nav .nav-underline .tab a.active:after, .nav-underline .tab .navbar-underline.navbar-expand-md .navbar-nav a.active:after, .navbar-underline.navbar-expand-md .navbar-nav .nav-underline .tab.active a:after, .nav-underline .tab.active .navbar-underline.navbar-expand-md .navbar-nav a:after {
+    background-color: $c-red-80;
+    }
+}
+
+.wm-tab-close-link {
+    color: $c-danger;
+}
