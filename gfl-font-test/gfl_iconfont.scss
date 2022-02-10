@@ -1,0 +1,525 @@
+/* ICONS */
+@font-face {
+    font-family: "GFLFontIcon";
+    font-style: normal;
+    font-weight: 400;
+    src: url("GFLFontIcons/GFLFontIcon.woff2") format("woff2"),
+      url("GFLFontIcons/GFLFontIcon.woff") format("woff"),
+      url("GFLFontIcons/GFLFontIcon.ttf") format("truetype"),
+      url("GFLFontIcons/GFLFontIcon.svg") format("svg");
+  }
+  
+  i[class^="gfl-"]:before,
+  i[class*=" gfl-"]:before,
+  .gflicon {
+      @include gfl-iconfont-before;
+  }
+  
+  .gfl-agenda:before {
+      content: "\f000";
+  };
+  
+  .gfl-alarm:before {
+      content: "\f001";
+  };
+  
+  .gfl-apps:before {
+      content: "\f002";
+  };
+  
+  .gfl-bank:before {
+      content: "\f003";
+  };
+  
+  .gfl-bell:before {
+      content: "\f004";
+  };
+  
+  .gfl-biblio:before {
+      content: "\f005";
+  };
+  
+  .gfl-board:before {
+      content: "\f006";
+  };
+  
+  .gfl-bubble:before {
+      content: "\f007";
+  };
+  
+  .gfl-caret:before {
+      content: "\f008";
+  };
+  
+  .gfl-chat:before {
+      content: "\f009";
+  };
+  
+  .gfl-check:before {
+      content: "\f00a";
+  };
+  
+  .gfl-circle:before {
+      content: "\f00b";
+  };
+  
+  .gfl-circlequestion:before {
+      content: "\f00c";
+  };
+  
+  .gfl-clock:before {
+      content: "\f00d";
+  };
+  
+  .gfl-coge:before {
+      content: "\f00e";
+  };
+  
+  .gfl-contacs:before {
+      content: "\f00f";
+  };
+  
+  .gfl-dashboard:before {
+      content: "\f010";
+  };
+  
+  .gfl-document:before {
+      content: "\f011";
+  };
+  
+  .gfl-dossier:before {
+      content: "\f012";
+  };
+  
+  .gfl-dotcircle:before {
+      content: "\f013";
+  };
+  
+  .gfl-edit:before {
+      content: "\f014";
+  };
+  
+  .gfl-error:before {
+      content: "\f015";
+  };
+  
+  .gfl-euro:before {
+      content: "\f016";
+  };
+  
+  .gfl-extlink:before {
+      content: "\f017";
+  };
+  
+  .gfl-fth_alarm:before {
+      content: "\f018";
+  };
+  
+  .gfl-fth_alert_triangle:before {
+      content: "\f019";
+  };
+  
+  .gfl-fth_arrow_down_circle:before {
+      content: "\f01a";
+  };
+  
+  .gfl-fth_arrow_left:before {
+      content: "\f01b";
+  };
+  
+  .gfl-fth_arrow_right:before {
+      content: "\f01c";
+  };
+  
+  .gfl-fth_auto_alarm:before {
+      content: "\f01d";
+  };
+  
+  .gfl-fth_bell:before {
+      content: "\f01e";
+  };
+  
+  .gfl-fth_calendar:before {
+      content: "\f01f";
+  };
+  
+  .gfl-fth_check:before {
+      content: "\f020";
+  };
+  
+  .gfl-fth_chevron_down:before {
+      content: "\f021";
+  };
+  
+  .gfl-fth_chevron_left:before {
+      content: "\f022";
+  };
+  
+  .gfl-fth_chevron_right:before {
+      content: "\f023";
+  };
+  
+  .gfl-fth_chevron_right_alt:before {
+      content: "\f024";
+  };
+  
+  .gfl-fth_circle:before {
+      content: "\f025";
+  };
+  
+  .gfl-fth_circle_full:before {
+      content: "\f026";
+  };
+  
+  .gfl-fth_clock:before {
+      content: "\f027";
+  };
+  
+  .gfl-fth_copy:before {
+      content: "\f028";
+  };
+  
+  .gfl-fth_download:before {
+      content: "\f029";
+  };
+  
+  .gfl-fth_drag:before {
+      content: "\f02a";
+  };
+  
+  .gfl-fth_edit:before {
+      content: "\f02b";
+  };
+  
+  .gfl-fth_edit_alt:before {
+      content: "\f02c";
+  };
+  
+  .gfl-fth_euro:before {
+      content: "\f02d";
+  };
+  
+  .gfl-fth_ext_link:before {
+      content: "\f02e";
+  };
+  
+  .gfl-fth_eye:before {
+      content: "\f02f";
+  };
+  
+  .gfl-fth_file_move:before {
+      content: "\f030";
+  };
+  
+  .gfl-fth_filter:before {
+      content: "\f031";
+  };
+  
+  .gfl-fth_flag:before {
+      content: "\f032";
+  };
+  
+  .gfl-fth_folder:before {
+      content: "\f033";
+  };
+  
+  .gfl-fth_folder_full:before {
+      content: "\f034";
+  };
+  
+  .gfl-fth_google:before {
+      content: "\f035";
+  };
+  
+  .gfl-fth_group:before {
+      content: "\f036";
+  };
+  
+  .gfl-fth_help_circle:before {
+      content: "\f037";
+  };
+  
+  .gfl-fth_history:before {
+      content: "\f038";
+  };
+  
+  .gfl-fth_home:before {
+      content: "\f039";
+  };
+  
+  .gfl-fth_inbox:before {
+      content: "\f03a";
+  };
+  
+  .gfl-fth_info:before {
+      content: "\f03b";
+  };
+  
+  .gfl-fth_kanban:before {
+      content: "\f03c";
+  };
+  
+  .gfl-fth_link:before {
+      content: "\f03d";
+  };
+  
+  .gfl-fth_list:before {
+      content: "\f03e";
+  };
+  
+  .gfl-fth_loader:before {
+      content: "\f03f";
+  };
+  
+  .gfl-fth_lock:before {
+      content: "\f040";
+  };
+  
+  .gfl-fth_logout:before {
+      content: "\f041";
+  };
+  
+  .gfl-fth_mail:before {
+      content: "\f042";
+  };
+  
+  .gfl-fth_maximize:before {
+      content: "\f043";
+  };
+  
+  .gfl-fth_message_circle:before {
+      content: "\f044";
+  };
+  
+  .gfl-fth_minimize:before {
+      content: "\f045";
+  };
+  
+  .gfl-fth_minus:before {
+      content: "\f046";
+  };
+  
+  .gfl-fth_monitor:before {
+      content: "\f047";
+  };
+  
+  .gfl-fth_more_horizontal:before {
+      content: "\f048";
+  };
+  
+  .gfl-fth_more_vertical:before {
+      content: "\f049";
+  };
+  
+  .gfl-fth_move:before {
+      content: "\f04a";
+  };
+  
+  .gfl-fth_move_vertical:before {
+      content: "\f04b";
+  };
+  
+  .gfl-fth_paperclip:before {
+      content: "\f04c";
+  };
+  
+  .gfl-fth_phone:before {
+      content: "\f04d";
+  };
+  
+  .gfl-fth_pie:before {
+      content: "\f04e";
+  };
+  
+  .gfl-fth_plus:before {
+      content: "\f04f";
+  };
+  
+  .gfl-fth_refresh:before {
+      content: "\f050";
+  };
+  
+  .gfl-fth_repeat:before {
+      content: "\f051";
+  };
+  
+  .gfl-fth_rinvia:before {
+      content: "\f052";
+  };
+  
+  .gfl-fth_search:before {
+      content: "\f053";
+  };
+  
+  .gfl-fth_send:before {
+      content: "\f054";
+  };
+  
+  .gfl-fth_settings:before {
+      content: "\f055";
+  };
+  
+  .gfl-fth_share:before {
+      content: "\f056";
+  };
+  
+  .gfl-fth_star:before {
+      content: "\f057";
+  };
+  
+  .gfl-fth_tag:before {
+      content: "\f058";
+  };
+  
+  .gfl-fth_text:before {
+      content: "\f059";
+  };
+  
+  .gfl-fth_times:before {
+      content: "\f05a";
+  };
+  
+  .gfl-fth_tool:before {
+      content: "\f05b";
+  };
+  
+  .gfl-fth_trash:before {
+      content: "\f05c";
+  };
+  
+  .gfl-fth_trash_delete:before {
+      content: "\f05d";
+  };
+  
+  .gfl-fth_trash_restore:before {
+      content: "\f05e";
+  };
+  
+  .gfl-fth_udienza:before {
+      content: "\f05f";
+  };
+  
+  .gfl-fth_upload:before {
+      content: "\f060";
+  };
+  
+  .gfl-fth_user:before {
+      content: "\f061";
+  };
+  
+  .gfl-fth_users:before {
+      content: "\f062";
+  };
+  
+  .gfl-gears:before {
+      content: "\f063";
+  };
+  
+  .gfl-history:before {
+      content: "\f064";
+  };
+  
+  .gfl-history_back:before {
+      content: "\f065";
+  };
+  
+  .gfl-info:before {
+      content: "\f066";
+  };
+  
+  .gfl-info_dashed:before {
+      content: "\f067";
+  };
+  
+  .gfl-ligthbulb:before {
+      content: "\f068";
+  };
+  
+  .gfl-logout:before {
+      content: "\f069";
+  };
+  
+  .gfl-lookup:before {
+      content: "\f06a";
+  };
+  
+  .gfl-mail:before {
+      content: "\f06b";
+  };
+  
+  .gfl-news:before {
+      content: "\f06c";
+  };
+  
+  .gfl-pct:before {
+      content: "\f06d";
+  };
+  
+  .gfl-pencil:before {
+      content: "\f06e";
+  };
+  
+  .gfl-person:before {
+      content: "\f06f";
+  };
+  
+  .gfl-phone:before {
+      content: "\f070";
+  };
+  
+  .gfl-phone_contacts:before {
+      content: "\f071";
+  };
+  
+  .gfl-pin:before {
+      content: "\f072";
+  };
+  
+  .gfl-polisweb:before {
+      content: "\f073";
+  };
+  
+  .gfl-question_dashed:before {
+      content: "\f074";
+  };
+  
+  .gfl-ringbell:before {
+      content: "\f075";
+  };
+  
+  .gfl-rules:before {
+      content: "\f076";
+  };
+  
+  .gfl-search:before {
+      content: "\f077";
+  };
+  
+  .gfl-smile:before {
+      content: "\f078";
+  };
+  
+  .gfl-star:before {
+      content: "\f079";
+  };
+  
+  .gfl-starfilled:before {
+      content: "\f07a";
+  };
+  
+  .gfl-success:before {
+      content: "\f07b";
+  };
+  
+  .gfl-trashcan:before {
+      content: "\f07c";
+  };
+  
+  .gfl-user_settings:before {
+      content: "\f07d";
+  };
+  
+  .gfl-warning:before {
+      content: "\f07e";
+  };
+  
