@@ -46,14 +46,17 @@ $link-color-hover: $c-blue-80;
 $link-color-active: $c-blue-70;
 $link-ghost-hover-bg: $c-blue-20;
 
+body {
+    font-family: "Quattrocento Sans", sans-serif !important;
+    color: $text-primary;
+}
+
 #senna_surface1 {
   --btn-primary-hover-border-color: hsl(220deg, 71%, 26%);
   --btn-primary-background-color: hsl(220deg, 71%, 26%);
   --btn-primary-border-color: hsl(220deg, 71%, 26%);
 
-  body {
-    font-family: "Quattrocento Sans", sans-serif !important;
-  }
+  
 
   a {
     color: $c-links;
@@ -63,7 +66,6 @@ $link-ghost-hover-bg: $c-blue-20;
     color: $link-color-hover;
   }
 
-  body,
   #wrapper,
   .table-list,
   select.form-control,
@@ -132,33 +134,33 @@ $link-ghost-hover-bg: $c-blue-20;
 
 
     @media (min-width: 768px) {
-    .navbar-underline.navbar-expand-md .navbar-nav .nav-link.active:after,
-    .navbar-underline.navbar-expand-md
-        .navbar-nav
-        .nav-underline
-        .tab
-        a.active:after,
-    .nav-underline
-        .tab
+        .navbar-underline.navbar-expand-md .navbar-nav .nav-link.active:after,
         .navbar-underline.navbar-expand-md
-        .navbar-nav
-        a.active:after,
-    .navbar-underline.navbar-expand-md
-        .navbar-nav
+            .navbar-nav
+            .nav-underline
+            .tab
+            a.active:after,
         .nav-underline
-        .tab.active
-        a:after,
-    .nav-underline
-        .tab.active
+            .tab
+            .navbar-underline.navbar-expand-md
+            .navbar-nav
+            a.active:after,
         .navbar-underline.navbar-expand-md
-        .navbar-nav
-        a:after {
-        background-color: $c-red-80;
-    }
+            .navbar-nav
+            .nav-underline
+            .tab.active
+            a:after,
+        .nav-underline
+            .tab.active
+            .navbar-underline.navbar-expand-md
+            .navbar-nav
+            a:after {
+            background-color: $c-red-80;
+        }
     }
 
     .wm-tab-close-link {
-    color: $c-danger;
+        color: $c-danger;
     }
 
 }
