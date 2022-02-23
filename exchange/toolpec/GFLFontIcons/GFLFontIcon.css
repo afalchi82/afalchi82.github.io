@@ -1,9 +1,9 @@
 @font-face {
     font-family: "GFLFontIcon";
-    src: url("./GFLFontIcon.svg?7b9a179158ccb0b9888a510029ac0341#GFLFontIcon") format("svg"),
-url("./GFLFontIcon.ttf?7b9a179158ccb0b9888a510029ac0341") format("truetype"),
-url("./GFLFontIcon.woff?7b9a179158ccb0b9888a510029ac0341") format("woff"),
-url("./GFLFontIcon.woff2?7b9a179158ccb0b9888a510029ac0341") format("woff2");
+    src: url("./GFLFontIcon.svg?8d42a978a4c87b844c357c17d02ce54a#GFLFontIcon") format("svg"),
+url("./GFLFontIcon.ttf?8d42a978a4c87b844c357c17d02ce54a") format("truetype"),
+url("./GFLFontIcon.woff?8d42a978a4c87b844c357c17d02ce54a") format("woff"),
+url("./GFLFontIcon.woff2?8d42a978a4c87b844c357c17d02ce54a") format("woff2");
 }
 
 i[class^="gfl-"]:before, i[class*=" gfl-"]:before {
@@ -22,6 +22,15 @@ i[class^="gfl-"]:before, i[class*=" gfl-"]:before {
 }
 .gfl-chevron_down_alt:before {
     content: "\f10c";
+}
+.gfl-corner_up_left:before {
+    content: "\f114";
+}
+.gfl-corner_up_right:before {
+    content: "\f115";
+}
+.gfl-double_corner_up_left:before {
+    content: "\f11a";
 }
 .gfl-fth_alert_triangle:before {
     content: "\f11f";
@@ -149,12 +158,6 @@ i[class^="gfl-"]:before, i[class*=" gfl-"]:before {
 .gfl-contacs:before {
     content: "\f113";
 }
-.gfl-corner-up-left:before {
-    content: "\f114";
-}
-.gfl-corner-up-right:before {
-    content: "\f115";
-}
 .gfl-dashboard:before {
     content: "\f116";
 }
@@ -166,9 +169,6 @@ i[class^="gfl-"]:before, i[class*=" gfl-"]:before {
 }
 .gfl-dotcircle:before {
     content: "\f119";
-}
-.gfl-double-corner-up-left:before {
-    content: "\f11a";
 }
 .gfl-edit:before {
     content: "\f11b";
