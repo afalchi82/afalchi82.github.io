@@ -8,6 +8,10 @@ const codepointsMap = {
 
 	checkbox_check: 				"\f10d",
 	chevron_down_alt: 				"\f10c",
+	corner_up_left: 				"\f114",
+	corner_up_right: 				"\f115",
+	chevron_down_alt: 				"\f10c",
+	double_corner_up_left:			"\f11a",
 	fth_alert_triangle: 			"\f11f",
 	fth_arrow_left: 		  		"\f11c",
 	fth_arrow_right: 				"\f11d",
