@@ -194,5 +194,12 @@ function createOptions() {
         optionsEl.appendChild(label);
     });
 }
+
 createOptions();
 buttonStop.style.display = "none";
+
+const timestamp = document.createElement('p')
+timestamp.innerText = new Date()
+timestamp.classList.add('timestamp')
+
+document.body.appendChild(timestamp)
