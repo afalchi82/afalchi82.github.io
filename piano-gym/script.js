@@ -106,7 +106,7 @@ function start() {
     return setInterval(() => {
         oscillator && oscillator.stop();
 
-        beatBallsEl.innerText = "🔴".repeat(current.tick);
+        beatBallsEl.innerText = "🔴 ".repeat(current.tick);
 
         if (current.tick % current.ticks === 1) {
             current.note =
