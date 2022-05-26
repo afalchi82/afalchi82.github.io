@@ -108,6 +108,7 @@ function start() {
 
         beatBallsEl.innerText = "🔴 ".repeat(current.tick);
 
+
         if (current.tick % current.ticks === 1) {
             current.note =
                 next.note !== undefined
@@ -142,6 +143,7 @@ function start() {
                 (next.inversion ? `<sup>${next.inversion}</sup>` : "");
             nextEl.classList.remove("animation-next");
             setTimeout(() => {
+                document.body.style.backgroundColor = getPageBG(current.note[0], current.alteration);
                 nextEl.classList.add("animation-next");
             }, 400);
             playSound(2);
@@ -153,26 +155,31 @@ function start() {
         current.tick < current.ticks ? current.tick++ : (current.tick = 1);
     }, current.tempo);
 }
+
 buttonPlay.addEventListener("click", function () {
     init = start();
     buttonPlay.style.display = "none";
     buttonStop.style.display = "inline";
 });
+
 buttonStop.addEventListener("click", function () {
     clearInterval(init);
     buttonPlay.style.display = "inline";
     buttonStop.style.display = "none";
 });
+
 inputTempo.addEventListener("change", function () {
     clearInterval(init);
     current.tempo = inputTempo.value;
     init = start();
 });
+
 inputTicks.addEventListener("change", function () {
     clearInterval(init);
     current.ticks = inputTicks.value;
     init = start();
 });
+
 function createOptions() {
     const types = ["notes", "alterations", "modes", "inversions"];
     types.forEach((type) => {
@@ -193,6 +200,26 @@ function createOptions() {
         label.appendChild(select);
         optionsEl.appendChild(label);
     });
+}
+
+function getPageBG(note, alteration) {
+    const index = data.notes.indexOf(note);
+    const hue =  (360 / notes.length) * index;
+    const sat = (function () {
+        let sat;
+        switch(alteration) {
+            case data.alterations[1]:
+                sat = '75%';
+                break;
+            case data.alterations[2]:
+                sat = '25%';
+                break;
+            default: 
+                sat = '50%';
+        }
+        return sat;
+    }());
+    return `hsl(${ hue }deg, ${sat}, 50%)`;
 }
 
 createOptions();
