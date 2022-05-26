@@ -202,24 +202,25 @@ function createOptions() {
     });
 }
 
-function getPageBG(note, alteration) {
+function getPageBG(note, alt) {
     const index = data.notes.indexOf(note);
-    const hue =  (360 / notes.length) * index;
-    const sat = (function () {
-        let sat;
-        switch(alteration) {
-            case data.alterations[1]:
-                sat = '75%';
-                break;
-            case data.alterations[2]:
-                sat = '25%';
-                break;
-            default: 
-                sat = '50%';
-        }
-        return sat;
+    const hueSlice = (360 / notes.length);
+    const altMod = (function () {
+        let res = 0;
+        alt === data.alterations[1] ?
+            res = hueSlice / 2 :
+            null;
+        alt === data.alterations[1] ?
+            res = -(hueSlice / 2) :
+            null;
+
+        return res;
     }());
-    return `hsl(${ hue }deg, ${sat}, 50%)`;
+
+    
+    const hue = (hueSlice * index) + altMod;
+    
+    return `hsl(${ hue }deg, 50%, 50%)`;
 }
 
 createOptions();
