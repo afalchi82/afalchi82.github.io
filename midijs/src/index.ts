@@ -5,11 +5,13 @@ import Score from "./Score.js";
 
 let chord: string[];
 let played: string[];
+let chordName: string;
 
 const questionEl = document.getElementById("question");
 const playedEl = document.getElementById("played");
 const logEl = document.getElementById("log");
 const scoreEl = document.getElementById("score");
+const chordEl = document.getElementById("chord");
 
 const score = new Score;
 
@@ -21,6 +23,8 @@ WebMidi.enable()
     });
 
 function onEnabled(): void {
+    console.log('enabled')
+
     newQuestion();
 
     if (WebMidi.inputs.length < 1) {
@@ -39,8 +43,6 @@ function onEnabled(): void {
 }
 
 function noteOnHandler(e): void {
-    console.log(noteCodeToKey(e.rawData[1]))
-
     played.push(e.note.name);
     played = [...new Set(played)];
 
@@ -70,8 +72,11 @@ function newQuestion(): void {
     score.newQuestion();
 
     chord = dice.getRndChord();
+    chordName = dice.getRndChordName();
     played = [];
+
     questionEl.innerHTML = `Find: ${chord}`;
     playedEl.innerHTML = `Played: ${played}`;
+    chordEl.innerHTML = `Chord: ${chordName}`;
     logEl.innerHTML = "";
 }

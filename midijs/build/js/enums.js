@@ -1,9 +1,19 @@
-// enum Direction [
-//   "C", "C#",
-//   "D", "D#",
-//   "E",
-//   "F", "F#",
-//   "G", "G#",
-//   "A", "A#",
-//   "B"
-// ];
+export const Notes = [
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "A",
+    "B",
+];
+export const Alterations = [
+    "#",
+    "♭"
+];
+export const ChordTypes = [
+    "Maj",
+    "min",
+    "dim",
+    "Aug",
+];

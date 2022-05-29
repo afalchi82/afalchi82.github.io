@@ -1,16 +1,20 @@
-import { notes } from "./utils.js";
+import { 
+  Notes,
+  ChordTypes, 
+  Alterations
+} from "./enums.js";
+
+import {
+  rndFromArr
+} from "./utils.js";
 
 export default class Dice {
 
-  private notes: string[] = notes;
+  private notes: string[] = Notes;
   private root: string;
 
   constructor() {
     this.root = this.getRndNote();
-  }
-
-  private rndIndex(): number {
-    return Math.floor(Math.random() * this.notes.length);
   }
 
   private nextInt(int: number): string {
@@ -20,12 +24,17 @@ export default class Dice {
   }
 
   public getRndNote(): string {
-    return this.notes[this.rndIndex()];
+    return rndFromArr(this.notes);
   }
 
   public getRndChord(): string[] {
     this.root = this.getRndNote();
     return [this.root, this.nextInt(2), this.nextInt(4)];
+  }
+
+  public getRndChordName(): string {
+    const newChord = rndFromArr(Notes) + rndFromArr(ChordTypes) + rndFromArr(Alterations)
+    return newChord;
   }
 }
 

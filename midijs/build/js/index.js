@@ -1,13 +1,14 @@
 import { WebMidi } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
 import Dice from "./Dice.js";
-import { noteCodeToKey } from "./utils.js";
 import Score from "./Score.js";
 let chord;
 let played;
+let chordName;
 const questionEl = document.getElementById("question");
 const playedEl = document.getElementById("played");
 const logEl = document.getElementById("log");
 const scoreEl = document.getElementById("score");
+const chordEl = document.getElementById("chord");
 const score = new Score;
 // Enable WebMidi.js and trigger the onEnabled() function when ready
 WebMidi.enable()
@@ -16,6 +17,7 @@ WebMidi.enable()
     // alert(err)
 });
 function onEnabled() {
+    console.log('enabled');
     newQuestion();
     if (WebMidi.inputs.length < 1) {
         logEl.innerHTML += "No device detected.";
@@ -31,7 +33,6 @@ function onEnabled() {
     mySynth.channels[1].addListener("noteoff", noteOffHandler);
 }
 function noteOnHandler(e) {
-    console.log(noteCodeToKey(e.rawData[1]));
     played.push(e.note.name);
     played = [...new Set(played)];
     playedEl.innerHTML = `Played: ${played}`;
@@ -54,8 +55,10 @@ function newQuestion() {
     const dice = new Dice();
     score.newQuestion();
     chord = dice.getRndChord();
+    chordName = dice.getRndChordName();
     played = [];
     questionEl.innerHTML = `Find: ${chord}`;
     playedEl.innerHTML = `Played: ${played}`;
+    chordEl.innerHTML = `Chord: ${chordName}`;
     logEl.innerHTML = "";
 }

@@ -1,7 +1,11 @@
-export const notes: string[] = "cdefgab".toUpperCase().split("");
+import { Notes } from "./enums.js";
 
 export const keys: string[] = "cdefgab".toUpperCase().split("");
 
 export const noteCodeToKey = ( noteIndex: number ): string => {
-    return notes[noteIndex % 12];
+    return Notes[noteIndex % 12];
 };
+
+export const rndFromArr = (arr) => {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
