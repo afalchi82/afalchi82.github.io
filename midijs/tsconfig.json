@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "moduleResolution": "classic",
+        "target": "esnext",
+        "outDir": "build/js",
+        "rootDir": "src"
+    },
+    "include": ["src/**/*"],
+}
