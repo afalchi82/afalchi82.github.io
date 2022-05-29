@@ -1,6 +1,8 @@
+import { notes } from "./utils.js";
+
 export default class Dice {
 
-  private notes: string[] = "cdefgab".toUpperCase().split("");
+  private notes: string[] = notes;
   private root: string;
 
   constructor() {
