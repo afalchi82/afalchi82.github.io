@@ -25,4 +25,22 @@ export default class Dice {
         const newChord = rndFromArr(Notes) + rndFromArr(Alterations) + rndFromArr(ChordTypes);
         return newChord;
     }
+    getRndChord2() {
+        const rootIndex = Math.floor(Math.random() * 12);
+        return {
+            root: {
+                index: rootIndex,
+                name: Notes[rootIndex]
+            }
+        };
+    }
 }
+/**
+ * get note index 0-11
+ * get accidental
+ * get chord type
+ *
+ *
+ *
+ *
+ */ 

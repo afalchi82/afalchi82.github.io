@@ -20,3 +20,10 @@ export const ChordTypes = [
     "dim",
     "Aug",
 ];
+
+export const ChordIntervals = {
+    maj: [4, 7],
+    min: [3, 7],
+    dim: [3, 6],
+    aug: [4, 8],
+}

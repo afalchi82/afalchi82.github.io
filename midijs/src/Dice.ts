@@ -8,6 +8,12 @@ import {
   rndFromArr
 } from "./utils.js";
 
+type ChordArray = [
+  string, 
+  string, 
+  string, 
+];
+
 export default class Dice {
 
   private notes: string[] = Notes;
@@ -31,7 +37,7 @@ export default class Dice {
     return rndFromArr(Notes) + rndFromArr(Alterations);
   }
 
-  public getRndChord(): string[] {
+  public getRndChord(): ChordArray {
     this.root = this.getRndNote();
     return [this.root, this.nextInt(2), this.nextInt(4)];
   }
@@ -40,6 +46,25 @@ export default class Dice {
     const newChord = rndFromArr(Notes) + rndFromArr(Alterations) + rndFromArr(ChordTypes);
     return newChord;
   }
+
+  public getRndChord2(): object {
+    const rootIndex = Math.floor(Math.random() * 12);
+    return {
+      root: {
+        index: rootIndex,
+        name: Notes[rootIndex]
+      }
+    };
+  }
 }
 
 
+/**
+ * get note index 0-11
+ * get accidental
+ * get chord type 
+ * 
+ * 
+ * 
+ * 
+ */
