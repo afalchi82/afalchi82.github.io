@@ -9,8 +9,9 @@ export const Notes = [
 ];
 
 export const Alterations = [
+    "",
     "#",
-    "♭"
+    "b"
 ];
 
 export const ChordTypes = [

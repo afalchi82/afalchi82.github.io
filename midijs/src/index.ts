@@ -1,9 +1,10 @@
 // @ts-ignore
 import { WebMidi, Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
 import Dice from "./Dice.js";
-import { keyNameToMusicName } from "./utils.js";
+import { noteMusicNameTokey } from "./utils.js";
 import Score from "./Score.js";
 
+let note: string;
 let chord: string[];
 let played: string[];
 let chordName: string;
@@ -13,10 +14,11 @@ const playedEl = document.getElementById("played");
 const logEl = document.getElementById("log");
 const scoreEl = document.getElementById("score");
 const chordEl = document.getElementById("chord");
+const noteEl = document.getElementById("note");
 
 const score = new Score;
 
-console.log(keyNameToMusicName("B#"))
+console.log(noteMusicNameTokey("B#"))
 
 // Enable WebMidi.js and trigger the onEnabled() function when ready
 WebMidi.enable()
@@ -26,8 +28,6 @@ WebMidi.enable()
     });
 
 function onEnabled(): void {
-    console.log('enabled')
-
     newQuestion();
 
     if (WebMidi.inputs.length < 1) {
@@ -47,17 +47,13 @@ function onEnabled(): void {
 
 function noteOnHandler(e): void {
     console.log(e)
-    console.log("toNoteNumber", Utilities.toNoteNumber(e.note.name + e.note.octave))
-    console.log("toNoteIdentifier", Utilities.toNoteIdentifier(60))
-    console.log("toNoteIdentifier", Utilities.toNoteIdentifier(61))
-    console.log("toNoteIdentifier", Utilities.toNoteIdentifier(62))
-
-    played.push(e.note.name);
+    
+    played.push(`${e.note.name}${e.note.accidental ? e.note.accidental : ''}`);
     played = [...new Set(played)];
 
     playedEl.innerHTML = `Played: ${played}`;
 
-    if (chord.every((r) => played.includes(r))) {
+    if (played.includes(noteMusicNameTokey(note))) {
         logEl.innerHTML = `<p>${e.note.name} <span class="success">Correct!</span></p>`;
         score.addResult(Date.now());
 
@@ -67,6 +63,17 @@ function noteOnHandler(e): void {
     } else {
         logEl.innerHTML = `<p>${e.note.name} <span class="error">Error!</span></p>`;
     }
+
+    //if (chord.every((r) => played.includes(r))) {
+    //    logEl.innerHTML = `<p>${e.note.name} <span class="success">Correct!</span></p>`;
+    //    score.addResult(Date.now());
+//
+    //    scoreEl.innerHTML = score.getScore();
+    //    
+    //    setTimeout(newQuestion, 1000);
+    //} else {
+    //    logEl.innerHTML = `<p>${e.note.name} <span class="error">Error!</span></p>`;
+    //}
 }
 
 function noteOffHandler(e): void {
@@ -80,12 +87,14 @@ function newQuestion(): void {
 
     score.newQuestion();
 
+    note = dice.getRndNoteWithAccidental();
     chord = dice.getRndChord();
     chordName = dice.getRndChordName();
     played = [];
 
     questionEl.innerHTML = `Find: ${chord}`;
     playedEl.innerHTML = `Played: ${played}`;
+    noteEl.innerHTML = `Note: ${note}`;
     chordEl.innerHTML = `Chord: ${chordName}`;
     logEl.innerHTML = "";
 }

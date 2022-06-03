@@ -2,7 +2,7 @@
 import { Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
 import { Notes } from "./enums.js";
 export const keys = "cdefgab".toUpperCase().split("");
-export const keyNameToMusicName = (keyName) => {
+export const noteMusicNameTokey = (keyName) => {
     if (keyName.search(/[#b]/) === -1) {
         return keyName;
     }

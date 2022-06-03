@@ -14,6 +14,9 @@ export default class Dice {
     getRndNote() {
         return rndFromArr(this.notes);
     }
+    getRndNoteWithAccidental() {
+        return rndFromArr(Notes) + rndFromArr(Alterations);
+    }
     getRndChord() {
         this.root = this.getRndNote();
         return [this.root, this.nextInt(2), this.nextInt(4)];

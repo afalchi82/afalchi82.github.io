@@ -4,7 +4,7 @@ import { Notes } from "./enums.js";
 
 export const keys: string[] = "cdefgab".toUpperCase().split("");
 
-export const keyNameToMusicName = (keyName: string): string => {
+export const noteMusicNameTokey = (keyName: string): string => {
     
     if (keyName.search(/[#b]/) === -1) {
         return keyName;
