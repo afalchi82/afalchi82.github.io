@@ -1,6 +1,7 @@
-import { WebMidi } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+// @ts-ignore
+import { WebMidi, Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
 import Dice from "./Dice.js";
-import { noteCodeToKey } from "./utils.js";
+import { keyNameToMusicName } from "./utils.js";
 import Score from "./Score.js";
 
 let chord: string[];
@@ -15,9 +16,11 @@ const chordEl = document.getElementById("chord");
 
 const score = new Score;
 
+console.log(keyNameToMusicName("B#"))
+
 // Enable WebMidi.js and trigger the onEnabled() function when ready
 WebMidi.enable()
-    .then(onEnabled)
+    .then(onEnabled) 
     .catch((err) => {
         // alert(err)
     });
@@ -43,6 +46,12 @@ function onEnabled(): void {
 }
 
 function noteOnHandler(e): void {
+    console.log(e)
+    console.log("toNoteNumber", Utilities.toNoteNumber(e.note.name + e.note.octave))
+    console.log("toNoteIdentifier", Utilities.toNoteIdentifier(60))
+    console.log("toNoteIdentifier", Utilities.toNoteIdentifier(61))
+    console.log("toNoteIdentifier", Utilities.toNoteIdentifier(62))
+
     played.push(e.note.name);
     played = [...new Set(played)];
 

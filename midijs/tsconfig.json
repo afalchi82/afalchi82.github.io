@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": "/",
     "lib": ["dom", "es2016"],
-    "moduleResolution": "Classic",
+    "moduleResolution": "classic",
     "paths": {
-      "webmidi": ["node_modules/webmidi/dist/esm"]
+      "webmidi": ["node_modules/webmidi/dist/esm/webmidi.esm.d.ts"]
     },
     "target": "esnext",
     "outDir": "build/js",

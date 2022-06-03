@@ -19,7 +19,7 @@ export default class Dice {
         return [this.root, this.nextInt(2), this.nextInt(4)];
     }
     getRndChordName() {
-        const newChord = rndFromArr(Notes) + rndFromArr(ChordTypes) + rndFromArr(Alterations);
+        const newChord = rndFromArr(Notes) + rndFromArr(Alterations) + rndFromArr(ChordTypes);
         return newChord;
     }
 }

@@ -33,7 +33,7 @@ export default class Dice {
   }
 
   public getRndChordName(): string {
-    const newChord = rndFromArr(Notes) + rndFromArr(ChordTypes) + rndFromArr(Alterations)
+    const newChord = rndFromArr(Notes) + rndFromArr(Alterations) + rndFromArr(ChordTypes);
     return newChord;
   }
 }
