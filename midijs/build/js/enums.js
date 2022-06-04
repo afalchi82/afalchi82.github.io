@@ -13,10 +13,10 @@ export const Alterations = [
     "b"
 ];
 export const ChordTypes = [
-    "Maj",
+    "maj",
     "min",
     "dim",
-    "Aug",
+    "aug",
 ];
 export const ChordIntervals = {
     maj: [4, 7],

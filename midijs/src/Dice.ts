@@ -5,8 +5,9 @@ import {
 } from "./enums.js";
 
 import {
+  chordNameToKeysArray,
   rndFromArr
-} from "./utils.js";
+} from "./Utils.js";
 
 type ChordArray = [
   string, 
@@ -16,55 +17,26 @@ type ChordArray = [
 
 export default class Dice {
 
-  private notes: string[] = Notes;
-  private root: string;
+  public root: string;
+  public chordName: string;
+  public chordArray: string[];
 
   constructor() {
     this.root = this.getRndNote();
-  }
-
-  private nextInt(int: number): string {
-    const rootIndex: number = this.notes.indexOf(this.root);
-    const nextIndex: number = (rootIndex + int) % this.notes.length;
-    return this.notes[nextIndex];
+    this.chordName = this.getRndChordName();
+    this.chordArray = chordNameToKeysArray(this.chordName);
   }
 
   public getRndNote(): string {
-    return rndFromArr(this.notes);
+    return rndFromArr(Notes);
   }
 
   public getRndNoteWithAccidental(): string {
     return rndFromArr(Notes) + rndFromArr(Alterations);
   }
 
-  public getRndChord(): ChordArray {
-    this.root = this.getRndNote();
-    return [this.root, this.nextInt(2), this.nextInt(4)];
-  }
-
   public getRndChordName(): string {
-    const newChord = rndFromArr(Notes) + rndFromArr(Alterations) + rndFromArr(ChordTypes);
+    const newChord = `${this.root}${rndFromArr(Alterations)} ${rndFromArr(ChordTypes)}`;
     return newChord;
   }
-
-  public getRndChord2(): object {
-    const rootIndex = Math.floor(Math.random() * 12);
-    return {
-      root: {
-        index: rootIndex,
-        name: Notes[rootIndex]
-      }
-    };
-  }
 }
-
-
-/**
- * get note index 0-11
- * get accidental
- * get chord type 
- * 
- * 
- * 
- * 
- */

@@ -1,8 +1,21 @@
 // @ts-ignore
 import { Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
-import { Notes } from "./enums.js";
+import { ChordIntervals, Notes } from "./enums.js";
 export const keys = "cdefgab".toUpperCase().split("");
-export const noteMusicNameTokey = (keyName) => {
+export function chordNameToKeysArray(chordName) {
+    const defaultOctave = 4;
+    // Transform root note to key
+    const rootKey = noteMusicNameTokey(chordName);
+    // Get code number from key
+    const rootCode = Utilities.toNoteNumber(rootKey + defaultOctave);
+    const chordType = chordName.split(" ")[1];
+    return [
+        rootKey,
+        absKeyFromCode(rootCode + ChordIntervals[chordType][0]),
+        absKeyFromCode(rootCode + ChordIntervals[chordType][1]),
+    ];
+}
+export function noteMusicNameTokey(keyName) {
     if (keyName.search(/[#b]/) === -1) {
         return keyName;
     }
@@ -22,11 +35,13 @@ export const noteMusicNameTokey = (keyName) => {
         const newNoteWithAccident = keyName.search(/[CF]/) >= 0 ? newNote : `${newNote}#`;
         return newNoteWithAccident;
     }
-};
-export const noteCodeToKey = (noteIndex) => {
+}
+export function noteCodeToKey(noteIndex) {
     return Notes[noteIndex % 12];
-};
-export const rndFromArr = (arr) => {
+}
+export function rndFromArr(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
-};
-export const toAbsNote = (noteName) => Utilities.toNoteNumber(noteName);
+}
+export function absKeyFromCode(noteCode) {
+    return Utilities.toNoteIdentifier(noteCode).replace(/\d/g, "");
+}
