@@ -43,7 +43,7 @@ function noteOnHandler(e) {
     if (chordArray.every((r) => played.includes(r))) {
         logEl.innerHTML = `<p>${e.note.name} <span class="success">Correct!</span></p>`;
         score.addResult(Date.now());
-        scoreEl.innerHTML = score.getScore();
+        scoreEl.innerHTML = `${score.getScore().score} (${score.getScore().questions})`;
         success = true;
     }
     else {

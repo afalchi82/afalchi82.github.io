@@ -6,7 +6,10 @@ export default class Score {
             tot += answerTime;
             return tot;
         }, 0);
-        return ((answerTimes / this.score.length) / 1000).toFixed(3) + "s";
+        return {
+            score: ((answerTimes / this.score.length) / 1000).toFixed(3) + "s",
+            questions: this.score.length
+        };
     }
     addResult(timeEnd) {
         const lastIndex = this.score.length - 1;
