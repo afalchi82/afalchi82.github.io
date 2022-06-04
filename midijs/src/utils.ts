@@ -11,7 +11,7 @@ export function chordNameToKeysArray (chordName: string): string[] {
     const defaultOctave = 4;
 
     // Transform root note to key
-    const rootKey = noteMusicNameTokey(chordName);
+    const rootKey = noteMusicNameTokey(chordName.split(" ")[0]);
 
     // Get code number from key
     const rootCode = Utilities.toNoteNumber(rootKey + defaultOctave);
@@ -25,6 +25,7 @@ export function chordNameToKeysArray (chordName: string): string[] {
     ];
 }
 
+
 export function noteMusicNameTokey(keyName: string): string {
     
     if (keyName.search(/[#b]/) === -1) {
@@ -35,7 +36,7 @@ export function noteMusicNameTokey(keyName: string): string {
 
     if (keyName.includes("#")) {
         if (keyName.search(/[BE]/) === -1) {
-            return keyName
+            return keyName;
         } else {
             const newIndex: number = oldIndex === (Notes.length - 1) ? 0 : oldIndex + 1;
             return Notes[newIndex];

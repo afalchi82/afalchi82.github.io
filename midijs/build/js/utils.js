@@ -5,7 +5,7 @@ export const keys = "cdefgab".toUpperCase().split("");
 export function chordNameToKeysArray(chordName) {
     const defaultOctave = 4;
     // Transform root note to key
-    const rootKey = noteMusicNameTokey(chordName);
+    const rootKey = noteMusicNameTokey(chordName.split(" ")[0]);
     // Get code number from key
     const rootCode = Utilities.toNoteNumber(rootKey + defaultOctave);
     const chordType = chordName.split(" ")[1];

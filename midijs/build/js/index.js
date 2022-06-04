@@ -6,6 +6,7 @@ let note;
 let chordArray;
 let played;
 let chordName;
+let success = false;
 const questionEl = document.getElementById("question");
 const playedEl = document.getElementById("played");
 const logEl = document.getElementById("log");
@@ -24,10 +25,10 @@ function onEnabled() {
         logEl.innerHTML += "No device detected.";
     }
     else {
-        newQuestion();
         WebMidi.inputs.forEach((device, index) => {
             logEl.innerHTML += `${index}: ${device.name} <br>`;
         });
+        newQuestion();
         const mySynth = WebMidi.inputs[0];
         // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
         mySynth.channels[1].addListener("noteon", noteOnHandler);
@@ -43,7 +44,7 @@ function noteOnHandler(e) {
         logEl.innerHTML = `<p>${e.note.name} <span class="success">Correct!</span></p>`;
         score.addResult(Date.now());
         scoreEl.innerHTML = score.getScore();
-        setTimeout(newQuestion, 1000);
+        success = true;
     }
     else {
         logEl.innerHTML = `<p>${e.note.name} <span class="error">Error!</span></p>`;
@@ -53,6 +54,12 @@ function noteOffHandler(e) {
     const playedNoteIndex = played.indexOf(e.note.name);
     played.splice(playedNoteIndex, 1);
     playedEl.innerHTML = `Played: ${played}`;
+    if (played.length === 0 && success) {
+        setTimeout(() => {
+            success = false;
+            newQuestion();
+        }, 1000);
+    }
 }
 function newQuestion() {
     const dice = new Dice();
