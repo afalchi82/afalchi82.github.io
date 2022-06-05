@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+import { Utilities } from "../node_modules/webmidi/dist/esm/webmidi.esm.min.js";
 import { 
     ChordIntervals,
     Notes 
