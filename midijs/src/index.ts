@@ -1,5 +1,5 @@
 // @ts-ignore
-import { WebMidi, Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+import { WebMidi, Utilities } from "../node_modules/webmidi/dist/esm/webmidi.esm.min.js";
 import Dice from "./Dice.js";
 import Score from "./Score.js";
 
