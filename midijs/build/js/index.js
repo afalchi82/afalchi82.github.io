@@ -26,6 +26,7 @@ function onEnabled() {
     }
     else {
         WebMidi.inputs.forEach((device, index) => {
+            logEl.innerHTML += new Date() + "<br>";
             logEl.innerHTML += `${index}: ${device.name} <br>`;
         });
         newQuestion();
