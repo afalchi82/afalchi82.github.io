@@ -1,5 +1,5 @@
 // @ts-ignore
-import { WebMidi } from "../../node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+import { WebMidi } from "https://cdn.jsdelivr.net/npm/webmidi@next/dist/esm/webmidi.esm.js";
 import Dice from "./Dice.js";
 import Score from "./Score.js";
 let note;
@@ -26,7 +26,6 @@ function onEnabled() {
     }
     else {
         WebMidi.inputs.forEach((device, index) => {
-            logEl.innerHTML += new Date() + "<br>";
             logEl.innerHTML += `${index}: ${device.name} <br>`;
         });
         newQuestion();

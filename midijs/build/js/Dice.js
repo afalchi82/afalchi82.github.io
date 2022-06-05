@@ -1,5 +1,5 @@
 import { Notes, ChordTypes, Alterations } from "./enums.js";
-import { chordNameToKeysArray, rndFromArr } from "./Utils.js";
+import { chordNameToKeysArray, rndFromArr } from "./utils.js";
 export default class Dice {
     root;
     chordName;

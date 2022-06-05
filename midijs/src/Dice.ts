@@ -14,7 +14,7 @@ type ChordArray = [
   string, 
   string, 
 ];
-
+  
 export default class Dice {
 
   public root: string;

@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Utilities } from "../node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+import { Utilities } from "https://cdn.jsdelivr.net/npm/webmidi@next/dist/esm/webmidi.esm.js";
 import { 
     ChordIntervals,
     Notes 
@@ -23,13 +23,13 @@ export function chordNameToKeysArray (chordName: string): string[] {
         absKeyFromCode(rootCode + ChordIntervals[chordType][0]),
         absKeyFromCode(rootCode + ChordIntervals[chordType][1]),
     ];
-}
+} 
 
 
 export function noteMusicNameTokey(keyName: string): string {
     
     if (keyName.search(/[#b]/) === -1) {
-        return keyName;
+        return keyName; 
     }
 
     const oldIndex: number = Notes.indexOf(keyName[0]);

@@ -45,15 +45,24 @@
                 color: red;
             }
         </style>
+
+        <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+
+
     </head>
 
     <body translate="no">
-        <div id="question"></div>
-        <div id="note"></div>
-        <div id="chord"></div>
-        <div id="played"></div>
-        <div id="score"></div>
-        <div id="log">ad</div>
+        <div x-data="{
+            versione: new Date()
+        }">
+            <div id="version" x-text="versione"></div>
+            <div id="question"></div>
+            <div id="note"></div>
+            <div id="chord"></div>
+            <div id="played"></div>
+            <div id="score"></div>
+            <div id="log">ad</div>
+        </div>
 
         <script type="module" src="js/index.js"></script>
     </body>

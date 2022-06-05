@@ -1,7 +1,9 @@
 // @ts-ignore
-import { WebMidi, Utilities } from "../node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+import { WebMidi } from "https://cdn.jsdelivr.net/npm/webmidi@next/dist/esm/webmidi.esm.js";
+
 import Dice from "./Dice.js";
 import Score from "./Score.js";
+
 
 let note: string;
 let chordArray: string[];
@@ -17,7 +19,7 @@ const chordEl = document.getElementById("chord");
 const noteEl = document.getElementById("note");
 
 const score = new Score;
-
+ 
 
 
 // Enable WebMidi.js and trigger the onEnabled() function when ready

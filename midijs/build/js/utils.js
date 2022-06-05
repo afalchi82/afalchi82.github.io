@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Utilities } from "/node_modules/webmidi/dist/esm/webmidi.esm.min.js";
+import { Utilities } from "https://cdn.jsdelivr.net/npm/webmidi@next/dist/esm/webmidi.esm.js";
 import { ChordIntervals, Notes } from "./enums.js";
 export const keys = "cdefgab".toUpperCase().split("");
 export function chordNameToKeysArray(chordName) {
