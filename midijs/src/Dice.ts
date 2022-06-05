@@ -7,7 +7,7 @@ import {
 import {
   chordNameToKeysArray,
   rndFromArr
-} from "./Utils.js";
+} from "./utils.js";
 
 type ChordArray = [
   string, 
