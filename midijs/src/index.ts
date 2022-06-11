@@ -1,5 +1,5 @@
 // @ts-ignore
-import { WebMidi } from "https://cdn.jsdelivr.net/npm/webmidi@next/dist/esm/webmidi.esm.js";
+import { WebMidi } from "https://cdn.jsdelivr.net/npm/webmidi/dist/esm/webmidi.esm.js";
 
 import Dice from "./Dice.js";
 import Score from "./Score.js";
@@ -44,7 +44,7 @@ function onEnabled(): void {
 
 
         const mySynth = WebMidi.inputs[0];
-        // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
+        //  const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
     
         mySynth.channels[1].addListener("noteon", noteOnHandler);
         mySynth.channels[1].addListener("noteoff", noteOffHandler);
@@ -54,8 +54,6 @@ function onEnabled(): void {
 }
 
 function noteOnHandler(e): void {
-    console.log(e)
-    
     played.push(`${e.note.name}${e.note.accidental ? e.note.accidental : ''}`);
     played = [...new Set(played)];
 
