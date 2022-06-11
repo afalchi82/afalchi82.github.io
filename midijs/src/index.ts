@@ -1,8 +1,22 @@
 // @ts-ignore
 import { WebMidi } from "https://cdn.jsdelivr.net/npm/webmidi/dist/esm/webmidi.esm.js";
 
+// @ts-ignore
+import Alpine from "../lib/alpinejs/module.esm.js";
+
 import Dice from "./Dice.js";
 import Score from "./Score.js";
+
+
+// TODO in standby
+// Alpine.data("info", () => ({
+//     chordName: "",
+//     init,
+//     log: "stacippa"
+// }));
+// 
+// Alpine.start();
+
 
 
 let note: string;
@@ -19,18 +33,17 @@ const chordEl = document.getElementById("chord");
 const noteEl = document.getElementById("note");
 
 const score = new Score;
- 
 
+function init() {
+    WebMidi.enable()
+        .then(onEnabled)
+        .catch((err) => {
+            // alert(err)
+        });
 
-// Enable WebMidi.js and trigger the onEnabled() function when ready
-WebMidi.enable()
-    .then(onEnabled) 
-    .catch((err) => {
-        // alert(err)
-    });
+}
 
 function onEnabled(): void {
-   
 
     if (WebMidi.inputs.length < 1) {
         logEl.innerHTML += "No device detected.";
@@ -41,11 +54,9 @@ function onEnabled(): void {
 
         newQuestion();
 
-
-
         const mySynth = WebMidi.inputs[0];
         //  const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
-    
+
         mySynth.channels[1].addListener("noteon", noteOnHandler);
         mySynth.channels[1].addListener("noteoff", noteOffHandler);
 
@@ -66,8 +77,8 @@ function noteOnHandler(e): void {
         scoreEl.innerHTML = `${score.getScore().score} (${score.getScore().questions})`;
 
         success = true;
-        
-        
+
+
     } else {
         logEl.innerHTML = `<p>${e.note.name} <span class="error">Error!</span></p>`;
     }
@@ -84,7 +95,7 @@ function noteOffHandler(e): void {
             success = false;
             newQuestion();
         }, 1000);
-    } 
+    }
 }
 
 function newQuestion(): void {
@@ -103,3 +114,6 @@ function newQuestion(): void {
     chordEl.innerHTML = `Chord: ${chordName}`;
     logEl.innerHTML = "";
 }
+
+
+init();

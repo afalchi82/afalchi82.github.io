@@ -2,6 +2,14 @@
 import { WebMidi } from "https://cdn.jsdelivr.net/npm/webmidi/dist/esm/webmidi.esm.js";
 import Dice from "./Dice.js";
 import Score from "./Score.js";
+// TODO in standby
+// Alpine.data("info", () => ({
+//     chordName: "",
+//     init,
+//     log: "stacippa"
+// }));
+// 
+// Alpine.start();
 let note;
 let chordArray;
 let played;
@@ -14,12 +22,13 @@ const scoreEl = document.getElementById("score");
 const chordEl = document.getElementById("chord");
 const noteEl = document.getElementById("note");
 const score = new Score;
-// Enable WebMidi.js and trigger the onEnabled() function when ready
-WebMidi.enable()
-    .then(onEnabled)
-    .catch((err) => {
-    // alert(err)
-});
+function init() {
+    WebMidi.enable()
+        .then(onEnabled)
+        .catch((err) => {
+        // alert(err)
+    });
+}
 function onEnabled() {
     if (WebMidi.inputs.length < 1) {
         logEl.innerHTML += "No device detected.";
@@ -73,3 +82,4 @@ function newQuestion() {
     chordEl.innerHTML = `Chord: ${chordName}`;
     logEl.innerHTML = "";
 }
+init();
