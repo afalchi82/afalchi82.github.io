@@ -49,14 +49,15 @@ function noteOnHandler(e) {
     played = [...new Set(played)];
     playedEl.innerHTML = `Played: ${played}`;
     if (chordArray.every((r) => played.includes(r))) {
+        score.addResult(Date.now(), true);
         logEl.innerHTML = `<p>${e.note.name} <span class="success">Correct!</span></p>`;
-        score.addResult(Date.now());
-        scoreEl.innerHTML = `${score.getScore().score} (${score.getScore().questions})`;
         success = true;
     }
     else {
+        score.addResult(Date.now(), false);
         logEl.innerHTML = `<p>${e.note.name} <span class="error">Error!</span></p>`;
     }
+    scoreEl.innerHTML = `${score.getScore().score} (${score.getScore().correct}/${score.getScore().total})`;
 }
 function noteOffHandler(e) {
     const playedNoteIndex = played.indexOf(e.note.name);

@@ -1,38 +1,48 @@
-type question = {
+type answer = {
     start: number,
-    end?: number
+    end?: number,
+    correct?: boolean,
 };
 
-type score = question[];
+type answers = answer[];
 
 type scoreObj = {
     score: string,
-    questions: number
+    correct: number,
+    total: number,
 };
 
 export default class Score {
-    private score: score = [];
+    private answers: answers = [];
 
     public getScore(): scoreObj {
-        const answerTimes: number = this.score.reduce((tot: number, curr: question) => {
-            const answerTime = curr.end - curr.start;
-            tot += answerTime;
+        const answerTimes: number = this.answers.reduce((tot: number, curr: answer) => {
+            if (!curr.end) return tot;
+
+            tot += curr.end - curr.start;
+            return tot;
+        }, 0);
+
+        const correctCount: number = this.answers.reduce((tot, curr) => {
+            curr.correct ? tot += 1 : null;
             return tot;
         }, 0);
 
         return {
-            score: ((answerTimes / this.score.length) / 1000).toFixed(3) + "s",
-            questions: this.score.length
+            score: ((answerTimes / this.answers.length) / 1000).toFixed(3) + "s",
+            correct: correctCount,
+            total: this.answers.length
         };
     }
 
-    public addResult(timeEnd: number): void {
-        const lastIndex = this.score.length - 1;
-        this.score[lastIndex].end = timeEnd;
+    public addResult(timeEnd: number, correct: boolean): void {
+        const lastIndex = this.answers.length - 1;
+        this.answers[lastIndex].end = timeEnd;
+        this.answers[lastIndex].correct = correct;
     }
 
     public newQuestion(): void {
-        this.score.push({
+        this.answers.push({
             start: Date.now()
         })
     }
