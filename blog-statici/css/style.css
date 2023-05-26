@@ -10838,7 +10838,7 @@ textarea {
 .retro-layout .h-entry {
   display: block;
   position: relative;
-  border-radius: 0;
+  border-radius: 10px;
   overflow: hidden;
 }
 .retro-layout .h-entry .post-category {
@@ -11028,7 +11028,7 @@ textarea {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  border-radius: 0;
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 .posts-entry .blog-entry h2, .posts-entry .blog-entry .h2 {
@@ -11089,6 +11089,7 @@ textarea {
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 10px;
+  aspect-ratio: 2;
 }
 .post-entry-alt .img-link img {
   margin-bottom: 0;
@@ -11412,7 +11413,7 @@ textarea {
 
 .site-cover {
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   position: relative;
 }
 .site-cover > .container {
