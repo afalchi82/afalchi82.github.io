@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$font-sans: "Quattrocento Sans", sans-serif;
+$font-family-sans-serif: $font-sans;
+$font-family-sans-serif-secondary: $font-sans;
+
+$theme-blue: #33658a;
+$theme-red: #c32f27;
+$theme-green: #7cb518;
+$theme-orange: #fb6107;
+$theme-purple: #8338ec;
+
+$current-theme: $theme-blue;
+
+$primary: $current-theme;
+$secondary: $current-theme;
+
+$blogs-border-radius: 0;
