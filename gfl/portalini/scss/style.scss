@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+@import 'bootstrap/mixins';
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/bootstrap';
+
+@import '_design-tokens';
+
+// $font-sans: "Quattrocento Sans", sans-serif;
+$font-family-sans-serif: $font-sans;
+$font-family-sans-serif-secondary: $font-sans;
+
+$theme-blue: #33658a;
+$theme-red: #c32f27;
+$theme-green: #7cb518;
+$theme-orange: #fb6107;
+$theme-purple: #8338ec;
+
+$current-theme: $theme-blue;
+
+$primary: $current-theme;
+$secondary: $current-theme;
+
+$border-radius: .6rem;
+
+.c-grey-100 {
+  color: $c-grey-100;
+}
+.c-grey-90 {
+  color: $c-grey-90;
+}
+.c-grey-80 {
+  color: $c-grey-80;
+}
+
+body {
+  font-size: 15px;
+  font-family: $font-sans;
+  color: $c-grey-100;
+}
+
+a {}
+
+h2 {
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.post {
+  transition: all .3s;
+  border-radius: $border-radius;
+
+  &:hover {
+    background: $c-grey-10;
+  }
+}
+
+.icon-pdf {
+  width: 60px;
+  height: 60px;
+  background: $c-grey-20;
+  border-radius: $border-radius;
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .modal-xl {
+    max-width: 1400px;
+  }
+}
+
+.pdf-object {
+  height: calc(100vh - 10rem);
+}

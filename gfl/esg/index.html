@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>ESG - Environmental, Social & Governance - GFL</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script defer src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
+    
+    <script defer src="https://unpkg.com/vue-router@4.2.2/dist/vue-router.global.js"></script>
+
+    <script defer src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script defer src="js/script.js" type="module"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <section class="main-nav bg-white border-bottom">
+            <div class="container">
+                <header class="d-flex flex-wrap justify-content-center py-3">
+                    <router-link to="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                        <img src="img/logo_formazione.svg" width="400" alt="">
+                    </router-link>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item" v-for="cat in categories" :key="cat.id">
+                            <router-link :to="'/' + cat.name">{{ cat.label }}</router-link>
+                        </li>
+                    </ul>
+                </header>
+            </div>
+        </section>
+
+        <router-view></router-view>
+
+    </div>
+
+
+    <!-- **************************************************
+        Home
+    ************************************************** -->
+    <template id="home-page-tpl">
+
+        <div v-if="loading">
+            <loading-icon></loading-icon>
+        </div>
+
+        <div v-if="!loading">
+
+
+            <!-- Hero -->
+            <div class="main-hero position-relative overflow-hidden px-3 p-md-5 mb-5 bg-grey-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 d-flex align-items-center">
+                            <h1 class="fw-bold">Attiviamo la conoscenza per una società più equa, sostenibile ed efficiente</h1>
+                        </div>
+                        <div class="col-md-6 ms-auto offset-md-1">
+                            <a href="">
+                                <img src="img/hero-video.jpg" class="img-fluid mx-auto" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <template v-for="(cat, index) in categories" :key="cat.id">
+                <div class="container mb-5">
+                    <div class="d-flex justify-content-between align-items-end mb-3">
+                        <h2>{{ cat.label }}</h2>
+                        <router-link :to="'/' + cat.name" class="btn btn-outline-primary">Vedi tutti</router-link>
+                    </div>
+                    <div class="row align-items-stretch retro-layout">
+                        <div class="col-md-7" :class="index === 1 && 'order-1'">
+                            <cat-article :category="cat" :article="cat.articles.find(art => art.homeIndex === 1)" :index="1"></cat-article>
+                        </div>
+                        <div class="col-md-5">
+                            <cat-article :category="cat" :article="cat.articles.find(art => art.homeIndex === 2)" :index="2"></cat-article>
+                            <cat-article :category="cat" :article="cat.articles.find(art => art.homeIndex === 3)" :index="3"></cat-article>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <carousel-section id="carousel-1"></carousel-section>
+
+            <carousel-section id="carousel-2"></carousel-section>
+
+        </div>
+    </template>
+
+    <!-- **************************************************
+        Category
+    ************************************************** -->
+    <template id="category-page-tpl">
+        <hero-section :title="category.label"></hero-section>
+
+        <section class="results-list container">
+            <div class="row retro-layout">
+                <template v-for="article in category.articles" :key="article.url">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article-card :article="article" :category="category"></article-card>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </template>
+
+
+    <!-- **************************************************
+        Article
+    ************************************************** -->
+    <template id="article-page-tpl">
+        <div v-if="loading">
+            <loading-icon></loading-icon>
+        </div>
+        <div v-if="!loading">
+            <div v-if="article">
+                <hero-section :title="title"></hero-section>
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-md-8" v-html="article">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="!article">
+                <h1 class="text-center">
+                    Contenuto non trovato
+                </h1>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- **************************************************
+        UI
+    ************************************************** -->
+    <template id="hero-section-tpl">
+        <div class="position-relative overflow-hidden px-3 p-md-5 mb-5 bg-grey-30">
+            <div class="container">
+                <h1 class="fw-bold">
+                    {{ title }}
+                </h1>
+            </div>
+        </div>
+    </template>
+
+    <template id="cat-article-tpl">
+        <router-link 
+            :to="article.url" 
+            class="h-entry gradient text-white" 
+            :class="[
+                'gradient--' + category.id, 
+                {
+                    'img-5 h-100': index === 1,
+                    'mb-30': index === 2,
+                    'v-height': index !== 1,
+                }
+            ]"
+        >
+            <div class="featured-img" :style="{ 'background-image': 'url(img/' + article.thumb + ')' }"></div>
+            <div class="label" :class="'bg-' + category.id"> {{ category.code }} </div>
+            <div class="text">
+                <h3>{{ article.title }}</h3>
+                <p>
+                    {{ article.abstract }}
+                </p>
+                <span class="author">
+                    {{ article.author }}
+                </span>
+            </div>
+        </router-link>
+    </template>
+
+    <template id="article-card-tpl">
+        <router-link :to="article.url" class="article-card h-entry img-5 h-100 gradient text-white" :class="'gradient--' + category.id">
+            <div class="featured-img" :style="{ 'background-image': 'url(img/' + article.thumb + ')' }"></div>
+            <div class="label" :class="'bg-' + article.id"> {{ article.code }} </div>
+            <div class="text">
+                <h3>{{ article.title }} </h3>
+                <div>
+                    {{ article.abstract }}
+                </div>
+                <span class="author">
+                    {{ article.author }}
+                </span>
+            </div>
+        </router-link>
+    </template>
+
+    <template id="loading-icon-tpl">
+        <div class="text-center m-5">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="100px"
+                 height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <circle cx="50" cy="50" fill="none" stroke="#133371" stroke-width="5" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1">
+                    </animateTransform>
+                </circle>
+            </svg>
+        </div>
+    </template>
+
+    <template id="carousel-section-tpl">
+        <div :id="id" class="carousel slide bg-grey-30 p-4 mb-5" data-bs-ride="carousel" data-bs-interval="false">
+            <div class="carousel-indicators">
+                <button type="button" :data-bs-target="'#' + id" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" :data-bs-target="'#' + id" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" :data-bs-target="'#' + id" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner mb-4">
+                <template v-for="slide in 3" :key="slide">
+                    <div class="carousel-item" :class="slide === 1 && 'active'">
+                        <div class="container">
+                            <div class="row">
+                                <template v-for="article in 3" :key="article">
+                                    <div class="col-md-4">
+                                        <img src="img/rassegna.jpg" class="d-block img-fluid mx-auto" alt="">
+                                        <strong class="d-inline-block mb-2 text-primary">World</strong>
+                                        <h3 class="mb-0">Featured post</h3>
+                                        <div class="mb-1 text-muted">Nov 12</div>
+                                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
+                                            content.</p>
+                                        <a href="#" class="stretched-link link-dark">Continue reading</a>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#' + id" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#' + id" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </template>
+
+</body>
+
+</html>
