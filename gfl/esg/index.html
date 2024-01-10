@@ -32,11 +32,16 @@
     <link href="blog.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <script>
+        // Fix error __VUE_PROD_DEVTOOLS__ is not defined
+        __VUE_PROD_DEVTOOLS__ = false;
+    </script>
+
 
     <!-- <script defer src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script> -->
-    <script defer src="https://unpkg.com/vue@3.3.4/dist/vue.global.prod.js"></script>
+    <script defer src="https://unpkg.com/vue@3.4.5/dist/vue.global.prod.js"></script>
 
-    <script defer src="https://unpkg.com/vue-router@4.2.2/dist/vue-router.global.js"></script>
+    <script defer src="https://unpkg.com/vue-router@4.2.5/dist/vue-router.global.js"></script>
 
     <script defer src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script defer src="js/script.js" type="module"></script>
@@ -355,9 +360,7 @@
                 </div>
             </div>
             <h3 class="h5 c-blue"><strong>{{ article.title }}</strong></h3>
-            <div class="mb-2">
-                {{ utils.ellipsis(article.abstract) }}
-            </div>
+            <div class="mb-2" v-html="utils.ellipsis(article.abstract)"></div>
             <article-author :author="article.author"></article-author>
         </router-link>
     </template>
