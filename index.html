@@ -1,0 +1,504 @@
+    <!doctype html>
+<html lang="it">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NW2RPVV');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>ESG - Environmental, Social & Governance - GFL</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/gfl-icon-font/gfl-icon-font.css" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <!-- <script defer src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script> -->
+    <script defer src="https://unpkg.com/vue@3.3.4/dist/vue.global.prod.js"></script>
+
+    <script defer src="https://unpkg.com/vue-router@4.2.2/dist/vue-router.global.js"></script>
+
+    <script defer src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script defer src="js/script.js" type="module"></script>
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW2RPVV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <script type="text/javascript" id="gfl-hf-script"  hf-ticket="" hf-name="esg" site-name="esg" src="https://cliente.giuffre.it/hf2/Scripts/hfimport.js"></script>
+    
+
+    <div id="app">
+
+        <section class="main-nav bg-white border-bottom" v-cloak>
+            <div class="container">
+                <header class="d-flex flex-wrap justify-content-between py-2 py-md-3">
+                    <router-link to="/" class="d-flex align-items-center d-lg-block me-md-auto text-dark text-decoration-none">
+                        <img src="img/logo-esg.svg" height="25" alt="" class="d-block">
+                        <strong class="tagline mt-2 c-blue d-none d-lg-block">
+                            Informazioni chiave in materia ESG: Environmental, Social, Governance
+                        </strong>
+                    </router-link>
+                    <button class="mobile-menu btn btn-link d-md-none" @click="mobileMenuOpen = !mobileMenuOpen">
+                        <i class="gfl-icon" :class="mobileMenuOpen ? 'icon-fth-times' : 'icon-fth-menu'"></i>
+                    </button>
+                    <nav 
+                        :class="{
+                            'border-bottom py-3': mobileMenuOpen,
+                        }" 
+                        class="main-nav__links" 
+                        v-show="!isMobile || isMobile && mobileMenuOpen"
+                    >
+                        <div :class="isMobile && 'container'">
+                            <ul class="nav nav-pills">
+                                <li :class="mobileMenuOpen && 'd-block mb-2'" class="nav-item" v-for="cat in categories" :key="cat.name">
+                                    <router-link 
+                                        @click="mobileMenuOpen = false"
+                                        :to="'/in-primo-piano/' + cat.name" 
+                                        :class="'nav-link-' + cat.name"
+                                        class="nav-link" 
+                                    >
+                                        {{ cat.label }}
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </section>
+
+        <router-view></router-view>
+
+    </div>
+
+    <script type="text/javascript" id="gfl-ff-script" ff-name="esg" src="https://cliente.giuffre.it/hf2/Scripts/ffimport.js"></script>
+
+    
+    <!-- **************************************************
+        Home
+    ************************************************** -->
+    <template id="home-page-tpl">
+
+        <div v-if="loading">
+            <loading-icon></loading-icon>
+        </div>
+
+        <div v-if="!loading">
+
+            <!-- Hero -->
+            <div class="main-hero position-relative mb-5 overflow-hidden bg-grey-30">
+                <div class="container">
+                    <div class="row py-4 py-md-5">
+                        <div class="col-md-6 d-flex align-items-end">
+                            <h1 class="fw-bold text-center h2 p-2 mb-3 mb-md-0  mx-xl-3">
+                                Attiviamo la conoscenza per una società <br class="d-none d-xxl-block">più equa, sostenibile ed efficiente                                
+                            </h1>
+                        </div>
+                        <div class="col-md-6 ms-auto d-flex justify-content-end">
+                            <!-- Banner -->
+                            <!-- <a href="https://shop.giuffre.it/026102526-master-sostenibilit-d-impresa-implementare-le-strategie-esg" target="_blank" title="Master online - Sostenibilità d'impresa">
+                                <img src="img/master-sostenibilita-impresa.gif" class="img-fluid mx-auto" alt="Iscriviti ora">
+                            </a> -->
+
+                            <!-- Video -->
+                            <router-link :to="`in-primo-piano/${ heroVideo.category }/${ heroVideo.url }`" class="video-play">
+                                <img :src="'img/' + heroVideo.thumb" class="img-fluid mx-auto" alt="">
+                            </router-link>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- Video -->
+            <!-- Per ora nascosto -->
+            <!-- <div class="container mb-5">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+
+                    <h2>Video</h2>
+
+                    <router-link :to="'/'" class="btn btn-outline-primary">
+                        Vedi tutti
+                        <i class="gfl-icon icon-fth-chevron-right"></i>
+                    </router-link>
+                </div>
+                <div class="row align-items-stretch">
+                    <div class="col-md-7">
+                        <video-card 
+                            :article="videoArticles[0]" 
+                            :img-bg="false"
+                            class="h-100"
+                        ></video-card>
+                    </div>
+                    <div class="col-md-5">
+                        <video-card 
+                            :article="videoArticles[1]" 
+                        ></video-card>
+                        <video-card 
+                            :article="videoArticles[2]" 
+                            class="mt-4" 
+                        ></video-card>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- In-primo-piano -->
+            <div class="container mb-5">
+                <div class="row mb-3">
+                    <div class="col-md-10 mb-2 mb-md-0">
+                        <h2 class="c-blue">
+                            <strong>In primo piano</strong>
+                        </h2>
+                        Aggiornamenti sui principali temi ESG
+                    </div>
+                    <div class="col-lg-2 text-end">
+                        <router-link :to="'/in-primo-piano'" class="btn btn-outline-primary">
+                            Vedi tutti
+                            <i class="gfl-icon icon-fth-chevron-right"></i>
+                        </router-link>
+                    </div>
+                </div>
+                <div class="row gx-5 mb-5">
+                    <template v-for="index in 3" :key="index">
+                        <div class="d-flex col-md-6 col-lg-4">
+                            <default-card
+                                :article="inPrimoPianoArticlesHome[index - 1]"
+                                :category="utils.getCategoryFromName(inPrimoPianoArticlesHome[index - 1].category)"
+                            ></default-card>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <section class="bg-grey-30">
+                <carousel-section 
+                    id="approfondisci" 
+                    :articles="approfondisciArticles" 
+                    carousel-title="Potrebbe interessarti anche"                                                                                      
+                    carousel-description="Scopri altri contenuti ESG"                                                                                      
+                    carousel-type="approfondisci"
+                ></carousel-section>
+            </section>
+
+            <carousel-section 
+                id="scelti-per-voi" 
+                :articles="sceltiPerVoiArticles" 
+                carousel-title="Scelti per voi"
+                carousel-type="sceltipervoi"
+            ></carousel-section>
+
+        </div>
+    </template>
+
+    <!-- **************************************************
+        Category
+    ************************************************** -->
+    <template id="category-page-tpl">
+
+        <div v-if="loading">
+            <loading-icon></loading-icon>
+        </div>
+
+        <div v-if="!loading">
+
+            <hero-section :category="category" :section="section"></hero-section>
+
+            <section class="results-list container">
+                <div class="row gx-5">
+                    <template v-for="(article, index) in articles" :key="article.url">
+                        <div class="d-flex col-md-6 col-lg-4 mb-5">
+                            <default-card 
+                                :article="article" 
+                                :category="utils.getCategoryFromName(article.category)"
+                                v-if="section.name === 'in-primo-piano'"
+                            ></default-card>
+                            <video-card 
+                                :article="article" 
+                                v-if="section.name === 'video'"
+                            ></video-card>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </div>
+    </template>
+
+
+    <!-- **************************************************
+        Article
+    ************************************************** -->
+    <template id="article-page-tpl">
+        <div v-if="loading">
+            <loading-icon></loading-icon>
+        </div>
+        <div v-if="!loading">
+            <hero-section 
+                :article-info="articleInfo" 
+                :category="utils.getCategoryFromName(articleInfo.category)"
+                :section="section"
+            ></hero-section>
+            <div class="container mb-5">
+                <div class="row g-5">
+                    <div class="col-md-8">
+                        <img :src="'img/' + articleInfo.thumb" class="img-fluid mb-5 ms-md-5 col-md-10 float-md-end" alt="" style="margin-right: -53%;" v-if="!articleInfo.video">
+                        <main v-html="article" class="article-body"></main>
+                        <div v-if="articleSource">
+                            <strong>Fonte: </strong> 
+                            <a :href="articleSource.url" target="_blank">
+                                {{ articleSource.label }}
+                            </a>
+                        </div>
+                        <button class="btn btn-outline-primary mt-5" onclick="document.documentElement.scrollTop = 0;">
+                            <i class="gfl-icon icon-fth-arrow-right" style="transform: rotate(-90deg)"></i>
+                            Torna in alto
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- **************************************************
+        UI
+    ************************************************** -->
+    <template id="category-title-tpl">
+        <h1 class="category-title fw-bold" :class="'border-' + category.name">
+            {{ category.label }}
+        </h1>
+    </template>
+
+    <template id="article-author-tpl">
+        <span class="article-author text-secondary">
+            <span v-if="date">{{ date }} - </span>
+            di {{ author }}{{ authorInfo && ', ' }}<span v-if="authorInfo"> {{ authorInfo }}</span>
+        </span>
+    </template>
+
+    <template id="hero-section-tpl">
+        <div class="hero-section position-relative overflow-hidden mb-5">
+            <div class="container">
+                <div class="py-4" :class="(articleInfo && articleInfo.abstract) && 'border-bottom'">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <router-link to="/" class="text-decoration-none">
+                                    Home
+                                </router-link>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <router-link :to="`/${ section.name }`" class="text-decoration-none">{{ section.label }} </router-link>
+                            </li>
+                            <li class="breadcrumb-item" v-if="category.name">
+                                <router-link :to="`/${ section.name }/${category.name}`" class="text-decoration-none">
+                                    <span :class="'c-' + category.name">&#9724;</span>
+                                    {{ category.label }} 
+                                </router-link>
+                            </li>
+                        </ol>
+                    </nav>
+                    <h1 class="category-title fw-bold mt-4" :class="category.name && 'border-' + category.name" v-if="!(articleInfo && articleInfo.title)">
+                        {{ category.label }}
+                    </h1>
+                    <div v-if="articleInfo">
+                        <h2 class="mt-3 h1" v-if="articleInfo.title">
+                            <strong>{{ articleInfo.title }}</strong>
+                        </h2>
+                        <h5 class="mt-3 h5 lh-base" v-if="articleInfo.abstract" v-html="articleInfo.abstract"></h5>
+                        <article-author :author="articleInfo.author" :author-info="articleInfo.authorInfo" :date="articleInfo.date" class="mt-3" v-if="articleInfo.author"></article-author>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="default-card-tpl">
+        <router-link 
+            :to="'/in-primo-piano/' + category.name + '/' + article.url"
+            class="default-card"
+        >
+            <div class="position-relative">
+                <div class="default-card__category m-2 mt-0 px-3 p-1" :class="'bg-' + article.category" :title="category.label">
+                    {{ getCategoryCode() }}
+                </div>
+                <div :class="article.video && 'video-play'">
+                    <img :src="`img/${ article.thumb }`" class="d-block img-fluid mb-3" alt="">
+                </div>
+            </div>
+            <h3 class="h5 c-blue"><strong>{{ article.title }}</strong></h3>
+            <div class="mb-2">
+                {{ utils.ellipsis(article.abstract) }}
+            </div>
+            <article-author :author="article.author"></article-author>
+        </router-link>
+    </template>
+
+    <template id="video-card-tpl">
+        <router-link 
+            :to="'video/' + article.url" 
+            class="video-card"
+        >
+            <div>
+                <img :src="`img/${ article.thumb }`" class="d-block img-fluid mb-3" alt="">
+            </div>
+            <h3 class="h5"><strong>{{ article.title }}</strong></h3>
+            <div class="mb-2">
+                {{ utils.ellipsis(article.abstract) }}
+            </div>
+            <article-author :author="article.author"></article-author>
+        </router-link>
+    </template>
+
+    <template id="inprimopiano-card-tpl">
+        <router-link 
+            :to="'/in-primo-piano/' + category.name + '/' + article.url" 
+            :class="category && 'border-' + category.name"
+            class="inprimopiano-card"
+        >
+            <div class="inprimopiano-card__bg" :style="{ 'background-image': 'url(img/' + article.thumb + ')' }"></div>
+            <div class="inprimopiano-card__code m-2 px-3 p-1" :class="'bg-' + article.category" :title="category.label">
+                {{ getCategoryCode() }}
+            </div>
+            <div class="inprimopiano-card__text m-2 p-2">
+                <h3 class="h5"><strong>{{ article.title }}</strong></h3>
+                <div class="inprimopiano-card__abstract mb-2">
+                    {{ utils.ellipsis(article.abstract) }}
+                </div>
+                <article-author :author="article.author"></article-author>
+            </div>
+        </router-link>
+    </template>
+
+    <template id="approfondisci-card-tpl">
+        <article class="approfondisci-card p-3 mb-3 position-relative">
+            <div class="row">
+                <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-12 offset-md-0 col-lg-4 mb-3">
+                    <img :src="'img/' + article.thumb" alt="" class="approfondisci-card__thumb d-block img-fluid mx-auto rounded" alt="">
+                </div>
+                <div class="col-lg-8">
+                    <h6><strong>{{ article.title }}</strong> </h6>
+                    <div>
+                        {{ article.abstract }}
+                    </div>
+                    <div class="approfondisci-card__author c-text-tertiary mb-3">
+                        di {{ article.author }}
+                    </div>
+                    <a :href="article.url" class="stretched-link" target="_blank">
+                        {{ article.urlLabel }}
+                    </a>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <template id="sceltipervoi-card-tpl">
+        <article class="sceltipervoi-card text-center p-4 mt-4">
+            <a :href="article.url" class="text-decoration-none" target="_blank">
+                <div class="sceltipervoi-card__icon-scelti mb-n2">
+                    <img :src="article.icon === 'master' ? 'img/scelti-per-voi/icon-master.svg' : 'img/icon-scelti.svg'" alt="" class="d-block mx-auto mb-3" alt="">
+                </div>
+                <img :src="'img/' + article.thumb" alt="" class="sceltipervoi-card__thumb d-block img-fluid mx-auto mb-3" alt="">
+                <h6><strong>{{ article.title }}</strong> </h6>
+                <div>
+                    {{ article.abstract }}
+                </div>
+                <div class="approfondisci-card__author c-text-tertiary mb-3">
+                    di {{ article.author }}
+                </div>
+            </a>
+        </article>
+    </template>
+
+    <template id="loading-icon-tpl">
+        <div class="text-center m-5">
+            <svg 
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                style="margin:auto;background:#fff;display:block;"
+                width="100px"
+                height="100px"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+            >
+                <circle cx="50" cy="50" fill="none" stroke="#133371" stroke-width="5" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1">
+                    </animateTransform>
+                </circle>
+            </svg>
+        </div>
+    </template>
+
+    <template id="carousel-section-tpl">
+        <section class="py-5" v-if="paginatedArticles">
+            <div class="container">
+                <h2 class="c-blue">
+                    <strong>{{ carouselTitle }}</strong>
+                </h2>
+                {{ carouselDescription }}
+            </div>
+            <div :id="id" class="carousel slide p-4" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-indicators">
+                    <template v-for="(slide, slideIndex) in paginatedArticles" :key="slideIndex">
+                        <button type="button" :data-bs-target="`#${ id }`" :data-bs-slide-to="slideIndex" :class="slideIndex === 0 && 'active'"></button>
+                    </template>
+                </div>
+                <div class="carousel-inner mb-4">
+                    <template v-for="(slide, slideIndex) in paginatedArticles" :key="slideIndex">
+                        <div class="carousel-item" :class="slideIndex === 0 && 'active'">
+                            <div class="container">
+                                <div class="row">
+                                    <template v-for="(article, articleIndex) in slide" :key="article.url">
+                                        <div class="col-md-4 d-flex">
+                                            <approfondisci-card :article="article" v-if="carouselType === 'approfondisci'"></approfondisci-card>
+                                            <sceltipervoi-card :article="article" v-if="carouselType === 'sceltipervoi'"></sceltipervoi-card>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <button class="carousel-control-prev" type="button" :data-bs-target="'#' + id" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" :data-bs-target="'#' + id" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </template>
+
+</body>
+
+</html>
