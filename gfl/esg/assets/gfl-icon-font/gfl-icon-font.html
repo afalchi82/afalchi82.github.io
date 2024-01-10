@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gfl-icon-font</title>
+
+    <meta name="robots" content="noindex">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .preview {
+            width: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .preview .inner {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: #f5f5f5;
+            -webkit-border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            border-radius: 3px 3px 0 0;
+        }
+        .preview .inner  {
+            line-height: 85px;
+            font-size: 24px;
+            color: #333;
+        }
+        .label {
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            font-size: 10px;
+            font-family: Monaco, monospace;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: #ddd;
+            -webkit-border-radius: 0 0 3px 3px;
+            -moz-border-radius: 0 0 3px 3px;
+            border-radius: 0 0 3px 3px;
+            color: #666;
+        }
+
+        .fixed-codepoint {
+            background: #333;
+            color: #f5f5f5;
+            border-radius: 10px;
+            font-size: 8px;
+            text-transform: uppercase;
+            padding: 1px 3px;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="gfl-icon-font.css" />
+</head>
+<body>
+
+    <h1>gfl-icon-font - Ver. 0.14.0 </h1>
+
+        <div class="preview" title="agenda">
+            <span class="inner">
+                <i class="gfl-icon icon-agenda"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>agenda</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="alarm">
+            <span class="inner">
+                <i class="gfl-icon icon-alarm"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>alarm</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="apps">
+            <span class="inner">
+                <i class="gfl-icon icon-apps"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>apps</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="bank">
+            <span class="inner">
+                <i class="gfl-icon icon-bank"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>bank</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="bell">
+            <span class="inner">
+                <i class="gfl-icon icon-bell"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>bell</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="biblio">
+            <span class="inner">
+                <i class="gfl-icon icon-biblio"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>biblio</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="board">
+            <span class="inner">
+                <i class="gfl-icon icon-board"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>board</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="bubble">
+            <span class="inner">
+                <i class="gfl-icon icon-bubble"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>bubble</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="caret">
+            <span class="inner">
+                <i class="gfl-icon icon-caret"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>caret</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="chat">
+            <span class="inner">
+                <i class="gfl-icon icon-chat"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>chat</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="check">
+            <span class="inner">
+                <i class="gfl-icon icon-check"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>check</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="checkbox_check">
+            <span class="inner">
+                <i class="gfl-icon icon-checkbox_check"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>checkbox_check</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="chevron_down_alt">
+            <span class="inner">
+                <i class="gfl-icon icon-chevron_down_alt"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>chevron_down_alt</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="circle">
+            <span class="inner">
+                <i class="gfl-icon icon-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="circlequestion">
+            <span class="inner">
+                <i class="gfl-icon icon-circlequestion"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>circlequestion</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="clock">
+            <span class="inner">
+                <i class="gfl-icon icon-clock"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>clock</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="coge">
+            <span class="inner">
+                <i class="gfl-icon icon-coge"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>coge</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="comunicazioni">
+            <span class="inner">
+                <i class="gfl-icon icon-comunicazioni"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>comunicazioni</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="contacs">
+            <span class="inner">
+                <i class="gfl-icon icon-contacs"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>contacs</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="corner_up_left">
+            <span class="inner">
+                <i class="gfl-icon icon-corner_up_left"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>corner_up_left</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="corner_up_right">
+            <span class="inner">
+                <i class="gfl-icon icon-corner_up_right"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>corner_up_right</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="dashboard">
+            <span class="inner">
+                <i class="gfl-icon icon-dashboard"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>dashboard</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="document">
+            <span class="inner">
+                <i class="gfl-icon icon-document"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>document</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="dossier">
+            <span class="inner">
+                <i class="gfl-icon icon-dossier"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>dossier</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="dotcircle">
+            <span class="inner">
+                <i class="gfl-icon icon-dotcircle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>dotcircle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="double_corner_up_left">
+            <span class="inner">
+                <i class="gfl-icon icon-double_corner_up_left"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>double_corner_up_left</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="edit">
+            <span class="inner">
+                <i class="gfl-icon icon-edit"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>edit</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="error">
+            <span class="inner">
+                <i class="gfl-icon icon-error"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>error</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="euro">
+            <span class="inner">
+                <i class="gfl-icon icon-euro"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>euro</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="extlink">
+            <span class="inner">
+                <i class="gfl-icon icon-extlink"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>extlink</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-alarm">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-alarm"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-alarm</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-alert-octagon">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-alert-octagon"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-alert-octagon</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-alert-triangle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-alert-triangle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-alert-triangle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-align-justify">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-align-justify"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-align-justify</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-arrow-down-circle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-arrow-down-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-arrow-down-circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-arrow-left">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-arrow-left"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-arrow-left</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-arrow-right">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-arrow-right"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-arrow-right</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-auto-alarm">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-auto-alarm"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-auto-alarm</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-award">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-award"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-award</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-bell">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-bell"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-bell</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-book-open">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-book-open"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-book-open</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-calendar">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-calendar"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-calendar</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-check-circle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-check-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-check-circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-check">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-check"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-check</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-chevron-down">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-chevron-down"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-chevron-down</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-chevron-left">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-chevron-left"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-chevron-left</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-chevron-right-alt">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-chevron-right-alt"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-chevron-right-alt</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-chevron-right">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-chevron-right"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-chevron-right</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-circle-full">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-circle-full"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-circle-full</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-circle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-clock">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-clock"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-clock</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-copy">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-copy"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-copy</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-download">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-download"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-download</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-drag">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-drag"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-drag</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-edit-alt">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-edit-alt"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-edit-alt</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-edit-c">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-edit-c"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-edit-c</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-edit">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-edit"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-edit</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-euro">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-euro"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-euro</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-ext-link">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-ext-link"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-ext-link</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-eye-off">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-eye-off"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-eye-off</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-eye">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-eye"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-eye</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-feather">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-feather"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-feather</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-file-move">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-file-move"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-file-move</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-file-text">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-file-text"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-file-text</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-filter">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-filter"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-filter</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-flag">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-flag"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-flag</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-folder-full">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-folder-full"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-folder-full</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-folder">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-folder"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-folder</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-google">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-google"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-google</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-group">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-group"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-group</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-help-circle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-help-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-help-circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-history">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-history"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-history</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-home">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-home"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-home</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-inbox">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-inbox"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-inbox</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-info">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-info"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-info</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-italic">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-italic"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-italic</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-kanban">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-kanban"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-kanban</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-link">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-link"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-link</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-list">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-list"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-list</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-loader">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-loader"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-loader</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-lock">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-lock"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-lock</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-logout">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-logout"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-logout</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-mail">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-mail"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-mail</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-maximize">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-maximize"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-maximize</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-menu">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-menu"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-menu</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-message-circle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-message-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-message-circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-minimize">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-minimize"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-minimize</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-minus">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-minus"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-minus</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-monitor">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-monitor"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-monitor</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-more-horizontal">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-more-horizontal"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-more-horizontal</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-more-vertical">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-more-vertical"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-more-vertical</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-move-vertical">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-move-vertical"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-move-vertical</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-move">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-move"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-move</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-paperclip">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-paperclip"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-paperclip</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-pen-tool">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-pen-tool"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-pen-tool</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-percent">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-percent"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-percent</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-phone">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-phone"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-phone</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-play-circle">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-play-circle"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-play-circle</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-plus-square">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-plus-square"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-plus-square</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-plus">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-plus"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-plus</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-printer">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-printer"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-printer</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-refresh">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-refresh"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-refresh</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-repeat">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-repeat"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-repeat</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-rinvia">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-rinvia"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-rinvia</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-search">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-search"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-search</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-send">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-send"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-send</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-settings">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-settings"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-settings</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-share">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-share"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-share</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-smile">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-smile"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-smile</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-star-filled">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-star-filled"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-star-filled</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-star">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-star"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-star</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-tag">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-tag"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-tag</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-times">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-times"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-times</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-tool">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-tool"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-tool</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-trash-delete">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-trash-delete"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-trash-delete</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-trash-restore">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-trash-restore"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-trash-restore</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-trash">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-trash"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-trash</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-udienza">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-udienza"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-udienza</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-upload-cloud">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-upload-cloud"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-upload-cloud</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-upload">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-upload"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-upload</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-user">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-user"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-user</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-users">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-users"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-users</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-x-octagon">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-x-octagon"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-x-octagon</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-x-square">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-x-square"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-x-square</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="fth-x">
+            <span class="inner">
+                <i class="gfl-icon icon-fth-x"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>fth-x</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="gears">
+            <span class="inner">
+                <i class="gfl-icon icon-gears"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>gears</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="history_back">
+            <span class="inner">
+                <i class="gfl-icon icon-history_back"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>history_back</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="history">
+            <span class="inner">
+                <i class="gfl-icon icon-history"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>history</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="info_dashed">
+            <span class="inner">
+                <i class="gfl-icon icon-info_dashed"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>info_dashed</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="info">
+            <span class="inner">
+                <i class="gfl-icon icon-info"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>info</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="ius">
+            <span class="inner">
+                <i class="gfl-icon icon-ius"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>ius</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="ligthbulb">
+            <span class="inner">
+                <i class="gfl-icon icon-ligthbulb"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>ligthbulb</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="logout">
+            <span class="inner">
+                <i class="gfl-icon icon-logout"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>logout</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="lookup">
+            <span class="inner">
+                <i class="gfl-icon icon-lookup"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>lookup</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="mail">
+            <span class="inner">
+                <i class="gfl-icon icon-mail"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>mail</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="map-pin">
+            <span class="inner">
+                <i class="gfl-icon icon-map-pin"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>map-pin</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="news">
+            <span class="inner">
+                <i class="gfl-icon icon-news"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>news</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="otp">
+            <span class="inner">
+                <i class="gfl-icon icon-otp"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>otp</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="pct">
+            <span class="inner">
+                <i class="gfl-icon icon-pct"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>pct</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="pencil">
+            <span class="inner">
+                <i class="gfl-icon icon-pencil"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>pencil</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="person">
+            <span class="inner">
+                <i class="gfl-icon icon-person"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>person</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="phone_contacts">
+            <span class="inner">
+                <i class="gfl-icon icon-phone_contacts"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>phone_contacts</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="phone">
+            <span class="inner">
+                <i class="gfl-icon icon-phone"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>phone</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="pie">
+            <span class="inner">
+                <i class="gfl-icon icon-pie"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>pie</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="pin">
+            <span class="inner">
+                <i class="gfl-icon icon-pin"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>pin</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="polisweb">
+            <span class="inner">
+                <i class="gfl-icon icon-polisweb"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>polisweb</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="printer">
+            <span class="inner">
+                <i class="gfl-icon icon-printer"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>printer</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="question_dashed">
+            <span class="inner">
+                <i class="gfl-icon icon-question_dashed"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>question_dashed</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="ringbell">
+            <span class="inner">
+                <i class="gfl-icon icon-ringbell"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>ringbell</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="rules">
+            <span class="inner">
+                <i class="gfl-icon icon-rules"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>rules</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="search">
+            <span class="inner">
+                <i class="gfl-icon icon-search"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>search</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="smart-card">
+            <span class="inner">
+                <i class="gfl-icon icon-smart-card"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>smart-card</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="smile">
+            <span class="inner">
+                <i class="gfl-icon icon-smile"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>smile</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="star">
+            <span class="inner">
+                <i class="gfl-icon icon-star"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>star</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="success">
+            <span class="inner">
+                <i class="gfl-icon icon-success"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>success</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="trashcan">
+            <span class="inner">
+                <i class="gfl-icon icon-trashcan"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>trashcan</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="user_settings">
+            <span class="inner">
+                <i class="gfl-icon icon-user_settings"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>user_settings</span> <br>
+            </span>
+        </div>
+        <div class="preview" title="warning">
+            <span class="inner">
+                <i class="gfl-icon icon-warning"></i>
+            </span>
+            <br>
+            <span class='label'>
+                <span>warning</span> <br>
+            </span>
+        </div>
+
+    
+
+</body>
+</html>

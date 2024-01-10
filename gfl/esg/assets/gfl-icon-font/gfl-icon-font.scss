@@ -1,0 +1,660 @@
+/* --------------------------------------------------
+    GFL Font Icon - Ver. 0.14.0
+-------------------------------------------------- */    
+
+$gfl-icon-font-font: "gfl-icon-font";
+
+@font-face {
+    font-family: $gfl-icon-font-font;
+    src: url("./gfl-icon-font.svg?7ad49c3921c10bf6d77aa6436602614d#gfl-icon-font") format("svg"),
+url("./gfl-icon-font.ttf?7ad49c3921c10bf6d77aa6436602614d") format("truetype"),
+url("./gfl-icon-font.woff?7ad49c3921c10bf6d77aa6436602614d") format("woff"),
+url("./gfl-icon-font.woff2?7ad49c3921c10bf6d77aa6436602614d") format("woff2");
+}
+
+i.gfl-icon, .gfl-icon {
+    font-family: gfl-icon-font !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$gfl-icon-font-map: (
+    "agenda": "\f101",
+    "alarm": "\f102",
+    "apps": "\f103",
+    "bank": "\f104",
+    "bell": "\f105",
+    "biblio": "\f106",
+    "board": "\f107",
+    "bubble": "\f108",
+    "caret": "\f109",
+    "chat": "\f10a",
+    "check": "\f10b",
+    "checkbox_check": "\f10c",
+    "chevron_down_alt": "\f10d",
+    "circle": "\f10e",
+    "circlequestion": "\f10f",
+    "clock": "\f110",
+    "coge": "\f111",
+    "comunicazioni": "\f112",
+    "contacs": "\f113",
+    "corner_up_left": "\f114",
+    "corner_up_right": "\f115",
+    "dashboard": "\f116",
+    "document": "\f117",
+    "dossier": "\f118",
+    "dotcircle": "\f119",
+    "double_corner_up_left": "\f11a",
+    "edit": "\f11b",
+    "error": "\f11c",
+    "euro": "\f11d",
+    "extlink": "\f11e",
+    "fth-alarm": "\f11f",
+    "fth-alert-octagon": "\f120",
+    "fth-alert-triangle": "\f121",
+    "fth-align-justify": "\f122",
+    "fth-arrow-down-circle": "\f123",
+    "fth-arrow-left": "\f124",
+    "fth-arrow-right": "\f125",
+    "fth-auto-alarm": "\f126",
+    "fth-award": "\f127",
+    "fth-bell": "\f128",
+    "fth-book-open": "\f129",
+    "fth-calendar": "\f12a",
+    "fth-check-circle": "\f12b",
+    "fth-check": "\f12c",
+    "fth-chevron-down": "\f12d",
+    "fth-chevron-left": "\f12e",
+    "fth-chevron-right-alt": "\f12f",
+    "fth-chevron-right": "\f130",
+    "fth-circle-full": "\f131",
+    "fth-circle": "\f132",
+    "fth-clock": "\f133",
+    "fth-copy": "\f134",
+    "fth-download": "\f135",
+    "fth-drag": "\f136",
+    "fth-edit-alt": "\f137",
+    "fth-edit-c": "\f138",
+    "fth-edit": "\f139",
+    "fth-euro": "\f13a",
+    "fth-ext-link": "\f13b",
+    "fth-eye-off": "\f13c",
+    "fth-eye": "\f13d",
+    "fth-feather": "\f13e",
+    "fth-file-move": "\f13f",
+    "fth-file-text": "\f140",
+    "fth-filter": "\f141",
+    "fth-flag": "\f142",
+    "fth-folder-full": "\f143",
+    "fth-folder": "\f144",
+    "fth-google": "\f145",
+    "fth-group": "\f146",
+    "fth-help-circle": "\f147",
+    "fth-history": "\f148",
+    "fth-home": "\f149",
+    "fth-inbox": "\f14a",
+    "fth-info": "\f14b",
+    "fth-italic": "\f14c",
+    "fth-kanban": "\f14d",
+    "fth-link": "\f14e",
+    "fth-list": "\f14f",
+    "fth-loader": "\f150",
+    "fth-lock": "\f151",
+    "fth-logout": "\f152",
+    "fth-mail": "\f153",
+    "fth-maximize": "\f154",
+    "fth-menu": "\f155",
+    "fth-message-circle": "\f156",
+    "fth-minimize": "\f157",
+    "fth-minus": "\f158",
+    "fth-monitor": "\f159",
+    "fth-more-horizontal": "\f15a",
+    "fth-more-vertical": "\f15b",
+    "fth-move-vertical": "\f15c",
+    "fth-move": "\f15d",
+    "fth-paperclip": "\f15e",
+    "fth-pen-tool": "\f15f",
+    "fth-percent": "\f160",
+    "fth-phone": "\f161",
+    "fth-play-circle": "\f162",
+    "fth-plus-square": "\f163",
+    "fth-plus": "\f164",
+    "fth-printer": "\f165",
+    "fth-refresh": "\f166",
+    "fth-repeat": "\f167",
+    "fth-rinvia": "\f168",
+    "fth-search": "\f169",
+    "fth-send": "\f16a",
+    "fth-settings": "\f16b",
+    "fth-share": "\f16c",
+    "fth-smile": "\f16d",
+    "fth-star-filled": "\f16e",
+    "fth-star": "\f16f",
+    "fth-tag": "\f170",
+    "fth-times": "\f171",
+    "fth-tool": "\f172",
+    "fth-trash-delete": "\f173",
+    "fth-trash-restore": "\f174",
+    "fth-trash": "\f175",
+    "fth-udienza": "\f176",
+    "fth-upload-cloud": "\f177",
+    "fth-upload": "\f178",
+    "fth-user": "\f179",
+    "fth-users": "\f17a",
+    "fth-x-octagon": "\f17b",
+    "fth-x-square": "\f17c",
+    "fth-x": "\f17d",
+    "gears": "\f17e",
+    "history_back": "\f17f",
+    "history": "\f180",
+    "info_dashed": "\f181",
+    "info": "\f182",
+    "ius": "\f183",
+    "ligthbulb": "\f184",
+    "logout": "\f185",
+    "lookup": "\f186",
+    "mail": "\f187",
+    "map-pin": "\f188",
+    "news": "\f189",
+    "otp": "\f18a",
+    "pct": "\f18b",
+    "pencil": "\f18c",
+    "person": "\f18d",
+    "phone_contacts": "\f18e",
+    "phone": "\f18f",
+    "pie": "\f190",
+    "pin": "\f191",
+    "polisweb": "\f192",
+    "printer": "\f193",
+    "question_dashed": "\f194",
+    "ringbell": "\f195",
+    "rules": "\f196",
+    "search": "\f197",
+    "smart-card": "\f198",
+    "smile": "\f199",
+    "star": "\f19a",
+    "success": "\f19b",
+    "trashcan": "\f19c",
+    "user_settings": "\f19d",
+    "warning": "\f19e",
+);
+
+.icon-agenda:before {
+    content: map-get($gfl-icon-font-map, "agenda");
+}
+.icon-alarm:before {
+    content: map-get($gfl-icon-font-map, "alarm");
+}
+.icon-apps:before {
+    content: map-get($gfl-icon-font-map, "apps");
+}
+.icon-bank:before {
+    content: map-get($gfl-icon-font-map, "bank");
+}
+.icon-bell:before {
+    content: map-get($gfl-icon-font-map, "bell");
+}
+.icon-biblio:before {
+    content: map-get($gfl-icon-font-map, "biblio");
+}
+.icon-board:before {
+    content: map-get($gfl-icon-font-map, "board");
+}
+.icon-bubble:before {
+    content: map-get($gfl-icon-font-map, "bubble");
+}
+.icon-caret:before {
+    content: map-get($gfl-icon-font-map, "caret");
+}
+.icon-chat:before {
+    content: map-get($gfl-icon-font-map, "chat");
+}
+.icon-check:before {
+    content: map-get($gfl-icon-font-map, "check");
+}
+.icon-checkbox_check:before {
+    content: map-get($gfl-icon-font-map, "checkbox_check");
+}
+.icon-chevron_down_alt:before {
+    content: map-get($gfl-icon-font-map, "chevron_down_alt");
+}
+.icon-circle:before {
+    content: map-get($gfl-icon-font-map, "circle");
+}
+.icon-circlequestion:before {
+    content: map-get($gfl-icon-font-map, "circlequestion");
+}
+.icon-clock:before {
+    content: map-get($gfl-icon-font-map, "clock");
+}
+.icon-coge:before {
+    content: map-get($gfl-icon-font-map, "coge");
+}
+.icon-comunicazioni:before {
+    content: map-get($gfl-icon-font-map, "comunicazioni");
+}
+.icon-contacs:before {
+    content: map-get($gfl-icon-font-map, "contacs");
+}
+.icon-corner_up_left:before {
+    content: map-get($gfl-icon-font-map, "corner_up_left");
+}
+.icon-corner_up_right:before {
+    content: map-get($gfl-icon-font-map, "corner_up_right");
+}
+.icon-dashboard:before {
+    content: map-get($gfl-icon-font-map, "dashboard");
+}
+.icon-document:before {
+    content: map-get($gfl-icon-font-map, "document");
+}
+.icon-dossier:before {
+    content: map-get($gfl-icon-font-map, "dossier");
+}
+.icon-dotcircle:before {
+    content: map-get($gfl-icon-font-map, "dotcircle");
+}
+.icon-double_corner_up_left:before {
+    content: map-get($gfl-icon-font-map, "double_corner_up_left");
+}
+.icon-edit:before {
+    content: map-get($gfl-icon-font-map, "edit");
+}
+.icon-error:before {
+    content: map-get($gfl-icon-font-map, "error");
+}
+.icon-euro:before {
+    content: map-get($gfl-icon-font-map, "euro");
+}
+.icon-extlink:before {
+    content: map-get($gfl-icon-font-map, "extlink");
+}
+.icon-fth-alarm:before {
+    content: map-get($gfl-icon-font-map, "fth-alarm");
+}
+.icon-fth-alert-octagon:before {
+    content: map-get($gfl-icon-font-map, "fth-alert-octagon");
+}
+.icon-fth-alert-triangle:before {
+    content: map-get($gfl-icon-font-map, "fth-alert-triangle");
+}
+.icon-fth-align-justify:before {
+    content: map-get($gfl-icon-font-map, "fth-align-justify");
+}
+.icon-fth-arrow-down-circle:before {
+    content: map-get($gfl-icon-font-map, "fth-arrow-down-circle");
+}
+.icon-fth-arrow-left:before {
+    content: map-get($gfl-icon-font-map, "fth-arrow-left");
+}
+.icon-fth-arrow-right:before {
+    content: map-get($gfl-icon-font-map, "fth-arrow-right");
+}
+.icon-fth-auto-alarm:before {
+    content: map-get($gfl-icon-font-map, "fth-auto-alarm");
+}
+.icon-fth-award:before {
+    content: map-get($gfl-icon-font-map, "fth-award");
+}
+.icon-fth-bell:before {
+    content: map-get($gfl-icon-font-map, "fth-bell");
+}
+.icon-fth-book-open:before {
+    content: map-get($gfl-icon-font-map, "fth-book-open");
+}
+.icon-fth-calendar:before {
+    content: map-get($gfl-icon-font-map, "fth-calendar");
+}
+.icon-fth-check-circle:before {
+    content: map-get($gfl-icon-font-map, "fth-check-circle");
+}
+.icon-fth-check:before {
+    content: map-get($gfl-icon-font-map, "fth-check");
+}
+.icon-fth-chevron-down:before {
+    content: map-get($gfl-icon-font-map, "fth-chevron-down");
+}
+.icon-fth-chevron-left:before {
+    content: map-get($gfl-icon-font-map, "fth-chevron-left");
+}
+.icon-fth-chevron-right-alt:before {
+    content: map-get($gfl-icon-font-map, "fth-chevron-right-alt");
+}
+.icon-fth-chevron-right:before {
+    content: map-get($gfl-icon-font-map, "fth-chevron-right");
+}
+.icon-fth-circle-full:before {
+    content: map-get($gfl-icon-font-map, "fth-circle-full");
+}
+.icon-fth-circle:before {
+    content: map-get($gfl-icon-font-map, "fth-circle");
+}
+.icon-fth-clock:before {
+    content: map-get($gfl-icon-font-map, "fth-clock");
+}
+.icon-fth-copy:before {
+    content: map-get($gfl-icon-font-map, "fth-copy");
+}
+.icon-fth-download:before {
+    content: map-get($gfl-icon-font-map, "fth-download");
+}
+.icon-fth-drag:before {
+    content: map-get($gfl-icon-font-map, "fth-drag");
+}
+.icon-fth-edit-alt:before {
+    content: map-get($gfl-icon-font-map, "fth-edit-alt");
+}
+.icon-fth-edit-c:before {
+    content: map-get($gfl-icon-font-map, "fth-edit-c");
+}
+.icon-fth-edit:before {
+    content: map-get($gfl-icon-font-map, "fth-edit");
+}
+.icon-fth-euro:before {
+    content: map-get($gfl-icon-font-map, "fth-euro");
+}
+.icon-fth-ext-link:before {
+    content: map-get($gfl-icon-font-map, "fth-ext-link");
+}
+.icon-fth-eye-off:before {
+    content: map-get($gfl-icon-font-map, "fth-eye-off");
+}
+.icon-fth-eye:before {
+    content: map-get($gfl-icon-font-map, "fth-eye");
+}
+.icon-fth-feather:before {
+    content: map-get($gfl-icon-font-map, "fth-feather");
+}
+.icon-fth-file-move:before {
+    content: map-get($gfl-icon-font-map, "fth-file-move");
+}
+.icon-fth-file-text:before {
+    content: map-get($gfl-icon-font-map, "fth-file-text");
+}
+.icon-fth-filter:before {
+    content: map-get($gfl-icon-font-map, "fth-filter");
+}
+.icon-fth-flag:before {
+    content: map-get($gfl-icon-font-map, "fth-flag");
+}
+.icon-fth-folder-full:before {
+    content: map-get($gfl-icon-font-map, "fth-folder-full");
+}
+.icon-fth-folder:before {
+    content: map-get($gfl-icon-font-map, "fth-folder");
+}
+.icon-fth-google:before {
+    content: map-get($gfl-icon-font-map, "fth-google");
+}
+.icon-fth-group:before {
+    content: map-get($gfl-icon-font-map, "fth-group");
+}
+.icon-fth-help-circle:before {
+    content: map-get($gfl-icon-font-map, "fth-help-circle");
+}
+.icon-fth-history:before {
+    content: map-get($gfl-icon-font-map, "fth-history");
+}
+.icon-fth-home:before {
+    content: map-get($gfl-icon-font-map, "fth-home");
+}
+.icon-fth-inbox:before {
+    content: map-get($gfl-icon-font-map, "fth-inbox");
+}
+.icon-fth-info:before {
+    content: map-get($gfl-icon-font-map, "fth-info");
+}
+.icon-fth-italic:before {
+    content: map-get($gfl-icon-font-map, "fth-italic");
+}
+.icon-fth-kanban:before {
+    content: map-get($gfl-icon-font-map, "fth-kanban");
+}
+.icon-fth-link:before {
+    content: map-get($gfl-icon-font-map, "fth-link");
+}
+.icon-fth-list:before {
+    content: map-get($gfl-icon-font-map, "fth-list");
+}
+.icon-fth-loader:before {
+    content: map-get($gfl-icon-font-map, "fth-loader");
+}
+.icon-fth-lock:before {
+    content: map-get($gfl-icon-font-map, "fth-lock");
+}
+.icon-fth-logout:before {
+    content: map-get($gfl-icon-font-map, "fth-logout");
+}
+.icon-fth-mail:before {
+    content: map-get($gfl-icon-font-map, "fth-mail");
+}
+.icon-fth-maximize:before {
+    content: map-get($gfl-icon-font-map, "fth-maximize");
+}
+.icon-fth-menu:before {
+    content: map-get($gfl-icon-font-map, "fth-menu");
+}
+.icon-fth-message-circle:before {
+    content: map-get($gfl-icon-font-map, "fth-message-circle");
+}
+.icon-fth-minimize:before {
+    content: map-get($gfl-icon-font-map, "fth-minimize");
+}
+.icon-fth-minus:before {
+    content: map-get($gfl-icon-font-map, "fth-minus");
+}
+.icon-fth-monitor:before {
+    content: map-get($gfl-icon-font-map, "fth-monitor");
+}
+.icon-fth-more-horizontal:before {
+    content: map-get($gfl-icon-font-map, "fth-more-horizontal");
+}
+.icon-fth-more-vertical:before {
+    content: map-get($gfl-icon-font-map, "fth-more-vertical");
+}
+.icon-fth-move-vertical:before {
+    content: map-get($gfl-icon-font-map, "fth-move-vertical");
+}
+.icon-fth-move:before {
+    content: map-get($gfl-icon-font-map, "fth-move");
+}
+.icon-fth-paperclip:before {
+    content: map-get($gfl-icon-font-map, "fth-paperclip");
+}
+.icon-fth-pen-tool:before {
+    content: map-get($gfl-icon-font-map, "fth-pen-tool");
+}
+.icon-fth-percent:before {
+    content: map-get($gfl-icon-font-map, "fth-percent");
+}
+.icon-fth-phone:before {
+    content: map-get($gfl-icon-font-map, "fth-phone");
+}
+.icon-fth-play-circle:before {
+    content: map-get($gfl-icon-font-map, "fth-play-circle");
+}
+.icon-fth-plus-square:before {
+    content: map-get($gfl-icon-font-map, "fth-plus-square");
+}
+.icon-fth-plus:before {
+    content: map-get($gfl-icon-font-map, "fth-plus");
+}
+.icon-fth-printer:before {
+    content: map-get($gfl-icon-font-map, "fth-printer");
+}
+.icon-fth-refresh:before {
+    content: map-get($gfl-icon-font-map, "fth-refresh");
+}
+.icon-fth-repeat:before {
+    content: map-get($gfl-icon-font-map, "fth-repeat");
+}
+.icon-fth-rinvia:before {
+    content: map-get($gfl-icon-font-map, "fth-rinvia");
+}
+.icon-fth-search:before {
+    content: map-get($gfl-icon-font-map, "fth-search");
+}
+.icon-fth-send:before {
+    content: map-get($gfl-icon-font-map, "fth-send");
+}
+.icon-fth-settings:before {
+    content: map-get($gfl-icon-font-map, "fth-settings");
+}
+.icon-fth-share:before {
+    content: map-get($gfl-icon-font-map, "fth-share");
+}
+.icon-fth-smile:before {
+    content: map-get($gfl-icon-font-map, "fth-smile");
+}
+.icon-fth-star-filled:before {
+    content: map-get($gfl-icon-font-map, "fth-star-filled");
+}
+.icon-fth-star:before {
+    content: map-get($gfl-icon-font-map, "fth-star");
+}
+.icon-fth-tag:before {
+    content: map-get($gfl-icon-font-map, "fth-tag");
+}
+.icon-fth-times:before {
+    content: map-get($gfl-icon-font-map, "fth-times");
+}
+.icon-fth-tool:before {
+    content: map-get($gfl-icon-font-map, "fth-tool");
+}
+.icon-fth-trash-delete:before {
+    content: map-get($gfl-icon-font-map, "fth-trash-delete");
+}
+.icon-fth-trash-restore:before {
+    content: map-get($gfl-icon-font-map, "fth-trash-restore");
+}
+.icon-fth-trash:before {
+    content: map-get($gfl-icon-font-map, "fth-trash");
+}
+.icon-fth-udienza:before {
+    content: map-get($gfl-icon-font-map, "fth-udienza");
+}
+.icon-fth-upload-cloud:before {
+    content: map-get($gfl-icon-font-map, "fth-upload-cloud");
+}
+.icon-fth-upload:before {
+    content: map-get($gfl-icon-font-map, "fth-upload");
+}
+.icon-fth-user:before {
+    content: map-get($gfl-icon-font-map, "fth-user");
+}
+.icon-fth-users:before {
+    content: map-get($gfl-icon-font-map, "fth-users");
+}
+.icon-fth-x-octagon:before {
+    content: map-get($gfl-icon-font-map, "fth-x-octagon");
+}
+.icon-fth-x-square:before {
+    content: map-get($gfl-icon-font-map, "fth-x-square");
+}
+.icon-fth-x:before {
+    content: map-get($gfl-icon-font-map, "fth-x");
+}
+.icon-gears:before {
+    content: map-get($gfl-icon-font-map, "gears");
+}
+.icon-history_back:before {
+    content: map-get($gfl-icon-font-map, "history_back");
+}
+.icon-history:before {
+    content: map-get($gfl-icon-font-map, "history");
+}
+.icon-info_dashed:before {
+    content: map-get($gfl-icon-font-map, "info_dashed");
+}
+.icon-info:before {
+    content: map-get($gfl-icon-font-map, "info");
+}
+.icon-ius:before {
+    content: map-get($gfl-icon-font-map, "ius");
+}
+.icon-ligthbulb:before {
+    content: map-get($gfl-icon-font-map, "ligthbulb");
+}
+.icon-logout:before {
+    content: map-get($gfl-icon-font-map, "logout");
+}
+.icon-lookup:before {
+    content: map-get($gfl-icon-font-map, "lookup");
+}
+.icon-mail:before {
+    content: map-get($gfl-icon-font-map, "mail");
+}
+.icon-map-pin:before {
+    content: map-get($gfl-icon-font-map, "map-pin");
+}
+.icon-news:before {
+    content: map-get($gfl-icon-font-map, "news");
+}
+.icon-otp:before {
+    content: map-get($gfl-icon-font-map, "otp");
+}
+.icon-pct:before {
+    content: map-get($gfl-icon-font-map, "pct");
+}
+.icon-pencil:before {
+    content: map-get($gfl-icon-font-map, "pencil");
+}
+.icon-person:before {
+    content: map-get($gfl-icon-font-map, "person");
+}
+.icon-phone_contacts:before {
+    content: map-get($gfl-icon-font-map, "phone_contacts");
+}
+.icon-phone:before {
+    content: map-get($gfl-icon-font-map, "phone");
+}
+.icon-pie:before {
+    content: map-get($gfl-icon-font-map, "pie");
+}
+.icon-pin:before {
+    content: map-get($gfl-icon-font-map, "pin");
+}
+.icon-polisweb:before {
+    content: map-get($gfl-icon-font-map, "polisweb");
+}
+.icon-printer:before {
+    content: map-get($gfl-icon-font-map, "printer");
+}
+.icon-question_dashed:before {
+    content: map-get($gfl-icon-font-map, "question_dashed");
+}
+.icon-ringbell:before {
+    content: map-get($gfl-icon-font-map, "ringbell");
+}
+.icon-rules:before {
+    content: map-get($gfl-icon-font-map, "rules");
+}
+.icon-search:before {
+    content: map-get($gfl-icon-font-map, "search");
+}
+.icon-smart-card:before {
+    content: map-get($gfl-icon-font-map, "smart-card");
+}
+.icon-smile:before {
+    content: map-get($gfl-icon-font-map, "smile");
+}
+.icon-star:before {
+    content: map-get($gfl-icon-font-map, "star");
+}
+.icon-success:before {
+    content: map-get($gfl-icon-font-map, "success");
+}
+.icon-trashcan:before {
+    content: map-get($gfl-icon-font-map, "trashcan");
+}
+.icon-user_settings:before {
+    content: map-get($gfl-icon-font-map, "user_settings");
+}
+.icon-warning:before {
+    content: map-get($gfl-icon-font-map, "warning");
+}

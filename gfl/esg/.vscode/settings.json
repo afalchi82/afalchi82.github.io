@@ -1,0 +1,6 @@
+{
+    "editor.detectIndentation": false,
+    "liveServer.settings.port": 5501,
+    "html.format.wrapAttributes": "preserve",
+    "html.format.maxPreserveNewLines": 2
+}
