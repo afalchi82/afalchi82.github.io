@@ -1,0 +1,445 @@
+// @import '_vars'; 
+
+@import 'bootstrap/mixins';
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/bootstrap';
+
+@import '_design-tokens';
+
+
+// ----------------------------------------
+// Utils
+// ----------------------------------------
+$c-env: #00b050;
+$c-soc: #2b7ae7;
+$c-gov: #c00000;
+
+$sections-colors-map: (
+    environmental: $c-env,
+    social: $c-soc,
+    governance: $c-gov,
+);
+
+$border-rounded: .8rem;
+
+@each $k,
+$v in $sections-colors-map {
+    .c-#{ $k } {
+        color: $v !important;
+    }
+
+    .bg-#{ $k } {
+        background-color: $v !important;
+    }
+
+    .border-#{ $k } {
+        border-color: $v !important;
+    }
+}
+
+$c-text-colors-map: (
+    'blue': $c-blue,
+    text-primary: $c-text-primary,
+    text-secondary: $c-text-secondary,
+    text-tertiary: $c-text-tertiary,
+    text-muted: $c-text-muted,
+    text-disabled: $c-text-disabled,
+);
+
+@each $k,
+$v in $c-text-colors-map {
+    .c-#{ $k } {
+        color: $v !important;
+    }
+}
+
+
+
+.bg-grey-30 {
+    background-color: $c-grey-30 !important;
+}
+
+
+[v-cloak] {
+    display: none;
+}
+
+
+// ----------------------------------------
+// Global
+// ----------------------------------------
+body {
+    font-family: 'Quattrocento Sans', sans-serif;
+    max-width: 1920px;
+    margin: 0 auto;
+    min-width: 350px;
+}
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    &__links {
+        background: white;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .nav {
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            position: relative;
+            top: 0;
+            left: initial;
+            width: unset;
+
+            .nav {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+
+a {
+    color: $link-color;
+}
+
+.btn {
+    border-radius: 0;
+    display: inline-flex;
+    gap: 0.2rem;
+    align-items: center;
+
+    &-outline-primary {
+        color: $link-color;
+        border-color: $link-color;
+
+        &:hover {
+            color: white;
+            background-color: $link-color-hover;
+            border-color: $link-color-hover;
+        }
+    }
+}
+
+.ratio-3x2::before {
+    padding-top: 66%
+}
+
+.tagline {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+// ----------------------------------------
+// Nav
+// ----------------------------------------
+.nav-pills .nav-link {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    line-height: 1;
+
+    &,
+    &:focus,
+    &:hover,
+    &:active {
+        color: $c-grey-100;
+    }
+
+    &:hover {
+        background: $c-grey-20;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+    }
+
+    @each $k,
+    $v in $sections-colors-map {
+        &-#{ $k }::before {
+            background: $v;
+        }
+    }
+}
+
+.mobile-menu {
+    color: $c-text-primary;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+
+
+// ----------------------------------------
+// Logo
+// ----------------------------------------
+.logo {
+    max-height: 10rem;
+}
+
+// ----------------------------------------
+// Main hero
+// ----------------------------------------
+.main-hero {
+    h1 {
+        background: rgba($c-blue, .8);
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            background: url('../img/female_look-right.png') no-repeat left bottom / contain;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}
+
+// ----------------------------------------
+// in-primo-piano
+// ----------------------------------------
+.inprimopiano-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: background-color .4s;
+    width: 100%;
+    justify-content: space-between;
+
+    &:before {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &,
+    &:hover {
+        color: $c-grey-100;
+        text-decoration: none;
+    }
+
+    &__bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transform: scale(1.05);
+        transition: .3s all ease;
+    }
+
+    &__code,
+    &__text {
+        z-index: 1;
+    }
+
+    &__code {
+        color: white;
+    }
+
+    &__text {
+        background: rgba(white, 90%);
+        z-index: 10;
+    }
+
+    &__abstract {
+        overflow: hidden;
+    }
+
+    &:hover &__bg {
+        transform: scale(1.0);
+    }
+}
+
+.article-author {
+    color: $c-grey-90;
+}
+
+.article-body {
+    table {
+        margin-bottom: 1rem;
+
+        td {
+            border: 1px solid $c-grey-70;
+            padding: 1rem;
+            
+        }
+    }
+}
+
+// ----------------------------------------
+// Approfondisci
+// ----------------------------------------
+.approfondisci-card {
+    background: white;
+    border-radius: $border-rounded;
+    display: flex;
+    align-items: stretch;
+
+    &__thumb {
+        aspect-ratio: 1;
+    }
+}
+
+.category-title {
+    $border-size: 1.2rem;
+
+    border-left: $border-size solid red;
+    line-height: $border-size;
+    padding-left: 1rem;
+
+    &--xl {
+        $border-size: 1.2rem;
+    }
+}
+
+
+// ----------------------------------------
+// Hero
+// ----------------------------------------
+.hero-section {
+    background: linear-gradient(to bottom, $c-grey-30, transparent);
+}
+
+.video-play {
+    position: relative;
+
+    &::before {
+        $size: 15%; 
+
+        content: "";
+        background: url('../img/play.svg') no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        width: $size;
+        height: 0;
+        padding-bottom: $size;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .8;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+// ----------------------------------------
+// Scelti per voi
+// ----------------------------------------
+.sceltipervoi-card {
+    $border-thickness: 6px;
+
+    border: $border-thickness solid $c-cyan;
+    position: relative;
+
+    &__icon-scelti,
+    &::after {
+        width: 140px;
+        background: white;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        height: $border-thickness;
+        margin: 0 auto;
+        position: absolute;
+        bottom: -$border-thickness;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    &__icon-scelti {
+        text-transform: uppercase;
+        color: $c-cyan;
+        transform: translateY(-3rem);
+        margin: 0 auto;
+
+        img {
+            width: 64px;
+        }
+    }
+
+    &__thumb {
+        height: 14rem;        
+        border: 1px solid $c-text-tertiary;
+    }
+ 
+    @media (min-width: 768px) {
+        &::after {
+            width: 200px;
+        }
+    } 
+}
+
+
+// ----------------------------------------
+// Video card
+// ----------------------------------------
+.default-card,
+.video-card {
+    transition: transform .2s;
+    transform-origin: top left;
+
+    &,
+    &:hover {
+        color: $c-grey-100;
+        text-decoration: none; 
+    }
+
+    &:hover {
+        transform: translateY(-.2rem); 
+    }
+
+    &__category {
+        z-index: 1;
+        position: absolute;
+        color: white;
+    }
+}
+
+
+
+// ----------------------------------------
+// Carousel
+// ----------------------------------------
+.carousel-control-next-icon {
+    background-image: url('../img/carousel-right.svg');
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../img/carousel-left.svg');
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: $c-blue;
+}
