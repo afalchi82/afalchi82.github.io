@@ -74,8 +74,8 @@
     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
       <div class="player-btns" id="btns" style="margin-bottom:0"></div>
       <div class="mode-switch">
-        <button class="mode-btn active" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie cumulative</button>
-        <button class="mode-btn" id="btn-percent" onclick="setMode('percent')">% Vittoria</button>
+        <button class="mode-btn active" id="btn-percent" onclick="setMode('percent')">% Vittoria</button>
+        <button class="mode-btn" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie cumulative</button>
       </div>
     </div>
     <div class="chart-box"><canvas id="chart"></canvas></div>
@@ -151,7 +151,7 @@ async function loadData() {
     });
 
     allPlayers = playerNames.filter(p => seriesData[p].length > 0);
-    allPlayers.slice(0, 4).forEach(p => selectedPlayers.add(p));
+    allPlayers.slice(0, 6).forEach(p => selectedPlayers.add(p));
 
     document.getElementById("loading").style.display = "none";
     document.getElementById("app").style.display = "block";
