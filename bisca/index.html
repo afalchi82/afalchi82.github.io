@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risultati Partite</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f1a;
+    color: #e0e0f0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+  h1 {
+    font-size: 26px; font-weight: 700;
+    background: linear-gradient(90deg, #6366f1, #a78bfa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  .subtitle { color: #6b6b8a; font-size: 14px; margin-bottom: 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .player-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .player-btn {
+    padding: 6px 14px; border-radius: 20px; font-size: 13px;
+    border: 2px solid; cursor: pointer; transition: all 0.15s;
+    font-weight: 500; background: transparent;
+  }
+  .chart-box {
+    background: #161626; border-radius: 14px;
+    padding: 24px; border: 1px solid #2a2a3e; margin-bottom: 24px;
+  }
+  .cards { display: flex; flex-wrap: wrap; gap: 12px; }
+  .card {
+    background: #161626; border-radius: 10px;
+    padding: 12px 16px; min-width: 130px;
+    border: 1px solid #2a2a3e; cursor: pointer;
+    transition: border 0.15s, opacity 0.15s;
+  }
+  .card.inactive { opacity: 0.4; }
+  .card-name { font-weight: 600; font-size: 13px; }
+  .card-score { font-size: 20px; font-weight: 700; margin-top: 4px; color: #e0e0f0; }
+  .card-sub { font-size: 11px; color: #6b6b8a; margin-top: 2px; }
+  #error {
+    background: #2a1520; border: 1px solid #7f1d1d;
+    border-radius: 10px; padding: 20px; color: #fca5a5; display: none;
+    line-height: 1.6;
+  }
+  #loading { text-align: center; color: #6b6b8a; padding: 60px; }
+  .mode-switch {
+    display: flex; gap: 0; margin-bottom: 20px;
+    background: #161626; border: 1px solid #2a2a3e;
+    border-radius: 10px; padding: 4px; width: fit-content;
+  }
+  .mode-btn {
+    padding: 7px 18px; border-radius: 7px; font-size: 13px;
+    border: none; cursor: pointer; transition: all 0.2s;
+    font-weight: 500; color: #6b6b8a; background: transparent;
+  }
+  .mode-btn.active {
+    background: #6366f1; color: #fff;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Risultati Partita per Partita</h1>
+  <p class="subtitle">1 = Vittoria · 0 = Sconfitta — ogni punto è una partita giocata</p>
+  <div id="loading">Caricamento dati…</div>
+  <div id="error"></div>
+  <div id="app" style="display:none">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+      <div class="player-btns" id="btns" style="margin-bottom:0"></div>
+      <div class="mode-switch">
+        <button class="mode-btn active" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie cumulative</button>
+        <button class="mode-btn" id="btn-percent" onclick="setMode('percent')">% Vittoria</button>
+      </div>
+    </div>
+    <div class="chart-box"><canvas id="chart"></canvas></div>
+    <div class="cards" id="cards"></div>
+  </div>
+</div>
+
+<script>
+const SHEET_ID = "14x7iAH2VoFxXDcy48HY5Hzv9jagMrPZfQs8nCQK14mE";
+// gviz endpoint: no redirect, no CORS issues for public sheets
+const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=0`;
+
+const COLORS = [
+  "#6366f1","#f59e0b","#10b981","#ef4444",
+  "#3b82f6","#ec4899","#8b5cf6","#14b8a6",
+  "#f97316","#84cc16","#06b6d4"
+];
+
+let chart = null;
+let allPlayers = [];
+let seriesData = {};
+let selectedPlayers = new Set();
+let viewMode = 'cumulative'; // 'cumulative' | 'percent'
+
+function setMode(mode) {
+  viewMode = mode;
+  document.getElementById('btn-cumulative').classList.toggle('active', mode === 'cumulative');
+  document.getElementById('btn-percent').classList.toggle('active', mode === 'percent');
+  renderChart();
+}
+
+async function loadData() {
+  try {
+    const res = await fetch(GVIZ_URL);
+    if (!res.ok) throw new Error(`Errore HTTP ${res.status}`);
+    const text = await res.text();
+
+    // gviz wraps JSON in /*O_o*/\ngoogle.visualization.Query.setResponse({...});
+    // Strip the wrapper to get raw JSON
+    const jsonStr = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)?.[1];
+    if (!jsonStr) throw new Error("Formato risposta non riconosciuto.");
+    const json = JSON.parse(jsonStr);
+
+    const table = json.table;
+    if (!table || !table.cols) throw new Error("Nessun dato trovato nel foglio.");
+
+    // headers: col 0 = date, col 1+ = player names
+    const playerNames = table.cols.slice(1)
+      .map(c => (c.label || "").trim())
+      .filter(n => n !== "");
+
+    playerNames.forEach(p => seriesData[p] = []);
+
+    let currentDate = "";
+    table.rows.forEach(row => {
+      // col 0: date cell
+      const dateCell = row.c[0];
+      if (dateCell && dateCell.v !== null && dateCell.v !== undefined) {
+        // gviz returns dates as "Date(2026,6,1)" strings or formatted value
+        const formatted = dateCell.f || String(dateCell.v);
+        if (formatted) currentDate = formatted;
+      }
+
+      playerNames.forEach((name, i) => {
+        const cell = row.c[i + 1];
+        if (cell && cell.v !== null && cell.v !== undefined) {
+          const val = parseFloat(cell.v);
+          if (val === 0 || val === 1) {
+            seriesData[name].push({ result: val, date: currentDate });
+          }
+        }
+      });
+    });
+
+    allPlayers = playerNames.filter(p => seriesData[p].length > 0);
+    allPlayers.slice(0, 4).forEach(p => selectedPlayers.add(p));
+
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("app").style.display = "block";
+    renderButtons();
+    renderCards();
+    renderChart();
+
+  } catch(e) {
+    document.getElementById("loading").style.display = "none";
+    const el = document.getElementById("error");
+    el.style.display = "block";
+    el.innerHTML = `<strong>Impossibile leggere il foglio</strong>
+      <p style="margin-top:8px;font-size:13px">${e.message}</p>
+      <p style="margin-top:10px;font-size:12px;color:#9ca3af">
+        Assicurati che il foglio sia condiviso come <em>"Chiunque abbia il link può visualizzare"</em>:<br>
+        File → Condividi → Chiunque abbia il link → Visualizzatore
+      </p>`;
+  }
+}
+
+function colorFor(name) {
+  return COLORS[allPlayers.indexOf(name) % COLORS.length];
+}
+
+function togglePlayer(name) {
+  if (selectedPlayers.has(name)) selectedPlayers.delete(name);
+  else selectedPlayers.add(name);
+  renderButtons(); renderCards(); renderChart();
+}
+
+function renderButtons() {
+  const container = document.getElementById("btns");
+  container.innerHTML = "";
+  allPlayers.forEach(name => {
+    const color = colorFor(name);
+    const active = selectedPlayers.has(name);
+    const btn = document.createElement("button");
+    btn.className = "player-btn";
+    btn.textContent = `${name} (${seriesData[name].length})`;
+    btn.style.borderColor = color;
+    btn.style.color = active ? color : "#555";
+    btn.style.background = active ? color + "22" : "transparent";
+    btn.style.opacity = active ? "1" : "0.4";
+    btn.onclick = () => togglePlayer(name);
+    container.appendChild(btn);
+  });
+}
+
+function renderCards() {
+  const container = document.getElementById("cards");
+  container.innerHTML = "";
+  allPlayers.forEach(name => {
+    const color = colorFor(name);
+    const results = seriesData[name];
+    const wins = results.filter(r => r.result === 1).length;
+    const total = results.length;
+    const pct = total > 0 ? Math.round(wins / total * 100) : 0;
+    const active = selectedPlayers.has(name);
+    const card = document.createElement("div");
+    card.className = "card" + (active ? "" : " inactive");
+    card.style.borderColor = active ? color + "66" : "#2a2a3e";
+    card.innerHTML = `
+      <div class="card-name" style="color:${color}">${name}</div>
+      <div class="card-score">${wins}/${total}</div>
+      <div class="card-sub">vittorie · ${pct}%</div>
+    `;
+    card.onclick = () => togglePlayer(name);
+    container.appendChild(card);
+  });
+}
+
+function renderChart() {
+  const selected = allPlayers.filter(p => selectedPlayers.has(p));
+
+  // Collect all unique dates in order
+  const dateSet = new Set();
+  allPlayers.forEach(p => seriesData[p].forEach(r => { if (r.date) dateSet.add(r.date); }));
+  const dates = Array.from(dateSet);
+
+  const isPct = viewMode === 'percent';
+
+  const datasets = selected.map(name => {
+    const color = colorFor(name);
+    let cumWins = 0, cumPlayed = 0;
+    const data = dates.map(date => {
+      const matches = seriesData[name].filter(r => r.date === date);
+      matches.forEach(r => { cumWins += r.result; cumPlayed++; });
+      if (isPct) {
+        return cumPlayed > 0 ? Math.round(cumWins / cumPlayed * 100) : null;
+      } else {
+        return cumWins;
+      }
+    });
+    return {
+      label: name, data,
+      borderColor: color, backgroundColor: color + "22",
+      pointBackgroundColor: color,
+      pointRadius: 5, pointHoverRadius: 7,
+      borderWidth: 2, spanGaps: true, tension: 0
+    };
+  });
+
+  const maxWins = selected.reduce((m, p) => Math.max(m, seriesData[p].filter(r => r.result === 1).length), 0);
+
+  const yConfig = isPct ? {
+    min: 0, max: 100,
+    ticks: { color: "#6b6b8a", stepSize: 10, callback: v => v + "%" },
+    title: { display: true, text: "% Vittoria progressiva", color: "#6b6b8a", font: { size: 12 } },
+    grid: { color: "#1e1e30" }
+  } : {
+    min: 0, max: maxWins + 1,
+    ticks: { color: "#6b6b8a", stepSize: 1, precision: 0 },
+    title: { display: true, text: "Vittorie cumulative", color: "#6b6b8a", font: { size: 12 } },
+    grid: { color: "#1e1e30" }
+  };
+
+  if (chart) chart.destroy();
+  const ctx = document.getElementById("chart").getContext("2d");
+  chart = new Chart(ctx, {
+    type: "line",
+    data: { labels: dates, datasets },
+    options: {
+      responsive: true,
+      animation: { duration: 300 },
+      scales: {
+        x: {
+          title: { display: true, text: "Data", color: "#6b6b8a", font: { size: 12 } },
+          ticks: { color: "#6b6b8a" },
+          grid: { color: "#1e1e30" }
+        },
+        y: yConfig
+      },
+      plugins: {
+        legend: { labels: { color: "#9090b0", font: { size: 13 } } },
+        tooltip: {
+          callbacks: {
+            title: items => items[0].label,
+            label: item => {
+              const name = item.dataset.label;
+              const date = dates[item.dataIndex];
+              const matches = seriesData[name].filter(r => r.date === date);
+              const wins = matches.filter(r => r.result === 1).length;
+              const played = matches.length;
+              const detail = played > 0 ? ` (${wins}V / ${played - wins}S oggi)` : " (non ha giocato)";
+              const value = isPct ? `${item.raw}%` : `${item.raw} vittorie`;
+              return ` ${name}: ${value}${detail}`;
+            }
+          },
+          backgroundColor: "#1e1e2e", borderColor: "#333", borderWidth: 1,
+          titleColor: "#a0a0b0", bodyColor: "#e0e0f0", padding: 10
+        }
+      }
+    }
+  });
+}
+
+loadData();
+</script>
+</body>
+</html>
