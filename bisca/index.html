@@ -229,7 +229,7 @@ function renderChart() {
   // Collect all unique dates in order
   const dateSet = new Set();
   allPlayers.forEach(p => seriesData[p].forEach(r => { if (r.date) dateSet.add(r.date); }));
-  const dates = Array.from(dateSet);
+  const dates = Array.from(dateSet).sort();
 
   const isPct = viewMode === 'percent';
 
