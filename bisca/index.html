@@ -62,6 +62,15 @@
   .mode-btn.active {
     background: #6366f1; color: #fff;
   }
+  .legend-note {
+    display: flex; align-items: center; gap: 8px;
+    color: #6b6b8a; font-size: 12px; margin-top: 14px;
+  }
+  .legend-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #9090b0; display: inline-block;
+  }
+  .legend-dot.ghost { opacity: 0.3; }
 </style>
 </head>
 <body>
@@ -78,7 +87,13 @@
         <button class="mode-btn" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie cumulative</button>
       </div>
     </div>
-    <div class="chart-box"><canvas id="chart"></canvas></div>
+    <div class="chart-box">
+      <canvas id="chart"></canvas>
+      <div class="legend-note">
+        <span class="legend-dot"></span> ha giocato
+        <span class="legend-dot ghost" style="margin-left:12px"></span> non ha giocato quel giorno
+      </div>
+    </div>
     <div class="cards" id="cards"></div>
   </div>
 </div>
@@ -243,9 +258,12 @@ function renderChart() {
 
   const datasets = selected.map(name => {
     const color = colorFor(name);
+    const ghost = color + "55"; // colore semitrasparente per i giorni senza partite
     let cumWins = 0, cumPlayed = 0;
+    const playedFlags = [];
     const data = dates.map(date => {
       const matches = seriesData[name].filter(r => r.date === date);
+      playedFlags.push(matches.length > 0);
       matches.forEach(r => { cumWins += r.result; cumPlayed++; });
       if (isPct) {
         return cumPlayed > 0 ? Math.round(cumWins / cumPlayed * 100) : null;
@@ -256,7 +274,11 @@ function renderChart() {
     return {
       label: name, data,
       borderColor: color, backgroundColor: color + "22",
-      pointBackgroundColor: color,
+      // pallino pieno se ha giocato, semitrasparente se non ha giocato
+      pointBackgroundColor: playedFlags.map(p => p ? color : ghost),
+      pointBorderColor: playedFlags.map(p => p ? color : ghost),
+      pointHoverBackgroundColor: playedFlags.map(p => p ? color : ghost),
+      pointHoverBorderColor: playedFlags.map(p => p ? color : ghost),
       pointRadius: 5, pointHoverRadius: 7,
       borderWidth: 2, spanGaps: true, tension: 0
     };
