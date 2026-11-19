@@ -22,7 +22,7 @@
     color: var(--cream);
     font-family: 'Playfair Display', Georgia, serif;
     min-height: 100vh;
-    padding: 28px 20px 48px;
+    padding: 56px 20px 48px;
     position: relative;
   }
   /* rombi del feltro */
@@ -65,7 +65,10 @@
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 3px 0 #4a2a00) drop-shadow(0 6px 8px rgba(0,0,0,.7));
   }
-  h1 .suit { font-family: 'Playfair Display', serif; font-size: .55em; vertical-align: middle; margin: 0 .35em; }
+  h1 { display: flex; align-items: center; justify-content: center; }
+  h1 .suit { font-family: 'Playfair Display', serif; font-size: .55em; line-height: 1; display: block; margin: 0 .2em; }
+  h1 .suit:nth-of-type(2) { margin-right: .5em; }
+  h1 .suit:nth-of-type(3) { margin-left: .5em; }
   h1 .red { -webkit-text-fill-color: #ff4b4b; }
   h1 .blk { -webkit-text-fill-color: #1a1a1a; filter: drop-shadow(0 0 2px #fff3b0); }
   .subtitle {
@@ -192,20 +195,12 @@
   <div class="marquee">
     <div class="bulbs top"></div>
     <h1><span class="suit blk">♠</span><span class="suit red">♥</span> BISCA <span class="suit red">♦</span><span class="suit blk">♣</span></h1>
-    <p class="subtitle">1 = Vittoria · 0 = Sconfitta — ogni punto è una partita giocata</p>
     <div class="bulbs bottom"></div>
   </div>
 
   <div id="loading">♠ MESCOLO LE CARTE… ♥</div>
   <div id="error"></div>
   <div id="app" style="display:none">
-    <div class="toolbar">
-      <div class="player-btns" id="btns"></div>
-      <div class="mode-switch">
-        <button class="mode-btn active" id="btn-percent" onclick="setMode('percent')">% Vittoria</button>
-        <button class="mode-btn" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie</button>
-      </div>
-    </div>
     <div class="chart-frame">
       <div class="chart-box">
         <canvas id="chart"></canvas>
@@ -238,18 +233,10 @@ let chart = null;
 let allPlayers = [];
 let seriesData = {};
 let selectedPlayers = new Set();
-let viewMode = 'percent'; // 'cumulative' | 'percent'
 
 if (window.Chart) {
   Chart.defaults.font.family = "'Playfair Display', Georgia, serif";
   Chart.defaults.color = "#fff3b0";
-}
-
-function setMode(mode) {
-  viewMode = mode;
-  document.getElementById('btn-cumulative').classList.toggle('active', mode === 'cumulative');
-  document.getElementById('btn-percent').classList.toggle('active', mode === 'percent');
-  renderChart();
 }
 
 async function loadData() {
@@ -303,7 +290,6 @@ async function loadData() {
 
     document.getElementById("loading").style.display = "none";
     document.getElementById("app").style.display = "block";
-    renderButtons();
     renderCards();
     renderChart();
 
@@ -327,25 +313,7 @@ function colorFor(name) {
 function togglePlayer(name) {
   if (selectedPlayers.has(name)) selectedPlayers.delete(name);
   else selectedPlayers.add(name);
-  renderButtons(); renderCards(); renderChart();
-}
-
-function renderButtons() {
-  const container = document.getElementById("btns");
-  container.innerHTML = "";
-  allPlayers.forEach(name => {
-    const color = colorFor(name);
-    const active = selectedPlayers.has(name);
-    const btn = document.createElement("button");
-    btn.className = "chip " + (active ? "on" : "off");
-    btn.style.background = `radial-gradient(circle at 35% 30%, ${color}ee, ${color} 55%, ${color}bb)`;
-    btn.style.boxShadow = `0 5px 0 rgba(0,0,0,.45), 0 9px 12px rgba(0,0,0,.55), inset 0 0 0 2px rgba(0,0,0,.25)`;
-    btn.title = name;
-    btn.innerHTML = `<span class="n"></span><span class="c">${seriesData[name].length}</span>`;
-    btn.querySelector(".n").textContent = name;
-    btn.onclick = () => togglePlayer(name);
-    container.appendChild(btn);
-  });
+  renderCards(); renderChart();
 }
 
 function renderCards() {
@@ -396,8 +364,6 @@ function renderChart() {
   allPlayers.forEach(p => seriesData[p].forEach(r => { if (r.date) dateSet.add(r.date); }));
   const dates = Array.from(dateSet).sort();
 
-  const isPct = viewMode === 'percent';
-
   const datasets = selected.map(name => {
     const color = colorFor(name);
     const ghost = color + "88";
@@ -407,11 +373,7 @@ function renderChart() {
       const matches = seriesData[name].filter(r => r.date === date);
       playedFlags.push(matches.length > 0);
       matches.forEach(r => { cumWins += r.result; cumPlayed++; });
-      if (isPct) {
-        return cumPlayed > 0 ? Math.round(cumWins / cumPlayed * 100) : null;
-      } else {
-        return cumWins;
-      }
+      return cumPlayed > 0 ? Math.round(cumWins / cumPlayed * 100) : null;
     });
     return {
       label: name, data,
@@ -428,21 +390,14 @@ function renderChart() {
     };
   });
 
-  const maxWins = selected.reduce((m, p) => Math.max(m, seriesData[p].filter(r => r.result === 1).length), 0);
-
   const gridColor = "rgba(244,197,66,.18)";
   const tickFont = { family: "'Playfair Display', serif", size: 12, weight: "600" };
   const axisTitle = (t) => ({ display: true, text: t, color: "#f4c542", font: { family: "'Rye', serif", size: 13 } });
 
-  const yConfig = isPct ? {
+  const yConfig = {
     min: 0, max: 100,
     ticks: { color: "#fff3b0", stepSize: 10, callback: v => v + "%", font: tickFont },
     title: axisTitle("% Vittoria progressiva"),
-    grid: { color: gridColor }
-  } : {
-    min: 0, max: maxWins + 1,
-    ticks: { color: "#fff3b0", stepSize: 1, precision: 0, font: tickFont },
-    title: axisTitle("Vittorie cumulative"),
     grid: { color: gridColor }
   };
 
@@ -474,8 +429,7 @@ function renderChart() {
               const wins = matches.filter(r => r.result === 1).length;
               const played = matches.length;
               const detail = played > 0 ? ` (${wins}V / ${played - wins}S oggi)` : " (non ha giocato)";
-              const value = isPct ? `${item.raw}%` : `${item.raw} vittorie`;
-              return ` ${name}: ${value}${detail}`;
+              return ` ${name}: ${item.raw}%${detail}`;
             }
           },
           backgroundColor: "#4a0508", borderColor: "#f4c542", borderWidth: 2,
