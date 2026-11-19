@@ -4,99 +4,218 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎲 Bisca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Rye&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold-1: #fff3b0; --gold-2: #f4c542; --gold-3: #c8921a; --gold-4: #7a4e08;
+    --cream: #fdf3d8; --felt: #0b5d3b; --felt-dark: #063d27; --red: #b3121f;
+  }
   body {
-    background: #0f0f1a;
-    color: #e0e0f0;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background:
+      radial-gradient(ellipse at 50% 0%, #12805a 0%, #0b5d3b 45%, #052f1f 100%),
+      #052f1f;
+    background-attachment: fixed;
+    color: var(--cream);
+    font-family: 'Playfair Display', Georgia, serif;
     min-height: 100vh;
-    padding: 32px 24px;
+    padding: 28px 20px 48px;
+    position: relative;
   }
+  /* rombi del feltro */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .09;
+    background:
+      repeating-linear-gradient(45deg, #000 0 1px, transparent 1px 34px),
+      repeating-linear-gradient(-45deg, #000 0 1px, transparent 1px 34px);
+  }
+  .container { max-width: 1400px; margin: 0 auto; position: relative; }
+
+  /* ---------- INSEGNA ---------- */
+  .marquee {
+    position: relative; text-align: center; padding: 22px 16px 18px; margin-bottom: 26px;
+    background: linear-gradient(180deg, #8d0f1b 0%, #5c0710 100%);
+    border-radius: 18px;
+    border: 5px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 0 5px var(--gold-3), 0 0 0 8px var(--gold-4), 0 12px 30px rgba(0,0,0,.6), inset 0 0 40px rgba(0,0,0,.5);
+  }
+  .bulbs {
+    position: absolute; left: 14px; right: 14px; height: 14px; overflow: hidden;
+  }
+  .bulbs.top { top: 6px; } .bulbs.bottom { bottom: 6px; }
+  .bulbs::before, .bulbs::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, #fffbe0 0 2px, #ffd23f 3px, #ff9d00 6px, transparent 7px) 0 50% / 28px 14px repeat-x;
+    filter: drop-shadow(0 0 4px #ffb300);
+  }
+  .bulbs::after { background-position: 14px 50%; animation: blinkA 1s steps(1) infinite; }
+  .bulbs::before { animation: blinkB 1s steps(1) infinite; }
+  @keyframes blinkA { 0%{opacity:1} 50%{opacity:.15} }
+  @keyframes blinkB { 0%{opacity:.15} 50%{opacity:1} }
+
   h1 {
-    font-size: 26px; font-weight: 700;
-    background: linear-gradient(90deg, #6366f1, #a78bfa);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    margin-bottom: 6px;
+    font-family: 'Rye', serif; font-weight: 400;
+    font-size: clamp(40px, 8vw, 78px); letter-spacing: 6px; line-height: 1.1;
+    margin: 12px 0 4px;
+    background: linear-gradient(180deg, var(--gold-1) 0%, var(--gold-2) 45%, var(--gold-3) 55%, var(--gold-1) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 0 #4a2a00) drop-shadow(0 6px 8px rgba(0,0,0,.7));
   }
-  .subtitle { color: #6b6b8a; font-size: 14px; margin-bottom: 24px; }
-  .container { max-width: 1400px; margin: 0 auto; }
-  .player-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-  .player-btn {
-    padding: 6px 14px; border-radius: 20px; font-size: 13px;
-    border: 2px solid; cursor: pointer; transition: all 0.15s;
-    font-weight: 500; background: transparent;
+  h1 .suit { font-family: 'Playfair Display', serif; font-size: .55em; vertical-align: middle; margin: 0 .35em; }
+  h1 .red { -webkit-text-fill-color: #ff4b4b; }
+  h1 .blk { -webkit-text-fill-color: #1a1a1a; filter: drop-shadow(0 0 2px #fff3b0); }
+  .subtitle {
+    font-style: italic; font-size: 15px; color: var(--gold-1);
+    text-shadow: 0 2px 0 rgba(0,0,0,.6); letter-spacing: .5px;
+  }
+
+  /* ---------- FICHE GIOCATORI ---------- */
+  .toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; margin-bottom:22px; }
+  .player-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+  .chip {
+    width: 88px; height: 88px; border-radius: 50%;
+    border: 5px dashed #fff; cursor: pointer; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Alfa Slab One', serif; color: #fff; text-align: center; line-height: 1.05;
+    text-shadow: 0 2px 2px rgba(0,0,0,.6);
+    transition: transform .12s, box-shadow .12s, filter .2s;
+    padding: 4px;
+  }
+  .chip::before {
+    content: ""; position: absolute; inset: 5px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.75); pointer-events: none;
+  }
+  .chip .n { font-size: 12px; max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chip .c { font-size: 18px; margin-top: 2px; }
+  .chip.on { transform: translateY(0); }
+  .chip.off { filter: grayscale(.9) brightness(.55); transform: translateY(3px); box-shadow: none !important; }
+  .chip:hover { transform: translateY(-3px) rotate(-4deg); }
+
+  /* ---------- PULSANTI MODALITÀ (stile HOLD) ---------- */
+  .mode-switch { display: flex; gap: 12px; padding: 10px 14px; border-radius: 14px;
+    background: linear-gradient(180deg,#2b2b2b,#0e0e0e); box-shadow: inset 0 0 0 2px #555, 0 0 0 3px var(--gold-3), 0 6px 14px rgba(0,0,0,.6); }
+  .mode-btn {
+    font-family: 'Alfa Slab One', serif; text-transform: uppercase; letter-spacing: 1px;
+    font-size: 14px; padding: 12px 20px; border-radius: 10px; cursor: pointer;
+    color: #ffe9e9; border: 2px solid #3b0006;
+    background: linear-gradient(180deg, #e03a3a 0%, #a50f14 50%, #7a0a0e 100%);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.45), 0 5px 0 #4a0508, 0 8px 10px rgba(0,0,0,.6);
+    text-shadow: 0 2px 0 rgba(0,0,0,.6);
+    transition: transform .08s, box-shadow .08s, filter .2s;
+  }
+  .mode-btn:active, .mode-btn.active { transform: translateY(4px); box-shadow: inset 0 2px 0 rgba(255,255,255,.45), 0 1px 0 #4a0508, 0 3px 4px rgba(0,0,0,.6); }
+  .mode-btn.active {
+    color: #3a2300; border-color: #6b4300;
+    background: linear-gradient(180deg, #fff6a8 0%, #ffd23f 50%, #f0a500 100%);
+    text-shadow: 0 1px 0 rgba(255,255,255,.6);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 1px 0 #6b4300, 0 0 18px 3px rgba(255,210,63,.75);
+  }
+
+  /* ---------- SCHERMO DEL CABINATO ---------- */
+  .chart-frame {
+    padding: 12px; border-radius: 22px; margin-bottom: 34px;
+    background: linear-gradient(135deg, var(--gold-1), var(--gold-3) 30%, var(--gold-1) 50%, var(--gold-4) 75%, var(--gold-2));
+    box-shadow: 0 14px 30px rgba(0,0,0,.65), inset 0 0 0 2px rgba(255,255,255,.4);
   }
   .chart-box {
-    background: #161626; border-radius: 14px;
-    padding: 24px; border: 1px solid #2a2a3e; margin-bottom: 24px;
-  }
-  .cards { display: flex; flex-wrap: wrap; gap: 12px; }
-  .card {
-    background: #161626; border-radius: 10px;
-    padding: 12px 16px; min-width: 130px;
-    border: 1px solid #2a2a3e; cursor: pointer;
-    transition: border 0.15s, opacity 0.15s;
-  }
-  .card.inactive { opacity: 0.4; }
-  .card-name { font-weight: 600; font-size: 13px; }
-  .card-score { font-size: 20px; font-weight: 700; margin-top: 4px; color: #e0e0f0; }
-  .card-sub { font-size: 11px; color: #6b6b8a; margin-top: 2px; }
-  #error {
-    background: #2a1520; border: 1px solid #7f1d1d;
-    border-radius: 10px; padding: 20px; color: #fca5a5; display: none;
-    line-height: 1.6;
-  }
-  #loading { text-align: center; color: #6b6b8a; padding: 60px; }
-  .mode-switch {
-    display: flex; gap: 0; margin-bottom: 20px;
-    background: #161626; border: 1px solid #2a2a3e;
-    border-radius: 10px; padding: 4px; width: fit-content;
-  }
-  .mode-btn {
-    padding: 7px 18px; border-radius: 7px; font-size: 13px;
-    border: none; cursor: pointer; transition: all 0.2s;
-    font-weight: 500; color: #6b6b8a; background: transparent;
-  }
-  .mode-btn.active {
-    background: #6366f1; color: #fff;
+    border-radius: 12px; padding: 22px;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.08), transparent 60%),
+      linear-gradient(180deg, #0a4b31, #06331f);
+    box-shadow: inset 0 0 0 3px #04241a, inset 0 0 40px rgba(0,0,0,.7);
   }
   .legend-note {
-    display: flex; align-items: center; gap: 8px;
-    color: #6b6b8a; font-size: 12px; margin-top: 14px;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    color: var(--gold-1); font-size: 13px; font-style: italic; margin-top: 14px;
   }
-  .legend-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: #9090b0; display: inline-block;
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gold-1); display: inline-block; border: 2px solid var(--gold-1); }
+  .legend-dot.ghost { background: transparent; opacity: .5; }
+
+  /* ---------- CARTE ---------- */
+  .section-title {
+    font-family: 'Rye', serif; font-size: 22px; letter-spacing: 3px; color: var(--gold-2);
+    text-shadow: 0 2px 0 #3a2200, 0 0 12px rgba(244,197,66,.4); margin-bottom: 20px; text-align: center;
   }
-  .legend-dot.ghost {
-    background: transparent;
-    border: 2px solid #9090b0; opacity: 0.4;
+  .section-title::before, .section-title::after { content: " ♦ "; color: #ff4b4b; }
+  .cards { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; padding-bottom: 10px; }
+  .slot { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .pcard {
+    width: 142px; height: 200px; border-radius: 12px; position: relative; cursor: pointer;
+    background: linear-gradient(160deg, #fffdf4 0%, var(--cream) 100%);
+    border: 2px solid #3b2a12; color: #1a1a1a; overflow: hidden;
+    box-shadow: 0 8px 14px rgba(0,0,0,.55), inset 0 0 0 4px #fffdf4, inset 0 0 0 5px #d9c9a0;
+    transition: transform .15s, filter .2s, box-shadow .15s;
   }
+  .pcard:hover { transform: translateY(-6px) rotate(-2deg); }
+  .pcard.inactive { filter: grayscale(.85) brightness(.6); transform: translateY(8px); box-shadow: 0 2px 4px rgba(0,0,0,.5); }
+  .pcard.red { color: #c4101c; }
+  .corner { position: absolute; display: flex; flex-direction: column; align-items: center; font-weight: 800; line-height: 1; }
+  .corner .rank { font-size: 20px; }
+  .corner .suit { font-size: 18px; }
+  .corner.tl { top: 9px; left: 11px; }
+  .corner.br { bottom: 9px; right: 11px; transform: rotate(180deg); }
+  .watermark {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 120px; opacity: .08; pointer-events: none;
+  }
+  .face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 12px; }
+  .card-name {
+    font-family: 'Alfa Slab One', serif; font-size: 12px; letter-spacing: .5px; color: #fff;
+    padding: 4px 10px; border-radius: 4px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    text-shadow: 0 1px 1px rgba(0,0,0,.7); border: 1.5px solid rgba(0,0,0,.5);
+    box-shadow: 0 2px 0 rgba(0,0,0,.35);
+  }
+  .card-score { font-family: 'Alfa Slab One', serif; font-size: 34px; margin-top: 10px; color: #1a1a1a; text-shadow: 2px 2px 0 rgba(0,0,0,.12); }
+  .card-sub { font-size: 12px; font-style: italic; color: #5a4a2a; margin-top: 2px; font-weight: 600; }
+  .held {
+    font-family: 'Alfa Slab One', serif; font-size: 15px; letter-spacing: 3px; height: 22px;
+    color: #ffe14d; text-shadow: 0 0 8px #ff9d00, 0 2px 0 #5a3500;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  .held.hidden { visibility: hidden; }
+  @keyframes pulse { 50% { opacity: .55; } }
+
+  /* ---------- STATI ---------- */
+  #error {
+    background: #4a0a10; border: 3px double var(--gold-3);
+    border-radius: 12px; padding: 20px; color: #ffd6d6; display: none; line-height: 1.6;
+  }
+  #loading { text-align: center; color: var(--gold-1); padding: 60px; font-family: 'Rye', serif; font-size: 22px; letter-spacing: 3px; animation: pulse 1s infinite; }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>🎲 Bisca</h1>
-  <p class="subtitle">1 = Vittoria · 0 = Sconfitta — ogni punto è una partita giocata</p>
-  <div id="loading">Caricamento dati…</div>
+  <div class="marquee">
+    <div class="bulbs top"></div>
+    <h1><span class="suit blk">♠</span><span class="suit red">♥</span> BISCA <span class="suit red">♦</span><span class="suit blk">♣</span></h1>
+    <p class="subtitle">1 = Vittoria · 0 = Sconfitta — ogni punto è una partita giocata</p>
+    <div class="bulbs bottom"></div>
+  </div>
+
+  <div id="loading">♠ MESCOLO LE CARTE… ♥</div>
   <div id="error"></div>
   <div id="app" style="display:none">
-    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
-      <div class="player-btns" id="btns" style="margin-bottom:0"></div>
+    <div class="toolbar">
+      <div class="player-btns" id="btns"></div>
       <div class="mode-switch">
         <button class="mode-btn active" id="btn-percent" onclick="setMode('percent')">% Vittoria</button>
-        <button class="mode-btn" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie cumulative</button>
+        <button class="mode-btn" id="btn-cumulative" onclick="setMode('cumulative')">Vittorie</button>
       </div>
     </div>
-    <div class="chart-box">
-      <canvas id="chart"></canvas>
-      <div class="legend-note">
-        <span class="legend-dot"></span> ha giocato
-        <span class="legend-dot ghost" style="margin-left:12px"></span> non ha giocato quel giorno
+    <div class="chart-frame">
+      <div class="chart-box">
+        <canvas id="chart"></canvas>
+        <div class="legend-note">
+          <span class="legend-dot"></span> ha giocato
+          <span class="legend-dot ghost" style="margin-left:12px"></span> non ha giocato quel giorno
+        </div>
       </div>
     </div>
+    <div class="section-title">La Mano dei Giocatori</div>
     <div class="cards" id="cards"></div>
   </div>
 </div>
@@ -106,17 +225,25 @@ const SHEET_ID = "14x7iAH2VoFxXDcy48HY5Hzv9jagMrPZfQs8nCQK14mE";
 // gviz endpoint: no redirect, no CORS issues for public sheets
 const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=0`;
 
+// colori più saturi, da fiche da casinò
 const COLORS = [
-  "#6366f1","#f59e0b","#10b981","#ef4444",
-  "#3b82f6","#ec4899","#8b5cf6","#14b8a6",
-  "#f97316","#84cc16","#06b6d4"
+  "#d4202c","#1f6fd1","#1a9b4f","#e8a400",
+  "#7b2cbf","#e0559b","#0f9aa8","#e8661a",
+  "#5c7f12","#3a3a8c","#9a3b1a"
 ];
+const SUITS = ["♠","♥","♦","♣"];
+const RANKS = ["A","K","Q","J","10","9","8","7","6","5","4","3","2"];
 
 let chart = null;
 let allPlayers = [];
 let seriesData = {};
 let selectedPlayers = new Set();
 let viewMode = 'percent'; // 'cumulative' | 'percent'
+
+if (window.Chart) {
+  Chart.defaults.font.family = "'Playfair Display', Georgia, serif";
+  Chart.defaults.color = "#fff3b0";
+}
 
 function setMode(mode) {
   viewMode = mode;
@@ -131,8 +258,6 @@ async function loadData() {
     if (!res.ok) throw new Error(`Errore HTTP ${res.status}`);
     const text = await res.text();
 
-    // gviz wraps JSON in /*O_o*/\ngoogle.visualization.Query.setResponse({...});
-    // Strip the wrapper to get raw JSON
     const jsonStr = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)?.[1];
     if (!jsonStr) throw new Error("Formato risposta non riconosciuto.");
     const json = JSON.parse(jsonStr);
@@ -140,7 +265,6 @@ async function loadData() {
     const table = json.table;
     if (!table || !table.cols) throw new Error("Nessun dato trovato nel foglio.");
 
-    // headers: col 0 = date, col 1+ = player names
     const playerNames = table.cols.slice(1)
       .map(c => (c.label || "").trim())
       .filter(n => n !== "");
@@ -149,10 +273,8 @@ async function loadData() {
 
     let currentDate = "";
     table.rows.forEach(row => {
-      // col 0: date cell
       const dateCell = row.c[0];
       if (dateCell && dateCell.v !== null && dateCell.v !== undefined) {
-        // gviz returns dates as "Date(2026,6,1)" strings or formatted value
         const formatted = dateCell.f || String(dateCell.v);
         if (formatted) currentDate = formatted;
       }
@@ -189,9 +311,9 @@ async function loadData() {
     document.getElementById("loading").style.display = "none";
     const el = document.getElementById("error");
     el.style.display = "block";
-    el.innerHTML = `<strong>Impossibile leggere il foglio</strong>
+    el.innerHTML = `<strong>♠ Il banco è chiuso: impossibile leggere il foglio</strong>
       <p style="margin-top:8px;font-size:13px">${e.message}</p>
-      <p style="margin-top:10px;font-size:12px;color:#9ca3af">
+      <p style="margin-top:10px;font-size:12px;color:#f3c9a0">
         Assicurati che il foglio sia condiviso come <em>"Chiunque abbia il link può visualizzare"</em>:<br>
         File → Condividi → Chiunque abbia il link → Visualizzatore
       </p>`;
@@ -215,12 +337,12 @@ function renderButtons() {
     const color = colorFor(name);
     const active = selectedPlayers.has(name);
     const btn = document.createElement("button");
-    btn.className = "player-btn";
-    btn.textContent = `${name} (${seriesData[name].length})`;
-    btn.style.borderColor = color;
-    btn.style.color = active ? color : "#555";
-    btn.style.background = active ? color + "22" : "transparent";
-    btn.style.opacity = active ? "1" : "0.4";
+    btn.className = "chip " + (active ? "on" : "off");
+    btn.style.background = `radial-gradient(circle at 35% 30%, ${color}ee, ${color} 55%, ${color}bb)`;
+    btn.style.boxShadow = `0 5px 0 rgba(0,0,0,.45), 0 9px 12px rgba(0,0,0,.55), inset 0 0 0 2px rgba(0,0,0,.25)`;
+    btn.title = name;
+    btn.innerHTML = `<span class="n"></span><span class="c">${seriesData[name].length}</span>`;
+    btn.querySelector(".n").textContent = name;
     btn.onclick = () => togglePlayer(name);
     container.appendChild(btn);
   });
@@ -229,30 +351,47 @@ function renderButtons() {
 function renderCards() {
   const container = document.getElementById("cards");
   container.innerHTML = "";
-  allPlayers.forEach(name => {
+  allPlayers.forEach((name, idx) => {
     const color = colorFor(name);
     const results = seriesData[name];
     const wins = results.filter(r => r.result === 1).length;
     const total = results.length;
     const pct = total > 0 ? Math.round(wins / total * 100) : 0;
     const active = selectedPlayers.has(name);
+    const suit = SUITS[idx % 4];
+    const isRed = suit === "♥" || suit === "♦";
+    const rank = RANKS[idx % RANKS.length];
+
+    const slot = document.createElement("div");
+    slot.className = "slot";
+
     const card = document.createElement("div");
-    card.className = "card" + (active ? "" : " inactive");
-    card.style.borderColor = active ? color + "66" : "#2a2a3e";
+    card.className = "pcard" + (isRed ? " red" : "") + (active ? "" : " inactive");
     card.innerHTML = `
-      <div class="card-name" style="color:${color}">${name}</div>
-      <div class="card-score">${wins}/${total}</div>
-      <div class="card-sub">vittorie · ${pct}%</div>
-    `;
+      <div class="corner tl"><span class="rank">${rank}</span><span class="suit">${suit}</span></div>
+      <div class="corner br"><span class="rank">${rank}</span><span class="suit">${suit}</span></div>
+      <div class="watermark">${suit}</div>
+      <div class="face">
+        <div class="card-name" style="background:${color}"></div>
+        <div class="card-score">${wins}/${total}</div>
+        <div class="card-sub">vittorie · ${pct}%</div>
+      </div>`;
+    card.querySelector(".card-name").textContent = name;
     card.onclick = () => togglePlayer(name);
-    container.appendChild(card);
+
+    const held = document.createElement("div");
+    held.className = "held" + (active ? "" : " hidden");
+    held.textContent = "HELD";
+
+    slot.appendChild(card);
+    slot.appendChild(held);
+    container.appendChild(slot);
   });
 }
 
 function renderChart() {
   const selected = allPlayers.filter(p => selectedPlayers.has(p));
 
-  // Collect all unique dates in order
   const dateSet = new Set();
   allPlayers.forEach(p => seriesData[p].forEach(r => { if (r.date) dateSet.add(r.date); }));
   const dates = Array.from(dateSet).sort();
@@ -261,7 +400,7 @@ function renderChart() {
 
   const datasets = selected.map(name => {
     const color = colorFor(name);
-    const ghost = color + "55"; // colore semitrasparente per i giorni senza partite
+    const ghost = color + "88";
     let cumWins = 0, cumPlayed = 0;
     const playedFlags = [];
     const data = dates.map(date => {
@@ -276,31 +415,35 @@ function renderChart() {
     });
     return {
       label: name, data,
-      borderColor: color, backgroundColor: color + "22",
-      // pallino pieno se ha giocato, solo contorno semitrasparente se non ha giocato
+      borderColor: color, backgroundColor: color + "33",
+      // fiche piene se ha giocato, solo contorno se non ha giocato
       pointBackgroundColor: playedFlags.map(p => p ? color : "transparent"),
-      pointBorderColor: playedFlags.map(p => p ? color : ghost),
-      pointBorderWidth: playedFlags.map(p => p ? 1 : 2),
+      pointBorderColor: playedFlags.map(p => p ? "#fff3b0" : ghost),
+      pointBorderWidth: playedFlags.map(p => p ? 2 : 2),
       pointHoverBackgroundColor: playedFlags.map(p => p ? color : "transparent"),
-      pointHoverBorderColor: playedFlags.map(p => p ? color : ghost),
-      pointHoverBorderWidth: playedFlags.map(p => p ? 1 : 2),
-      pointRadius: 5, pointHoverRadius: 7,
-      borderWidth: 2, spanGaps: true, tension: 0
+      pointHoverBorderColor: playedFlags.map(p => p ? "#fff3b0" : ghost),
+      pointHoverBorderWidth: 3,
+      pointRadius: 6, pointHoverRadius: 9,
+      borderWidth: 4, spanGaps: true, tension: 0
     };
   });
 
   const maxWins = selected.reduce((m, p) => Math.max(m, seriesData[p].filter(r => r.result === 1).length), 0);
 
+  const gridColor = "rgba(244,197,66,.18)";
+  const tickFont = { family: "'Playfair Display', serif", size: 12, weight: "600" };
+  const axisTitle = (t) => ({ display: true, text: t, color: "#f4c542", font: { family: "'Rye', serif", size: 13 } });
+
   const yConfig = isPct ? {
     min: 0, max: 100,
-    ticks: { color: "#6b6b8a", stepSize: 10, callback: v => v + "%" },
-    title: { display: true, text: "% Vittoria progressiva", color: "#6b6b8a", font: { size: 12 } },
-    grid: { color: "#1e1e30" }
+    ticks: { color: "#fff3b0", stepSize: 10, callback: v => v + "%", font: tickFont },
+    title: axisTitle("% Vittoria progressiva"),
+    grid: { color: gridColor }
   } : {
     min: 0, max: maxWins + 1,
-    ticks: { color: "#6b6b8a", stepSize: 1, precision: 0 },
-    title: { display: true, text: "Vittorie cumulative", color: "#6b6b8a", font: { size: 12 } },
-    grid: { color: "#1e1e30" }
+    ticks: { color: "#fff3b0", stepSize: 1, precision: 0, font: tickFont },
+    title: axisTitle("Vittorie cumulative"),
+    grid: { color: gridColor }
   };
 
   if (chart) chart.destroy();
@@ -313,14 +456,14 @@ function renderChart() {
       animation: { duration: 300 },
       scales: {
         x: {
-          title: { display: true, text: "Data", color: "#6b6b8a", font: { size: 12 } },
-          ticks: { color: "#6b6b8a" },
-          grid: { color: "#1e1e30" }
+          title: axisTitle("Data"),
+          ticks: { color: "#fff3b0", font: tickFont },
+          grid: { color: gridColor }
         },
         y: yConfig
       },
       plugins: {
-        legend: { labels: { color: "#9090b0", font: { size: 13 } } },
+        legend: { labels: { color: "#fff3b0", font: { family: "'Alfa Slab One', serif", size: 12 }, usePointStyle: true, pointStyle: "circle", padding: 16 } },
         tooltip: {
           callbacks: {
             title: items => items[0].label,
@@ -335,8 +478,10 @@ function renderChart() {
               return ` ${name}: ${value}${detail}`;
             }
           },
-          backgroundColor: "#1e1e2e", borderColor: "#333", borderWidth: 1,
-          titleColor: "#a0a0b0", bodyColor: "#e0e0f0", padding: 10
+          backgroundColor: "#4a0508", borderColor: "#f4c542", borderWidth: 2,
+          titleColor: "#f4c542", bodyColor: "#fdf3d8", padding: 12,
+          titleFont: { family: "'Rye', serif", size: 14 },
+          bodyFont: { family: "'Playfair Display', serif", size: 13 }
         }
       }
     }
